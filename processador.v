@@ -1,8 +1,18 @@
-module proc(DIN, Resetn, Clock, Run, Done);
+module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	input [15:0] DIN;
 	input Resetn, Clock, Run;
 	output Done;
 	//. . . declare variables
+	reg [15:0] IR;
+	wire [2:0] III;
+	wire IMM;
+	wire [2:0]rX;
+	wire [2:0]rY;
+	reg rX_in;reg [2:0]Tstep_Q;reg [2:0]Tstep_D;reg[15:0]BusWires;
+	wire[7:0]R_in;reg[15:0]r0,r7,r1,r2,r3,r4,r5,r6; //registradores de prop´sito geral
+	reg Done,IR_in;reg[3:0]Select;
+	wire [8:0]Imm;
+	wire [15:0]G;
 	
 	assign III = IR[15:13];
 	assign IMM = IR[12];

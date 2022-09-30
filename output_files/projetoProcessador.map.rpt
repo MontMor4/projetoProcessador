@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projetoProcessador
-Thu Sep 29 21:23:23 2022
+Fri Sep 30 18:16:00 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,7 +10,15 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |projetoProcessador
+ 10. Port Connectivity Checks: "dec3to8:decX"
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
+ 13. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -36,20 +44,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Sep 29 21:23:23 2022               ;
+; Analysis & Synthesis Status        ; Successful - Fri Sep 30 18:16:00 2022           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; projetoProcessador                              ;
 ; Top-level Entity Name              ; projetoProcessador                              ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 0                                               ;
+;     Total combinational functions  ; 0                                               ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 20                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -144,9 +152,112 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 8      ;
+; Number detected on machine ; 4      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
+; processador.v                    ; yes             ; User Verilog HDL File  ; C:/projetoProcessador_Pratica2/projetoProcessador/processador.v ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 20    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |projetoProcessador        ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 20   ; 0            ; |projetoProcessador ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |projetoProcessador ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; T0             ; 000   ; Unsigned Binary                                           ;
+; T1             ; 001   ; Unsigned Binary                                           ;
+; T2             ; 010   ; Unsigned Binary                                           ;
+; T3             ; 011   ; Unsigned Binary                                           ;
+; mv             ; 000   ; Unsigned Binary                                           ;
+; mvt            ; 001   ; Unsigned Binary                                           ;
+; add            ; 010   ; Unsigned Binary                                           ;
+; sub            ; 011   ; Unsigned Binary                                           ;
+; _R0            ; 0000  ; Unsigned Binary                                           ;
+; _R1            ; 0001  ; Unsigned Binary                                           ;
+; _R2            ; 0010  ; Unsigned Binary                                           ;
+; _R3            ; 0011  ; Unsigned Binary                                           ;
+; _R7            ; 0111  ; Unsigned Binary                                           ;
+; _G             ; 1000  ; Unsigned Binary                                           ;
+; _IR8_IR8_0     ; 1001  ; Unsigned Binary                                           ;
+; _IR7_0_0       ; 1010  ; Unsigned Binary                                           ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dec3to8:decX"                                                                       ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; W    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Y    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -155,41 +266,68 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Sep 29 21:23:22 2022
+    Info: Processing started: Fri Sep 30 18:15:59 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projetoProcessador -c projetoProcessador
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 2 entities, in source file processador.v
-    Info (12023): Found entity 1: proc
+    Info (12023): Found entity 1: projetoProcessador
     Info (12023): Found entity 2: dec3to8
-Warning (10236): Verilog HDL Implicit Net warning at processador.v(7): created implicit net for "III"
-Warning (10236): Verilog HDL Implicit Net warning at processador.v(8): created implicit net for "IMM"
-Warning (10236): Verilog HDL Implicit Net warning at processador.v(9): created implicit net for "rX"
-Warning (10236): Verilog HDL Implicit Net warning at processador.v(10): created implicit net for "rY"
-Warning (10236): Verilog HDL Implicit Net warning at processador.v(11): created implicit net for "rX_in"
-Warning (10236): Verilog HDL Implicit Net warning at processador.v(11): created implicit net for "R_in"
-Error (10161): Verilog HDL error at processador.v(7): object "IR" is not declared File: C:/altera/projetoProcessador/processador.v Line: 7
-Error (10161): Verilog HDL error at processador.v(8): object "IR" is not declared File: C:/altera/projetoProcessador/processador.v Line: 8
-Error (10161): Verilog HDL error at processador.v(9): object "IR" is not declared File: C:/altera/projetoProcessador/processador.v Line: 9
-Error (10161): Verilog HDL error at processador.v(10): object "IR" is not declared File: C:/altera/projetoProcessador/processador.v Line: 10
-Error (10161): Verilog HDL error at processador.v(15): object "Tstep_Q" is not declared File: C:/altera/projetoProcessador/processador.v Line: 15
-Error (10161): Verilog HDL error at processador.v(16): object "Tstep_Q" is not declared File: C:/altera/projetoProcessador/processador.v Line: 16
-Error (10161): Verilog HDL error at processador.v(18): object "Tstep_D" is not declared File: C:/altera/projetoProcessador/processador.v Line: 18
-Error (10161): Verilog HDL error at processador.v(19): object "Tstep_D" is not declared File: C:/altera/projetoProcessador/processador.v Line: 19
-Error (10137): Verilog HDL Procedural Assignment error at processador.v(32): object "rX_in" on left-hand side of assignment must have a variable data type File: C:/altera/projetoProcessador/processador.v Line: 32
-Error (10137): Verilog HDL Procedural Assignment error at processador.v(32): object "Done" on left-hand side of assignment must have a variable data type File: C:/altera/projetoProcessador/processador.v Line: 32
-Error (10161): Verilog HDL error at processador.v(33): object "Tstep_Q" is not declared File: C:/altera/projetoProcessador/processador.v Line: 33
-Error (10161): Verilog HDL error at processador.v(35): object "IR_in" is not declared File: C:/altera/projetoProcessador/processador.v Line: 35
-Error (10161): Verilog HDL error at processador.v(39): object "Imm" is not declared File: C:/altera/projetoProcessador/processador.v Line: 39
-Error (10161): Verilog HDL error at processador.v(39): object "Select" is not declared File: C:/altera/projetoProcessador/processador.v Line: 39
-Error (10161): Verilog HDL error at processador.v(40): object "Select" is not declared File: C:/altera/projetoProcessador/processador.v Line: 40
-Error (10137): Verilog HDL Procedural Assignment error at processador.v(41): object "rX_in" on left-hand side of assignment must have a variable data type File: C:/altera/projetoProcessador/processador.v Line: 41
-Error (10137): Verilog HDL Procedural Assignment error at processador.v(42): object "Done" on left-hand side of assignment must have a variable data type File: C:/altera/projetoProcessador/processador.v Line: 42
-Error (10161): Verilog HDL error at processador.v(76): object "Select" is not declared File: C:/altera/projetoProcessador/processador.v Line: 76
-Error (10161): Verilog HDL error at processador.v(77): object "BusWires" is not declared File: C:/altera/projetoProcessador/processador.v Line: 77
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 19 errors, 7 warnings
-    Error: Peak virtual memory: 4575 megabytes
-    Error: Processing ended: Thu Sep 29 21:23:23 2022
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:00
+Info (12127): Elaborating entity "projetoProcessador" for the top level hierarchy
+Warning (10858): Verilog HDL warning at processador.v(6): object IR used but never assigned
+Warning (10036): Verilog HDL or VHDL warning at processador.v(8): object "IMM" assigned a value but never read
+Warning (10858): Verilog HDL warning at processador.v(11): object Tstep_Q used but never assigned
+Warning (10036): Verilog HDL or VHDL warning at processador.v(11): object "Tstep_D" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at processador.v(11): object "BusWires" assigned a value but never read
+Warning (10858): Verilog HDL warning at processador.v(12): object r0 used but never assigned
+Warning (10858): Verilog HDL warning at processador.v(12): object r7 used but never assigned
+Warning (10858): Verilog HDL warning at processador.v(12): object r1 used but never assigned
+Warning (10036): Verilog HDL or VHDL warning at processador.v(13): object "IR_in" assigned a value but never read
+Warning (10858): Verilog HDL warning at processador.v(14): object Imm used but never assigned
+Warning (10858): Verilog HDL warning at processador.v(15): object G used but never assigned
+Warning (10270): Verilog HDL Case Statement warning at processador.v(47): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at processador.v(42): inferring latch(es) for variable "Select", which holds its previous value in one or more paths through the always construct
+Warning (10030): Net "IR[15..13]" at processador.v(6) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "IR[11..9]" at processador.v(6) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "Tstep_Q.T0" at processador.v(11) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "dec3to8" for hierarchy "dec3to8:decX"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Done" is stuck at VCC
+Info (144001): Generated suppressed messages file C:/projetoProcessador_Pratica2/projetoProcessador/output_files/projetoProcessador.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 19 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "DIN[0]"
+    Warning (15610): No output dependent on input pin "DIN[1]"
+    Warning (15610): No output dependent on input pin "DIN[2]"
+    Warning (15610): No output dependent on input pin "DIN[3]"
+    Warning (15610): No output dependent on input pin "DIN[4]"
+    Warning (15610): No output dependent on input pin "DIN[5]"
+    Warning (15610): No output dependent on input pin "DIN[6]"
+    Warning (15610): No output dependent on input pin "DIN[7]"
+    Warning (15610): No output dependent on input pin "DIN[8]"
+    Warning (15610): No output dependent on input pin "DIN[9]"
+    Warning (15610): No output dependent on input pin "DIN[10]"
+    Warning (15610): No output dependent on input pin "DIN[11]"
+    Warning (15610): No output dependent on input pin "DIN[12]"
+    Warning (15610): No output dependent on input pin "DIN[13]"
+    Warning (15610): No output dependent on input pin "DIN[14]"
+    Warning (15610): No output dependent on input pin "DIN[15]"
+    Warning (15610): No output dependent on input pin "Resetn"
+    Warning (15610): No output dependent on input pin "Clock"
+    Warning (15610): No output dependent on input pin "Run"
+Info (21057): Implemented 20 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 19 input pins
+    Info (21059): Implemented 1 output pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 39 warnings
+    Info: Peak virtual memory: 4595 megabytes
+    Info: Processing ended: Fri Sep 30 18:16:00 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/projetoProcessador_Pratica2/projetoProcessador/output_files/projetoProcessador.map.smsg.
 
 
