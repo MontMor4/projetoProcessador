@@ -1,8 +1,18 @@
-module proc(DIN, Resetn, Clock, Run, Done);
+module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	input [15:0] DIN;
 	input Resetn, Clock, Run;
 	output Done;
 	//. . . declare variables
+	reg [15:0] IR;
+	wire [2:0] III;
+	wire IMM;
+	wire [2:0]rX;
+	wire [2:0]rY;
+	reg rX_in; reg [2:0]Tstep_Q; reg [2:0]Tstep_D; reg[15:0]BusWires;
+	wire[7:0]R_in;reg[15:0]r0,r7,r1,r2,r3,r4,r5,r6; //registradores de prop´sito geral
+	reg Done,IR_in;reg[3:0]Select;
+	wire [8:0]Imm;
+	wire [15:0]G;
 	
 	assign III = IR[15:13];
 	assign IMM = IR[12];
@@ -12,7 +22,7 @@ module proc(DIN, Resetn, Clock, Run, Done);
 	
 	parameter T0 = 3'b000, T1 = 3'b001, T2 = 3'b010, T3 = 3'b011;
 	// Control FSM state table
-	always @(Tstep_Q, Run, Done)
+	always @(Tstep_Q, Run, Done)//controla o funcionamento do processador
 		case (Tstep_Q)
 			T0: // data is loaded into IR in this time step
 			if (~Run) Tstep_D = T0;
@@ -20,6 +30,7 @@ module proc(DIN, Resetn, Clock, Run, Done);
 			T1: ;//. . .
 			//. . .
 		endcase
+		//parametros que indicam o opcode da instrução
 		parameter mv = 3'b000, mvt = 3'b001, add = 3'b010, sub = 3'b011;
 		// selectors for the BusWires multiplexer
 		parameter _R0 = 4'b0000, _R1 = 4'b0001, _R2 = 4'b0010,
@@ -30,7 +41,7 @@ module proc(DIN, Resetn, Clock, Run, Done);
 		// control FSM outputs
 		always @(*) begin
 			rX_in = 1'b0; Done = 1'b0; //. . . // default values for variables
-			case (Tstep_Q)
+			case (Tstep_Q) //controla o estado da instrução 
 				T0: // store DIN into IR
 					IR_in = 1'b1;
 				T1: // define signals in time step T1
