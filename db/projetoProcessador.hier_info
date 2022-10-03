@@ -8,17 +8,18 @@ DIN[5] => ~NO_FANOUT~
 DIN[6] => ~NO_FANOUT~
 DIN[7] => ~NO_FANOUT~
 DIN[8] => ~NO_FANOUT~
-DIN[9] => ~NO_FANOUT~
-DIN[10] => ~NO_FANOUT~
-DIN[11] => ~NO_FANOUT~
+DIN[9] => IR[9].DATAIN
+DIN[10] => IR[10].DATAIN
+DIN[11] => IR[11].DATAIN
 DIN[12] => ~NO_FANOUT~
-DIN[13] => ~NO_FANOUT~
-DIN[14] => ~NO_FANOUT~
-DIN[15] => ~NO_FANOUT~
+DIN[13] => IR[13].DATAIN
+DIN[14] => IR[14].DATAIN
+DIN[15] => IR[15].DATAIN
 Resetn => ~NO_FANOUT~
 Clock => ~NO_FANOUT~
-Run => ~NO_FANOUT~
-Done <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+Run => Tstep_D.T1.DATAB
+Run => Selector0.IN1
+Done <= Done.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |projetoProcessador|dec3to8:decX
