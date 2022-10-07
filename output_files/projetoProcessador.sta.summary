@@ -2,4 +2,36 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow Model Setup 'Resetn'
+Slack : -1.525
+TNS   : -4.414
+
+Type  : Slow Model Hold 'Resetn'
+Slack : -1.384
+TNS   : -2.533
+
+Type  : Slow Model Minimum Pulse Width 'Resetn'
+Slack : -1.380
+TNS   : -1.380
+
+Type  : Slow Model Minimum Pulse Width 'Tstep_Q.T0_427'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'Resetn'
+Slack : -0.159
+TNS   : -0.435
+
+Type  : Fast Model Hold 'Resetn'
+Slack : -1.036
+TNS   : -1.950
+
+Type  : Fast Model Minimum Pulse Width 'Resetn'
+Slack : -1.380
+TNS   : -1.380
+
+Type  : Fast Model Minimum Pulse Width 'Tstep_Q.T0_427'
+Slack : 0.500
+TNS   : 0.000
+
 ------------------------------------------------------------

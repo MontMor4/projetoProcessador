@@ -1,0 +1,49 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do projetoProcessador_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/projetoprocessador.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module projetoProcessador
+# -- Compiling module dec3to8
+# -- Compiling module regn
+# -- Compiling module Alu
+# 
+# Top level modules:
+# 	projetoProcessador
+# 
+# vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/projetoProcessador_tb.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module projetoProcessador_tb
+# 
+# Top level modules:
+# 	projetoProcessador_tb
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  projetoProcessador_tb
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps projetoProcessador_tb 
+# Loading work.projetoProcessador_tb
+# Loading work.projetoProcessador
+# Loading work.dec3to8
+# Loading work.regn
+# Loading work.Alu
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Time=50 clock=0 reset=0 run=1 done=0 Din=1000000000010 regDestino=x
+# Time=100 clock=1 reset=0 run=1 done=0 Din=1000000000010 regDestino=x
+# Time=150 clock=0 reset=0 run=1 done=0 Din=1000000000010 regDestino=x
+# Time=200 clock=1 reset=0 run=1 done=0 Din=1000000000010 regDestino=x
+# Time=250 clock=0 reset=0 run=1 done=0 Din=1000000000010 regDestino=x
+run
