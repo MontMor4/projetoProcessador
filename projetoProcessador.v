@@ -17,7 +17,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	reg [15:0]IR_wire;
 	reg G_in,AddSub;
 	wire[7:0] R_in;
-	wire [15:0] RA_out;
+	wire [15:0] RA_out,RG_out;
 	wire [15:0] saidaALU;
 	
 	assign III = IR[15:13]; //opcode da instrução
@@ -33,8 +33,11 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	
 	initial begin
 		 Tstep_Q = T0;
+		 $display("Tstep_Q=%0b",Tstep_Q);
 	end
+	
 	// Control FSM state table
+	
 	always @(Tstep_Q, Run, Done)//controla o funcionamento do processador
 		case (Tstep_Q)
 			T0: // data is loaded into IR in this time step
@@ -77,7 +80,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 				T1: // define signals in time step T1
 					case (III)
 						mv: begin
-							if (!Imm) begin
+							if (!IMM) begin
 								case(rY)
 								3'b000: Select = _R0;
 								3'b001: Select = _R1;
@@ -122,7 +125,8 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 					
 					case(III) 
 						add: begin
-							if (!Imm) begin // mv rX, rY
+							A_in =1'b0;
+							if (!IMM) begin // mv rX, rY
 								case(rY)
 								3'b000: Select = _R0;
 								3'b001: Select = _R1;
@@ -136,10 +140,11 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 								endcase
 							end
 							else Select = _IR8_IR8_0;
+							
 							G_in = 1'b1;
 						end
 						sub: begin
-							if (!Imm) begin // mv rX, rY
+							if (!IMM) begin // mv rX, rY
 								case(rY)
 								3'b000: Select = _R0;
 								3'b001: Select = _R1;
@@ -163,6 +168,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 					
 					case (III)
 						add,sub: begin
+							
 							Select = _G;
 							rX_in =1'b1;
 							Done = 1'b1;
@@ -180,27 +186,33 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	always @(posedge Clock, negedge Resetn)
 		if (!Resetn) 
 		begin
-			Tstep_Q = Tstep_D;
-		end 
-			
-			regn reg_0(BusWires,Resetn,R_in[0] ,Clock ,r0);
+			Tstep_Q <= T0;
+		end else begin
+			Tstep_Q <= Tstep_D;
+		end
 		
-			regn reg_1(BusWires, Resetn, R_in[1], Clock, r1);
-			
-			regn reg_2(BusWires, Resetn, R_in[2], Clock, r2);
-			
-			regn reg_3(BusWires, Resetn, R_in[3], Clock, r3);
-			
-			regn reg_4(BusWires, Resetn, R_in[4], Clock, r4);
 		
-			regn reg_5(BusWires, Resetn, R_in[5], Clock, r5);
 			
-			regn reg_6(BusWires, Resetn, R_in[6], Clock, r6);
+			regn reg_0(BusWires,Resetn,R_in[7] ,Clock ,r0);
+		
+			regn reg_1(BusWires, Resetn, R_in[6], Clock, r1);
 			
-			regn reg_7(BusWires, Resetn, R_in[7], Clock, r7);
+			regn reg_2(BusWires, Resetn, R_in[5], Clock, r2);
 			
+			regn reg_3(BusWires, Resetn, R_in[4], Clock, r3);
 			
-			regn A(BusWires,Resetn,R_in[0] ,Clock ,RA_out);
+			regn reg_4(BusWires, Resetn, R_in[3], Clock, r4);
+		
+			regn reg_5(BusWires, Resetn, R_in[2], Clock, r5);
+			
+			regn reg_6(BusWires, Resetn, R_in[1], Clock, r6);
+			
+			regn reg_7(BusWires, Resetn, R_in[0], Clock, r7);
+			
+			regn A(BusWires,Resetn,A_in ,Clock ,RA_out);
+			
+			regn regG(saidaALU,Resetn,G_in,Clock,G);
+			
 			Alu alu(BusWires,RA_out,AddSub,saidaALU);
 	
 		
@@ -210,11 +222,11 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 			case (Select)
 				_R0: BusWires = r0;
 				_R1: BusWires = r1;
-				_R1: BusWires = r2;
-				_R1: BusWires = r3;
-				_R1: BusWires = r4;
-				_R1: BusWires = r5;
-				_R1: BusWires = r6;
+				_R2: BusWires = r2;
+				_R3: BusWires = r3;
+				_R4: BusWires = r4;
+				_R5: BusWires = r5;
+				_R6: BusWires = r6;
 				_R7: BusWires = r7;
 				_G: BusWires = G;
 				_IR8_IR8_0: BusWires = {{7{IR[8]}}, IR[8:0]};
@@ -266,7 +278,7 @@ endmodule
 	if(!Addsub) begin 
 		Res <= BusW + RA_out;
 		end else begin
-			Res <= BusW - RA_out;
+			Res <= RA_out - BusW;
 		end
 	
 	endmodule

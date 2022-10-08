@@ -4,34 +4,34 @@ K3
 cModel Technology
 Z0 dC:\pastaX\projetoProcessador\simulation\modelsim
 vAlu
-I^NRV30oIMJVTz0dR8bH>Y1
+IeHkz0FN^1EKMA;n5S>Cd70
 VUWHImI[0TW8LT8EX1P<Cz3
 Z1 dC:\pastaX\projetoProcessador\simulation\modelsim
-Z2 w1665175093
-Z3 8C:/pastaX/projetoProcessador/projetoprocessador.v
-Z4 FC:/pastaX/projetoProcessador/projetoprocessador.v
-L0 256
+Z2 w1665214349
+Z3 8C:/pastaX/projetoProcessador/projetoProcessador.v
+Z4 FC:/pastaX/projetoProcessador/projetoProcessador.v
+L0 271
 Z5 OV;L;10.1d;51
 r1
 31
-Z6 !s108 1665176266.088000
-Z7 !s107 C:/pastaX/projetoProcessador/projetoprocessador.v|
-Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/pastaX/projetoProcessador|C:/pastaX/projetoProcessador/projetoprocessador.v|
+Z6 !s108 1665214377.613000
+Z7 !s107 C:/pastaX/projetoProcessador/projetoProcessador.v|
+Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/pastaX/projetoProcessador|C:/pastaX/projetoProcessador/projetoProcessador.v|
 Z9 o-vlog01compat -work work -O0
 Z10 !s92 -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador -O0
 n@alu
 !i10b 1
-!s100 KU^8bg`acGKPPaO:E4hoj0
+!s100 K0VBiZ03JHjm@zVoZS1>23
 !s85 0
 !s101 -O0
 vdec3to8
-INg^_4E;]4oG:L1;GO?`b90
+IX8@KG1mEETIz8o1j?oZ8C3
 VWGLzn^X@`CM]?8jJRF_IR3
 R1
 R2
 R3
 R4
-L0 223
+L0 238
 R5
 r1
 31
@@ -41,11 +41,11 @@ R8
 R9
 R10
 !i10b 1
-!s100 8P9ih?^V<_O<>;_4K>7ZG2
+!s100 LTc2_d@o>Kj^3GjRhaZLE3
 !s85 0
 !s101 -O0
 vprojetoProcessador
-IP2QBGMik?7hj;Ub3dc7Xi3
+IMUJE@@U`]ABnY7YZO0NBJ1
 VaUczOggP]iR:TV;N[KWEk3
 R1
 R2
@@ -62,16 +62,16 @@ R9
 R10
 nprojeto@processador
 !i10b 1
-!s100 ReSo<50F74e[2^AY1`3lW2
+!s100 zo]c;nN:GA>K8OVlUZ[oW2
 !s85 0
 !s101 -O0
 vprojetoProcessador_tb
 !i10b 1
-!s100 Xe^;]W=ao[]nGUOQf^jU70
-I`QCzl3PRe1d9KddVUDmaD3
+!s100 naPnV0WVCM`:D0ameKSD13
+I@m:K;Yg;__>McJlYDNDM_0
 VjNWXhCVY:dfOo[:MJEo=M0
 R1
-w1665176228
+w1665213749
 8C:/pastaX/projetoProcessador/projetoProcessador_tb.v
 FC:/pastaX/projetoProcessador/projetoProcessador_tb.v
 L0 1
@@ -79,7 +79,7 @@ R5
 r1
 !s85 0
 31
-!s108 1665176266.198000
+!s108 1665214377.707000
 !s107 C:/pastaX/projetoProcessador/projetoProcessador_tb.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/pastaX/projetoProcessador|C:/pastaX/projetoProcessador/projetoProcessador_tb.v|
 !s101 -O0
@@ -87,13 +87,13 @@ R9
 R10
 nprojeto@processador_tb
 vregn
-IFfV;mVU:XZ0<^3GAd`Xm51
+I4CfRd72eF1R`>2UP;SG[J3
 V9zaDo2omaB;@NS2Ai0:Sl2
 R1
 R2
 R3
 R4
-L0 244
+L0 259
 R5
 r1
 31
@@ -103,6 +103,6 @@ R8
 R9
 R10
 !i10b 1
-!s100 mQDd6e1`FmIObE??10bdR1
+!s100 Y47AW?R3^PM]XaG>PK7Mh1
 !s85 0
 !s101 -O0
