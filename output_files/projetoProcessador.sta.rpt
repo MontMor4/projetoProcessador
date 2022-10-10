@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for projetoProcessador
-Sat Oct 08 04:34:17 2022
+Mon Oct 10 14:09:05 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -17,37 +17,41 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   9. Slow Model Removal Summary
  10. Slow Model Minimum Pulse Width Summary
  11. Slow Model Setup: 'Clock'
- 12. Slow Model Hold: 'Clock'
- 13. Slow Model Minimum Pulse Width: 'Clock'
- 14. Slow Model Minimum Pulse Width: 'Tstep_Q.T0'
- 15. Setup Times
- 16. Hold Times
- 17. Clock to Output Times
- 18. Minimum Clock to Output Times
- 19. Fast Model Setup Summary
- 20. Fast Model Hold Summary
- 21. Fast Model Recovery Summary
- 22. Fast Model Removal Summary
- 23. Fast Model Minimum Pulse Width Summary
- 24. Fast Model Setup: 'Clock'
- 25. Fast Model Hold: 'Clock'
- 26. Fast Model Minimum Pulse Width: 'Clock'
- 27. Fast Model Minimum Pulse Width: 'Tstep_Q.T0'
- 28. Setup Times
- 29. Hold Times
- 30. Clock to Output Times
- 31. Minimum Clock to Output Times
- 32. Multicorner Timing Analysis Summary
- 33. Setup Times
- 34. Hold Times
- 35. Clock to Output Times
- 36. Minimum Clock to Output Times
- 37. Setup Transfers
- 38. Hold Transfers
- 39. Report TCCS
- 40. Report RSKM
- 41. Unconstrained Paths
- 42. TimeQuest Timing Analyzer Messages
+ 12. Slow Model Setup: 'Tstep_Q.T0'
+ 13. Slow Model Hold: 'Clock'
+ 14. Slow Model Hold: 'Tstep_Q.T0'
+ 15. Slow Model Minimum Pulse Width: 'Clock'
+ 16. Slow Model Minimum Pulse Width: 'Tstep_Q.T0'
+ 17. Setup Times
+ 18. Hold Times
+ 19. Clock to Output Times
+ 20. Minimum Clock to Output Times
+ 21. Fast Model Setup Summary
+ 22. Fast Model Hold Summary
+ 23. Fast Model Recovery Summary
+ 24. Fast Model Removal Summary
+ 25. Fast Model Minimum Pulse Width Summary
+ 26. Fast Model Setup: 'Clock'
+ 27. Fast Model Setup: 'Tstep_Q.T0'
+ 28. Fast Model Hold: 'Clock'
+ 29. Fast Model Hold: 'Tstep_Q.T0'
+ 30. Fast Model Minimum Pulse Width: 'Clock'
+ 31. Fast Model Minimum Pulse Width: 'Tstep_Q.T0'
+ 32. Setup Times
+ 33. Hold Times
+ 34. Clock to Output Times
+ 35. Minimum Clock to Output Times
+ 36. Multicorner Timing Analysis Summary
+ 37. Setup Times
+ 38. Hold Times
+ 39. Clock to Output Times
+ 40. Minimum Clock to Output Times
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
 
 
 
@@ -104,32 +108,34 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------+
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; Slow Model Fmax Summary                                                                                   ;
-+------------+-----------------+------------+---------------------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
-+------------+-----------------+------------+---------------------------------------------------------------+
-; 769.82 MHz ; 420.17 MHz      ; Clock      ; limit due to minimum period restriction (max I/O toggle rate) ;
-+------------+-----------------+------------+---------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                           ;
++------------+-----------------+------------+-------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                  ;
++------------+-----------------+------------+-------------------------------------------------------+
+; 316.06 MHz ; 260.01 MHz      ; Clock      ; limit due to high minimum pulse width violation (tch) ;
++------------+-----------------+------------+-------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+--------------------------------+
-; Slow Model Setup Summary       ;
-+-------+--------+---------------+
-; Clock ; Slack  ; End Point TNS ;
-+-------+--------+---------------+
-; Clock ; -0.299 ; -0.383        ;
-+-------+--------+---------------+
++-------------------------------------+
+; Slow Model Setup Summary            ;
++------------+--------+---------------+
+; Clock      ; Slack  ; End Point TNS ;
++------------+--------+---------------+
+; Clock      ; -2.164 ; -4.770        ;
+; Tstep_Q.T0 ; -1.201 ; -2.379        ;
++------------+--------+---------------+
 
 
-+--------------------------------+
-; Slow Model Hold Summary        ;
-+-------+--------+---------------+
-; Clock ; Slack  ; End Point TNS ;
-+-------+--------+---------------+
-; Clock ; -2.557 ; -4.666        ;
-+-------+--------+---------------+
++-------------------------------------+
+; Slow Model Hold Summary             ;
++------------+--------+---------------+
+; Clock      ; Slack  ; End Point TNS ;
++------------+--------+---------------+
+; Clock      ; -2.555 ; -4.556        ;
+; Tstep_Q.T0 ; 1.199  ; 0.000         ;
++------------+--------+---------------+
 
 
 -------------------------------
@@ -149,82 +155,138 @@ No paths to report.
 +------------+--------+------------------+
 ; Clock      ; Slack  ; End Point TNS    ;
 +------------+--------+------------------+
-; Clock      ; -1.380 ; -5.380           ;
+; Clock      ; -1.423 ; -25.302          ;
 ; Tstep_Q.T0 ; 0.500  ; 0.000            ;
 +------------+--------+------------------+
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Slow Model Setup: 'Clock'                                                                              ;
-+--------+------------+------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+------------+------------+--------------+-------------+--------------+------------+------------+
-; -0.299 ; Tstep_Q.T1 ; Tstep_Q.T0 ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.335      ;
-; -0.174 ; Tstep_Q.T3 ; Tstep_Q.T0 ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.210      ;
-; -0.084 ; Tstep_Q.T1 ; Tstep_Q.T2 ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.120      ;
-; -0.009 ; Tstep_Q.T3 ; Tstep_Q.T2 ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.045      ;
-; 0.070  ; IR[14]     ; Tstep_Q.T0 ; Tstep_Q.T0   ; Clock       ; 1.000        ; 0.214      ; 1.180      ;
-; 0.093  ; Tstep_Q.T2 ; Tstep_Q.T3 ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.943      ;
-; 0.146  ; IR[15]     ; Tstep_Q.T0 ; Tstep_Q.T0   ; Clock       ; 1.000        ; 0.215      ; 1.105      ;
-; 0.608  ; IR[15]     ; Tstep_Q.T2 ; Tstep_Q.T0   ; Clock       ; 1.000        ; 0.215      ; 0.643      ;
-; 0.610  ; IR[14]     ; Tstep_Q.T2 ; Tstep_Q.T0   ; Clock       ; 1.000        ; 0.214      ; 0.640      ;
-; 2.379  ; Tstep_Q.T0 ; Tstep_Q.T1 ; Tstep_Q.T0   ; Clock       ; 0.500        ; 2.698      ; 1.105      ;
-; 2.827  ; Tstep_Q.T0 ; Tstep_Q.T0 ; Tstep_Q.T0   ; Clock       ; 0.500        ; 2.698      ; 0.657      ;
-; 2.879  ; Tstep_Q.T0 ; Tstep_Q.T1 ; Tstep_Q.T0   ; Clock       ; 1.000        ; 2.698      ; 1.105      ;
-; 3.327  ; Tstep_Q.T0 ; Tstep_Q.T0 ; Tstep_Q.T0   ; Clock       ; 1.000        ; 2.698      ; 0.657      ;
-+--------+------------+------------+--------------+-------------+--------------+------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'Clock'                                                                                                                                                                                                                                                                           ;
++--------+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                             ; To Node                                                                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.164 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg0 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 1.000        ; -0.026     ; 3.103      ;
+; -2.164 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg1 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 1.000        ; -0.026     ; 3.103      ;
+; -2.164 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg2 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 1.000        ; -0.026     ; 3.103      ;
+; -2.164 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg3 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 1.000        ; -0.026     ; 3.103      ;
+; -2.164 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg4 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 1.000        ; -0.026     ; 3.103      ;
+; -2.164 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg0 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 1.000        ; -0.026     ; 3.103      ;
+; -2.164 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg1 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 1.000        ; -0.026     ; 3.103      ;
+; -2.164 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg2 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 1.000        ; -0.026     ; 3.103      ;
+; -2.164 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg3 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 1.000        ; -0.026     ; 3.103      ;
+; -2.164 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg4 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 1.000        ; -0.026     ; 3.103      ;
+; -0.294 ; Tstep_Q.T1                                                                                                            ; Tstep_Q.T0                                                                                   ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.330      ;
+; -0.164 ; Tstep_Q.T3                                                                                                            ; Tstep_Q.T0                                                                                   ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.200      ;
+; -0.079 ; Tstep_Q.T1                                                                                                            ; Tstep_Q.T2                                                                                   ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.115      ;
+; -0.069 ; Tstep_Q.T2                                                                                                            ; Tstep_Q.T3                                                                                   ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.105      ;
+; -0.064 ; IR[15]                                                                                                                ; Tstep_Q.T0                                                                                   ; Tstep_Q.T0   ; Clock       ; 1.000        ; 0.060      ; 1.160      ;
+; -0.044 ; IR[14]                                                                                                                ; Tstep_Q.T0                                                                                   ; Tstep_Q.T0   ; Clock       ; 1.000        ; 0.061      ; 1.141      ;
+; 0.225  ; Tstep_Q.T3                                                                                                            ; Tstep_Q.T2                                                                                   ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.811      ;
+; 0.313  ; IR[14]                                                                                                                ; Tstep_Q.T2                                                                                   ; Tstep_Q.T0   ; Clock       ; 1.000        ; 0.061      ; 0.784      ;
+; 0.460  ; IR[15]                                                                                                                ; Tstep_Q.T2                                                                                   ; Tstep_Q.T0   ; Clock       ; 1.000        ; 0.060      ; 0.636      ;
+; 2.271  ; Tstep_Q.T0                                                                                                            ; Tstep_Q.T1                                                                                   ; Tstep_Q.T0   ; Clock       ; 0.500        ; 2.696      ; 1.211      ;
+; 2.771  ; Tstep_Q.T0                                                                                                            ; Tstep_Q.T1                                                                                   ; Tstep_Q.T0   ; Clock       ; 1.000        ; 2.696      ; 1.211      ;
+; 2.825  ; Tstep_Q.T0                                                                                                            ; Tstep_Q.T0                                                                                   ; Tstep_Q.T0   ; Clock       ; 0.500        ; 2.696      ; 0.657      ;
+; 3.325  ; Tstep_Q.T0                                                                                                            ; Tstep_Q.T0                                                                                   ; Tstep_Q.T0   ; Clock       ; 1.000        ; 2.696      ; 0.657      ;
++--------+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Slow Model Hold: 'Clock'                                                                               ;
-+--------+------------+------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+------------+------------+--------------+-------------+--------------+------------+------------+
-; -2.557 ; Tstep_Q.T0 ; Tstep_Q.T0 ; Tstep_Q.T0   ; Clock       ; 0.000        ; 2.698      ; 0.657      ;
-; -2.109 ; Tstep_Q.T0 ; Tstep_Q.T1 ; Tstep_Q.T0   ; Clock       ; 0.000        ; 2.698      ; 1.105      ;
-; -2.057 ; Tstep_Q.T0 ; Tstep_Q.T0 ; Tstep_Q.T0   ; Clock       ; -0.500       ; 2.698      ; 0.657      ;
-; -1.609 ; Tstep_Q.T0 ; Tstep_Q.T1 ; Tstep_Q.T0   ; Clock       ; -0.500       ; 2.698      ; 1.105      ;
-; 0.160  ; IR[14]     ; Tstep_Q.T2 ; Tstep_Q.T0   ; Clock       ; 0.000        ; 0.214      ; 0.640      ;
-; 0.162  ; IR[15]     ; Tstep_Q.T2 ; Tstep_Q.T0   ; Clock       ; 0.000        ; 0.215      ; 0.643      ;
-; 0.624  ; IR[15]     ; Tstep_Q.T0 ; Tstep_Q.T0   ; Clock       ; 0.000        ; 0.215      ; 1.105      ;
-; 0.677  ; Tstep_Q.T2 ; Tstep_Q.T3 ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.943      ;
-; 0.700  ; IR[14]     ; Tstep_Q.T0 ; Tstep_Q.T0   ; Clock       ; 0.000        ; 0.214      ; 1.180      ;
-; 0.779  ; Tstep_Q.T3 ; Tstep_Q.T2 ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.045      ;
-; 0.854  ; Tstep_Q.T1 ; Tstep_Q.T2 ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.120      ;
-; 0.922  ; Tstep_Q.T3 ; Tstep_Q.T0 ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.188      ;
-; 1.069  ; Tstep_Q.T1 ; Tstep_Q.T0 ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.335      ;
-+--------+------------+------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'Tstep_Q.T0'                                                                                                                                                        ;
++--------+----------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                    ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; -1.201 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; IR[15]  ; Clock        ; Tstep_Q.T0  ; 1.000        ; -0.091     ; 1.108      ;
+; -1.178 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; IR[14]  ; Clock        ; Tstep_Q.T0  ; 1.000        ; -0.092     ; 1.114      ;
++--------+----------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
 
 
-+---------------------------------------------------------------------------------------------------------+
-; Slow Model Minimum Pulse Width: 'Clock'                                                                 ;
-+--------+--------------+----------------+------------------+-------+------------+------------------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                 ;
-+--------+--------------+----------------+------------------+-------+------------+------------------------+
-; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; Clock ; Rise       ; Clock                  ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T0             ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T0             ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T1             ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T1             ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T2             ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T2             ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T3             ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T3             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock|combout          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock|combout          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock~clkctrl|inclk[0] ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock~clkctrl|inclk[0] ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock~clkctrl|outclk   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock~clkctrl|outclk   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T1|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T1|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T2|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T2|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T3|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T3|clk         ;
-+--------+--------------+----------------+------------------+-------+------------+------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'Clock'                                                                                                                                                                                                                                                                            ;
++--------+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                             ; To Node                                                                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.555 ; Tstep_Q.T0                                                                                                            ; Tstep_Q.T0                                                                                   ; Tstep_Q.T0   ; Clock       ; 0.000        ; 2.696      ; 0.657      ;
+; -2.055 ; Tstep_Q.T0                                                                                                            ; Tstep_Q.T0                                                                                   ; Tstep_Q.T0   ; Clock       ; -0.500       ; 2.696      ; 0.657      ;
+; -2.001 ; Tstep_Q.T0                                                                                                            ; Tstep_Q.T1                                                                                   ; Tstep_Q.T0   ; Clock       ; 0.000        ; 2.696      ; 1.211      ;
+; -1.501 ; Tstep_Q.T0                                                                                                            ; Tstep_Q.T1                                                                                   ; Tstep_Q.T0   ; Clock       ; -0.500       ; 2.696      ; 1.211      ;
+; 0.310  ; IR[15]                                                                                                                ; Tstep_Q.T2                                                                                   ; Tstep_Q.T0   ; Clock       ; 0.000        ; 0.060      ; 0.636      ;
+; 0.457  ; IR[14]                                                                                                                ; Tstep_Q.T2                                                                                   ; Tstep_Q.T0   ; Clock       ; 0.000        ; 0.061      ; 0.784      ;
+; 0.545  ; Tstep_Q.T3                                                                                                            ; Tstep_Q.T2                                                                                   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.811      ;
+; 0.776  ; Tstep_Q.T3                                                                                                            ; Tstep_Q.T0                                                                                   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.042      ;
+; 0.814  ; IR[14]                                                                                                                ; Tstep_Q.T0                                                                                   ; Tstep_Q.T0   ; Clock       ; 0.000        ; 0.061      ; 1.141      ;
+; 0.834  ; IR[15]                                                                                                                ; Tstep_Q.T0                                                                                   ; Tstep_Q.T0   ; Clock       ; 0.000        ; 0.060      ; 1.160      ;
+; 0.839  ; Tstep_Q.T2                                                                                                            ; Tstep_Q.T3                                                                                   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.105      ;
+; 0.849  ; Tstep_Q.T1                                                                                                            ; Tstep_Q.T2                                                                                   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.115      ;
+; 1.064  ; Tstep_Q.T1                                                                                                            ; Tstep_Q.T0                                                                                   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.330      ;
+; 2.895  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg0 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 0.000        ; -0.026     ; 3.103      ;
+; 2.895  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg1 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 0.000        ; -0.026     ; 3.103      ;
+; 2.895  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg2 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 0.000        ; -0.026     ; 3.103      ;
+; 2.895  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg3 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 0.000        ; -0.026     ; 3.103      ;
+; 2.895  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg4 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 0.000        ; -0.026     ; 3.103      ;
+; 2.895  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg0 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 0.000        ; -0.026     ; 3.103      ;
+; 2.895  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg1 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 0.000        ; -0.026     ; 3.103      ;
+; 2.895  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg2 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 0.000        ; -0.026     ; 3.103      ;
+; 2.895  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg3 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 0.000        ; -0.026     ; 3.103      ;
+; 2.895  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg4 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 0.000        ; -0.026     ; 3.103      ;
++--------+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'Tstep_Q.T0'                                                                                                                                                        ;
++-------+----------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                    ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; 1.199 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; IR[15]  ; Clock        ; Tstep_Q.T0  ; 0.000        ; -0.091     ; 1.108      ;
+; 1.206 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; IR[14]  ; Clock        ; Tstep_Q.T0  ; 0.000        ; -0.092     ; 1.114      ;
++-------+----------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'Clock'                                                                                                                                                                ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                                                ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------------------+
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14]                          ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14]                          ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15]                          ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15]                          ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg0 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg0 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg1 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg1 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg2 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg2 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg3 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg3 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg4 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg4 ;
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; Clock ; Rise       ; Clock                                                                                                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T0                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T0                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T1                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T1                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T2                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T2                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T3                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T3                                                                                                            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock|combout                                                                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock|combout                                                                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock~clkctrl|inclk[0]                                                                                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock~clkctrl|inclk[0]                                                                                                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock~clkctrl|outclk                                                                                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock~clkctrl|outclk                                                                                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T0|clk                                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T0|clk                                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T1|clk                                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T1|clk                                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T2|clk                                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T2|clk                                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T3|clk                                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T3|clk                                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; memInstr|altsyncram_component|auto_generated|ram_block1a14|clk0                                                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; memInstr|altsyncram_component|auto_generated|ram_block1a14|clk0                                                       ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------+
@@ -234,12 +296,12 @@ No paths to report.
 +-------+--------------+----------------+------------------+------------+------------+-----------------------------+
 ; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Tstep_Q.T0 ; Rise       ; IR[14]                      ;
 ; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Tstep_Q.T0 ; Rise       ; IR[14]                      ;
-; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Tstep_Q.T0 ; Rise       ; IR[14]|datad                ;
-; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Tstep_Q.T0 ; Rise       ; IR[14]|datad                ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Tstep_Q.T0 ; Rise       ; IR[14]|datac                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Tstep_Q.T0 ; Rise       ; IR[14]|datac                ;
 ; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Tstep_Q.T0 ; Rise       ; IR[15]                      ;
 ; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Tstep_Q.T0 ; Rise       ; IR[15]                      ;
-; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Tstep_Q.T0 ; Rise       ; IR[15]|datad                ;
-; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Tstep_Q.T0 ; Rise       ; IR[15]|datad                ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Tstep_Q.T0 ; Rise       ; IR[15]|datac                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Tstep_Q.T0 ; Rise       ; IR[15]|datac                ;
 ; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Tstep_Q.T0 ; Rise       ; Tstep_Q.T0|regout           ;
 ; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Tstep_Q.T0 ; Rise       ; Tstep_Q.T0|regout           ;
 ; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Tstep_Q.T0 ; Rise       ; Tstep_Q.T0~clkctrl|inclk[0] ;
@@ -249,16 +311,19 @@ No paths to report.
 +-------+--------------+----------------+------------------+------------+------------+-----------------------------+
 
 
-+-----------------------------------------------------------------------+
-; Setup Times                                                           ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Run       ; Clock      ; 3.423 ; 3.423 ; Rise       ; Clock           ;
-; DIN[*]    ; Tstep_Q.T0 ; 4.266 ; 4.266 ; Rise       ; Tstep_Q.T0      ;
-;  DIN[14]  ; Tstep_Q.T0 ; 4.266 ; 4.266 ; Rise       ; Tstep_Q.T0      ;
-;  DIN[15]  ; Tstep_Q.T0 ; 4.261 ; 4.261 ; Rise       ; Tstep_Q.T0      ;
-+-----------+------------+-------+-------+------------+-----------------+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; DIN[*]    ; Clock      ; 3.415  ; 3.415  ; Rise       ; Clock           ;
+;  DIN[0]   ; Clock      ; -0.394 ; -0.394 ; Rise       ; Clock           ;
+;  DIN[1]   ; Clock      ; 3.415  ; 3.415  ; Rise       ; Clock           ;
+;  DIN[2]   ; Clock      ; 3.190  ; 3.190  ; Rise       ; Clock           ;
+;  DIN[3]   ; Clock      ; 3.198  ; 3.198  ; Rise       ; Clock           ;
+;  DIN[4]   ; Clock      ; 3.138  ; 3.138  ; Rise       ; Clock           ;
+; Run       ; Clock      ; -0.333 ; -0.333 ; Rise       ; Clock           ;
++-----------+------------+--------+--------+------------+-----------------+
 
 
 +-------------------------------------------------------------------------+
@@ -266,10 +331,13 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; Run       ; Clock      ; -2.922 ; -2.922 ; Rise       ; Clock           ;
-; DIN[*]    ; Tstep_Q.T0 ; -3.566 ; -3.566 ; Rise       ; Tstep_Q.T0      ;
-;  DIN[14]  ; Tstep_Q.T0 ; -3.566 ; -3.566 ; Rise       ; Tstep_Q.T0      ;
-;  DIN[15]  ; Tstep_Q.T0 ; -3.579 ; -3.579 ; Rise       ; Tstep_Q.T0      ;
+; DIN[*]    ; Clock      ; 0.663  ; 0.663  ; Rise       ; Clock           ;
+;  DIN[0]   ; Clock      ; 0.663  ; 0.663  ; Rise       ; Clock           ;
+;  DIN[1]   ; Clock      ; -3.146 ; -3.146 ; Rise       ; Clock           ;
+;  DIN[2]   ; Clock      ; -2.921 ; -2.921 ; Rise       ; Clock           ;
+;  DIN[3]   ; Clock      ; -2.929 ; -2.929 ; Rise       ; Clock           ;
+;  DIN[4]   ; Clock      ; -2.869 ; -2.869 ; Rise       ; Clock           ;
+; Run       ; Clock      ; 0.595  ; 0.595  ; Rise       ; Clock           ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -278,8 +346,8 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; Done      ; Clock      ; 7.446 ; 7.446 ; Rise       ; Clock           ;
-; Done      ; Tstep_Q.T0 ; 6.970 ; 6.970 ; Rise       ; Tstep_Q.T0      ;
+; Done      ; Clock      ; 7.219 ; 7.219 ; Rise       ; Clock           ;
+; Done      ; Tstep_Q.T0 ; 7.114 ; 7.114 ; Rise       ; Tstep_Q.T0      ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -288,27 +356,29 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; Done      ; Clock      ; 6.637 ; 6.637 ; Rise       ; Clock           ;
-; Done      ; Tstep_Q.T0 ; 6.406 ; 6.406 ; Rise       ; Tstep_Q.T0      ;
+; Done      ; Clock      ; 6.630 ; 6.630 ; Rise       ; Clock           ;
+; Done      ; Tstep_Q.T0 ; 6.805 ; 6.805 ; Rise       ; Tstep_Q.T0      ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
-+-------------------------------+
-; Fast Model Setup Summary      ;
-+-------+-------+---------------+
-; Clock ; Slack ; End Point TNS ;
-+-------+-------+---------------+
-; Clock ; 0.390 ; 0.000         ;
-+-------+-------+---------------+
++-------------------------------------+
+; Fast Model Setup Summary            ;
++------------+--------+---------------+
+; Clock      ; Slack  ; End Point TNS ;
++------------+--------+---------------+
+; Clock      ; -0.979 ; -1.958        ;
+; Tstep_Q.T0 ; -0.194 ; -0.383        ;
++------------+--------+---------------+
 
 
-+--------------------------------+
-; Fast Model Hold Summary        ;
-+-------+--------+---------------+
-; Clock ; Slack  ; End Point TNS ;
-+-------+--------+---------------+
-; Clock ; -1.597 ; -3.184        ;
-+-------+--------+---------------+
++-------------------------------------+
+; Fast Model Hold Summary             ;
++------------+--------+---------------+
+; Clock      ; Slack  ; End Point TNS ;
++------------+--------+---------------+
+; Clock      ; -1.595 ; -3.057        ;
+; Tstep_Q.T0 ; 0.782  ; 0.000         ;
++------------+--------+---------------+
 
 
 -------------------------------
@@ -328,82 +398,138 @@ No paths to report.
 +------------+--------+------------------+
 ; Clock      ; Slack  ; End Point TNS    ;
 +------------+--------+------------------+
-; Clock      ; -1.380 ; -5.380           ;
+; Clock      ; -1.423 ; -25.302          ;
 ; Tstep_Q.T0 ; 0.500  ; 0.000            ;
 +------------+--------+------------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Fast Model Setup: 'Clock'                                                                             ;
-+-------+------------+------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+------------+------------+--------------+-------------+--------------+------------+------------+
-; 0.390 ; Tstep_Q.T1 ; Tstep_Q.T0 ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.642      ;
-; 0.429 ; Tstep_Q.T3 ; Tstep_Q.T0 ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.603      ;
-; 0.491 ; Tstep_Q.T1 ; Tstep_Q.T2 ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.541      ;
-; 0.515 ; Tstep_Q.T3 ; Tstep_Q.T2 ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.517      ;
-; 0.544 ; Tstep_Q.T2 ; Tstep_Q.T3 ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.488      ;
-; 0.786 ; IR[14]     ; Tstep_Q.T0 ; Tstep_Q.T0   ; Clock       ; 1.000        ; 0.266      ; 0.512      ;
-; 0.809 ; IR[15]     ; Tstep_Q.T0 ; Tstep_Q.T0   ; Clock       ; 1.000        ; 0.267      ; 0.490      ;
-; 1.013 ; IR[15]     ; Tstep_Q.T2 ; Tstep_Q.T0   ; Clock       ; 1.000        ; 0.267      ; 0.286      ;
-; 1.027 ; IR[14]     ; Tstep_Q.T2 ; Tstep_Q.T0   ; Clock       ; 1.000        ; 0.266      ; 0.271      ;
-; 1.820 ; Tstep_Q.T0 ; Tstep_Q.T1 ; Tstep_Q.T0   ; Clock       ; 0.500        ; 1.671      ; 0.524      ;
-; 1.977 ; Tstep_Q.T0 ; Tstep_Q.T0 ; Tstep_Q.T0   ; Clock       ; 0.500        ; 1.671      ; 0.367      ;
-; 2.320 ; Tstep_Q.T0 ; Tstep_Q.T1 ; Tstep_Q.T0   ; Clock       ; 1.000        ; 1.671      ; 0.524      ;
-; 2.477 ; Tstep_Q.T0 ; Tstep_Q.T0 ; Tstep_Q.T0   ; Clock       ; 1.000        ; 1.671      ; 0.367      ;
-+-------+------------+------------+--------------+-------------+--------------+------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'Clock'                                                                                                                                                                                                                                                                           ;
++--------+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                             ; To Node                                                                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.979 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg0 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg1 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg2 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg3 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg4 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg0 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg1 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg2 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg3 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg4 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 1.000        ; -0.018     ; 1.960      ;
+; 0.393  ; Tstep_Q.T1                                                                                                            ; Tstep_Q.T0                                                                                   ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.639      ;
+; 0.465  ; Tstep_Q.T3                                                                                                            ; Tstep_Q.T0                                                                                   ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.567      ;
+; 0.474  ; Tstep_Q.T2                                                                                                            ; Tstep_Q.T3                                                                                   ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.558      ;
+; 0.494  ; Tstep_Q.T1                                                                                                            ; Tstep_Q.T2                                                                                   ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.538      ;
+; 0.626  ; Tstep_Q.T3                                                                                                            ; Tstep_Q.T2                                                                                   ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.406      ;
+; 0.722  ; IR[15]                                                                                                                ; Tstep_Q.T0                                                                                   ; Tstep_Q.T0   ; Clock       ; 1.000        ; 0.198      ; 0.508      ;
+; 0.731  ; IR[14]                                                                                                                ; Tstep_Q.T0                                                                                   ; Tstep_Q.T0   ; Clock       ; 1.000        ; 0.198      ; 0.499      ;
+; 0.888  ; IR[14]                                                                                                                ; Tstep_Q.T2                                                                                   ; Tstep_Q.T0   ; Clock       ; 1.000        ; 0.198      ; 0.342      ;
+; 0.959  ; IR[15]                                                                                                                ; Tstep_Q.T2                                                                                   ; Tstep_Q.T0   ; Clock       ; 1.000        ; 0.198      ; 0.271      ;
+; 1.763  ; Tstep_Q.T0                                                                                                            ; Tstep_Q.T1                                                                                   ; Tstep_Q.T0   ; Clock       ; 0.500        ; 1.669      ; 0.579      ;
+; 1.975  ; Tstep_Q.T0                                                                                                            ; Tstep_Q.T0                                                                                   ; Tstep_Q.T0   ; Clock       ; 0.500        ; 1.669      ; 0.367      ;
+; 2.263  ; Tstep_Q.T0                                                                                                            ; Tstep_Q.T1                                                                                   ; Tstep_Q.T0   ; Clock       ; 1.000        ; 1.669      ; 0.579      ;
+; 2.475  ; Tstep_Q.T0                                                                                                            ; Tstep_Q.T0                                                                                   ; Tstep_Q.T0   ; Clock       ; 1.000        ; 1.669      ; 0.367      ;
++--------+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Fast Model Hold: 'Clock'                                                                               ;
-+--------+------------+------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+------------+------------+--------------+-------------+--------------+------------+------------+
-; -1.597 ; Tstep_Q.T0 ; Tstep_Q.T0 ; Tstep_Q.T0   ; Clock       ; 0.000        ; 1.671      ; 0.367      ;
-; -1.440 ; Tstep_Q.T0 ; Tstep_Q.T1 ; Tstep_Q.T0   ; Clock       ; 0.000        ; 1.671      ; 0.524      ;
-; -1.097 ; Tstep_Q.T0 ; Tstep_Q.T0 ; Tstep_Q.T0   ; Clock       ; -0.500       ; 1.671      ; 0.367      ;
-; -0.940 ; Tstep_Q.T0 ; Tstep_Q.T1 ; Tstep_Q.T0   ; Clock       ; -0.500       ; 1.671      ; 0.524      ;
-; -0.147 ; IR[14]     ; Tstep_Q.T2 ; Tstep_Q.T0   ; Clock       ; 0.000        ; 0.266      ; 0.271      ;
-; -0.133 ; IR[15]     ; Tstep_Q.T2 ; Tstep_Q.T0   ; Clock       ; 0.000        ; 0.267      ; 0.286      ;
-; 0.071  ; IR[15]     ; Tstep_Q.T0 ; Tstep_Q.T0   ; Clock       ; 0.000        ; 0.267      ; 0.490      ;
-; 0.094  ; IR[14]     ; Tstep_Q.T0 ; Tstep_Q.T0   ; Clock       ; 0.000        ; 0.266      ; 0.512      ;
-; 0.336  ; Tstep_Q.T2 ; Tstep_Q.T3 ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.488      ;
-; 0.365  ; Tstep_Q.T3 ; Tstep_Q.T2 ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.517      ;
-; 0.389  ; Tstep_Q.T1 ; Tstep_Q.T2 ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.541      ;
-; 0.405  ; Tstep_Q.T3 ; Tstep_Q.T0 ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.557      ;
-; 0.490  ; Tstep_Q.T1 ; Tstep_Q.T0 ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.642      ;
-+--------+------------+------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'Tstep_Q.T0'                                                                                                                                                        ;
++--------+----------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                    ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; -0.194 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; IR[15]  ; Clock        ; Tstep_Q.T0  ; 1.000        ; -0.242     ; 0.540      ;
+; -0.189 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; IR[14]  ; Clock        ; Tstep_Q.T0  ; 1.000        ; -0.242     ; 0.545      ;
++--------+----------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
 
 
-+---------------------------------------------------------------------------------------------------------+
-; Fast Model Minimum Pulse Width: 'Clock'                                                                 ;
-+--------+--------------+----------------+------------------+-------+------------+------------------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                 ;
-+--------+--------------+----------------+------------------+-------+------------+------------------------+
-; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; Clock ; Rise       ; Clock                  ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T0             ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T0             ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T1             ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T1             ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T2             ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T2             ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T3             ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T3             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock|combout          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock|combout          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock~clkctrl|inclk[0] ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock~clkctrl|inclk[0] ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock~clkctrl|outclk   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock~clkctrl|outclk   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T0|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T1|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T1|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T2|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T2|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T3|clk         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T3|clk         ;
-+--------+--------------+----------------+------------------+-------+------------+------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'Clock'                                                                                                                                                                                                                                                                            ;
++--------+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                             ; To Node                                                                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.595 ; Tstep_Q.T0                                                                                                            ; Tstep_Q.T0                                                                                   ; Tstep_Q.T0   ; Clock       ; 0.000        ; 1.669      ; 0.367      ;
+; -1.383 ; Tstep_Q.T0                                                                                                            ; Tstep_Q.T1                                                                                   ; Tstep_Q.T0   ; Clock       ; 0.000        ; 1.669      ; 0.579      ;
+; -1.095 ; Tstep_Q.T0                                                                                                            ; Tstep_Q.T0                                                                                   ; Tstep_Q.T0   ; Clock       ; -0.500       ; 1.669      ; 0.367      ;
+; -0.883 ; Tstep_Q.T0                                                                                                            ; Tstep_Q.T1                                                                                   ; Tstep_Q.T0   ; Clock       ; -0.500       ; 1.669      ; 0.579      ;
+; -0.079 ; IR[15]                                                                                                                ; Tstep_Q.T2                                                                                   ; Tstep_Q.T0   ; Clock       ; 0.000        ; 0.198      ; 0.271      ;
+; -0.008 ; IR[14]                                                                                                                ; Tstep_Q.T2                                                                                   ; Tstep_Q.T0   ; Clock       ; 0.000        ; 0.198      ; 0.342      ;
+; 0.149  ; IR[14]                                                                                                                ; Tstep_Q.T0                                                                                   ; Tstep_Q.T0   ; Clock       ; 0.000        ; 0.198      ; 0.499      ;
+; 0.158  ; IR[15]                                                                                                                ; Tstep_Q.T0                                                                                   ; Tstep_Q.T0   ; Clock       ; 0.000        ; 0.198      ; 0.508      ;
+; 0.254  ; Tstep_Q.T3                                                                                                            ; Tstep_Q.T2                                                                                   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.406      ;
+; 0.376  ; Tstep_Q.T3                                                                                                            ; Tstep_Q.T0                                                                                   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.528      ;
+; 0.386  ; Tstep_Q.T1                                                                                                            ; Tstep_Q.T2                                                                                   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.538      ;
+; 0.406  ; Tstep_Q.T2                                                                                                            ; Tstep_Q.T3                                                                                   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.558      ;
+; 0.487  ; Tstep_Q.T1                                                                                                            ; Tstep_Q.T0                                                                                   ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.639      ;
+; 1.840  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg0 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 0.000        ; -0.018     ; 1.960      ;
+; 1.840  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg1 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 0.000        ; -0.018     ; 1.960      ;
+; 1.840  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg2 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 0.000        ; -0.018     ; 1.960      ;
+; 1.840  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg3 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 0.000        ; -0.018     ; 1.960      ;
+; 1.840  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg4 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; Clock        ; Clock       ; 0.000        ; -0.018     ; 1.960      ;
+; 1.840  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg0 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 0.000        ; -0.018     ; 1.960      ;
+; 1.840  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg1 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 0.000        ; -0.018     ; 1.960      ;
+; 1.840  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg2 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 0.000        ; -0.018     ; 1.960      ;
+; 1.840  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg3 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 0.000        ; -0.018     ; 1.960      ;
+; 1.840  ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg4 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; Clock        ; Clock       ; 0.000        ; -0.018     ; 1.960      ;
++--------+-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'Tstep_Q.T0'                                                                                                                                                        ;
++-------+----------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                    ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; 0.782 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15] ; IR[15]  ; Clock        ; Tstep_Q.T0  ; 0.000        ; -0.242     ; 0.540      ;
+; 0.787 ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14] ; IR[14]  ; Clock        ; Tstep_Q.T0  ; 0.000        ; -0.242     ; 0.545      ;
++-------+----------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'Clock'                                                                                                                                                                ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                                                ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------------------+
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14]                          ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[14]                          ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15]                          ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[15]                          ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg0 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg0 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg1 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg1 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg2 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg2 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg3 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg3 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg4 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; Clock ; Rise       ; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|ram_block1a14~porta_address_reg4 ;
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; Clock ; Rise       ; Clock                                                                                                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T0                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T0                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T1                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T1                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T2                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T2                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T3                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T3                                                                                                            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock|combout                                                                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock|combout                                                                                                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock~clkctrl|inclk[0]                                                                                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock~clkctrl|inclk[0]                                                                                                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock~clkctrl|outclk                                                                                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock~clkctrl|outclk                                                                                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T0|clk                                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T0|clk                                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T1|clk                                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T1|clk                                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T2|clk                                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T2|clk                                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Tstep_Q.T3|clk                                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Tstep_Q.T3|clk                                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; memInstr|altsyncram_component|auto_generated|ram_block1a14|clk0                                                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; memInstr|altsyncram_component|auto_generated|ram_block1a14|clk0                                                       ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------+
@@ -413,12 +539,12 @@ No paths to report.
 +-------+--------------+----------------+------------------+------------+------------+-----------------------------+
 ; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Tstep_Q.T0 ; Rise       ; IR[14]                      ;
 ; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Tstep_Q.T0 ; Rise       ; IR[14]                      ;
-; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Tstep_Q.T0 ; Rise       ; IR[14]|datad                ;
-; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Tstep_Q.T0 ; Rise       ; IR[14]|datad                ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Tstep_Q.T0 ; Rise       ; IR[14]|datac                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Tstep_Q.T0 ; Rise       ; IR[14]|datac                ;
 ; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Tstep_Q.T0 ; Rise       ; IR[15]                      ;
 ; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Tstep_Q.T0 ; Rise       ; IR[15]                      ;
-; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Tstep_Q.T0 ; Rise       ; IR[15]|datad                ;
-; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Tstep_Q.T0 ; Rise       ; IR[15]|datad                ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Tstep_Q.T0 ; Rise       ; IR[15]|datac                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Tstep_Q.T0 ; Rise       ; IR[15]|datac                ;
 ; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Tstep_Q.T0 ; Rise       ; Tstep_Q.T0|regout           ;
 ; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Tstep_Q.T0 ; Rise       ; Tstep_Q.T0|regout           ;
 ; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Tstep_Q.T0 ; Rise       ; Tstep_Q.T0~clkctrl|inclk[0] ;
@@ -428,16 +554,19 @@ No paths to report.
 +-------+--------------+----------------+------------------+------------+------------+-----------------------------+
 
 
-+-----------------------------------------------------------------------+
-; Setup Times                                                           ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Run       ; Clock      ; 1.825 ; 1.825 ; Rise       ; Clock           ;
-; DIN[*]    ; Tstep_Q.T0 ; 2.361 ; 2.361 ; Rise       ; Tstep_Q.T0      ;
-;  DIN[14]  ; Tstep_Q.T0 ; 2.361 ; 2.361 ; Rise       ; Tstep_Q.T0      ;
-;  DIN[15]  ; Tstep_Q.T0 ; 2.340 ; 2.340 ; Rise       ; Tstep_Q.T0      ;
-+-----------+------------+-------+-------+------------+-----------------+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; DIN[*]    ; Clock      ; 1.805  ; 1.805  ; Rise       ; Clock           ;
+;  DIN[0]   ; Clock      ; -0.556 ; -0.556 ; Rise       ; Clock           ;
+;  DIN[1]   ; Clock      ; 1.805  ; 1.805  ; Rise       ; Clock           ;
+;  DIN[2]   ; Clock      ; 1.715  ; 1.715  ; Rise       ; Clock           ;
+;  DIN[3]   ; Clock      ; 1.724  ; 1.724  ; Rise       ; Clock           ;
+;  DIN[4]   ; Clock      ; 1.664  ; 1.664  ; Rise       ; Clock           ;
+; Run       ; Clock      ; -0.511 ; -0.511 ; Rise       ; Clock           ;
++-----------+------------+--------+--------+------------+-----------------+
 
 
 +-------------------------------------------------------------------------+
@@ -445,10 +574,13 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; Run       ; Clock      ; -1.582 ; -1.582 ; Rise       ; Clock           ;
-; DIN[*]    ; Tstep_Q.T0 ; -2.062 ; -2.062 ; Rise       ; Tstep_Q.T0      ;
-;  DIN[14]  ; Tstep_Q.T0 ; -2.072 ; -2.072 ; Rise       ; Tstep_Q.T0      ;
-;  DIN[15]  ; Tstep_Q.T0 ; -2.062 ; -2.062 ; Rise       ; Tstep_Q.T0      ;
+; DIN[*]    ; Clock      ; 0.695  ; 0.695  ; Rise       ; Clock           ;
+;  DIN[0]   ; Clock      ; 0.695  ; 0.695  ; Rise       ; Clock           ;
+;  DIN[1]   ; Clock      ; -1.666 ; -1.666 ; Rise       ; Clock           ;
+;  DIN[2]   ; Clock      ; -1.576 ; -1.576 ; Rise       ; Clock           ;
+;  DIN[3]   ; Clock      ; -1.585 ; -1.585 ; Rise       ; Clock           ;
+;  DIN[4]   ; Clock      ; -1.525 ; -1.525 ; Rise       ; Clock           ;
+; Run       ; Clock      ; 0.644  ; 0.644  ; Rise       ; Clock           ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -457,8 +589,8 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; Done      ; Clock      ; 4.109 ; 4.109 ; Rise       ; Clock           ;
-; Done      ; Tstep_Q.T0 ; 3.674 ; 3.674 ; Rise       ; Tstep_Q.T0      ;
+; Done      ; Clock      ; 3.998 ; 3.998 ; Rise       ; Clock           ;
+; Done      ; Tstep_Q.T0 ; 3.727 ; 3.727 ; Rise       ; Tstep_Q.T0      ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -467,8 +599,8 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; Done      ; Clock      ; 3.791 ; 3.791 ; Rise       ; Clock           ;
-; Done      ; Tstep_Q.T0 ; 3.442 ; 3.442 ; Rise       ; Tstep_Q.T0      ;
+; Done      ; Clock      ; 3.775 ; 3.775 ; Rise       ; Clock           ;
+; Done      ; Tstep_Q.T0 ; 3.596 ; 3.596 ; Rise       ; Tstep_Q.T0      ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -477,25 +609,28 @@ No paths to report.
 +------------------+--------+--------+----------+---------+---------------------+
 ; Clock            ; Setup  ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+--------+--------+----------+---------+---------------------+
-; Worst-case Slack ; -0.299 ; -2.557 ; N/A      ; N/A     ; -1.380              ;
-;  Clock           ; -0.299 ; -2.557 ; N/A      ; N/A     ; -1.380              ;
-;  Tstep_Q.T0      ; N/A    ; N/A    ; N/A      ; N/A     ; 0.500               ;
-; Design-wide TNS  ; -0.383 ; -4.666 ; 0.0      ; 0.0     ; -5.38               ;
-;  Clock           ; -0.383 ; -4.666 ; N/A      ; N/A     ; -5.380              ;
-;  Tstep_Q.T0      ; N/A    ; N/A    ; N/A      ; N/A     ; 0.000               ;
+; Worst-case Slack ; -2.164 ; -2.555 ; N/A      ; N/A     ; -1.423              ;
+;  Clock           ; -2.164 ; -2.555 ; N/A      ; N/A     ; -1.423              ;
+;  Tstep_Q.T0      ; -1.201 ; 0.782  ; N/A      ; N/A     ; 0.500               ;
+; Design-wide TNS  ; -7.149 ; -4.556 ; 0.0      ; 0.0     ; -25.302             ;
+;  Clock           ; -4.770 ; -4.556 ; N/A      ; N/A     ; -25.302             ;
+;  Tstep_Q.T0      ; -2.379 ; 0.000  ; N/A      ; N/A     ; 0.000               ;
 +------------------+--------+--------+----------+---------+---------------------+
 
 
-+-----------------------------------------------------------------------+
-; Setup Times                                                           ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Run       ; Clock      ; 3.423 ; 3.423 ; Rise       ; Clock           ;
-; DIN[*]    ; Tstep_Q.T0 ; 4.266 ; 4.266 ; Rise       ; Tstep_Q.T0      ;
-;  DIN[14]  ; Tstep_Q.T0 ; 4.266 ; 4.266 ; Rise       ; Tstep_Q.T0      ;
-;  DIN[15]  ; Tstep_Q.T0 ; 4.261 ; 4.261 ; Rise       ; Tstep_Q.T0      ;
-+-----------+------------+-------+-------+------------+-----------------+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; DIN[*]    ; Clock      ; 3.415  ; 3.415  ; Rise       ; Clock           ;
+;  DIN[0]   ; Clock      ; -0.394 ; -0.394 ; Rise       ; Clock           ;
+;  DIN[1]   ; Clock      ; 3.415  ; 3.415  ; Rise       ; Clock           ;
+;  DIN[2]   ; Clock      ; 3.190  ; 3.190  ; Rise       ; Clock           ;
+;  DIN[3]   ; Clock      ; 3.198  ; 3.198  ; Rise       ; Clock           ;
+;  DIN[4]   ; Clock      ; 3.138  ; 3.138  ; Rise       ; Clock           ;
+; Run       ; Clock      ; -0.333 ; -0.333 ; Rise       ; Clock           ;
++-----------+------------+--------+--------+------------+-----------------+
 
 
 +-------------------------------------------------------------------------+
@@ -503,10 +638,13 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; Run       ; Clock      ; -1.582 ; -1.582 ; Rise       ; Clock           ;
-; DIN[*]    ; Tstep_Q.T0 ; -2.062 ; -2.062 ; Rise       ; Tstep_Q.T0      ;
-;  DIN[14]  ; Tstep_Q.T0 ; -2.072 ; -2.072 ; Rise       ; Tstep_Q.T0      ;
-;  DIN[15]  ; Tstep_Q.T0 ; -2.062 ; -2.062 ; Rise       ; Tstep_Q.T0      ;
+; DIN[*]    ; Clock      ; 0.695  ; 0.695  ; Rise       ; Clock           ;
+;  DIN[0]   ; Clock      ; 0.695  ; 0.695  ; Rise       ; Clock           ;
+;  DIN[1]   ; Clock      ; -1.666 ; -1.666 ; Rise       ; Clock           ;
+;  DIN[2]   ; Clock      ; -1.576 ; -1.576 ; Rise       ; Clock           ;
+;  DIN[3]   ; Clock      ; -1.585 ; -1.585 ; Rise       ; Clock           ;
+;  DIN[4]   ; Clock      ; -1.525 ; -1.525 ; Rise       ; Clock           ;
+; Run       ; Clock      ; 0.644  ; 0.644  ; Rise       ; Clock           ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -515,8 +653,8 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; Done      ; Clock      ; 7.446 ; 7.446 ; Rise       ; Clock           ;
-; Done      ; Tstep_Q.T0 ; 6.970 ; 6.970 ; Rise       ; Tstep_Q.T0      ;
+; Done      ; Clock      ; 7.219 ; 7.219 ; Rise       ; Clock           ;
+; Done      ; Tstep_Q.T0 ; 7.114 ; 7.114 ; Rise       ; Tstep_Q.T0      ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -525,30 +663,32 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; Done      ; Clock      ; 3.791 ; 3.791 ; Rise       ; Clock           ;
-; Done      ; Tstep_Q.T0 ; 3.442 ; 3.442 ; Rise       ; Tstep_Q.T0      ;
+; Done      ; Clock      ; 3.775 ; 3.775 ; Rise       ; Clock           ;
+; Done      ; Tstep_Q.T0 ; 3.596 ; 3.596 ; Rise       ; Tstep_Q.T0      ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
-+-------------------------------------------------------------------+
-; Setup Transfers                                                   ;
-+------------+----------+----------+----------+----------+----------+
-; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+------------+----------+----------+----------+----------+----------+
-; Clock      ; Clock    ; 6        ; 0        ; 0        ; 0        ;
-; Tstep_Q.T0 ; Clock    ; 6        ; 2        ; 0        ; 0        ;
-+------------+----------+----------+----------+----------+----------+
++---------------------------------------------------------------------+
+; Setup Transfers                                                     ;
++------------+------------+----------+----------+----------+----------+
+; From Clock ; To Clock   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+------------+----------+----------+----------+----------+
+; Clock      ; Clock      ; 16       ; 0        ; 0        ; 0        ;
+; Tstep_Q.T0 ; Clock      ; 6        ; 2        ; 0        ; 0        ;
+; Clock      ; Tstep_Q.T0 ; 2        ; 0        ; 0        ; 0        ;
++------------+------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
-+-------------------------------------------------------------------+
-; Hold Transfers                                                    ;
-+------------+----------+----------+----------+----------+----------+
-; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+------------+----------+----------+----------+----------+----------+
-; Clock      ; Clock    ; 6        ; 0        ; 0        ; 0        ;
-; Tstep_Q.T0 ; Clock    ; 6        ; 2        ; 0        ; 0        ;
-+------------+----------+----------+----------+----------+----------+
++---------------------------------------------------------------------+
+; Hold Transfers                                                      ;
++------------+------------+----------+----------+----------+----------+
+; From Clock ; To Clock   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+------------+----------+----------+----------+----------+
+; Clock      ; Clock      ; 16       ; 0        ; 0        ; 0        ;
+; Tstep_Q.T0 ; Clock      ; 6        ; 2        ; 0        ; 0        ;
+; Clock      ; Tstep_Q.T0 ; 2        ; 0        ; 0        ; 0        ;
++------------+------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
@@ -571,8 +711,8 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 4     ; 4    ;
-; Unconstrained Input Port Paths  ; 8     ; 8    ;
+; Unconstrained Input Ports       ; 7     ; 7    ;
+; Unconstrained Input Port Paths  ; 11    ; 11   ;
 ; Unconstrained Output Ports      ; 1     ; 1    ;
 ; Unconstrained Output Port Paths ; 4     ; 4    ;
 +---------------------------------+-------+------+
@@ -584,7 +724,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Oct 08 04:34:16 2022
+    Info: Processing started: Mon Oct 10 14:09:04 2022
 Info: Command: quartus_sta projetoProcessador -c projetoProcessador
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -599,45 +739,49 @@ Info (332105): Deriving Clocks
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -0.299
+Info (332146): Worst-case setup slack is -2.164
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.299        -0.383 Clock 
-Info (332146): Worst-case hold slack is -2.557
+    Info (332119):    -2.164        -4.770 Clock 
+    Info (332119):    -1.201        -2.379 Tstep_Q.T0 
+Info (332146): Worst-case hold slack is -2.555
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -2.557        -4.666 Clock 
+    Info (332119):    -2.555        -4.556 Clock 
+    Info (332119):     1.199         0.000 Tstep_Q.T0 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -1.380
+Info (332146): Worst-case minimum pulse width slack is -1.423
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.380        -5.380 Clock 
+    Info (332119):    -1.423       -25.302 Clock 
     Info (332119):     0.500         0.000 Tstep_Q.T0 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
-Info (332146): Worst-case setup slack is 0.390
-    Info (332119):     Slack End Point TNS Clock 
-    Info (332119): ========= ============= =====================
-    Info (332119):     0.390         0.000 Clock 
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case hold slack is -1.597
+Info (332146): Worst-case setup slack is -0.979
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.597        -3.184 Clock 
+    Info (332119):    -0.979        -1.958 Clock 
+    Info (332119):    -0.194        -0.383 Tstep_Q.T0 
+Info (332146): Worst-case hold slack is -1.595
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.595        -3.057 Clock 
+    Info (332119):     0.782         0.000 Tstep_Q.T0 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -1.380
+Info (332146): Worst-case minimum pulse width slack is -1.423
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.380        -5.380 Clock 
+    Info (332119):    -1.423       -25.302 Clock 
     Info (332119):     0.500         0.000 Tstep_Q.T0 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 4537 megabytes
-    Info: Processing ended: Sat Oct 08 04:34:17 2022
+    Info: Processing ended: Mon Oct 10 14:09:05 2022
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

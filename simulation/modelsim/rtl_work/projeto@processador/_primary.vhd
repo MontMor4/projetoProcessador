@@ -23,7 +23,7 @@ entity projetoProcessador is
         \_IR7_0_0\      : vl_logic_vector(0 to 3) := (Hi1, Hi0, Hi1, Hi0)
     );
     port(
-        DIN             : in     vl_logic_vector(15 downto 0);
+        DIN             : in     vl_logic_vector(4 downto 0);
         Resetn          : in     vl_logic;
         Clock           : in     vl_logic;
         Run             : in     vl_logic;

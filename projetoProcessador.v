@@ -1,5 +1,5 @@
 module projetoProcessador(DIN, Resetn, Clock, Run, Done);
-	input [15:0] DIN;
+	input [4:0] DIN;
 	input Resetn, Clock, Run;
 	output Done;
 	//. . . declare variables
@@ -18,7 +18,8 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	reg G_in,AddSub;
 	wire[7:0] R_in;
 	wire [15:0] RA_out,RG_out;
-	wire [15:0] saidaALU;
+	wire [15:0] saidaALU,saidaROM,saidaIR;
+	reg espera;
 	
 	assign III = IR[15:13]; //opcode da instrução
 	assign IMM = IR[12]; //bit que indica se é imediato ou não
@@ -26,19 +27,24 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	assign rY = IR[2:0]; //registrador y (existe quando IMM é igual a 0)
 	
 	
-	dec3to8 decX (rX_in, rX, R_in);
-
+	dec3to8 decX (rX_in, rX, R_in); //habilita os registradores de propósito geral a receberem dados
+	
+	instr_memory memInstr(DIN,Clock,saidaROM); //modulo da memória de intruções
+	
+	//regn regIR(saidaROM,Resetn,IR_in,Clock,saidaIR);
 	
 	parameter T0 = 3'b000, T1 = 3'b001, T2 = 3'b010, T3 = 3'b011;
 	
 	initial begin
-		 Tstep_Q = T0;
-		 $display("Tstep_Q=%0b",Tstep_Q);
+		Tstep_Q = T0;
+		IR_in = 1'b0;
+		espera = 1'b1;
 	end
 	
 	// Control FSM state table
 	
 	always @(Tstep_Q, Run, Done)//controla o funcionamento do processador
+		
 		case (Tstep_Q)
 			T0: // data is loaded into IR in this time step
 			begin
@@ -54,6 +60,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 			T3:Tstep_D=T0;//. . .
 			//. . .
 		endcase
+		
 			
 		//parametros que indicam o opcode da instrução
 		parameter mv = 3'b000, mvt = 3'b001, add = 3'b010, sub = 3'b011;
@@ -69,13 +76,14 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 			rX_in = 1'b0; Done = 1'b0; //. . . // default values for variables
 			AddSub = 1'b0;
 			G_in = 1'b0;
+			IR_in =1'b0;
 			
 			
 			case (Tstep_Q) //controla o estado da instrução //
 				T0: // store DIN into IR
 					begin
 					IR_in = 1'b1;
-					IR = DIN;
+					IR = saidaROM;
 					end
 				T1: // define signals in time step T1
 					case (III)
