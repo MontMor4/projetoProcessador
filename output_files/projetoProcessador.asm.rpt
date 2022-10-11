@@ -1,5 +1,5 @@
 Assembler report for projetoProcessador
-Mon Oct 10 14:09:03 2022
+Tue Oct 11 01:49:16 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -9,10 +9,11 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   1. Legal Notice
   2. Assembler Summary
   3. Assembler Settings
-  4. Assembler Generated Files
-  5. Assembler Device Options: C:/pastaX/projetoProcessador/output_files/projetoProcessador.sof
-  6. Assembler Device Options: C:/pastaX/projetoProcessador/output_files/projetoProcessador.pof
-  7. Assembler Messages
+  4. Assembler Encrypted IP Cores Summary
+  5. Assembler Generated Files
+  6. Assembler Device Options: C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/output_files/projetoProcessador.sof
+  7. Assembler Device Options: C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/output_files/projetoProcessador.pof
+  8. Assembler Messages
 
 
 
@@ -38,7 +39,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Oct 10 14:09:03 2022 ;
+; Assembler Status      ; Successful - Tue Oct 11 01:49:16 2022 ;
 ; Revision Name         ; projetoProcessador                    ;
 ; Top-level Entity Name ; projetoProcessador                    ;
 ; Family                ; Cyclone II                            ;
@@ -78,37 +79,47 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+------------------------------------------------------------------+
-; Assembler Generated Files                                        ;
-+------------------------------------------------------------------+
-; File Name                                                        ;
-+------------------------------------------------------------------+
-; C:/pastaX/projetoProcessador/output_files/projetoProcessador.sof ;
-; C:/pastaX/projetoProcessador/output_files/projetoProcessador.pof ;
-+------------------------------------------------------------------+
++------------------------------------------------+
+; Assembler Encrypted IP Cores Summary           ;
++--------+------------------------+--------------+
+; Vendor ; IP Core Name           ; License Type ;
++--------+------------------------+--------------+
+; Altera ; Signal Tap (6AF7 BCE1) ; Licensed     ;
+; Altera ; Signal Tap (6AF7 BCEC) ; Licensed     ;
++--------+------------------------+--------------+
 
 
-+--------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/pastaX/projetoProcessador/output_files/projetoProcessador.sof ;
-+----------------+---------------------------------------------------------------------------+
-; Option         ; Setting                                                                   ;
-+----------------+---------------------------------------------------------------------------+
-; Device         ; EP2C35F672C6                                                              ;
-; JTAG usercode  ; 0x002F97F4                                                                ;
-; Checksum       ; 0x002F97F4                                                                ;
-+----------------+---------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                 ;
++-------------------------------------------------------------------------------------------+
+; File Name                                                                                 ;
++-------------------------------------------------------------------------------------------+
+; C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/output_files/projetoProcessador.sof ;
+; C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/output_files/projetoProcessador.pof ;
++-------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/pastaX/projetoProcessador/output_files/projetoProcessador.pof ;
-+--------------------+-----------------------------------------------------------------------+
-; Option             ; Setting                                                               ;
-+--------------------+-----------------------------------------------------------------------+
-; Device             ; EPCS16                                                                ;
-; JTAG usercode      ; 0x00000000                                                            ;
-; Checksum           ; 0x1C787D68                                                            ;
-; Compression Ratio  ; 3                                                                     ;
-+--------------------+-----------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/output_files/projetoProcessador.sof ;
++----------------+----------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                            ;
++----------------+----------------------------------------------------------------------------------------------------+
+; Device         ; EP2C35F672C6                                                                                       ;
+; JTAG usercode  ; 0x003266DA                                                                                         ;
+; Checksum       ; 0x003266DA                                                                                         ;
++----------------+----------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/output_files/projetoProcessador.pof ;
++--------------------+------------------------------------------------------------------------------------------------+
+; Option             ; Setting                                                                                        ;
++--------------------+------------------------------------------------------------------------------------------------+
+; Device             ; EPCS16                                                                                         ;
+; JTAG usercode      ; 0x00000000                                                                                     ;
+; Checksum           ; 0x1C742CE4                                                                                     ;
+; Compression Ratio  ; 3                                                                                              ;
++--------------------+------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -117,13 +128,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Oct 10 14:09:02 2022
+    Info: Processing started: Tue Oct 11 01:49:14 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off projetoProcessador -c projetoProcessador
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4553 megabytes
-    Info: Processing ended: Mon Oct 10 14:09:04 2022
+    Info: Peak virtual memory: 4560 megabytes
+    Info: Processing ended: Tue Oct 11 01:49:16 2022
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
