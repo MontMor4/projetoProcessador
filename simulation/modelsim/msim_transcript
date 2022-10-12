@@ -10,23 +10,33 @@
 # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/projetoProcessador.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador {C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module projetoProcessador
 # -- Compiling module dec3to8
+# -- Compiling module pc_counter
+# ** Warning: C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador.v(342): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# -- Compiling module regInstr
 # -- Compiling module regn
 # -- Compiling module Alu
 # 
 # Top level modules:
 # 	projetoProcessador
-# vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/instr_memory.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador {C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/memory.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module memory
+# 
+# Top level modules:
+# 	memory
+# vlog -vlog01compat -work work +incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador {C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/instr_memory.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module instr_memory
 # 
 # Top level modules:
 # 	instr_memory
 # 
-# vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/projetoProcessador_tb.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador {C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador_tb.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module projetoProcessador_tb
 # 
@@ -42,8 +52,14 @@
 # Loading altera_mf_ver.altsyncram
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading work.memory
 # Loading work.regn
+# Loading work.pc_counter
+# Loading work.regInstr
 # Loading work.Alu
+# ** Warning: (vsim-3015) C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador.v(276): [PCDPC] - Port size (1 or 1) does not match connection size (5) for port 'endInstr'. The port definition is at: C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador.v(346).
+# 
+#         Region: /projetoProcessador_tb/proc/registradorInstrucao
 # 
 # add wave *
 # view structure
@@ -52,73 +68,75 @@
 # .main_pane.objects.interior.cs.body.tree
 # run -all
 # Testa mv
-# Time=50 clock=0 reset=0 run=1 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=0 instrucao=0000 BusWires =xxxxxxxxxxxxxxxx saidaA=xxxxxxxxxxxxxxxx
-# Time=100 clock=1 reset=0 run=1 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=0 instrucao=0000 BusWires =xxxxxxxxxxxxxxxx saidaA=xxxxxxxxxxxxxxxx
-# Time=150 clock=0 reset=0 run=1 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=0 instrucao=0000 BusWires =xxxxxxxxxxxxxxxx saidaA=xxxxxxxxxxxxxxxx
-# Time=200 clock=1 reset=1 run=1 done=1 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=1 instrucao=0000 BusWires =xxxxxxxxxxxxxxxx saidaA=xxxxxxxxxxxxxxxx
-# Time=250 clock=0 reset=1 run=1 done=1 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=1 instrucao=0000 BusWires =xxxxxxxxxxxxxxxx saidaA=xxxxxxxxxxxxxxxx
-# Time=300 clock=1 reset=1 run=1 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=0 instrucao=101c BusWires =xxxxxxxxxxxxxxxx saidaA=xxxxxxxxxxxxxxxx
-# Time=350 clock=0 reset=1 run=1 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=0 instrucao=101c BusWires =xxxxxxxxxxxxxxxx saidaA=xxxxxxxxxxxxxxxx
-# Time=400 clock=1 reset=1 run=1 done=1 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=1 instrucao=101c BusWires =0000000000011100 saidaA=xxxxxxxxxxxxxxxx
-# Time=450 clock=0 reset=1 run=1 done=1 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=1 instrucao=101c BusWires =0000000000011100 saidaA=xxxxxxxxxxxxxxxx
-# Time=500 clock=1 reset=1 run=1 done=0 Din=0 regDestino=0000000000011100 tstepQ=0 instrucao=101c BusWires =0000000000011100 saidaA=xxxxxxxxxxxxxxxx
-# Testa mvt
-# Time=600 clock=0 reset=0 run=1 done=0 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=0 instrucao=101c BusWires =0000000000011100 saidaA=xxxxxxxxxxxxxxxx
-# Time=650 clock=1 reset=0 run=1 done=0 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=0 instrucao=101c BusWires =0000000000011100 saidaA=xxxxxxxxxxxxxxxx
-# Time=700 clock=0 reset=0 run=1 done=0 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=0 instrucao=101c BusWires =0000000000011100 saidaA=xxxxxxxxxxxxxxxx
-# Time=750 clock=1 reset=1 run=1 done=1 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=1 instrucao=101c BusWires =0000000000011100 saidaA=xxxxxxxxxxxxxxxx
-# Time=800 clock=0 reset=1 run=1 done=1 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=1 instrucao=101c BusWires =0000000000011100 saidaA=xxxxxxxxxxxxxxxx
-# Time=850 clock=1 reset=1 run=1 done=0 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=0 instrucao=32ff BusWires =0000000011111111 saidaA=xxxxxxxxxxxxxxxx
-# Time=900 clock=0 reset=1 run=1 done=0 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=0 instrucao=32ff BusWires =0000000011111111 saidaA=xxxxxxxxxxxxxxxx
-# Time=950 clock=1 reset=1 run=1 done=1 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=1 instrucao=32ff BusWires =1111111100000000 saidaA=xxxxxxxxxxxxxxxx
-# Time=1000 clock=0 reset=1 run=1 done=1 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=1 instrucao=32ff BusWires =1111111100000000 saidaA=xxxxxxxxxxxxxxxx
-# Time=1050 clock=1 reset=1 run=1 done=0 Din=1 regDestino=1111111100000000 tstepQ=0 instrucao=32ff BusWires =1111111100000000 saidaA=xxxxxxxxxxxxxxxx
+# Time=50 clock=0 reset=1 run=0 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=0 instrucao=xxxx BusWires =0000000000000000 saidaROM=0000000000000000
+# Time=100 clock=1 reset=1 run=0 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=0 instrucao=xxxx BusWires =0000000000000000 saidaROM=0000000000000000
+# Time=150 clock=0 reset=1 run=1 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=0 instrucao=xxxx BusWires =0000000000000000 saidaROM=0000000000000000
+# Time=200 clock=1 reset=1 run=1 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=1 instrucao=xxxx BusWires =0000000000000000 saidaROM=0001000000000100
+# Time=250 clock=0 reset=1 run=1 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=1 instrucao=xxxx BusWires =0000000000000000 saidaROM=0001000000000100
+# Time=300 clock=1 reset=1 run=1 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=10 instrucao=1004 BusWires =0000000000000000 saidaROM=0001000000000100
+# Time=350 clock=0 reset=1 run=1 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=10 instrucao=1004 BusWires =0000000000000000 saidaROM=0001000000000100
+# Time=400 clock=1 reset=1 run=1 done=1 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=11 instrucao=1004 BusWires =0000000000000100 saidaROM=0001000000000100
+# Time=450 clock=0 reset=1 run=1 done=1 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=11 instrucao=1004 BusWires =0000000000000100 saidaROM=0001000000000100
+# Time=500 clock=1 reset=1 run=1 done=0 Din=0 regDestino=0000000000000100 tstepQ=0 instrucao=1004 BusWires =0000000000000001 saidaROM=0001000000000100
+# Testa load
+# Time=600 clock=0 reset=1 run=0 done=0 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=0 instrucao=1004 BusWires =0000000000000001 saidaA=xxxxxxxxxxxxxxxx
+# Time=650 clock=1 reset=1 run=0 done=0 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=0 instrucao=1004 BusWires =0000000000000001 saidaA=xxxxxxxxxxxxxxxx
+# Time=700 clock=0 reset=1 run=1 done=0 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=0 instrucao=1004 BusWires =0000000000000001 saidaA=xxxxxxxxxxxxxxxx
+# Time=750 clock=1 reset=1 run=1 done=0 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=1 instrucao=1004 BusWires =0000000000000001 saidaA=xxxxxxxxxxxxxxxx
+# Time=800 clock=0 reset=1 run=1 done=0 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=1 instrucao=1004 BusWires =0000000000000001 saidaA=xxxxxxxxxxxxxxxx
+# Time=850 clock=1 reset=1 run=1 done=0 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=10 instrucao=8200 BusWires =0000000000000001 saidaA=xxxxxxxxxxxxxxxx
+# Time=900 clock=0 reset=1 run=1 done=0 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=10 instrucao=8200 BusWires =0000000000000001 saidaA=xxxxxxxxxxxxxxxx
+# Time=950 clock=1 reset=1 run=1 done=0 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=11 instrucao=8200 BusWires =0000000000000010 saidaA=xxxxxxxxxxxxxxxx
+# Time=1000 clock=0 reset=1 run=1 done=0 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=11 instrucao=8200 BusWires =0000000000000010 saidaA=xxxxxxxxxxxxxxxx
+# Time=1050 clock=1 reset=1 run=1 done=0 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=100 instrucao=8200 BusWires =0000000000000010 saidaA=xxxxxxxxxxxxxxxx
+# Time=1100 clock=0 reset=1 run=1 done=0 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=100 instrucao=8200 BusWires =0000000000000010 saidaA=xxxxxxxxxxxxxxxx
+# Time=1150 clock=1 reset=1 run=1 done=1 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=101 instrucao=8200 BusWires =0000000000000101 saidaA=xxxxxxxxxxxxxxxx
+# Time=1200 clock=0 reset=1 run=1 done=1 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=101 instrucao=8200 BusWires =0000000000000101 saidaA=xxxxxxxxxxxxxxxx
+# Time=1250 clock=1 reset=1 run=1 done=0 Din=1 regDestino=0000000000000101 tstepQ=0 instrucao=8200 BusWires =0000000000000010 saidaA=xxxxxxxxxxxxxxxx
 # Testa Add
-# Time=1150 clock=0 reset=0 run=1 done=0 Din=10 regDestino=1111111100000000 tstepQ=0 instrucao=32ff BusWires =1111111100000000 saidaA=xxxxxxxxxxxxxxxx Select=1010 saidaALU=xxxxxxxxxxxxxxxx
-# Time=1200 clock=1 reset=0 run=1 done=0 Din=10 regDestino=1111111100000000 tstepQ=0 instrucao=32ff BusWires =1111111100000000 saidaA=xxxxxxxxxxxxxxxx Select=1010 saidaALU=xxxxxxxxxxxxxxxx
-# Time=1250 clock=0 reset=0 run=1 done=0 Din=10 regDestino=1111111100000000 tstepQ=0 instrucao=32ff BusWires =1111111100000000 saidaA=xxxxxxxxxxxxxxxx Select=1010 saidaALU=xxxxxxxxxxxxxxxx
-# Time=1300 clock=1 reset=1 run=1 done=1 Din=10 regDestino=1111111100000000 tstepQ=1 instrucao=32ff BusWires =1111111100000000 saidaA=xxxxxxxxxxxxxxxx Select=1010 saidaALU=xxxxxxxxxxxxxxxx
-# Time=1350 clock=0 reset=1 run=1 done=1 Din=10 regDestino=1111111100000000 tstepQ=1 instrucao=32ff BusWires =1111111100000000 saidaA=xxxxxxxxxxxxxxxx Select=1010 saidaALU=xxxxxxxxxxxxxxxx
-# Time=1400 clock=1 reset=1 run=1 done=0 Din=10 regDestino=1111111100000000 tstepQ=0 instrucao=52ff BusWires =1111111100000000 saidaA=xxxxxxxxxxxxxxxx Select=1010 saidaALU=xxxxxxxxxxxxxxxx
-# Time=1450 clock=0 reset=1 run=1 done=0 Din=10 regDestino=1111111100000000 tstepQ=0 instrucao=52ff BusWires =1111111100000000 saidaA=xxxxxxxxxxxxxxxx Select=1010 saidaALU=xxxxxxxxxxxxxxxx
-# Time=1500 clock=1 reset=1 run=1 done=0 Din=10 regDestino=1111111100000000 tstepQ=1 instrucao=52ff BusWires =1111111100000000 saidaA=xxxxxxxxxxxxxxxx Select=0001 saidaALU=xxxxxxxxxxxxxxxx
-# Time=1550 clock=0 reset=1 run=1 done=0 Din=10 regDestino=1111111100000000 tstepQ=1 instrucao=52ff BusWires =1111111100000000 saidaA=xxxxxxxxxxxxxxxx Select=0001 saidaALU=xxxxxxxxxxxxxxxx
-# Time=1600 clock=1 reset=1 run=1 done=0 Din=10 regDestino=1111111100000000 tstepQ=10 instrucao=52ff BusWires =0000000011111111 saidaA=1111111100000000 Select=1001 saidaALU=1111111111111111
-# Time=1650 clock=0 reset=1 run=1 done=0 Din=10 regDestino=1111111100000000 tstepQ=10 instrucao=52ff BusWires =0000000011111111 saidaA=1111111100000000 Select=1001 saidaALU=1111111111111111
-# Time=1700 clock=1 reset=1 run=1 done=1 Din=10 regDestino=1111111100000000 tstepQ=11 instrucao=52ff BusWires =1111111111111111 saidaA=1111111100000000 Select=1000 saidaALU=1111111011111111
-# Time=1750 clock=0 reset=1 run=1 done=1 Din=10 regDestino=1111111100000000 tstepQ=11 instrucao=52ff BusWires =1111111111111111 saidaA=1111111100000000 Select=1000 saidaALU=1111111011111111
-# Time=1800 clock=1 reset=1 run=1 done=0 Din=10 regDestino=1111111111111111 tstepQ=0 instrucao=52ff BusWires =1111111111111111 saidaA=1111111100000000 Select=1000 saidaALU=1111111011111111
-# Testa Sub
-# Time=1900 clock=0 reset=0 run=1 done=0 Din=11 regDestino=1111111111111111 tstepQ=0 instrucao=52ff BusWires =1111111111111111 saidaA=1111111100000000 Select=1000 saidaALU=1111111011111111
-# Time=1950 clock=1 reset=0 run=1 done=0 Din=11 regDestino=1111111111111111 tstepQ=0 instrucao=52ff BusWires =1111111111111111 saidaA=1111111100000000 Select=1000 saidaALU=1111111011111111
-# Time=2000 clock=0 reset=0 run=1 done=0 Din=11 regDestino=1111111111111111 tstepQ=0 instrucao=52ff BusWires =1111111111111111 saidaA=1111111100000000 Select=1000 saidaALU=1111111011111111
-# Time=2050 clock=1 reset=1 run=1 done=0 Din=11 regDestino=1111111111111111 tstepQ=1 instrucao=52ff BusWires =1111111111111111 saidaA=1111111100000000 Select=0001 saidaALU=1111111011111111
-# Time=2100 clock=0 reset=1 run=1 done=0 Din=11 regDestino=1111111111111111 tstepQ=1 instrucao=52ff BusWires =1111111111111111 saidaA=1111111100000000 Select=0001 saidaALU=1111111011111111
-# Time=2150 clock=1 reset=1 run=1 done=0 Din=11 regDestino=1111111111111111 tstepQ=10 instrucao=52ff BusWires =0000000011111111 saidaA=1111111111111111 Select=1001 saidaALU=0000000011111110
-# Time=2200 clock=0 reset=1 run=1 done=0 Din=11 regDestino=1111111111111111 tstepQ=10 instrucao=52ff BusWires =0000000011111111 saidaA=1111111111111111 Select=1001 saidaALU=0000000011111110
-# Time=2250 clock=1 reset=1 run=1 done=1 Din=11 regDestino=1111111111111111 tstepQ=11 instrucao=52ff BusWires =0000000011111110 saidaA=1111111111111111 Select=1000 saidaALU=0000000011111101
-# Time=2300 clock=0 reset=1 run=1 done=1 Din=11 regDestino=1111111111111111 tstepQ=11 instrucao=52ff BusWires =0000000011111110 saidaA=1111111111111111 Select=1000 saidaALU=0000000011111101
-# Time=2350 clock=1 reset=1 run=1 done=0 Din=11 regDestino=0000000011111110 tstepQ=0 instrucao=6200 BusWires =0000000011111110 saidaA=1111111111111111 Select=1000 saidaALU=0000000011111101
-# Time=2400 clock=0 reset=1 run=1 done=0 Din=11 regDestino=0000000011111110 tstepQ=0 instrucao=6200 BusWires =0000000011111110 saidaA=1111111111111111 Select=1000 saidaALU=0000000011111101
-# Time=2450 clock=1 reset=1 run=1 done=0 Din=11 regDestino=0000000011111110 tstepQ=1 instrucao=6200 BusWires =0000000011111110 saidaA=1111111111111111 Select=0001 saidaALU=0000000011111101
-# Time=2500 clock=0 reset=1 run=1 done=0 Din=11 regDestino=0000000011111110 tstepQ=1 instrucao=6200 BusWires =0000000011111110 saidaA=1111111111111111 Select=0001 saidaALU=0000000011111101
-# Time=2550 clock=1 reset=1 run=1 done=0 Din=11 regDestino=0000000011111110 tstepQ=10 instrucao=6200 BusWires =0000000000011100 saidaA=0000000011111110 Select=0000 saidaALU=0000000011100010
-# Time=2600 clock=0 reset=1 run=1 done=0 Din=11 regDestino=0000000011111110 tstepQ=10 instrucao=6200 BusWires =0000000000011100 saidaA=0000000011111110 Select=0000 saidaALU=0000000011100010
-# Time=2650 clock=1 reset=1 run=1 done=1 Din=11 regDestino=0000000011111110 tstepQ=11 instrucao=6200 BusWires =0000000011100010 saidaA=0000000000011100 Select=1000 saidaALU=0000000011111110
-# Testa Add
-# Time=2750 clock=0 reset=1 run=1 done=0 Din=100 regDestino=0000000011111110 tstepQ=0 instrucao=6200 BusWires =0000000011100010 saidaA=0000000000011100 Select=1000 saidaALU=0000000011111110
-# Time=2800 clock=1 reset=1 run=1 done=0 Din=100 regDestino=0000000011111110 tstepQ=1 instrucao=6200 BusWires =0000000011111110 saidaA=0000000011100010 Select=0001 saidaALU=0000000111100000
-# Time=2850 clock=0 reset=1 run=1 done=0 Din=100 regDestino=0000000011111110 tstepQ=1 instrucao=6200 BusWires =0000000011111110 saidaA=0000000011100010 Select=0001 saidaALU=0000000111100000
-# Time=2900 clock=1 reset=1 run=1 done=0 Din=100 regDestino=0000000011111110 tstepQ=10 instrucao=6200 BusWires =0000000000011100 saidaA=0000000011111110 Select=0000 saidaALU=0000000011100010
-# Time=2950 clock=0 reset=1 run=1 done=0 Din=100 regDestino=0000000011111110 tstepQ=10 instrucao=6200 BusWires =0000000000011100 saidaA=0000000011111110 Select=0000 saidaALU=0000000011100010
-# Time=3000 clock=1 reset=1 run=1 done=1 Din=100 regDestino=0000000011111110 tstepQ=11 instrucao=6200 BusWires =0000000011100010 saidaA=0000000000011100 Select=1000 saidaALU=0000000011111110
-# Time=3050 clock=0 reset=1 run=1 done=1 Din=100 regDestino=0000000011111110 tstepQ=11 instrucao=6200 BusWires =0000000011100010 saidaA=0000000000011100 Select=1000 saidaALU=0000000011111110
-# Time=3100 clock=1 reset=1 run=1 done=0 Din=100 regDestino=0000000011100010 tstepQ=0 instrucao=5201 BusWires =0000000011100010 saidaA=0000000011100010 Select=1000 saidaALU=0000000111000100
-# Time=3150 clock=0 reset=1 run=1 done=0 Din=100 regDestino=0000000011100010 tstepQ=0 instrucao=5201 BusWires =0000000011100010 saidaA=0000000011100010 Select=1000 saidaALU=0000000111000100
-# Time=3200 clock=1 reset=1 run=1 done=0 Din=100 regDestino=0000000011100010 tstepQ=1 instrucao=5201 BusWires =0000000011100010 saidaA=0000000011100010 Select=0001 saidaALU=0000000111000100
-# Time=3250 clock=0 reset=1 run=1 done=0 Din=100 regDestino=0000000011100010 tstepQ=1 instrucao=5201 BusWires =0000000011100010 saidaA=0000000011100010 Select=0001 saidaALU=0000000111000100
-# Time=3300 clock=1 reset=1 run=1 done=0 Din=100 regDestino=0000000011100010 tstepQ=10 instrucao=5201 BusWires =0000000000000001 saidaA=0000000011100010 Select=1001 saidaALU=0000000011100011
-# Time=3350 clock=0 reset=1 run=1 done=0 Din=100 regDestino=0000000011100010 tstepQ=10 instrucao=5201 BusWires =0000000000000001 saidaA=0000000011100010 Select=1001 saidaALU=0000000011100011
-# Time=3400 clock=1 reset=1 run=1 done=1 Din=100 regDestino=0000000011100010 tstepQ=11 instrucao=5201 BusWires =0000000011100011 saidaA=0000000011100010 Select=1000 saidaALU=0000000111000101
-# Time=3450 clock=0 reset=1 run=1 done=1 Din=100 regDestino=0000000011100010 tstepQ=11 instrucao=5201 BusWires =0000000011100011 saidaA=0000000011100010 Select=1000 saidaALU=0000000111000101
-# Time=3500 clock=1 reset=1 run=1 done=0 Din=100 regDestino=0000000011100011 tstepQ=0 instrucao=5201 BusWires =0000000011100011 saidaA=0000000011100010 Select=1000 saidaALU=0000000111000101
+# Time=1350 clock=0 reset=1 run=0 done=0 Din=10 regDestino=0000000000000101 tstepQ=0 instrucao=8200 BusWires =0000000000000010 saidaA=xxxxxxxxxxxxxxxx Select=0111 saidaALU=xxxxxxxxxxxxxxxx
+# Time=1400 clock=1 reset=1 run=0 done=0 Din=10 regDestino=0000000000000101 tstepQ=0 instrucao=8200 BusWires =0000000000000010 saidaA=xxxxxxxxxxxxxxxx Select=0111 saidaALU=xxxxxxxxxxxxxxxx
+# Time=1450 clock=0 reset=1 run=1 done=0 Din=10 regDestino=0000000000000101 tstepQ=0 instrucao=8200 BusWires =0000000000000010 saidaA=xxxxxxxxxxxxxxxx Select=0111 saidaALU=xxxxxxxxxxxxxxxx
+# Time=1500 clock=1 reset=1 run=1 done=0 Din=10 regDestino=0000000000000101 tstepQ=1 instrucao=8200 BusWires =0000000000000010 saidaA=xxxxxxxxxxxxxxxx Select=0111 saidaALU=xxxxxxxxxxxxxxxx
+# Time=1550 clock=0 reset=1 run=1 done=0 Din=10 regDestino=0000000000000101 tstepQ=1 instrucao=8200 BusWires =0000000000000010 saidaA=xxxxxxxxxxxxxxxx Select=0111 saidaALU=xxxxxxxxxxxxxxxx
+# Time=1600 clock=1 reset=1 run=1 done=0 Din=10 regDestino=0000000000000101 tstepQ=10 instrucao=5209 BusWires =0000000000000010 saidaA=xxxxxxxxxxxxxxxx Select=0111 saidaALU=xxxxxxxxxxxxxxxx
+# Time=1650 clock=0 reset=1 run=1 done=0 Din=10 regDestino=0000000000000101 tstepQ=10 instrucao=5209 BusWires =0000000000000010 saidaA=xxxxxxxxxxxxxxxx Select=0111 saidaALU=xxxxxxxxxxxxxxxx
+# Time=1700 clock=1 reset=1 run=1 done=0 Din=10 regDestino=0000000000000101 tstepQ=11 instrucao=5209 BusWires =0000000000000101 saidaA=xxxxxxxxxxxxxxxx Select=0001 saidaALU=xxxxxxxxxxxxxxxx
+# Time=1750 clock=0 reset=1 run=1 done=0 Din=10 regDestino=0000000000000101 tstepQ=11 instrucao=5209 BusWires =0000000000000101 saidaA=xxxxxxxxxxxxxxxx Select=0001 saidaALU=xxxxxxxxxxxxxxxx
+# Time=1800 clock=1 reset=1 run=1 done=0 Din=10 regDestino=0000000000000101 tstepQ=100 instrucao=5209 BusWires =0000000000001001 saidaA=0000000000000101 Select=1001 saidaALU=0000000000001110
+# Time=1850 clock=0 reset=1 run=1 done=0 Din=10 regDestino=0000000000000101 tstepQ=100 instrucao=5209 BusWires =0000000000001001 saidaA=0000000000000101 Select=1001 saidaALU=0000000000001110
+# Time=1900 clock=1 reset=1 run=1 done=1 Din=10 regDestino=0000000000000101 tstepQ=101 instrucao=5209 BusWires =0000000000001110 saidaA=0000000000000101 Select=1000 saidaALU=0000000000010011
+# Time=1950 clock=0 reset=1 run=1 done=1 Din=10 regDestino=0000000000000101 tstepQ=101 instrucao=5209 BusWires =0000000000001110 saidaA=0000000000000101 Select=1000 saidaALU=0000000000010011
+# Time=2000 clock=1 reset=1 run=1 done=0 Din=10 regDestino=0000000000001110 tstepQ=0 instrucao=5209 BusWires =0000000000000011 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001000
+# Testa store
+# Time=2100 clock=0 reset=1 run=0 done=0 Din=11 regDestino=0000000000001110 tstepQ=0 instrucao=5209 BusWires =0000000000000011 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001000
+# Time=2150 clock=1 reset=1 run=0 done=0 Din=11 regDestino=0000000000001110 tstepQ=0 instrucao=5209 BusWires =0000000000000011 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001000
+# Time=2200 clock=0 reset=1 run=1 done=0 Din=11 regDestino=0000000000001110 tstepQ=0 instrucao=5209 BusWires =0000000000000011 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001000
+# Time=2250 clock=1 reset=1 run=1 done=0 Din=11 regDestino=0000000000001110 tstepQ=1 instrucao=5209 BusWires =0000000000000011 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001000
+# Time=2300 clock=0 reset=1 run=1 done=0 Din=11 regDestino=0000000000001110 tstepQ=1 instrucao=5209 BusWires =0000000000000011 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001000
+# Time=2350 clock=1 reset=1 run=1 done=0 Din=11 regDestino=0000000000001110 tstepQ=10 instrucao=a001 BusWires =0000000000000011 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001000
+# Time=2400 clock=0 reset=1 run=1 done=0 Din=11 regDestino=0000000000001110 tstepQ=10 instrucao=a001 BusWires =0000000000000011 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001000
+# Time=2450 clock=1 reset=1 run=1 done=0 Din=11 regDestino=0000000000001110 tstepQ=11 instrucao=a001 BusWires =0000000000000100 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001001
+# Time=2500 clock=0 reset=1 run=1 done=0 Din=11 regDestino=0000000000001110 tstepQ=11 instrucao=a001 BusWires =0000000000000100 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001001
+# Time=2550 clock=1 reset=1 run=1 done=0 Din=11 regDestino=0000000000001110 tstepQ=100 instrucao=a001 BusWires =0000000000000100 saidaA=0000000000000101 Select=0000 saidaALU=0000000000001001
+# Time=2600 clock=0 reset=1 run=1 done=0 Din=11 regDestino=0000000000001110 tstepQ=100 instrucao=a001 BusWires =0000000000000100 saidaA=0000000000000101 Select=0000 saidaALU=0000000000001001
+# Time=2650 clock=1 reset=1 run=1 done=0 Din=11 regDestino=0000000000001110 tstepQ=101 instrucao=a001 BusWires =0000000000000100 saidaA=0000000000000101 Select=0000 saidaALU=0000000000001001
+# Testa load
+# Time=2750 clock=0 reset=0 run=0 done=0 Din=100 regDestino=0000000000000100 tstepQ=0 instrucao=a001 BusWires =0000000000000100 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001001
+# Time=2800 clock=1 reset=0 run=0 done=0 Din=100 regDestino=0000000000000100 tstepQ=0 instrucao=a001 BusWires =0000000000000100 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001001
+# Time=2850 clock=0 reset=0 run=1 done=0 Din=100 regDestino=0000000000000100 tstepQ=0 instrucao=a001 BusWires =0000000000000100 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001001
+# Time=2900 clock=1 reset=0 run=1 done=0 Din=100 regDestino=0000000000000100 tstepQ=0 instrucao=a001 BusWires =0000000000000100 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001001
+# Time=2950 clock=0 reset=0 run=1 done=0 Din=100 regDestino=0000000000000100 tstepQ=0 instrucao=a001 BusWires =0000000000000100 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001001
+# Time=3000 clock=1 reset=0 run=1 done=0 Din=100 regDestino=0000000000000100 tstepQ=0 instrucao=a001 BusWires =0000000000000100 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001001
+# Time=3050 clock=0 reset=0 run=1 done=0 Din=100 regDestino=0000000000000100 tstepQ=0 instrucao=a001 BusWires =0000000000000100 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001001
+# Time=3100 clock=1 reset=0 run=1 done=0 Din=100 regDestino=0000000000000100 tstepQ=0 instrucao=a001 BusWires =0000000000000100 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001001
+# Time=3150 clock=0 reset=0 run=1 done=0 Din=100 regDestino=0000000000000100 tstepQ=0 instrucao=a001 BusWires =0000000000000100 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001001
+# Time=3200 clock=1 reset=0 run=1 done=0 Din=100 regDestino=0000000000000100 tstepQ=0 instrucao=a001 BusWires =0000000000000100 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001001
+# Time=3250 clock=0 reset=0 run=1 done=0 Din=100 regDestino=0000000000000100 tstepQ=0 instrucao=a001 BusWires =0000000000000100 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001001
+# Time=3300 clock=1 reset=0 run=1 done=0 Din=100 regDestino=0000000000000100 tstepQ=0 instrucao=a001 BusWires =0000000000000100 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001001
+# Time=3350 clock=0 reset=0 run=1 done=0 Din=100 regDestino=0000000000000100 tstepQ=0 instrucao=a001 BusWires =0000000000000100 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001001
+# Time=3400 clock=1 reset=0 run=1 done=0 Din=100 regDestino=0000000000000100 tstepQ=0 instrucao=a001 BusWires =0000000000000100 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001001
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line

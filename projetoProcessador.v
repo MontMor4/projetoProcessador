@@ -21,6 +21,9 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	reg [15:0] data;
 	reg wren;
 	reg addr_in;
+	reg pc_incr,pc_in;
+	reg [7:0] endMem;
+	wire [4:0]enderecoInstrucao;
 	
 	assign III = IR[15:13]; //opcode da instrução
 	assign IMM = IR[12]; //bit que indica se é imediato ou não
@@ -30,9 +33,9 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	
 	dec3to8 decX (rX_in, rX, R_in); //habilita os registradores de propósito geral a receberem dados
 	
-	instr_memory memInstr(DIN, Clock, saidaROM); //modulo da memória de intruções
+	instr_memory memInstr(r7[4:0], Clock, saidaROM); //modulo da memória de intruções
 	
-	memory memPrincipal(r7[7:0], Clock, data, wren, DadoMem); //módulo da memória principal
+	memory memPrincipal(endMem, Clock, BusWires, wren, DadoMem); //módulo da memória principal
 	
 	//regn regIR(saidaROM,Resetn,IR_in,Clock,saidaIR);
 	
@@ -80,9 +83,9 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 		
 		//selectors for the BusWires multiplexer
 		parameter _R0 = 4'b0000, _R1 = 4'b0001, _R2 = 4'b0010,
-			_R3 = 4'b0011, _R4 = 4'b0100,_R5 = 4'b0101,_R6 = 4'b110, _R7 = 4'b0111, _G = 4'b1000,
+			_R3 = 4'b0011, _R4 = 4'b0100,_R5 = 4'b0101,_R6 = 4'b110, _PC = 4'b0111, _G = 4'b1000,
 			_IR8_IR8_0 /* signed-extended immediate data */ = 4'b1001,
-			_IR7_0_0 /* immediate data << 8 */ = 4'b1010;
+			_IR7_0_0 /* immediate data << 8 */ = 4'b1010,_DIN = 4'b1011;
 	
 		// control FSM outputs
 		always @(*) begin
@@ -91,15 +94,27 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 			AddSub = 1'b0;
 			G_in = 1'b0;
 			IR_in =1'b0;
+			addr_in =1'b0;
+			pc_in = 1'b0;
+			pc_incr = 1'b0;
 			
 			
 			case (Tstep_Q) //controla o estado da instrução //
-				T0: // store DIN into IR
+				T0:begin
+					Select =_PC;
+					addr_in =1'b1;
+					pc_in = 1'b1;
+					
+				end
+				T1: ;
+				
+				T2: // store DIN into IR
 					begin
 					IR_in = 1'b1;
+					pc_incr = 1'b1;
 					IR = saidaROM;
 					end
-				T1: // define signals in time step T1
+				T3: // define signals in time step T1
 					case (III)
 						mv: begin
 							if (!IMM) begin
@@ -111,8 +126,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 								3'b100: Select = _R4;
 								3'b101: Select = _R5;
 								3'b110: Select = _R6;
-								3'b111: Select = _R7;
-							
+								
 								endcase
 							end
 							else Select = _IR8_IR8_0; // mv rX, #D
@@ -138,12 +152,24 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 								3'b100: Select = _R4;
 								3'b101: Select = _R5;
 								3'b110: Select = _R6;
-								3'b111: Select = _R7;
+							
 							
 							endcase
 						end
+						load,store:begin
+							//addr_in = 1'b1;
+							case(rY)
+								3'b000: endMem = r0[7:0];
+								3'b001: endMem = r1[7:0];
+								3'b010: endMem = r2[7:0];
+								3'b011: endMem = r3[7:0];
+								3'b100: endMem = r4[7:0];
+								3'b101: endMem = r5[7:0];
+								3'b110: endMem = r6[7:0];
+						endcase
+						end
 					endcase
-				T2: // define signals in time step T2
+				T4: // define signals in time step T2
 					
 					case(III) 
 						add: begin
@@ -157,7 +183,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 								3'b100: Select = _R4;
 								3'b101: Select = _R5;
 								3'b110: Select = _R6;
-								3'b111: Select = _R7;
+								
 							
 								endcase
 							end
@@ -175,18 +201,29 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 								3'b100: Select = _R4;
 								3'b101: Select = _R5;
 								3'b110: Select = _R6;
-								3'b111: Select = _R7;
-							
+								
 								endcase
 							end
 							else Select = _IR8_IR8_0;
 							G_in = 1'b1;
 							AddSub = 1'b1;
 						end
+						store: begin
+							case(rX)
+								3'b000: Select = _R0;
+								3'b001: Select = _R1;
+								3'b010: Select = _R2;
+								3'b011: Select = _R3;
+								3'b100: Select = _R4;
+								3'b101: Select = _R5;
+								3'b110: Select = _R6;
+								
+							endcase
+						end
 						
 					endcase
 					
-				T3: // define signals in time step T3
+				T5: // define signals in time step T3
 					
 					case (III)
 						add,sub: begin
@@ -196,7 +233,11 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 							Done = 1'b1;
 						
 						end
-						
+						load: begin
+							rX_in = 1'b1;
+							Done = 1'b1;
+							Select =_DIN;
+						end
 						
 					endcase
 					
@@ -229,7 +270,9 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 			
 			regn reg_6(BusWires, Resetn, R_in[1], Clock, r6);
 			
-			pc_counter reg_7(BusWires, Resetn, R_in[0], Clock, r7);
+			pc_counter reg_7(Clock, BusWires, pc_incr, pc_in, r7);
+			
+			regInstr registradorInstrucao(r7[4:0],Clock,addr_in,enderecoInstrucao);
 			
 			regn A(BusWires,Resetn,A_in ,Clock ,RA_out);
 			
@@ -249,10 +292,11 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 				_R4: BusWires = r4;
 				_R5: BusWires = r5;
 				_R6: BusWires = r6;
-				_R7: BusWires = r7;
+				_PC: BusWires = r7;
 				_G: BusWires = G;
 				_IR8_IR8_0: BusWires = {{7{IR[8]}}, IR[8:0]};
 				_IR7_0_0: BusWires = {IR[7:0], 8'b00000000};
+				_DIN: BusWires =DadoMem;
 				default: BusWires = 16'bxxxxxxxxxxxxxxxx;
 			endcase
 	endmodule
@@ -285,15 +329,27 @@ endmodule
 		input pc_incr;
 		input pc_in;
 		output reg [15:0] saida_pc;
+		initial begin
+			saida_pc = 16'b0000000000000000;
+		end
 				
 		always @(posedge clock)
 			
-			if(pc_incr && pc_in) begin
-				saida_pc = entrada_pc + 1'b1;
-			end	
+			if( pc_in) begin
+				saida_pc = entrada_pc;
+			end else if(pc_incr)begin
+				saida_pc = saida_pc + 16'b00000000000000001;
+			end
 				
 	endmodule
-	
+	module regInstr(endereco,clock,in,endInstr);
+		input [4:0] endereco;
+		input clock;
+		input in;
+		output reg endInstr;
+		always@(posedge clock)
+			if(in)endInstr<=endereco;
+	endmodule
 	
 	module regn(BusW,Reset,R_IN,clock,R_OUT);
 		input [15:0]BusW;

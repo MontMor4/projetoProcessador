@@ -2,36 +2,36 @@ m255
 K3
 13
 cModel Technology
-Z0 dC:\pastaX\projetoProcessador\simulation\modelsim
+Z0 dC:\Users\Vitão\Desktop\Codes\LAOC2\projetoProcessador\simulation\modelsim
 vAlu
-ISVG;Sj1GWJMTD0P=[fCWm2
+I=X0>zKJ:ja85C>HL_8f9U3
 VUWHImI[0TW8LT8EX1P<Cz3
-Z1 dC:\pastaX\projetoProcessador\simulation\modelsim
-Z2 w1665420217
-Z3 8C:/pastaX/projetoProcessador/projetoProcessador.v
-Z4 FC:/pastaX/projetoProcessador/projetoProcessador.v
-L0 279
+Z1 dC:\Users\Vitão\Desktop\Codes\LAOC2\projetoProcessador\simulation\modelsim
+Z2 w1665615424
+Z3 8C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador.v
+Z4 FC:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador.v
+L0 366
 Z5 OV;L;10.1d;51
 r1
 31
-Z6 !s108 1665421810.903000
-Z7 !s107 C:/pastaX/projetoProcessador/projetoProcessador.v|
-Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/pastaX/projetoProcessador|C:/pastaX/projetoProcessador/projetoProcessador.v|
+Z6 !s108 1665615508.461000
+Z7 !s107 C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador.v|
+Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador|C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador.v|
 Z9 o-vlog01compat -work work -O0
-Z10 !s92 -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador -O0
+Z10 !s92 -vlog01compat -work work +incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador -O0
 n@alu
 !i10b 1
-!s100 U=7gTdd=WATQWK57BTi[W1
+!s100 B;4j1ib]mgQ]HbS[nGP`E1
 !s85 0
 !s101 -O0
 vdec3to8
-II>1LB`[13]QKJLOl=ZmWN2
+IVW7EKm[lQRB]dGiUl6R9N3
 VWGLzn^X@`CM]?8jJRF_IR3
 R1
 R2
 R3
 R4
-L0 246
+L0 305
 R5
 r1
 31
@@ -41,16 +41,16 @@ R8
 R9
 R10
 !i10b 1
-!s100 SM83Q8:^k7Mb5?1VJH;161
+!s100 ZlgmU<EfRcb3]1dHaM^PC0
 !s85 0
 !s101 -O0
 vinstr_memory
-Ie0jQ>2W3kX`R[PL<7KOHf1
+IHcGzzP2CikR4@=8FM3KLe3
 V=h9ZWXQzRXjIdPJhZ^JfZ1
 R1
-w1665352862
-8C:/pastaX/projetoProcessador/instr_memory.v
-FC:/pastaX/projetoProcessador/instr_memory.v
+w1665455333
+8C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/instr_memory.v
+FC:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/instr_memory.v
 L0 39
 R5
 r1
@@ -58,15 +58,55 @@ r1
 R9
 R10
 !i10b 1
-!s100 MUjM[_TQUi1I5[=h_6Lb91
+!s100 >gaPhjSWLOc7DPaHPbYDR1
 !s85 0
-!s108 1665421811.059000
-!s107 C:/pastaX/projetoProcessador/instr_memory.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/pastaX/projetoProcessador|C:/pastaX/projetoProcessador/instr_memory.v|
+!s108 1665615508.684000
+!s107 C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/instr_memory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador|C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/instr_memory.v|
+!s101 -O0
+vmemory
+I8_Z;SIm7KJ2P]AWFcHK[Z1
+V]AE5B6M9:6Cj4lb?O:dNV3
+R1
+w1665456347
+8C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/memory.v
+FC:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/memory.v
+L0 39
+R5
+r1
+31
+R9
+R10
+!i10b 1
+!s100 <CON9?5kb7WXRjnjCz>dJ0
+!s85 0
+!s108 1665615508.604000
+!s107 C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/memory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador|C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/memory.v|
+!s101 -O0
+vpc_counter
+I4_mJzbjZ:W01lKJ03`nnm1
+V=6Mif9DTMjDg8G>YK?ikA2
+R1
+R2
+R3
+R4
+L0 327
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!i10b 1
+!s100 K3D0[E<ZLc`Eho2HK2elN1
+!s85 0
 !s101 -O0
 vprojetoProcessador
-I^gl@jZOLI7g2AJ?V5=BNU2
-V4J6h<CQKc44;h`]RgFUjP3
+I9n<41LI10i8f4ic@_Ab1U1
+VWFB6ohM^Yg>dW58`3]]4i3
 R1
 R2
 R3
@@ -82,38 +122,59 @@ R9
 R10
 nprojeto@processador
 !i10b 1
-!s100 hHPRgEXD@`nmhK98o06h_2
+!s100 D6gZPT5jeILE]6CKJ96>93
 !s85 0
 !s101 -O0
 vprojetoProcessador_tb
 !i10b 1
-!s100 j^8j6Dz2lg[QBHkQn1HAU2
-IHDnHmOF]e31``jd@LRMKA3
+!s100 6DOBi4NCZRReUYI:YKW7l0
+I8d9?:<1:fWca=10eL=RUb2
 VjNWXhCVY:dfOo[:MJEo=M0
 R1
-w1665421732
-8C:/pastaX/projetoProcessador/projetoProcessador_tb.v
-FC:/pastaX/projetoProcessador/projetoProcessador_tb.v
+w1665615412
+8C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador_tb.v
+FC:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador_tb.v
 L0 1
 R5
 r1
 !s85 0
 31
-!s108 1665421811.140000
-!s107 C:/pastaX/projetoProcessador/projetoProcessador_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/pastaX/projetoProcessador|C:/pastaX/projetoProcessador/projetoProcessador_tb.v|
+!s108 1665615508.766000
+!s107 C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador|C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador_tb.v|
 !s101 -O0
 R9
 R10
 nprojeto@processador_tb
+vregInstr
+IIXidKa?MAiNmmzh?^a;ek0
+VKED;W8KG42o12eIP^d4=>3
+R1
+R2
+R3
+R4
+L0 346
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+nreg@instr
+!i10b 1
+!s100 WU_hZ8;Z:JH=Sl<Peo3`C0
+!s85 0
+!s101 -O0
 vregn
-I:hiZRFNi4[T36WbJ3El@A1
+I^^VGm:Lj[BH?bfLmnD>be1
 V9zaDo2omaB;@NS2Ai0:Sl2
 R1
 R2
 R3
 R4
-L0 267
+L0 355
 R5
 r1
 31
@@ -123,6 +184,6 @@ R8
 R9
 R10
 !i10b 1
-!s100 TIianFP79EmW>6ZECk5Ri3
+!s100 oHa3mF4R3_AU<HeQV[TcY0
 !s85 0
 !s101 -O0

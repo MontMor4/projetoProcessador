@@ -6,10 +6,16 @@ entity projetoProcessador is
         T1              : vl_logic_vector(0 to 2) := (Hi0, Hi0, Hi1);
         T2              : vl_logic_vector(0 to 2) := (Hi0, Hi1, Hi0);
         T3              : vl_logic_vector(0 to 2) := (Hi0, Hi1, Hi1);
+        T4              : vl_logic_vector(0 to 2) := (Hi1, Hi0, Hi0);
+        T5              : vl_logic_vector(0 to 2) := (Hi1, Hi0, Hi1);
         mv              : vl_logic_vector(0 to 2) := (Hi0, Hi0, Hi0);
         mvt             : vl_logic_vector(0 to 2) := (Hi0, Hi0, Hi1);
         add             : vl_logic_vector(0 to 2) := (Hi0, Hi1, Hi0);
         sub             : vl_logic_vector(0 to 2) := (Hi0, Hi1, Hi1);
+        load            : vl_logic_vector(0 to 2) := (Hi1, Hi0, Hi0);
+        store           : vl_logic_vector(0 to 2) := (Hi1, Hi0, Hi1);
+        \_and\          : vl_logic_vector(0 to 2) := (Hi1, Hi1, Hi0);
+        branch          : vl_logic_vector(0 to 2) := (Hi1, Hi1, Hi1);
         \_R0\           : vl_logic_vector(0 to 3) := (Hi0, Hi0, Hi0, Hi0);
         \_R1\           : vl_logic_vector(0 to 3) := (Hi0, Hi0, Hi0, Hi1);
         \_R2\           : vl_logic_vector(0 to 3) := (Hi0, Hi0, Hi1, Hi0);
@@ -17,10 +23,11 @@ entity projetoProcessador is
         \_R4\           : vl_logic_vector(0 to 3) := (Hi0, Hi1, Hi0, Hi0);
         \_R5\           : vl_logic_vector(0 to 3) := (Hi0, Hi1, Hi0, Hi1);
         \_R6\           : vl_logic_vector(0 to 3) := (Hi0, Hi1, Hi1, Hi0);
-        \_R7\           : vl_logic_vector(0 to 3) := (Hi0, Hi1, Hi1, Hi1);
+        \_PC\           : vl_logic_vector(0 to 3) := (Hi0, Hi1, Hi1, Hi1);
         \_G\            : vl_logic_vector(0 to 3) := (Hi1, Hi0, Hi0, Hi0);
         \_IR8_IR8_0\    : vl_logic_vector(0 to 3) := (Hi1, Hi0, Hi0, Hi1);
-        \_IR7_0_0\      : vl_logic_vector(0 to 3) := (Hi1, Hi0, Hi1, Hi0)
+        \_IR7_0_0\      : vl_logic_vector(0 to 3) := (Hi1, Hi0, Hi1, Hi0);
+        \_DIN\          : vl_logic_vector(0 to 3) := (Hi1, Hi0, Hi1, Hi1)
     );
     port(
         DIN             : in     vl_logic_vector(4 downto 0);
@@ -34,10 +41,16 @@ entity projetoProcessador is
     attribute mti_svvh_generic_type of T1 : constant is 1;
     attribute mti_svvh_generic_type of T2 : constant is 1;
     attribute mti_svvh_generic_type of T3 : constant is 1;
+    attribute mti_svvh_generic_type of T4 : constant is 1;
+    attribute mti_svvh_generic_type of T5 : constant is 1;
     attribute mti_svvh_generic_type of mv : constant is 1;
     attribute mti_svvh_generic_type of mvt : constant is 1;
     attribute mti_svvh_generic_type of add : constant is 1;
     attribute mti_svvh_generic_type of sub : constant is 1;
+    attribute mti_svvh_generic_type of load : constant is 1;
+    attribute mti_svvh_generic_type of store : constant is 1;
+    attribute mti_svvh_generic_type of \_and\ : constant is 1;
+    attribute mti_svvh_generic_type of branch : constant is 1;
     attribute mti_svvh_generic_type of \_R0\ : constant is 1;
     attribute mti_svvh_generic_type of \_R1\ : constant is 1;
     attribute mti_svvh_generic_type of \_R2\ : constant is 1;
@@ -45,8 +58,9 @@ entity projetoProcessador is
     attribute mti_svvh_generic_type of \_R4\ : constant is 1;
     attribute mti_svvh_generic_type of \_R5\ : constant is 1;
     attribute mti_svvh_generic_type of \_R6\ : constant is 1;
-    attribute mti_svvh_generic_type of \_R7\ : constant is 1;
+    attribute mti_svvh_generic_type of \_PC\ : constant is 1;
     attribute mti_svvh_generic_type of \_G\ : constant is 1;
     attribute mti_svvh_generic_type of \_IR8_IR8_0\ : constant is 1;
     attribute mti_svvh_generic_type of \_IR7_0_0\ : constant is 1;
+    attribute mti_svvh_generic_type of \_DIN\ : constant is 1;
 end projetoProcessador;

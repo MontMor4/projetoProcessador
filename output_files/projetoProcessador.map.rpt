@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projetoProcessador
-Tue Oct 11 01:49:07 2022
+Wed Oct 12 20:18:29 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -18,22 +18,21 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  10. State Machine - |projetoProcessador|Tstep_Q
  11. User-Specified and Inferred Latches
  12. Registers Removed During Synthesis
- 13. Removed Registers Triggering Further Register Optimizations
- 14. General Register Statistics
- 15. Inverted Register Statistics
- 16. Multiplexer Restructuring Statistics (Restructuring Performed)
- 17. Source assignments for instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated
- 18. Source assignments for memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|altsyncram_m5a2:altsyncram1
- 19. Parameter Settings for User Entity Instance: Top-level Entity: |projetoProcessador
- 20. Parameter Settings for User Entity Instance: instr_memory:memInstr|altsyncram:altsyncram_component
- 21. Parameter Settings for User Entity Instance: memory:memPrincipal|altsyncram:altsyncram_component
- 22. altsyncram Parameter Settings by Entity Instance
- 23. Port Connectivity Checks: "pc_counter:reg_7"
- 24. Port Connectivity Checks: "memory:memPrincipal"
- 25. In-System Memory Content Editor Settings
- 26. Elapsed Time Per Partition
- 27. Analysis & Synthesis Messages
- 28. Analysis & Synthesis Suppressed Messages
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated
+ 17. Source assignments for memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|altsyncram_m5a2:altsyncram1
+ 18. Parameter Settings for User Entity Instance: Top-level Entity: |projetoProcessador
+ 19. Parameter Settings for User Entity Instance: instr_memory:memInstr|altsyncram:altsyncram_component
+ 20. Parameter Settings for User Entity Instance: memory:memPrincipal|altsyncram:altsyncram_component
+ 21. altsyncram Parameter Settings by Entity Instance
+ 22. Port Connectivity Checks: "regInstr:registradorInstrucao"
+ 23. Port Connectivity Checks: "dec3to8:decX"
+ 24. In-System Memory Content Editor Settings
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
+ 27. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -59,18 +58,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Oct 11 01:49:07 2022           ;
+; Analysis & Synthesis Status        ; Successful - Wed Oct 12 20:18:29 2022           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; projetoProcessador                              ;
 ; Top-level Entity Name              ; projetoProcessador                              ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 298                                             ;
-;     Total combinational functions  ; 270                                             ;
-;     Dedicated logic registers      ; 140                                             ;
-; Total registers                    ; 140                                             ;
+; Total logic elements               ; 648                                             ;
+;     Total combinational functions  ; 508                                             ;
+;     Dedicated logic registers      ; 289                                             ;
+; Total registers                    ; 289                                             ;
 ; Total pins                         ; 9                                               ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 4,416                                           ;
+; Total memory bits                  ; 4,608                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
 ; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
@@ -201,35 +200,35 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+-----------------------------------+------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                            ;
-+---------------------------------------------+--------------------------+
-; Resource                                    ; Usage                    ;
-+---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 298                      ;
-;                                             ;                          ;
-; Total combinational functions               ; 270                      ;
-; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 115                      ;
-;     -- 3 input functions                    ; 92                       ;
-;     -- <=2 input functions                  ; 63                       ;
-;                                             ;                          ;
-; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 250                      ;
-;     -- arithmetic mode                      ; 20                       ;
-;                                             ;                          ;
-; Total registers                             ; 140                      ;
-;     -- Dedicated logic registers            ; 140                      ;
-;     -- I/O registers                        ; 0                        ;
-;                                             ;                          ;
-; I/O pins                                    ; 9                        ;
-; Total memory bits                           ; 4416                     ;
-; Embedded Multiplier 9-bit elements          ; 0                        ;
-; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
-; Maximum fan-out                             ; 163                      ;
-; Total fan-out                               ; 1613                     ;
-; Average fan-out                             ; 3.58                     ;
-+---------------------------------------------+--------------------------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 648   ;
+;                                             ;       ;
+; Total combinational functions               ; 508   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 274   ;
+;     -- 3 input functions                    ; 148   ;
+;     -- <=2 input functions                  ; 86    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 458   ;
+;     -- arithmetic mode                      ; 50    ;
+;                                             ;       ;
+; Total registers                             ; 289   ;
+;     -- Dedicated logic registers            ; 289   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 9     ;
+; Total memory bits                           ; 4608  ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; Clock ;
+; Maximum fan-out                             ; 198   ;
+; Total fan-out                               ; 3082  ;
+; Average fan-out                             ; 3.66  ;
++---------------------------------------------+-------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -237,30 +236,31 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                    ; Library Name ;
 +------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |projetoProcessador                                                    ; 270 (67)          ; 140 (6)      ; 4416        ; 0            ; 0       ; 0         ; 9    ; 0            ; |projetoProcessador                                                                                                                                                                    ; work         ;
-;    |Alu:alu|                                                           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|Alu:alu                                                                                                                                                            ; work         ;
-;    |instr_memory:memInstr|                                             ; 0 (0)             ; 0 (0)        ; 320         ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|instr_memory:memInstr                                                                                                                                              ; work         ;
-;       |altsyncram:altsyncram_component|                                ; 0 (0)             ; 0 (0)        ; 320         ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|instr_memory:memInstr|altsyncram:altsyncram_component                                                                                                              ; work         ;
-;          |altsyncram_vk71:auto_generated|                              ; 0 (0)             ; 0 (0)        ; 320         ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated                                                                               ; work         ;
-;    |memory:memPrincipal|                                               ; 67 (0)            ; 43 (0)       ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|memory:memPrincipal                                                                                                                                                ; work         ;
-;       |altsyncram:altsyncram_component|                                ; 67 (0)            ; 43 (0)       ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component                                                                                                                ; work         ;
-;          |altsyncram_kpe1:auto_generated|                              ; 67 (0)            ; 43 (0)       ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated                                                                                 ; work         ;
+; |projetoProcessador                                                    ; 508 (260)         ; 289 (6)      ; 4608        ; 0            ; 0       ; 0         ; 9    ; 0            ; |projetoProcessador                                                                                                                                                                    ; work         ;
+;    |Alu:alu|                                                           ; 19 (19)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|Alu:alu                                                                                                                                                            ; work         ;
+;    |dec3to8:decX|                                                      ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|dec3to8:decX                                                                                                                                                       ; work         ;
+;    |instr_memory:memInstr|                                             ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|instr_memory:memInstr                                                                                                                                              ; work         ;
+;       |altsyncram:altsyncram_component|                                ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|instr_memory:memInstr|altsyncram:altsyncram_component                                                                                                              ; work         ;
+;          |altsyncram_vk71:auto_generated|                              ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated                                                                               ; work         ;
+;    |memory:memPrincipal|                                               ; 66 (0)            ; 43 (0)       ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|memory:memPrincipal                                                                                                                                                ; work         ;
+;       |altsyncram:altsyncram_component|                                ; 66 (0)            ; 43 (0)       ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component                                                                                                                ; work         ;
+;          |altsyncram_kpe1:auto_generated|                              ; 66 (0)            ; 43 (0)       ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated                                                                                 ; work         ;
 ;             |altsyncram_m5a2:altsyncram1|                              ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|altsyncram_m5a2:altsyncram1                                                     ; work         ;
-;             |sld_mod_ram_rom:mgl_prim2|                                ; 67 (50)           ; 43 (35)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2                                                       ; work         ;
-;                |sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr| ; 17 (17)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr ; work         ;
-;    |pc_counter:reg_7|                                                  ; 3 (3)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|pc_counter:reg_7                                                                                                                                                   ; work         ;
-;    |regn:A|                                                            ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:A                                                                                                                                                             ; work         ;
-;    |regn:regG|                                                         ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:regG                                                                                                                                                          ; work         ;
-;    |regn:reg_0|                                                        ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_0                                                                                                                                                         ; work         ;
-;    |regn:reg_1|                                                        ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_1                                                                                                                                                         ; work         ;
-;    |regn:reg_2|                                                        ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_2                                                                                                                                                         ; work         ;
-;    |regn:reg_3|                                                        ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_3                                                                                                                                                         ; work         ;
-;    |regn:reg_4|                                                        ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_4                                                                                                                                                         ; work         ;
-;    |regn:reg_5|                                                        ; 3 (3)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_5                                                                                                                                                         ; work         ;
-;    |regn:reg_6|                                                        ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_6                                                                                                                                                         ; work         ;
-;    |sld_hub:auto_hub|                                                  ; 114 (1)           ; 80 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|sld_hub:auto_hub                                                                                                                                                   ; work         ;
-;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                   ; 113 (75)          ; 80 (52)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                      ; work         ;
-;          |sld_rom_sr:hub_info_reg|                                     ; 21 (21)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                              ; work         ;
+;             |sld_mod_ram_rom:mgl_prim2|                                ; 66 (50)           ; 43 (35)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2                                                       ; work         ;
+;                |sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr| ; 16 (16)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr ; work         ;
+;    |pc_counter:reg_7|                                                  ; 17 (17)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|pc_counter:reg_7                                                                                                                                                   ; work         ;
+;    |regn:A|                                                            ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:A                                                                                                                                                             ; work         ;
+;    |regn:regG|                                                         ; 17 (17)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:regG                                                                                                                                                          ; work         ;
+;    |regn:reg_0|                                                        ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_0                                                                                                                                                         ; work         ;
+;    |regn:reg_1|                                                        ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_1                                                                                                                                                         ; work         ;
+;    |regn:reg_2|                                                        ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_2                                                                                                                                                         ; work         ;
+;    |regn:reg_3|                                                        ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_3                                                                                                                                                         ; work         ;
+;    |regn:reg_4|                                                        ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_4                                                                                                                                                         ; work         ;
+;    |regn:reg_5|                                                        ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_5                                                                                                                                                         ; work         ;
+;    |regn:reg_6|                                                        ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_6                                                                                                                                                         ; work         ;
+;    |sld_hub:auto_hub|                                                  ; 119 (1)           ; 80 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|sld_hub:auto_hub                                                                                                                                                   ; work         ;
+;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                   ; 118 (81)          ; 80 (52)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                      ; work         ;
+;          |sld_rom_sr:hub_info_reg|                                     ; 20 (20)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                              ; work         ;
 ;          |sld_shadow_jsm:shadow_jsm|                                   ; 17 (17)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_shadow_jsm:shadow_jsm                                                                            ; work         ;
 +------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -306,188 +306,58 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
 +-----------------------------------------------------+---------------------+------------------------+
-; IR[15]                                              ; Tstep_Q.T0          ; yes                    ;
-; IR[14]                                              ; Tstep_Q.T0          ; yes                    ;
-; IR[9]                                               ; Tstep_Q.T0          ; yes                    ;
-; IR[10]                                              ; Tstep_Q.T0          ; yes                    ;
-; IR[11]                                              ; Tstep_Q.T0          ; yes                    ;
-; Select._IR8_IR8_0_453                               ; Selector2           ; yes                    ;
-; IR[0]                                               ; Tstep_Q.T0          ; yes                    ;
-; Select._G_467                                       ; Selector2           ; yes                    ;
-; Select._R7_483                                      ; Selector2           ; yes                    ;
-; Select._R6_499                                      ; Selector2           ; yes                    ;
-; Select._R5_515                                      ; Selector2           ; yes                    ;
-; Select._R4_531                                      ; Selector2           ; yes                    ;
-; Select._R3_547                                      ; Selector2           ; yes                    ;
-; Select._R2_563                                      ; Selector2           ; yes                    ;
-; Select._R1_579                                      ; Selector2           ; yes                    ;
-; Select._R0_595                                      ; Selector2           ; yes                    ;
-; IR[12]                                              ; Tstep_Q.T0          ; yes                    ;
-; IR[13]                                              ; Tstep_Q.T0          ; yes                    ;
-; IR[1]                                               ; Tstep_Q.T0          ; yes                    ;
-; IR[2]                                               ; Tstep_Q.T0          ; yes                    ;
-; A_in                                                ; Selector44          ; yes                    ;
-; Number of user-specified and inferred latches = 21  ;                     ;                        ;
+; IR[14]                                              ; Tstep_Q.T2          ; yes                    ;
+; IR[13]                                              ; Tstep_Q.T2          ; yes                    ;
+; IR[15]                                              ; Tstep_Q.T2          ; yes                    ;
+; Select._DIN_777                                     ; Selector34          ; yes                    ;
+; IR[0]                                               ; Tstep_Q.T2          ; yes                    ;
+; Select._IR8_IR8_0_839                               ; Selector34          ; yes                    ;
+; Select._G_872                                       ; Selector34          ; yes                    ;
+; Select._PC_903                                      ; Selector34          ; yes                    ;
+; Select._R6_939                                      ; Selector35          ; yes                    ;
+; Select._R5_975                                      ; Selector35          ; yes                    ;
+; Select._R4_1011                                     ; Selector35          ; yes                    ;
+; Select._R3_1047                                     ; Selector35          ; yes                    ;
+; Select._R2_1083                                     ; Selector35          ; yes                    ;
+; Select._R1_1119                                     ; Selector35          ; yes                    ;
+; Select._R0_1155                                     ; Selector35          ; yes                    ;
+; endMem[0]                                           ; endMem[7]           ; yes                    ;
+; endMem[1]                                           ; endMem[7]           ; yes                    ;
+; endMem[2]                                           ; endMem[7]           ; yes                    ;
+; endMem[3]                                           ; endMem[7]           ; yes                    ;
+; endMem[4]                                           ; endMem[7]           ; yes                    ;
+; endMem[5]                                           ; endMem[7]           ; yes                    ;
+; endMem[6]                                           ; endMem[7]           ; yes                    ;
+; endMem[7]                                           ; endMem[7]           ; yes                    ;
+; IR[1]                                               ; Tstep_Q.T2          ; yes                    ;
+; IR[2]                                               ; Tstep_Q.T2          ; yes                    ;
+; IR[3]                                               ; Tstep_Q.T2          ; yes                    ;
+; IR[4]                                               ; Tstep_Q.T2          ; yes                    ;
+; IR[9]                                               ; Tstep_Q.T2          ; yes                    ;
+; IR[10]                                              ; Tstep_Q.T2          ; yes                    ;
+; IR[11]                                              ; Tstep_Q.T2          ; yes                    ;
+; IR[12]                                              ; Tstep_Q.T2          ; yes                    ;
+; A_in                                                ; Selector12          ; yes                    ;
+; IR[5]                                               ; Tstep_Q.T2          ; yes                    ;
+; IR[6]                                               ; Tstep_Q.T2          ; yes                    ;
+; IR[7]                                               ; Tstep_Q.T2          ; yes                    ;
+; Select._IR7_0_0_808                                 ; Selector34          ; yes                    ;
+; IR[8]                                               ; Tstep_Q.T2          ; yes                    ;
+; Number of user-specified and inferred latches = 37  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+----------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                               ;
-+-----------------------------------------+----------------------------------------+
-; Register name                           ; Reason for Removal                     ;
-+-----------------------------------------+----------------------------------------+
-; pc_counter:reg_7|saida_pc[2..15]        ; Stuck at GND due to stuck port data_in ;
-; Tstep_Q~4                               ; Lost fanout                            ;
-; Tstep_Q~5                               ; Lost fanout                            ;
-; Tstep_Q~6                               ; Lost fanout                            ;
-; regn:reg_6|R_OUT[1]                     ; Lost fanout                            ;
-; regn:reg_5|R_OUT[1]                     ; Lost fanout                            ;
-; regn:reg_4|R_OUT[1]                     ; Lost fanout                            ;
-; regn:reg_3|R_OUT[1]                     ; Lost fanout                            ;
-; regn:reg_2|R_OUT[1]                     ; Lost fanout                            ;
-; regn:reg_1|R_OUT[1]                     ; Lost fanout                            ;
-; regn:reg_0|R_OUT[1]                     ; Lost fanout                            ;
-; regn:reg_6|R_OUT[2]                     ; Lost fanout                            ;
-; regn:reg_5|R_OUT[2]                     ; Lost fanout                            ;
-; regn:reg_4|R_OUT[2]                     ; Lost fanout                            ;
-; regn:reg_3|R_OUT[2]                     ; Lost fanout                            ;
-; regn:reg_2|R_OUT[2]                     ; Lost fanout                            ;
-; regn:reg_1|R_OUT[2]                     ; Lost fanout                            ;
-; regn:reg_0|R_OUT[2]                     ; Lost fanout                            ;
-; regn:reg_6|R_OUT[3]                     ; Lost fanout                            ;
-; regn:reg_5|R_OUT[3]                     ; Lost fanout                            ;
-; regn:reg_4|R_OUT[3]                     ; Lost fanout                            ;
-; regn:reg_3|R_OUT[3]                     ; Lost fanout                            ;
-; regn:reg_2|R_OUT[3]                     ; Lost fanout                            ;
-; regn:reg_1|R_OUT[3]                     ; Lost fanout                            ;
-; regn:reg_0|R_OUT[3]                     ; Lost fanout                            ;
-; regn:reg_6|R_OUT[4]                     ; Lost fanout                            ;
-; regn:reg_5|R_OUT[4]                     ; Lost fanout                            ;
-; regn:reg_4|R_OUT[4]                     ; Lost fanout                            ;
-; regn:reg_3|R_OUT[4]                     ; Lost fanout                            ;
-; regn:reg_2|R_OUT[4]                     ; Lost fanout                            ;
-; regn:reg_1|R_OUT[4]                     ; Lost fanout                            ;
-; regn:reg_0|R_OUT[4]                     ; Lost fanout                            ;
-; regn:reg_6|R_OUT[5]                     ; Lost fanout                            ;
-; regn:reg_5|R_OUT[5]                     ; Lost fanout                            ;
-; regn:reg_4|R_OUT[5]                     ; Lost fanout                            ;
-; regn:reg_3|R_OUT[5]                     ; Lost fanout                            ;
-; regn:reg_2|R_OUT[5]                     ; Lost fanout                            ;
-; regn:reg_1|R_OUT[5]                     ; Lost fanout                            ;
-; regn:reg_0|R_OUT[5]                     ; Lost fanout                            ;
-; regn:reg_6|R_OUT[6]                     ; Lost fanout                            ;
-; regn:reg_5|R_OUT[6]                     ; Lost fanout                            ;
-; regn:reg_4|R_OUT[6]                     ; Lost fanout                            ;
-; regn:reg_3|R_OUT[6]                     ; Lost fanout                            ;
-; regn:reg_2|R_OUT[6]                     ; Lost fanout                            ;
-; regn:reg_1|R_OUT[6]                     ; Lost fanout                            ;
-; regn:reg_0|R_OUT[6]                     ; Lost fanout                            ;
-; regn:reg_6|R_OUT[7]                     ; Lost fanout                            ;
-; regn:reg_5|R_OUT[7]                     ; Lost fanout                            ;
-; regn:reg_4|R_OUT[7]                     ; Lost fanout                            ;
-; regn:reg_3|R_OUT[7]                     ; Lost fanout                            ;
-; regn:reg_2|R_OUT[7]                     ; Lost fanout                            ;
-; regn:reg_1|R_OUT[7]                     ; Lost fanout                            ;
-; regn:reg_0|R_OUT[7]                     ; Lost fanout                            ;
-; regn:reg_6|R_OUT[8]                     ; Lost fanout                            ;
-; regn:reg_5|R_OUT[8]                     ; Lost fanout                            ;
-; regn:reg_4|R_OUT[8]                     ; Lost fanout                            ;
-; regn:reg_3|R_OUT[8]                     ; Lost fanout                            ;
-; regn:reg_2|R_OUT[8]                     ; Lost fanout                            ;
-; regn:reg_1|R_OUT[8]                     ; Lost fanout                            ;
-; regn:reg_0|R_OUT[8]                     ; Lost fanout                            ;
-; regn:reg_6|R_OUT[9]                     ; Lost fanout                            ;
-; regn:reg_5|R_OUT[9]                     ; Lost fanout                            ;
-; regn:reg_4|R_OUT[9]                     ; Lost fanout                            ;
-; regn:reg_3|R_OUT[9]                     ; Lost fanout                            ;
-; regn:reg_2|R_OUT[9]                     ; Lost fanout                            ;
-; regn:reg_1|R_OUT[9]                     ; Lost fanout                            ;
-; regn:reg_0|R_OUT[9]                     ; Lost fanout                            ;
-; regn:reg_6|R_OUT[10]                    ; Lost fanout                            ;
-; regn:reg_5|R_OUT[10]                    ; Lost fanout                            ;
-; regn:reg_4|R_OUT[10]                    ; Lost fanout                            ;
-; regn:reg_3|R_OUT[10]                    ; Lost fanout                            ;
-; regn:reg_2|R_OUT[10]                    ; Lost fanout                            ;
-; regn:reg_1|R_OUT[10]                    ; Lost fanout                            ;
-; regn:reg_0|R_OUT[10]                    ; Lost fanout                            ;
-; regn:reg_6|R_OUT[11]                    ; Lost fanout                            ;
-; regn:reg_5|R_OUT[11]                    ; Lost fanout                            ;
-; regn:reg_4|R_OUT[11]                    ; Lost fanout                            ;
-; regn:reg_3|R_OUT[11]                    ; Lost fanout                            ;
-; regn:reg_2|R_OUT[11]                    ; Lost fanout                            ;
-; regn:reg_1|R_OUT[11]                    ; Lost fanout                            ;
-; regn:reg_0|R_OUT[11]                    ; Lost fanout                            ;
-; regn:reg_6|R_OUT[12]                    ; Lost fanout                            ;
-; regn:reg_5|R_OUT[12]                    ; Lost fanout                            ;
-; regn:reg_4|R_OUT[12]                    ; Lost fanout                            ;
-; regn:reg_3|R_OUT[12]                    ; Lost fanout                            ;
-; regn:reg_2|R_OUT[12]                    ; Lost fanout                            ;
-; regn:reg_1|R_OUT[12]                    ; Lost fanout                            ;
-; regn:reg_0|R_OUT[12]                    ; Lost fanout                            ;
-; regn:reg_6|R_OUT[13]                    ; Lost fanout                            ;
-; regn:reg_5|R_OUT[13]                    ; Lost fanout                            ;
-; regn:reg_4|R_OUT[13]                    ; Lost fanout                            ;
-; regn:reg_3|R_OUT[13]                    ; Lost fanout                            ;
-; regn:reg_2|R_OUT[13]                    ; Lost fanout                            ;
-; regn:reg_1|R_OUT[13]                    ; Lost fanout                            ;
-; regn:reg_0|R_OUT[13]                    ; Lost fanout                            ;
-; regn:reg_6|R_OUT[14]                    ; Lost fanout                            ;
-; regn:reg_5|R_OUT[14]                    ; Lost fanout                            ;
-; regn:reg_4|R_OUT[14]                    ; Lost fanout                            ;
-; regn:reg_3|R_OUT[14]                    ; Lost fanout                            ;
-; regn:reg_2|R_OUT[14]                    ; Lost fanout                            ;
-; regn:reg_1|R_OUT[14]                    ; Lost fanout                            ;
-; regn:reg_0|R_OUT[14]                    ; Lost fanout                            ;
-; regn:reg_6|R_OUT[15]                    ; Lost fanout                            ;
-; regn:reg_5|R_OUT[15]                    ; Lost fanout                            ;
-; regn:reg_4|R_OUT[15]                    ; Lost fanout                            ;
-; regn:reg_3|R_OUT[15]                    ; Lost fanout                            ;
-; regn:reg_2|R_OUT[15]                    ; Lost fanout                            ;
-; regn:reg_1|R_OUT[15]                    ; Lost fanout                            ;
-; regn:reg_0|R_OUT[15]                    ; Lost fanout                            ;
-; regn:A|R_OUT[1..15]                     ; Lost fanout                            ;
-; Total Number of Removed Registers = 137 ;                                        ;
-+-----------------------------------------+----------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                        ;
-+------------------------------+---------------------------+-----------------------------------------------------------------------------------------+
-; Register name                ; Reason for Removal        ; Registers Removed due to This Register                                                  ;
-+------------------------------+---------------------------+-----------------------------------------------------------------------------------------+
-; pc_counter:reg_7|saida_pc[3] ; Stuck at GND              ; regn:reg_0|R_OUT[12], regn:reg_0|R_OUT[13], regn:reg_1|R_OUT[14], regn:reg_0|R_OUT[14], ;
-;                              ; due to stuck port data_in ; regn:reg_2|R_OUT[15], regn:reg_1|R_OUT[15], regn:reg_0|R_OUT[15], regn:A|R_OUT[12],     ;
-;                              ;                           ; regn:A|R_OUT[13], regn:A|R_OUT[14], regn:A|R_OUT[15]                                    ;
-; regn:reg_6|R_OUT[1]          ; Lost Fanouts              ; regn:reg_5|R_OUT[1], regn:reg_4|R_OUT[1], regn:reg_3|R_OUT[1], regn:reg_2|R_OUT[1],     ;
-;                              ;                           ; regn:reg_1|R_OUT[1], regn:reg_0|R_OUT[1]                                                ;
-; regn:reg_6|R_OUT[2]          ; Lost Fanouts              ; regn:reg_5|R_OUT[2], regn:reg_4|R_OUT[2], regn:reg_3|R_OUT[2], regn:reg_2|R_OUT[2],     ;
-;                              ;                           ; regn:reg_1|R_OUT[2], regn:reg_0|R_OUT[2]                                                ;
-; regn:reg_6|R_OUT[3]          ; Lost Fanouts              ; regn:reg_5|R_OUT[3], regn:reg_4|R_OUT[3], regn:reg_3|R_OUT[3], regn:reg_2|R_OUT[3],     ;
-;                              ;                           ; regn:reg_1|R_OUT[3], regn:reg_0|R_OUT[3]                                                ;
-; regn:reg_6|R_OUT[4]          ; Lost Fanouts              ; regn:reg_5|R_OUT[4], regn:reg_4|R_OUT[4], regn:reg_3|R_OUT[4], regn:reg_2|R_OUT[4],     ;
-;                              ;                           ; regn:reg_1|R_OUT[4], regn:reg_0|R_OUT[4]                                                ;
-; regn:reg_6|R_OUT[5]          ; Lost Fanouts              ; regn:reg_5|R_OUT[5], regn:reg_4|R_OUT[5], regn:reg_3|R_OUT[5], regn:reg_2|R_OUT[5],     ;
-;                              ;                           ; regn:reg_1|R_OUT[5], regn:reg_0|R_OUT[5]                                                ;
-; regn:reg_6|R_OUT[6]          ; Lost Fanouts              ; regn:reg_5|R_OUT[6], regn:reg_4|R_OUT[6], regn:reg_3|R_OUT[6], regn:reg_2|R_OUT[6],     ;
-;                              ;                           ; regn:reg_1|R_OUT[6], regn:reg_0|R_OUT[6]                                                ;
-; regn:reg_6|R_OUT[7]          ; Lost Fanouts              ; regn:reg_5|R_OUT[7], regn:reg_4|R_OUT[7], regn:reg_3|R_OUT[7], regn:reg_2|R_OUT[7],     ;
-;                              ;                           ; regn:reg_1|R_OUT[7], regn:reg_0|R_OUT[7]                                                ;
-; regn:reg_6|R_OUT[8]          ; Lost Fanouts              ; regn:reg_5|R_OUT[8], regn:reg_4|R_OUT[8], regn:reg_3|R_OUT[8], regn:reg_2|R_OUT[8],     ;
-;                              ;                           ; regn:reg_1|R_OUT[8], regn:reg_0|R_OUT[8]                                                ;
-; regn:reg_6|R_OUT[9]          ; Lost Fanouts              ; regn:reg_5|R_OUT[9], regn:reg_4|R_OUT[9], regn:reg_3|R_OUT[9], regn:reg_2|R_OUT[9],     ;
-;                              ;                           ; regn:reg_1|R_OUT[9], regn:reg_0|R_OUT[9]                                                ;
-; regn:reg_6|R_OUT[10]         ; Lost Fanouts              ; regn:reg_5|R_OUT[10], regn:reg_4|R_OUT[10], regn:reg_3|R_OUT[10], regn:reg_2|R_OUT[10], ;
-;                              ;                           ; regn:reg_1|R_OUT[10], regn:reg_0|R_OUT[10]                                              ;
-; regn:reg_6|R_OUT[11]         ; Lost Fanouts              ; regn:reg_5|R_OUT[11], regn:reg_4|R_OUT[11], regn:reg_3|R_OUT[11], regn:reg_2|R_OUT[11], ;
-;                              ;                           ; regn:reg_1|R_OUT[11], regn:reg_0|R_OUT[11]                                              ;
-; regn:reg_6|R_OUT[12]         ; Lost Fanouts              ; regn:reg_5|R_OUT[12], regn:reg_4|R_OUT[12], regn:reg_3|R_OUT[12], regn:reg_2|R_OUT[12], ;
-;                              ;                           ; regn:reg_1|R_OUT[12]                                                                    ;
-; regn:reg_6|R_OUT[13]         ; Lost Fanouts              ; regn:reg_5|R_OUT[13], regn:reg_4|R_OUT[13], regn:reg_3|R_OUT[13], regn:reg_2|R_OUT[13], ;
-;                              ;                           ; regn:reg_1|R_OUT[13]                                                                    ;
-; regn:reg_6|R_OUT[14]         ; Lost Fanouts              ; regn:reg_5|R_OUT[14], regn:reg_4|R_OUT[14], regn:reg_3|R_OUT[14], regn:reg_2|R_OUT[14]  ;
-; regn:reg_6|R_OUT[15]         ; Lost Fanouts              ; regn:reg_5|R_OUT[15], regn:reg_4|R_OUT[15], regn:reg_3|R_OUT[15]                        ;
-+------------------------------+---------------------------+-----------------------------------------------------------------------------------------+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; Tstep_Q~4                             ; Lost fanout        ;
+; Tstep_Q~5                             ; Lost fanout        ;
+; Tstep_Q~6                             ; Lost fanout        ;
+; Total Number of Removed Registers = 3 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -495,12 +365,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 140   ;
+; Total registers                              ; 289   ;
 ; Number of registers using Synchronous Clear  ; 12    ;
-; Number of registers using Synchronous Load   ; 19    ;
+; Number of registers using Synchronous Load   ; 35    ;
 ; Number of registers using Asynchronous Clear ; 53    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 93    ;
+; Number of registers using Clock Enable       ; 250   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -522,15 +392,18 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[4]                                        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[12]                                                  ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[2]                                                   ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr|word_counter[3] ;
-; 16:1               ; 4 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr|WORD_SR[3]      ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; No         ; |projetoProcessador|Selector23                                                                                                                                                                         ;
-; 11:1               ; 6 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |projetoProcessador|Selector39                                                                                                                                                                         ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |projetoProcessador|Selector41                                                                                                                                                                         ;
-; 11:1               ; 8 bits    ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; No         ; |projetoProcessador|Selector33                                                                                                                                                                         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |projetoProcessador|pc_counter:reg_7|saida_pc[11]                                                                                                                                                      ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3]                                        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[8]                                                   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[0]                                                   ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr|word_counter[1] ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr|WORD_SR[0]      ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |projetoProcessador|Mux40                                                                                                                                                                              ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |projetoProcessador|Selector32                                                                                                                                                                         ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |projetoProcessador|Selector35                                                                                                                                                                         ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |projetoProcessador|Selector31                                                                                                                                                                         ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |projetoProcessador|Selector23                                                                                                                                                                         ;
+; 26:1               ; 7 bits    ; 119 LEs       ; 119 LEs              ; 0 LEs                  ; No         ; |projetoProcessador|Selector7                                                                                                                                                                          ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |projetoProcessador|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[0]                                                                                                 ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |projetoProcessador|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|mixer_addr_reg[4]                                                                                                    ;
 ; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |projetoProcessador|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|word_counter[1]                                                                              ;
@@ -584,10 +457,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; _R4            ; 0100  ; Unsigned Binary                                           ;
 ; _R5            ; 0101  ; Unsigned Binary                                           ;
 ; _R6            ; 0110  ; Unsigned Binary                                           ;
-; _R7            ; 0111  ; Unsigned Binary                                           ;
+; _PC            ; 0111  ; Unsigned Binary                                           ;
 ; _G             ; 1000  ; Unsigned Binary                                           ;
 ; _IR8_IR8_0     ; 1001  ; Unsigned Binary                                           ;
 ; _IR7_0_0       ; 1010  ; Unsigned Binary                                           ;
+; _DIN           ; 1011  ; Unsigned Binary                                           ;
 +----------------+-------+-----------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -745,22 +619,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+-------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "pc_counter:reg_7"                                                                                                                                                                       ;
-+------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
-+------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; clock      ; Input ; Warning  ; Input port expression (16 bits) is wider than the input port (1 bits) it drives.  The 15 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; entrada_pc ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "entrada_pc[15..1]" will be connected to GND.                               ;
-+------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "regInstr:registradorInstrucao"                                                                                                                                                ;
++--------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                                                                               ;
++--------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; endInstr     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (5 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
+; endInstr[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
++--------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "memory:memPrincipal"                                                                ;
+; Port Connectivity Checks: "dec3to8:decX"                                                                       ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Y[7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -789,57 +663,73 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Oct 11 01:49:03 2022
+    Info: Processing started: Wed Oct 12 20:18:25 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projetoProcessador -c projetoProcessador
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (12019): Can't analyze file -- file processador.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file projetoprocessador_tb.v
     Info (12023): Found entity 1: projetoProcessador_tb
-Info (12021): Found 5 design units, including 5 entities, in source file projetoprocessador.v
+Info (12021): Found 6 design units, including 6 entities, in source file projetoprocessador.v
     Info (12023): Found entity 1: projetoProcessador
     Info (12023): Found entity 2: dec3to8
     Info (12023): Found entity 3: pc_counter
-    Info (12023): Found entity 4: regn
-    Info (12023): Found entity 5: Alu
+    Info (12023): Found entity 4: regInstr
+    Info (12023): Found entity 5: regn
+    Info (12023): Found entity 6: Alu
 Info (12021): Found 1 design units, including 1 entities, in source file memory.v
     Info (12023): Found entity 1: memory
 Info (12127): Elaborating entity "projetoProcessador" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at projetoProcessador.v(13): object "IR_in" assigned a value but never read
-Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(103): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(148): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(191): incomplete case statement has no default case item
-Info (10264): Verilog HDL Case Statement information at projetoProcessador.v(96): all case item expressions in this case statement are onehot
-Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(90): inferring latch(es) for variable "IR", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(90): inferring latch(es) for variable "A_in", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(90): inferring latch(es) for variable "Select", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "Select._IR7_0_0" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "Select._IR8_IR8_0" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "Select._G" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "Select._R7" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "Select._R6" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "Select._R5" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "Select._R4" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "Select._R3" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "Select._R2" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "Select._R1" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "Select._R0" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "A_in" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "IR[0]" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "IR[1]" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "IR[2]" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "IR[3]" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "IR[4]" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "IR[5]" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "IR[6]" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "IR[7]" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "IR[8]" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "IR[9]" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "IR[10]" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "IR[11]" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "IR[12]" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "IR[13]" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "IR[14]" at projetoProcessador.v(90)
-Info (10041): Inferred latch for "IR[15]" at projetoProcessador.v(90)
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(121): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(147): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(161): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(118): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(178): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(196): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(212): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(174): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(228): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(93): inferring latch(es) for variable "Select", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(93): inferring latch(es) for variable "IR", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(93): inferring latch(es) for variable "endMem", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(93): inferring latch(es) for variable "A_in", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "A_in" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "endMem[0]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "endMem[1]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "endMem[2]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "endMem[3]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "endMem[4]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "endMem[5]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "endMem[6]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "endMem[7]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "IR[0]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "IR[1]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "IR[2]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "IR[3]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "IR[4]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "IR[5]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "IR[6]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "IR[7]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "IR[8]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "IR[9]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "IR[10]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "IR[11]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "IR[12]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "IR[13]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "IR[14]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "IR[15]" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "Select._DIN" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "Select._IR7_0_0" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "Select._IR8_IR8_0" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "Select._G" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "Select._PC" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "Select._R6" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "Select._R5" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "Select._R4" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "Select._R3" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "Select._R2" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "Select._R1" at projetoProcessador.v(93)
+Info (10041): Inferred latch for "Select._R0" at projetoProcessador.v(93)
 Info (12128): Elaborating entity "dec3to8" for hierarchy "dec3to8:decX"
 Warning (12125): Using design file instr_memory.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: instr_memory
@@ -901,39 +791,53 @@ Info (12133): Instantiated megafunction "memory:memPrincipal|altsyncram:altsyncr
 Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr"
 Info (12128): Elaborating entity "regn" for hierarchy "regn:reg_0"
 Info (12128): Elaborating entity "pc_counter" for hierarchy "pc_counter:reg_7"
+Info (12128): Elaborating entity "regInstr" for hierarchy "regInstr:registradorInstrucao"
+Warning (10230): Verilog HDL assignment warning at projetoProcessador.v(351): truncated value with size 5 to match size of target (1)
 Info (12128): Elaborating entity "Alu" for hierarchy "Alu:alu"
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[3]"
-        Warning (14320): Synthesized away node "instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[4]"
-        Warning (14320): Synthesized away node "instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[5]"
-        Warning (14320): Synthesized away node "instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[6]"
-        Warning (14320): Synthesized away node "instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[7]"
-        Warning (14320): Synthesized away node "instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated|q_a[8]"
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13012): Latch Select._IR8_IR8_0_453 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T2
-Warning (13012): Latch Select._G_467 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T3
-Warning (13012): Latch Select._R7_483 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T3
-Warning (13012): Latch Select._R6_499 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T3
-Warning (13012): Latch Select._R5_515 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T3
-Warning (13012): Latch Select._R4_531 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T3
-Warning (13012): Latch Select._R3_547 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T3
-Warning (13012): Latch Select._R2_563 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T3
-Warning (13012): Latch Select._R1_579 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T3
-Warning (13012): Latch Select._R0_595 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T3
+Warning (13012): Latch Select._DIN_777 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[15]
+Warning (13012): Latch Select._IR8_IR8_0_839 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[12]
+Warning (13012): Latch Select._G_872 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[15]
+Warning (13012): Latch Select._PC_903 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T0
+Warning (13012): Latch Select._R6_939 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T5
+Warning (13012): Latch Select._R5_975 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T5
+Warning (13012): Latch Select._R4_1011 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T5
+Warning (13012): Latch Select._R3_1047 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T5
+Warning (13012): Latch Select._R2_1083 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T5
+Warning (13012): Latch Select._R1_1119 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T5
+Warning (13012): Latch Select._R0_1155 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T5
+Warning (13012): Latch endMem[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[0]
+Warning (13012): Latch endMem[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[0]
+Warning (13012): Latch endMem[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[0]
+Warning (13012): Latch endMem[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[1]
+Warning (13012): Latch endMem[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[0]
+Warning (13012): Latch endMem[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[1]
+Warning (13012): Latch endMem[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[0]
+Warning (13012): Latch endMem[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[1]
 Warning (13012): Latch A_in has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T2
-Info (17049): 123 registers lost all their fanouts during netlist optimizations.
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T4
+Warning (13012): Latch Select._IR7_0_0_808 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[13]
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
@@ -941,14 +845,20 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (144001): Generated suppressed messages file C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/output_files/projetoProcessador.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 341 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 5 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "DIN[0]"
+    Warning (15610): No output dependent on input pin "DIN[1]"
+    Warning (15610): No output dependent on input pin "DIN[2]"
+    Warning (15610): No output dependent on input pin "DIN[3]"
+    Warning (15610): No output dependent on input pin "DIN[4]"
+Info (21057): Implemented 713 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 301 logic cells
-    Info (21064): Implemented 26 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 43 warnings
-    Info: Peak virtual memory: 4648 megabytes
-    Info: Processing ended: Tue Oct 11 01:49:07 2022
+    Info (21061): Implemented 667 logic cells
+    Info (21064): Implemented 32 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 69 warnings
+    Info: Peak virtual memory: 4656 megabytes
+    Info: Processing ended: Wed Oct 12 20:18:29 2022
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 
