@@ -76,7 +76,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 		
 			
 		//parametros que indicam o opcode da instrução
-		parameter mv = 3'b000, mvt = 3'b001, add = 3'b010, sub = 3'b011, load = 3'b100, store = 3'b101, _and = 3'b110, branch = 3'b111;
+		parameter mv = 3'b000, mvt = 3'b001, add = 3'b010, sub = 3'b011, load = 3'b100, store = 3'b101, _and = 3'b110, b_cond = 3'b111;
 		
 		//selectors for the BusWires multiplexer
 		parameter _R0 = 4'b0000, _R1 = 4'b0001, _R2 = 4'b0010,
@@ -140,7 +140,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 							Done = 1'b1;
 							
 							end
-						add,sub,_and: begin
+						add, sub, _and: begin
 						
 							A_in = 1'b1;
 							case(rX)
@@ -155,7 +155,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 							
 							endcase
 						end
-						load,store:begin
+						load, store:begin
 							//addr_in = 1'b1;
 							case(rY)
 								3'b000: endMem = r0[7:0];
@@ -167,12 +167,33 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 								3'b110: endMem = r6[7:0];
 						endcase
 						end
+						
+						b_cond: begin
+								A_in = 1'b1;
+								case(rX)
+									3'b000: //always branch
+										Select = _IR8_IR8_0;
+										
+									3'b001: //beq
+										if(G == 16'b0000000000000000) begin
+											Select = _IR8_IR8_0;
+										end else Done = 1'b1;
+									
+									3'b010: //bne
+										if(G != 16'b0000000000000000) begin
+											Select = _IR8_IR8_0;
+										end else Done = 1'b1;
+										
+								endcase
+						end
+							
+						
+						
 					endcase
 				T4: // define signals in time step T2
 					
 					case(III) 
 						add: begin
-							//precisa do A_in em T4 ????????
 							A_in =1'b0;
 							if (!IMM) begin // mv rX, rY
 								case(rY)
@@ -245,6 +266,13 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 							ALU_and = 1'b1;
 							
 							end
+						
+						b_cond: begin
+							Select = IR;
+							G_in = 1'b1;
+							
+						end
+						
 						endcase
 						
 				T5: // define signals in time step T3
@@ -260,6 +288,12 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 						load: begin
 							Select =_DIN;
 							rX_in = 1'b1;
+							Done = 1'b1;
+						end
+						
+						b_cond: begin
+							Select = G;
+							pc_in = 1'b1;
 							Done = 1'b1;
 						end
 						
@@ -280,7 +314,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 		
 		
 			
-			regn reg_0(BusWires,Resetn,R_in[7] ,Clock ,r0);
+			regn reg_0(BusWires, Resetn, R_in[7], Clock ,r0);
 		
 			regn reg_1(BusWires, Resetn, R_in[6], Clock, r1);
 			
@@ -296,13 +330,13 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 			
 			pc_counter reg_7(Clock, BusWires, pc_incr, pc_in, r7);
 			
-			regInstr registradorInstrucao(r7[4:0],Clock,addr_in,enderecoInstrucao);
+			regInstr registradorInstrucao(r7[4:0], Clock, addr_in, enderecoInstrucao);
 			
-			regn A(BusWires,Resetn,A_in ,Clock ,RA_out);
+			regn A(BusWires, Resetn, A_in, Clock, RA_out);
+			 
+			regn regG(saidaALU, Resetn, G_in, Clock, G);
 			
-			regn regG(saidaALU,Resetn,G_in,Clock,G);
-			
-			Alu alu(BusWires,RA_out,AddSub,saidaALU);
+			Alu alu(BusWires, RA_out, AddSub, ALU_and, saidaALU);
 	
 		
 	//. . . instantiate other registers and the adder/subtracter unit
@@ -359,7 +393,8 @@ endmodule
 				
 		always @(posedge clock)
 			
-			if( pc_in) begin
+			if(pc_in) begin
+				$display("pc_in");
 				saida_pc = entrada_pc;
 			end else if(pc_incr)begin
 				saida_pc = saida_pc + 16'b00000000000000001;
@@ -386,22 +421,56 @@ endmodule
 	endmodule 
 	
 	
-	module Alu(BusW, RA_out, Addsub, ALU_and, Res);
+	module Alu(BusW, RA_out, AddSub, ALU_and, Res);
 		input [15:0] BusW;
 		input [15:0] RA_out;
-		input Addsub;
+		input AddSub;
 		input ALU_and;
 		output reg [15:0] Res;
 
 		always@(*)
-		if(!Addsub && !ALU_and) begin 
+		
+		/*
+		if(!AddSub & !ALU_and) begin 
 			Res <= BusW + RA_out;
-			end else if(Addsub && !ALU_and)begin
+			end else if(AddSub & !ALU_and)begin
 				Res <= RA_out - BusW;
 			end else begin
-				Res <= RA_out && BusW;
+				Res <= RA_out & BusW;
 			end
+		*/
+		
+		if(ALU_and)begin
+			$display("ra_out: %16b & BusW: %16b", RA_out, BusW);
+			Res = RA_out & BusW;
+		end else if (AddSub) begin
+			Res = RA_out - BusW;
+		end else begin
+			Res = BusW + RA_out;
+		end
 		
 		
+	endmodule
+
+	module barrel (shift_type, shift, data_in, data_out);
+		input wire [1:0] shift_type;
+		input wire [3:0] shift;
+		input wire [15:0] data_in;
+		output reg [15:0] data_out;
+		parameter lsl = 2'b00, lsr = 2'b01, asr = 2'b10, ror = 2'b11;
+			
+			always @(*)
+				if (shift_type == lsl)
+				data_out = data_in << shift;
+				
+				else if (shift_type == lsr)
+				data_out = data_in >> shift;
+				
+				else if (shift_type == asr)
+				data_out = {{16{data_in[15]}},data_in} >> shift; // sign extend
+				
+				else // ror
+				data_out = (data_in >> shift) | (data_in << (16 - shift));
+				
 	endmodule
 

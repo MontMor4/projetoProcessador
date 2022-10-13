@@ -15,7 +15,7 @@ entity projetoProcessador is
         load            : vl_logic_vector(0 to 2) := (Hi1, Hi0, Hi0);
         store           : vl_logic_vector(0 to 2) := (Hi1, Hi0, Hi1);
         \_and\          : vl_logic_vector(0 to 2) := (Hi1, Hi1, Hi0);
-        branch          : vl_logic_vector(0 to 2) := (Hi1, Hi1, Hi1);
+        b_cond          : vl_logic_vector(0 to 2) := (Hi1, Hi1, Hi1);
         \_R0\           : vl_logic_vector(0 to 3) := (Hi0, Hi0, Hi0, Hi0);
         \_R1\           : vl_logic_vector(0 to 3) := (Hi0, Hi0, Hi0, Hi1);
         \_R2\           : vl_logic_vector(0 to 3) := (Hi0, Hi0, Hi1, Hi0);
@@ -50,7 +50,7 @@ entity projetoProcessador is
     attribute mti_svvh_generic_type of load : constant is 1;
     attribute mti_svvh_generic_type of store : constant is 1;
     attribute mti_svvh_generic_type of \_and\ : constant is 1;
-    attribute mti_svvh_generic_type of branch : constant is 1;
+    attribute mti_svvh_generic_type of b_cond : constant is 1;
     attribute mti_svvh_generic_type of \_R0\ : constant is 1;
     attribute mti_svvh_generic_type of \_R1\ : constant is 1;
     attribute mti_svvh_generic_type of \_R2\ : constant is 1;

@@ -19,7 +19,7 @@ module projetoProcessador_tb();
 		$display("Testa mv");
 		for(i=0;i<10;i= i+1)begin
 			#50;
-			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%4h BusWires =%16b saidaROM=%16b",
+			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%16b BusWires =%16b saidaROM=%16b",
 			$time,clock,reset,run,done,Din,proc.r0,proc.Tstep_Q,proc.IR,proc.BusWires,proc.saidaROM);
 			if(i==1)assign run = ~run;
 			assign clock =~clock;
@@ -34,12 +34,24 @@ module projetoProcessador_tb();
 		
 		for(i=0;i<14;i= i+1)begin
 			#50;
-			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%4h BusWires =%16b saidaA=%16b",
+			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%16b BusWires =%16b saidaA=%16b",
 			$time,clock,reset,run,done,Din,proc.r1,proc.Tstep_Q,proc.IR,proc.BusWires,proc.RA_out);
 			if(i==1)assign run = ~run;
 			assign clock =~clock;
 		end
 		
+		$display("testa bcond"); //beq 111 0 000 000000011
+		assign run = ~run;
+		#50;
+		
+		assign Din = 5'b00111;
+		for(i=0;i<14;i= i+1)begin
+			#50;
+			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%16b BusWires =%16b saidaA=%16b Select=%4b saidaALU=%16b",
+			$time,clock,reset,run,done,Din,proc.r2,proc.Tstep_Q,proc.IR,proc.BusWires,proc.RA_out,proc.Select,proc.saidaALU);
+			if(i==1)assign run = ~run;
+			assign clock =~clock;
+		end
 		
 		//testa instrução add 0101001000001001
 		$display("Testa Add");
@@ -49,7 +61,7 @@ module projetoProcessador_tb();
 		assign Din = 5'b00010;
 		for(i=0;i<14;i= i+1)begin
 			#50;
-			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%4h BusWires =%16b saidaA=%16b Select=%4b saidaALU=%16b",
+			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%16b BusWires =%16b saidaA=%16b Select=%4b saidaALU=%16b",
 			$time,clock,reset,run,done,Din,proc.r1,proc.Tstep_Q,proc.IR,proc.BusWires,proc.RA_out,proc.Select,proc.saidaALU);
 			if(i==1)assign run = ~run;
 			assign clock =~clock;
@@ -63,37 +75,54 @@ module projetoProcessador_tb();
 		assign Din = 5'b00011;
 		for(i=0;i<12;i= i+1)begin
 			#50;
-			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%4h BusWires =%16b saidaA=%16b Select=%4b saidaALU=%16b",
+			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%16b BusWires =%16b saidaA=%16b Select=%4b saidaALU=%16b",
 			$time,clock,reset,run,done,Din,proc.r1,proc.Tstep_Q,proc.IR,proc.BusWires,proc.RA_out,proc.Select,proc.saidaALU);
 			if(i==1)assign run = ~run;
 			assign clock =~clock;
 		end
 		
-		$display("Testa load"); //load 1000000000000001
+		$display("Testa load"); //load 100 0 000 000000001
 		assign run = ~run;
 		#50;
-		assign reset = ~reset;
+		
 		assign Din = 5'b00100;
 		for(i=0;i<14;i= i+1)begin
 			#50;
-			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%4h BusWires =%16b saidaA=%16b Select=%4b saidaALU=%16b",
+			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%16b BusWires =%16b saidaA=%16b Select=%4b saidaALU=%16b",
 			$time,clock,reset,run,done,Din,proc.r0,proc.Tstep_Q,proc.IR,proc.BusWires,proc.RA_out,proc.Select,proc.saidaALU);
 			if(i==1)assign run = ~run;
 			assign clock =~clock;
 		end
+
+		//teste instrução mv 000 1 010 000000010
+		$display("Testa mv");
+		assign run = ~run;
+		assign Din = 5'b00101;
 		
-		$display("testa and"); //and 110 
+		for(i=0;i<10;i= i+1)begin
+			#50;
+			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%16b BusWires =%16b saidaROM=%16b",
+			$time,clock,reset,run,done,Din,proc.r2,proc.Tstep_Q,proc.IR,proc.BusWires,proc.saidaROM);
+			if(i==1)assign run = ~run;
+			assign clock =~clock;
+			
+		end
+
+
+		$display("testa and"); //and 1101010000000001
 		assign run = ~run;
 		#50;
 		
-		assign Din = 5'b00101;
+		assign Din = 5'b00110;
 		for(i=0;i<14;i= i+1)begin
 			#50;
-			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%4h BusWires =%16b saidaA=%16b Select=%4b saidaALU=%16b",
-			$time,clock,reset,run,done,Din,proc.r0,proc.Tstep_Q,proc.IR,proc.BusWires,proc.RA_out,proc.Select,proc.saidaALU);
+			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%16b BusWires =%16b saidaA=%16b Select=%4b saidaALU=%16b",
+			$time,clock,reset,run,done,Din,proc.r2,proc.Tstep_Q,proc.IR,proc.BusWires,proc.RA_out,proc.Select,proc.saidaALU);
 			if(i==1)assign run = ~run;
 			assign clock =~clock;
 		end
+		
+		
 	end
 
 endmodule 
