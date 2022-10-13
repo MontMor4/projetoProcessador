@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projetoProcessador
-Wed Oct 12 20:18:29 2022
+Wed Oct 12 23:38:30 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -27,12 +27,13 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  19. Parameter Settings for User Entity Instance: instr_memory:memInstr|altsyncram:altsyncram_component
  20. Parameter Settings for User Entity Instance: memory:memPrincipal|altsyncram:altsyncram_component
  21. altsyncram Parameter Settings by Entity Instance
- 22. Port Connectivity Checks: "regInstr:registradorInstrucao"
- 23. Port Connectivity Checks: "dec3to8:decX"
- 24. In-System Memory Content Editor Settings
- 25. Elapsed Time Per Partition
- 26. Analysis & Synthesis Messages
- 27. Analysis & Synthesis Suppressed Messages
+ 22. Port Connectivity Checks: "Alu:alu"
+ 23. Port Connectivity Checks: "regInstr:registradorInstrucao"
+ 24. Port Connectivity Checks: "dec3to8:decX"
+ 25. In-System Memory Content Editor Settings
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+ 28. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -58,15 +59,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Oct 12 20:18:29 2022           ;
+; Analysis & Synthesis Status        ; Successful - Wed Oct 12 23:38:30 2022           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; projetoProcessador                              ;
 ; Top-level Entity Name              ; projetoProcessador                              ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 648                                             ;
-;     Total combinational functions  ; 508                                             ;
-;     Dedicated logic registers      ; 289                                             ;
-; Total registers                    ; 289                                             ;
+; Total logic elements               ; 579                                             ;
+;     Total combinational functions  ; 455                                             ;
+;     Dedicated logic registers      ; 257                                             ;
+; Total registers                    ; 257                                             ;
 ; Total pins                         ; 9                                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 4,608                                           ;
@@ -205,29 +206,29 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 648   ;
+; Estimated Total logic elements              ; 579   ;
 ;                                             ;       ;
-; Total combinational functions               ; 508   ;
+; Total combinational functions               ; 455   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 274   ;
-;     -- 3 input functions                    ; 148   ;
-;     -- <=2 input functions                  ; 86    ;
+;     -- 4 input functions                    ; 268   ;
+;     -- 3 input functions                    ; 95    ;
+;     -- <=2 input functions                  ; 92    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 458   ;
-;     -- arithmetic mode                      ; 50    ;
+;     -- normal mode                          ; 421   ;
+;     -- arithmetic mode                      ; 34    ;
 ;                                             ;       ;
-; Total registers                             ; 289   ;
-;     -- Dedicated logic registers            ; 289   ;
+; Total registers                             ; 257   ;
+;     -- Dedicated logic registers            ; 257   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 9     ;
 ; Total memory bits                           ; 4608  ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; Clock ;
-; Maximum fan-out                             ; 198   ;
-; Total fan-out                               ; 3082  ;
-; Average fan-out                             ; 3.66  ;
+; Maximum fan-out                             ; 166   ;
+; Total fan-out                               ; 2815  ;
+; Average fan-out                             ; 3.71  ;
 +---------------------------------------------+-------+
 
 
@@ -236,9 +237,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                    ; Library Name ;
 +------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |projetoProcessador                                                    ; 508 (260)         ; 289 (6)      ; 4608        ; 0            ; 0       ; 0         ; 9    ; 0            ; |projetoProcessador                                                                                                                                                                    ; work         ;
-;    |Alu:alu|                                                           ; 19 (19)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|Alu:alu                                                                                                                                                            ; work         ;
-;    |dec3to8:decX|                                                      ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|dec3to8:decX                                                                                                                                                       ; work         ;
+; |projetoProcessador                                                    ; 455 (247)         ; 257 (6)      ; 4608        ; 0            ; 0       ; 0         ; 9    ; 0            ; |projetoProcessador                                                                                                                                                                    ; work         ;
+;    |dec3to8:decX|                                                      ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|dec3to8:decX                                                                                                                                                       ; work         ;
 ;    |instr_memory:memInstr|                                             ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|instr_memory:memInstr                                                                                                                                              ; work         ;
 ;       |altsyncram:altsyncram_component|                                ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|instr_memory:memInstr|altsyncram:altsyncram_component                                                                                                              ; work         ;
 ;          |altsyncram_vk71:auto_generated|                              ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_vk71:auto_generated                                                                               ; work         ;
@@ -249,8 +249,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;             |sld_mod_ram_rom:mgl_prim2|                                ; 66 (50)           ; 43 (35)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2                                                       ; work         ;
 ;                |sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr| ; 16 (16)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr ; work         ;
 ;    |pc_counter:reg_7|                                                  ; 17 (17)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|pc_counter:reg_7                                                                                                                                                   ; work         ;
-;    |regn:A|                                                            ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:A                                                                                                                                                             ; work         ;
-;    |regn:regG|                                                         ; 17 (17)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:regG                                                                                                                                                          ; work         ;
 ;    |regn:reg_0|                                                        ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_0                                                                                                                                                         ; work         ;
 ;    |regn:reg_1|                                                        ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_1                                                                                                                                                         ; work         ;
 ;    |regn:reg_2|                                                        ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_2                                                                                                                                                         ; work         ;
@@ -258,8 +256,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |regn:reg_4|                                                        ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_4                                                                                                                                                         ; work         ;
 ;    |regn:reg_5|                                                        ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_5                                                                                                                                                         ; work         ;
 ;    |regn:reg_6|                                                        ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_6                                                                                                                                                         ; work         ;
-;    |sld_hub:auto_hub|                                                  ; 119 (1)           ; 80 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|sld_hub:auto_hub                                                                                                                                                   ; work         ;
-;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                   ; 118 (81)          ; 80 (52)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                      ; work         ;
+;    |sld_hub:auto_hub|                                                  ; 114 (1)           ; 80 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|sld_hub:auto_hub                                                                                                                                                   ; work         ;
+;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                   ; 113 (76)          ; 80 (52)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                      ; work         ;
 ;          |sld_rom_sr:hub_info_reg|                                     ; 20 (20)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                              ; work         ;
 ;          |sld_shadow_jsm:shadow_jsm|                                   ; 17 (17)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_shadow_jsm:shadow_jsm                                                                            ; work         ;
 +------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
@@ -306,21 +304,20 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
 +-----------------------------------------------------+---------------------+------------------------+
-; IR[14]                                              ; Tstep_Q.T2          ; yes                    ;
 ; IR[13]                                              ; Tstep_Q.T2          ; yes                    ;
+; IR[14]                                              ; Tstep_Q.T2          ; yes                    ;
 ; IR[15]                                              ; Tstep_Q.T2          ; yes                    ;
-; Select._DIN_777                                     ; Selector34          ; yes                    ;
+; Select._DIN_834                                     ; Selector34          ; yes                    ;
 ; IR[0]                                               ; Tstep_Q.T2          ; yes                    ;
-; Select._IR8_IR8_0_839                               ; Selector34          ; yes                    ;
-; Select._G_872                                       ; Selector34          ; yes                    ;
-; Select._PC_903                                      ; Selector34          ; yes                    ;
-; Select._R6_939                                      ; Selector35          ; yes                    ;
-; Select._R5_975                                      ; Selector35          ; yes                    ;
-; Select._R4_1011                                     ; Selector35          ; yes                    ;
-; Select._R3_1047                                     ; Selector35          ; yes                    ;
-; Select._R2_1083                                     ; Selector35          ; yes                    ;
-; Select._R1_1119                                     ; Selector35          ; yes                    ;
-; Select._R0_1155                                     ; Selector35          ; yes                    ;
+; Select._IR8_IR8_0_906                               ; Selector34          ; yes                    ;
+; Select._PC_979                                      ; Selector34          ; yes                    ;
+; Select._R6_1021                                     ; Selector35          ; yes                    ;
+; Select._R5_1063                                     ; Selector35          ; yes                    ;
+; Select._R4_1105                                     ; Selector35          ; yes                    ;
+; Select._R3_1147                                     ; Selector35          ; yes                    ;
+; Select._R2_1189                                     ; Selector35          ; yes                    ;
+; Select._R1_1231                                     ; Selector35          ; yes                    ;
+; Select._R0_1273                                     ; Selector35          ; yes                    ;
 ; endMem[0]                                           ; endMem[7]           ; yes                    ;
 ; endMem[1]                                           ; endMem[7]           ; yes                    ;
 ; endMem[2]                                           ; endMem[7]           ; yes                    ;
@@ -334,30 +331,30 @@ Encoding Type:  One-Hot
 ; IR[3]                                               ; Tstep_Q.T2          ; yes                    ;
 ; IR[4]                                               ; Tstep_Q.T2          ; yes                    ;
 ; IR[9]                                               ; Tstep_Q.T2          ; yes                    ;
-; IR[10]                                              ; Tstep_Q.T2          ; yes                    ;
 ; IR[11]                                              ; Tstep_Q.T2          ; yes                    ;
+; IR[10]                                              ; Tstep_Q.T2          ; yes                    ;
 ; IR[12]                                              ; Tstep_Q.T2          ; yes                    ;
-; A_in                                                ; Selector12          ; yes                    ;
 ; IR[5]                                               ; Tstep_Q.T2          ; yes                    ;
 ; IR[6]                                               ; Tstep_Q.T2          ; yes                    ;
 ; IR[7]                                               ; Tstep_Q.T2          ; yes                    ;
-; Select._IR7_0_0_808                                 ; Selector34          ; yes                    ;
 ; IR[8]                                               ; Tstep_Q.T2          ; yes                    ;
-; Number of user-specified and inferred latches = 37  ;                     ;                        ;
+; Select._IR7_0_0_870                                 ; Selector34          ; yes                    ;
+; Number of user-specified and inferred latches = 35  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; Tstep_Q~4                             ; Lost fanout        ;
-; Tstep_Q~5                             ; Lost fanout        ;
-; Tstep_Q~6                             ; Lost fanout        ;
-; Total Number of Removed Registers = 3 ;                    ;
-+---------------------------------------+--------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; regn:regG|R_OUT[0..15]                 ; Stuck at GND due to stuck port data_in ;
+; Tstep_Q~4                              ; Lost fanout                            ;
+; Tstep_Q~5                              ; Lost fanout                            ;
+; Tstep_Q~6                              ; Lost fanout                            ;
+; Total Number of Removed Registers = 19 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -365,12 +362,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 289   ;
+; Total registers                              ; 257   ;
 ; Number of registers using Synchronous Clear  ; 12    ;
 ; Number of registers using Synchronous Load   ; 35    ;
 ; Number of registers using Asynchronous Clear ; 53    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 250   ;
+; Number of registers using Clock Enable       ; 218   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -392,23 +389,23 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |projetoProcessador|pc_counter:reg_7|saida_pc[11]                                                                                                                                                      ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3]                                        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[8]                                                   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |projetoProcessador|pc_counter:reg_7|saida_pc[3]                                                                                                                                                       ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[1]                                        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[4]                                                   ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[0]                                                   ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr|word_counter[1] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr|word_counter[0] ;
 ; 16:1               ; 4 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component|altsyncram_kpe1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr|WORD_SR[0]      ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |projetoProcessador|Mux40                                                                                                                                                                              ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |projetoProcessador|Selector32                                                                                                                                                                         ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |projetoProcessador|Selector35                                                                                                                                                                         ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |projetoProcessador|Mux47                                                                                                                                                                              ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |projetoProcessador|Selector3                                                                                                                                                                          ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |projetoProcessador|Selector34                                                                                                                                                                         ;
 ; 12:1               ; 8 bits    ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |projetoProcessador|Selector31                                                                                                                                                                         ;
-; 12:1               ; 8 bits    ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |projetoProcessador|Selector23                                                                                                                                                                         ;
-; 26:1               ; 7 bits    ; 119 LEs       ; 119 LEs              ; 0 LEs                  ; No         ; |projetoProcessador|Selector7                                                                                                                                                                          ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |projetoProcessador|Selector16                                                                                                                                                                         ;
+; 26:1               ; 7 bits    ; 119 LEs       ; 119 LEs              ; 0 LEs                  ; No         ; |projetoProcessador|Selector8                                                                                                                                                                          ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |projetoProcessador|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[0]                                                                                                 ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |projetoProcessador|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|mixer_addr_reg[4]                                                                                                    ;
 ; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |projetoProcessador|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|word_counter[1]                                                                              ;
 ; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |projetoProcessador|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irsr_reg[2]                                                                                                          ;
-; 34:1               ; 4 bits    ; 88 LEs        ; 56 LEs               ; 32 LEs                 ; Yes        ; |projetoProcessador|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[3]                                                                                                   ;
+; 34:1               ; 4 bits    ; 88 LEs        ; 60 LEs               ; 28 LEs                 ; Yes        ; |projetoProcessador|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[3]                                                                                                   ;
 ; 20:1               ; 4 bits    ; 52 LEs        ; 32 LEs               ; 20 LEs                 ; Yes        ; |projetoProcessador|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|WORD_SR[1]                                                                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -619,6 +616,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+-------------------------------------------------------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Alu:alu"                                                                                                                                                                              ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                                            ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ALU_and ; Input  ; Warning  ; Input port expression (16 bits) is wider than the input port (1 bits) it drives.  The 15 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Res     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                           ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "regInstr:registradorInstrucao"                                                                                                                                                ;
 +--------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -663,7 +670,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Oct 12 20:18:25 2022
+    Info: Processing started: Wed Oct 12 23:38:26 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projetoProcessador -c projetoProcessador
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (12019): Can't analyze file -- file processador.v is missing
@@ -680,56 +687,58 @@ Info (12021): Found 1 design units, including 1 entities, in source file memory.
     Info (12023): Found entity 1: memory
 Info (12127): Elaborating entity "projetoProcessador" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at projetoProcessador.v(13): object "IR_in" assigned a value but never read
-Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(121): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(147): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(161): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(118): incomplete case statement has no default case item
+Warning (10036): Verilog HDL or VHDL warning at projetoProcessador.v(17): object "ALU_and" assigned a value but never read
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(120): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(146): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(160): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(117): incomplete case statement has no default case item
 Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(178): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(196): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(212): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(174): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(228): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(93): inferring latch(es) for variable "Select", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(93): inferring latch(es) for variable "IR", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(93): inferring latch(es) for variable "endMem", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(93): inferring latch(es) for variable "A_in", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "A_in" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "endMem[0]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "endMem[1]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "endMem[2]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "endMem[3]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "endMem[4]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "endMem[5]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "endMem[6]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "endMem[7]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "IR[0]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "IR[1]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "IR[2]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "IR[3]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "IR[4]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "IR[5]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "IR[6]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "IR[7]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "IR[8]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "IR[9]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "IR[10]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "IR[11]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "IR[12]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "IR[13]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "IR[14]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "IR[15]" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "Select._DIN" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "Select._IR7_0_0" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "Select._IR8_IR8_0" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "Select._G" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "Select._PC" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "Select._R6" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "Select._R5" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "Select._R4" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "Select._R3" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "Select._R2" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "Select._R1" at projetoProcessador.v(93)
-Info (10041): Inferred latch for "Select._R0" at projetoProcessador.v(93)
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(198): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(217): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(231): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(173): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(252): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(91): inferring latch(es) for variable "Select", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(91): inferring latch(es) for variable "IR", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(91): inferring latch(es) for variable "A_in", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(91): inferring latch(es) for variable "endMem", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "endMem[0]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "endMem[1]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "endMem[2]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "endMem[3]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "endMem[4]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "endMem[5]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "endMem[6]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "endMem[7]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "A_in" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "IR[0]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "IR[1]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "IR[2]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "IR[3]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "IR[4]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "IR[5]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "IR[6]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "IR[7]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "IR[8]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "IR[9]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "IR[10]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "IR[11]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "IR[12]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "IR[13]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "IR[14]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "IR[15]" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "Select._DIN" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "Select._IR7_0_0" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "Select._IR8_IR8_0" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "Select._G" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "Select._PC" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "Select._R6" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "Select._R5" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "Select._R4" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "Select._R3" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "Select._R2" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "Select._R1" at projetoProcessador.v(91)
+Info (10041): Inferred latch for "Select._R0" at projetoProcessador.v(91)
 Info (12128): Elaborating entity "dec3to8" for hierarchy "dec3to8:decX"
 Warning (12125): Using design file instr_memory.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: instr_memory
@@ -792,30 +801,266 @@ Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "memory:memPrincipal
 Info (12128): Elaborating entity "regn" for hierarchy "regn:reg_0"
 Info (12128): Elaborating entity "pc_counter" for hierarchy "pc_counter:reg_7"
 Info (12128): Elaborating entity "regInstr" for hierarchy "regInstr:registradorInstrucao"
-Warning (10230): Verilog HDL assignment warning at projetoProcessador.v(351): truncated value with size 5 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at projetoProcessador.v(375): truncated value with size 5 to match size of target (1)
 Info (12128): Elaborating entity "Alu" for hierarchy "Alu:alu"
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13012): Latch Select._DIN_777 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[15]
-Warning (13012): Latch Select._IR8_IR8_0_839 has unsafe behavior
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[15]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[14]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[13]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[12]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[11]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[10]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[9]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[8]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[7]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[6]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[5]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[4]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[3]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[2]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[1]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[0]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[15]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[14]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[13]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[12]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[11]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[10]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[9]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[8]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[7]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[6]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[5]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[4]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[3]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[2]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[1]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[0]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[15]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[14]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[13]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[12]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[11]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[10]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[9]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[8]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[7]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[6]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[5]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[4]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[3]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[2]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[1]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[0]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[15]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[14]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[13]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[12]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[11]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[10]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[9]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[8]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[7]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[6]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[5]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[4]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[3]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[2]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[1]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[0]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[15]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[14]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[13]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[12]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[11]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[10]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[9]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[8]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[7]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[6]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[5]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[4]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[3]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[2]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[1]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[0]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[15]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[14]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[13]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[12]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[11]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[10]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[9]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[8]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[7]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[6]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[5]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[4]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[3]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[2]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[1]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[0]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[15]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[14]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[13]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[12]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[11]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[10]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[9]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[8]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[7]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[6]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[5]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[4]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[3]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[2]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[1]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[0]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[15]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[14]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[13]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[12]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[11]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[10]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[9]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[8]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[7]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[6]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[5]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[4]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[3]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[2]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[1]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[0]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[15]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[14]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[13]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[12]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[11]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[10]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[9]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[8]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[7]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[6]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[5]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[4]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[3]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[2]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[1]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[0]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[15]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[14]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[13]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[12]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[11]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[10]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[9]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[8]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[7]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[6]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[5]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[4]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[3]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[2]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[1]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[0]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[15]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[14]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[13]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[12]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[11]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[10]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[9]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[8]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[7]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[6]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[5]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[4]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[3]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[2]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[1]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[0]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[15]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[14]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[13]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[12]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[11]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[10]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[9]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[8]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[7]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[6]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[5]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[4]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[3]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[2]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[1]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[0]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[15]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[14]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[13]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[12]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[11]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[10]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[9]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[8]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[7]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[6]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[5]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[4]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[3]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[2]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[1]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[0]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[15]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[14]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[13]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[12]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[11]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[10]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[9]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[8]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[7]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[6]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[5]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[4]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[3]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[2]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[1]" is missing source, defaulting to GND
+    Warning (12110): Net "saidaALU[0]" is missing source, defaulting to GND
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch Select._DIN_834 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[14]
+Warning (13012): Latch Select._IR8_IR8_0_906 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[12]
-Warning (13012): Latch Select._G_872 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[15]
-Warning (13012): Latch Select._PC_903 has unsafe behavior
+Warning (13012): Latch Select._PC_979 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T0
-Warning (13012): Latch Select._R6_939 has unsafe behavior
+Warning (13012): Latch Select._R6_1021 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T5
-Warning (13012): Latch Select._R5_975 has unsafe behavior
+Warning (13012): Latch Select._R5_1063 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T5
-Warning (13012): Latch Select._R4_1011 has unsafe behavior
+Warning (13012): Latch Select._R4_1105 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T5
-Warning (13012): Latch Select._R3_1047 has unsafe behavior
+Warning (13012): Latch Select._R3_1147 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T5
-Warning (13012): Latch Select._R2_1083 has unsafe behavior
+Warning (13012): Latch Select._R2_1189 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T5
-Warning (13012): Latch Select._R1_1119 has unsafe behavior
+Warning (13012): Latch Select._R1_1231 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T5
-Warning (13012): Latch Select._R0_1155 has unsafe behavior
+Warning (13012): Latch Select._R0_1273 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T5
 Warning (13012): Latch endMem[0] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[0]
@@ -833,9 +1078,7 @@ Warning (13012): Latch endMem[6] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[0]
 Warning (13012): Latch endMem[7] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[1]
-Warning (13012): Latch A_in has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T4
-Warning (13012): Latch Select._IR7_0_0_808 has unsafe behavior
+Warning (13012): Latch Select._IR7_0_0_870 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal IR[13]
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (13000): Registers with preset signals will power-up high
@@ -851,14 +1094,14 @@ Warning (21074): Design contains 5 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "DIN[2]"
     Warning (15610): No output dependent on input pin "DIN[3]"
     Warning (15610): No output dependent on input pin "DIN[4]"
-Info (21057): Implemented 713 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 644 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 667 logic cells
+    Info (21061): Implemented 598 logic cells
     Info (21064): Implemented 32 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 69 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 305 warnings
     Info: Peak virtual memory: 4656 megabytes
-    Info: Processing ended: Wed Oct 12 20:18:29 2022
+    Info: Processing ended: Wed Oct 12 23:38:30 2022
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 

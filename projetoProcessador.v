@@ -7,21 +7,18 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	wire IMM;
 	wire [2:0]rX;
 	wire [2:0]rY;
-	reg rX_in,A_in; reg [2:0]Tstep_Q; reg [2:0]Tstep_D; reg[15:0]BusWires;
+	reg rX_in, A_in; reg [2:0]Tstep_Q; reg [2:0]Tstep_D; reg[15:0]BusWires;
 	 
-	wire[15:0]r0,r7,r1,r2,r3,r4,r5,r6; //registradores de proposito geral
+	wire[15:0]r0, r7, r1, r2, r3, r4, r5, r6; //registradores de proposito geral
 	reg Done,IR_in;reg[3:0]Select;
 	wire [8:0]Imm;
 	wire [15:0]G;
 	reg [15:0]IR_wire;
-	reg G_in,AddSub;
+	reg G_in, AddSub, ALU_and, wren, addr_in, pc_incr,pc_in;
 	wire[7:0] R_in;
 	wire [15:0] RA_out,RG_out;
 	wire [15:0] saidaALU, saidaROM, saidaIR, DadoMem;
 	reg [15:0] data;
-	reg wren;
-	reg addr_in;
-	reg pc_incr,pc_in;
 	reg [7:0] endMem;
 	wire [4:0]enderecoInstrucao;
 	
@@ -90,8 +87,10 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 		// control FSM outputs
 		always @(*) begin
 			
-			rX_in = 1'b0; Done = 1'b0; //. . . // default values for variables
+			// initializing variable values
+			rX_in = 1'b0; Done = 1'b0;
 			AddSub = 1'b0;
+			ALU_and = 1'b0;
 			G_in = 1'b0;
 			IR_in =1'b0;
 			addr_in =1'b0;
@@ -119,13 +118,13 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 						mv: begin
 							if (!IMM) begin
 								case(rY)
-								3'b000: Select = _R0;
-								3'b001: Select = _R1;
-								3'b010: Select = _R2;
-								3'b011: Select = _R3;
-								3'b100: Select = _R4;
-								3'b101: Select = _R5;
-								3'b110: Select = _R6;
+									3'b000: Select = _R0;
+									3'b001: Select = _R1;
+									3'b010: Select = _R2;
+									3'b011: Select = _R3;
+									3'b100: Select = _R4;
+									3'b101: Select = _R5;
+									3'b110: Select = _R6;
 								
 								endcase
 							end
@@ -141,7 +140,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 							Done = 1'b1;
 							
 							end
-						add,sub: begin
+						add,sub,_and: begin
 						
 							A_in = 1'b1;
 							case(rX)
@@ -173,16 +172,17 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 					
 					case(III) 
 						add: begin
+							//precisa do A_in em T4 ????????
 							A_in =1'b0;
 							if (!IMM) begin // mv rX, rY
 								case(rY)
-								3'b000: Select = _R0;
-								3'b001: Select = _R1;
-								3'b010: Select = _R2;
-								3'b011: Select = _R3;
-								3'b100: Select = _R4;
-								3'b101: Select = _R5;
-								3'b110: Select = _R6;
+									3'b000: Select = _R0;
+									3'b001: Select = _R1;
+									3'b010: Select = _R2;
+									3'b011: Select = _R3;
+									3'b100: Select = _R4;
+									3'b101: Select = _R5;
+									3'b110: Select = _R6;
 								
 							
 								endcase
@@ -190,24 +190,29 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 							else Select = _IR8_IR8_0;
 							
 							G_in = 1'b1;
+							
 						end
+						
 						sub: begin
 							if (!IMM) begin // mv rX, rY
 								case(rY)
-								3'b000: Select = _R0;
-								3'b001: Select = _R1;
-								3'b010: Select = _R2;
-								3'b011: Select = _R3;
-								3'b100: Select = _R4;
-								3'b101: Select = _R5;
-								3'b110: Select = _R6;
+									3'b000: Select = _R0;
+									3'b001: Select = _R1;
+									3'b010: Select = _R2;
+									3'b011: Select = _R3;
+									3'b100: Select = _R4;
+									3'b101: Select = _R5;
+									3'b110: Select = _R6;
 								
 								endcase
-							end
-							else Select = _IR8_IR8_0;
+							end else Select = _IR8_IR8_0;
+							
+							//sinais de controle
 							G_in = 1'b1;
 							AddSub = 1'b1;
+							
 						end
+						
 						store: begin
 							case(rX)
 								3'b000: Select = _R0;
@@ -221,22 +226,41 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 							endcase
 						end
 						
-					endcase
-					
+						_and: begin
+							if (!IMM) begin	//caso a instrucao nao use um imediato, seleciona o registrador
+								case(rY)
+									3'b000: Select = _R0;
+									3'b001: Select = _R1;
+									3'b010: Select = _R2;
+									3'b011: Select = _R3;
+									3'b100: Select = _R4;
+									3'b101: Select = _R5;
+									3'b110: Select = _R6;
+								endcase
+								
+							end else Select = _IR8_IR8_0;
+							
+							//sinais de controle
+							G_in = 1'b1;
+							ALU_and = 1'b1;
+							
+							end
+						endcase
+						
 				T5: // define signals in time step T3
 					
 					case (III)
-						add,sub: begin
+						add, sub, _and: begin
 							
 							Select = _G;
-							rX_in =1'b1;
+							rX_in = 1'b1;
 							Done = 1'b1;
 						
 						end
 						load: begin
+							Select =_DIN;
 							rX_in = 1'b1;
 							Done = 1'b1;
-							Select =_DIN;
 						end
 						
 					endcase
@@ -362,17 +386,22 @@ endmodule
 	endmodule 
 	
 	
-	module Alu(BusW,RA_out,Addsub,Res);
+	module Alu(BusW, RA_out, Addsub, ALU_and, Res);
 		input [15:0] BusW;
 		input [15:0] RA_out;
 		input Addsub;
+		input ALU_and;
 		output reg [15:0] Res;
 
 		always@(*)
-		if(!Addsub) begin 
+		if(!Addsub && !ALU_and) begin 
 			Res <= BusW + RA_out;
-			end else begin
+			end else if(Addsub && !ALU_and)begin
 				Res <= RA_out - BusW;
+			end else begin
+				Res <= RA_out && BusW;
 			end
+		
+		
 	endmodule
 

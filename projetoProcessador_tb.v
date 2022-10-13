@@ -82,6 +82,18 @@ module projetoProcessador_tb();
 			assign clock =~clock;
 		end
 		
+		$display("testa and"); //and 110 
+		assign run = ~run;
+		#50;
+		
+		assign Din = 5'b00101;
+		for(i=0;i<14;i= i+1)begin
+			#50;
+			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%4h BusWires =%16b saidaA=%16b Select=%4b saidaALU=%16b",
+			$time,clock,reset,run,done,Din,proc.r0,proc.Tstep_Q,proc.IR,proc.BusWires,proc.RA_out,proc.Select,proc.saidaALU);
+			if(i==1)assign run = ~run;
+			assign clock =~clock;
+		end
 	end
 
 endmodule 
