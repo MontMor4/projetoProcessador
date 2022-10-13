@@ -14,7 +14,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	wire [8:0]Imm;
 	wire [15:0]G;
 	reg [15:0]IR_wire;
-	reg G_in, AddSub, ALU_and, wren, addr_in, pc_incr,pc_in;
+	reg G_in, AddSub, ALU_and, wren, addr_in, pc_incr, pc_in, DOUT_in, Wd;
 	wire[7:0] R_in;
 	wire [15:0] RA_out,RG_out;
 	wire [15:0] saidaALU, saidaROM, saidaIR, DadoMem;
@@ -22,10 +22,10 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	reg [7:0] endMem;
 	wire [4:0]enderecoInstrucao;
 	
-	assign III = IR[15:13]; //opcode da instrução
-	assign IMM = IR[12]; //bit que indica se é imediato ou não
-	assign rX = IR[11:9]; // registrador x
-	assign rY = IR[2:0]; //registrador y (existe quando IMM é igual a 0)
+	assign III = saidaIR[15:13]; //opcode da instrução
+	assign IMM = saidaIR[12]; //bit que indica se é imediato ou não
+	assign rX = saidaIR[11:9]; // registrador x
+	assign rY = saidaIR[2:0]; //registrador y (existe quando IMM é igual a 0)
 	
 	
 	dec3to8 decX (rX_in, rX, R_in); //habilita os registradores de propósito geral a receberem dados
@@ -34,7 +34,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	
 	memory memPrincipal(endMem, Clock, BusWires, wren, DadoMem); //módulo da memória principal
 	
-	//regn regIR(saidaROM,Resetn,IR_in,Clock,saidaIR);
+	regn regIR(saidaROM, Resetn, IR_in, Clock, saidaIR);
 	
 	parameter T0 = 3'b000, T1 = 3'b001, T2 = 3'b010, T3 = 3'b011, T4 = 3'b100, T5 = 3'b101;
 	
@@ -100,9 +100,9 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 			
 			case (Tstep_Q) //controla o estado da instrução //
 				T0:begin
-					Select =_PC;
-					addr_in =1'b1;
-					pc_in = 1'b1;
+					Select = _PC;
+					addr_in = 1'b1;
+					pc_incr = 1'b1;
 					
 				end
 				T1: ;
@@ -110,29 +110,19 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 				T2: // store DIN into IR
 					begin
 					IR_in = 1'b1;
-					pc_incr = 1'b1;
-					IR = saidaROM;
+					//pc_incr = 1'b1;
+					//IR = saidaROM;
 					end
 				T3: // define signals in time step T1
 					case (III)
 						mv: begin
-							if (!IMM) begin
-								case(rY)
-									3'b000: Select = _R0;
-									3'b001: Select = _R1;
-									3'b010: Select = _R2;
-									3'b011: Select = _R3;
-									3'b100: Select = _R4;
-									3'b101: Select = _R5;
-									3'b110: Select = _R6;
-								
-								endcase
-							end
-							else Select = _IR8_IR8_0; // mv rX, #D
+							if (!IMM) Select = rY;           
+							else Select = _IR8_IR8_0;
 							
 							rX_in = 1'b1; // enable rX
 							Done = 1'b1;
 						end
+						
 						mvt: // mvt rX, #D
 							begin
 							Select = _IR7_0_0;
@@ -140,93 +130,46 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 							Done = 1'b1;
 							
 							end
+							
 						add, sub, _and: begin
-						
 							A_in = 1'b1;
-							case(rX)
-								3'b000: Select = _R0;
-								3'b001: Select = _R1;
-								3'b010: Select = _R2;
-								3'b011: Select = _R3;
-								3'b100: Select = _R4;
-								3'b101: Select = _R5;
-								3'b110: Select = _R6;
-							
-							
-							endcase
+							Select = rX;           
 						end
+						
 						load, store:begin
-							//addr_in = 1'b1;
-							case(rY)
-								3'b000: endMem = r0[7:0];
-								3'b001: endMem = r1[7:0];
-								3'b010: endMem = r2[7:0];
-								3'b011: endMem = r3[7:0];
-								3'b100: endMem = r4[7:0];
-								3'b101: endMem = r5[7:0];
-								3'b110: endMem = r6[7:0];
-						endcase
+							addr_in = 1'b1;
+							Select = rY;           
 						end
 						
 						b_cond: begin
 								A_in = 1'b1;
-								case(rX)
-									3'b000: //always branch
-										Select = _IR8_IR8_0;
-										
+								Select = _PC;
+								case(rX)	
 									3'b001: //beq
-										if(G == 16'b0000000000000000) begin
-											Select = _IR8_IR8_0;
-										end else Done = 1'b1;
+										if(G != 0) Done = 1'b1;
 									
 									3'b010: //bne
-										if(G != 16'b0000000000000000) begin
-											Select = _IR8_IR8_0;
-										end else Done = 1'b1;
-										
+										if(G == 0) Done = 1'b1;
+									
+									//default: always branch
 								endcase
 						end
-							
-						
-						
+
 					endcase
 				T4: // define signals in time step T2
 					
 					case(III) 
 						add: begin
-							A_in =1'b0;
-							if (!IMM) begin // mv rX, rY
-								case(rY)
-									3'b000: Select = _R0;
-									3'b001: Select = _R1;
-									3'b010: Select = _R2;
-									3'b011: Select = _R3;
-									3'b100: Select = _R4;
-									3'b101: Select = _R5;
-									3'b110: Select = _R6;
-								
-							
-								endcase
-							end
+
+							if (!IMM) Select = rY;           
 							else Select = _IR8_IR8_0;
-							
 							G_in = 1'b1;
 							
 						end
 						
 						sub: begin
-							if (!IMM) begin // mv rX, rY
-								case(rY)
-									3'b000: Select = _R0;
-									3'b001: Select = _R1;
-									3'b010: Select = _R2;
-									3'b011: Select = _R3;
-									3'b100: Select = _R4;
-									3'b101: Select = _R5;
-									3'b110: Select = _R6;
-								
-								endcase
-							end else Select = _IR8_IR8_0;
+							if (!IMM) Select = rY;           
+							else Select = _IR8_IR8_0;
 							
 							//sinais de controle
 							G_in = 1'b1;
@@ -235,31 +178,15 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 						end
 						
 						store: begin
-							case(rX)
-								3'b000: Select = _R0;
-								3'b001: Select = _R1;
-								3'b010: Select = _R2;
-								3'b011: Select = _R3;
-								3'b100: Select = _R4;
-								3'b101: Select = _R5;
-								3'b110: Select = _R6;
-								
-							endcase
+							Select = rX;
+							DOUT_in = 1'b1;
+							Wd = 1'b1;
+							Done = 1'b1;
 						end
 						
 						_and: begin
-							if (!IMM) begin	//caso a instrucao nao use um imediato, seleciona o registrador
-								case(rY)
-									3'b000: Select = _R0;
-									3'b001: Select = _R1;
-									3'b010: Select = _R2;
-									3'b011: Select = _R3;
-									3'b100: Select = _R4;
-									3'b101: Select = _R5;
-									3'b110: Select = _R6;
-								endcase
-								
-							end else Select = _IR8_IR8_0;
+							if (!IMM) Select = rY;           
+							else Select = _IR8_IR8_0;
 							
 							//sinais de controle
 							G_in = 1'b1;
@@ -268,7 +195,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 							end
 						
 						b_cond: begin
-							Select = IR;
+							Select = _IR8_IR8_0;
 							G_in = 1'b1;
 							
 						end
@@ -312,7 +239,6 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 			Tstep_Q <= Tstep_D;
 		end
 		
-		
 			
 			regn reg_0(BusWires, Resetn, R_in[7], Clock ,r0);
 		
@@ -329,6 +255,10 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 			regn reg_6(BusWires, Resetn, R_in[1], Clock, r6);
 			
 			pc_counter reg_7(Clock, BusWires, pc_incr, pc_in, r7);
+			
+			regn D(BusWires, Resetn, DOUT_in, Clock, RD_out);
+			
+			regW W(Clock, Wd, W);
 			
 			regInstr registradorInstrucao(r7[4:0], Clock, addr_in, enderecoInstrucao);
 			
@@ -354,7 +284,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 				_G: BusWires = G;
 				_IR8_IR8_0: BusWires = {{7{IR[8]}}, IR[8:0]};
 				_IR7_0_0: BusWires = {IR[7:0], 8'b00000000};
-				_DIN: BusWires =DadoMem;
+				_DIN: BusWires = DadoMem;
 				default: BusWires = 16'bxxxxxxxxxxxxxxxx;
 			endcase
 	endmodule
@@ -381,6 +311,29 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 				endcase
 endmodule
 	
+	module regW(Clock, Wd, W);
+		input Clock;
+		input Wd;
+		output W;
+		
+		always @(posedge clock)
+			W = Wd;
+		
+	endmodule
+	
+	module DOUT();
+		input Clock;
+		input DOUT_in;
+		output D;
+	
+	endmodule
+	
+	
+	module Addr();
+	
+	
+	endmodule
+	
 	module pc_counter(clock, entrada_pc, pc_incr, pc_in, saida_pc);
 		input clock;
 		input [15:0] entrada_pc;
@@ -388,16 +341,15 @@ endmodule
 		input pc_in;
 		output reg [15:0] saida_pc;
 		initial begin
-			saida_pc = 16'b0000000000000000;
+			saida_pc = 16'b0;
 		end
 				
 		always @(posedge clock)
 			
 			if(pc_in) begin
-				$display("pc_in");
 				saida_pc = entrada_pc;
 			end else if(pc_incr)begin
-				saida_pc = saida_pc + 16'b00000000000000001;
+				saida_pc = saida_pc + 1'b1;
 			end
 				
 	endmodule
@@ -429,16 +381,6 @@ endmodule
 		output reg [15:0] Res;
 
 		always@(*)
-		
-		/*
-		if(!AddSub & !ALU_and) begin 
-			Res <= BusW + RA_out;
-			end else if(AddSub & !ALU_and)begin
-				Res <= RA_out - BusW;
-			end else begin
-				Res <= RA_out & BusW;
-			end
-		*/
 		
 		if(ALU_and)begin
 			$display("ra_out: %16b & BusW: %16b", RA_out, BusW);

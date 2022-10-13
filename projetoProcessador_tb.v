@@ -15,7 +15,7 @@ module projetoProcessador_tb();
 	end
 	initial begin
 	
-		//teste instrução mv 0001000000000100
+		//teste instrução mv 000 1 000 000000100
 		$display("Testa mv");
 		for(i=0;i<10;i= i+1)begin
 			#50;
@@ -26,7 +26,7 @@ module projetoProcessador_tb();
 			
 		end
 		
-		//testa instrução load 1000001000000000
+		//testa instrução load 100 0 001 000000000
 		$display("Testa load");
 		assign run = ~run;
 		#50;
@@ -40,6 +40,7 @@ module projetoProcessador_tb();
 			assign clock =~clock;
 		end
 		
+		/*
 		$display("testa bcond"); //beq 111 0 000 000000011
 		assign run = ~run;
 		#50;
@@ -52,8 +53,9 @@ module projetoProcessador_tb();
 			if(i==1)assign run = ~run;
 			assign clock =~clock;
 		end
+		*/
 		
-		//testa instrução add 0101001000001001
+		//testa instrução add 010 1 001 000001001
 		$display("Testa Add");
 		assign run = ~run;
 		#50;
@@ -67,7 +69,7 @@ module projetoProcessador_tb();
 			assign clock =~clock;
 		end
 		
-		//testa instrução store 1010000000000001
+		//testa instrução store 101 0 000 000000001
 		$display("Testa store");
 		assign run = ~run;
 		#50;
@@ -109,7 +111,7 @@ module projetoProcessador_tb();
 		end
 
 
-		$display("testa and"); //and 1101010000000001
+		$display("testa and"); //and 110 1 010 000000001
 		assign run = ~run;
 		#50;
 		

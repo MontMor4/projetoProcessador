@@ -4,34 +4,34 @@ K3
 cModel Technology
 Z0 dC:\Users\Vitão\Desktop\Codes\LAOC2\projetoProcessador\simulation\modelsim
 vAlu
-IO3UW:ZG:n]386:dk@7K>j3
+I0WA1<3DdV<bj6M8O[cDUE3
 V0h<i=zXfad=@4^iz[FGdH1
 Z1 dC:\Users\Vitão\Desktop\Codes\LAOC2\projetoProcessador\simulation\modelsim
-Z2 w1665674338
+Z2 w1665699724
 Z3 8C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador.v
 Z4 FC:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador.v
-L0 423
+L0 418
 Z5 OV;L;10.1d;51
 r1
 31
-Z6 !s108 1665674373.892000
+Z6 !s108 1665700045.762000
 Z7 !s107 C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador.v|
 Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador|C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador.v|
 Z9 o-vlog01compat -work work -O0
 Z10 !s92 -vlog01compat -work work +incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador -O0
 n@alu
 !i10b 1
-!s100 2K>oPHWV[>5G0FM;Z<EAZ3
+!s100 KNz^Ua?kR^`4?81Na9@;d3
 !s85 0
 !s101 -O0
-vdec3to8
-Ie@gMk0kja8`C4oBMHK_AN2
-VWGLzn^X@`CM]?8jJRF_IR3
+vbarrel
+IW]hb7NO5U7P53m<;CY7eL3
+V=]cL8o84G2<l9Z4mgbNb[1
 R1
 R2
 R3
 R4
-L0 361
+L0 449
 R5
 r1
 31
@@ -41,7 +41,27 @@ R8
 R9
 R10
 !i10b 1
-!s100 ThZ2H3h<cZ2lEO=^m0Acb2
+!s100 [0Q]VAbICeE>PV]7OCF8N1
+!s85 0
+!s101 -O0
+vdec3to8
+I0gXjeF>Qm9=_mTRfA]VPd2
+VWGLzn^X@`CM]?8jJRF_IR3
+R1
+R2
+R3
+R4
+L0 356
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!i10b 1
+!s100 SZ7OF7_oLOfmi=`]d[@9c2
 !s85 0
 !s101 -O0
 vinstr_memory
@@ -60,7 +80,7 @@ R10
 !i10b 1
 !s100 >gaPhjSWLOc7DPaHPbYDR1
 !s85 0
-!s108 1665674374.112000
+!s108 1665700045.995000
 !s107 C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/instr_memory.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador|C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/instr_memory.v|
 !s101 -O0
@@ -80,18 +100,18 @@ R10
 !i10b 1
 !s100 <CON9?5kb7WXRjnjCz>dJ0
 !s85 0
-!s108 1665674374.046000
+!s108 1665700045.925000
 !s107 C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/memory.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador|C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/memory.v|
 !s101 -O0
 vpc_counter
-I@Zl:e;k[IhIK3VeL;5M5V1
+IKWBk64BhVKKz0oIYoc[OC3
 V=6Mif9DTMjDg8G>YK?ikA2
 R1
 R2
 R3
 R4
-L0 383
+L0 378
 R5
 r1
 31
@@ -101,11 +121,11 @@ R8
 R9
 R10
 !i10b 1
-!s100 a@Bkg2ECzo1aAocZS78ae1
+!s100 cXjgnAaXM;0j18zW<k4Eg0
 !s85 0
 !s101 -O0
 vprojetoProcessador
-I_f8a1CP_09TEo??kjbGTg0
+I6i>lY8lE[KzA:CTFNhgMo0
 VDACPI8gA@3MlI[i>98R8G0
 R1
 R2
@@ -122,16 +142,16 @@ R9
 R10
 nprojeto@processador
 !i10b 1
-!s100 @64fXEW0849VH0T_A9=lY1
+!s100 1Jz5CZ=T=?dMb<LWM9oEH0
 !s85 0
 !s101 -O0
 vprojetoProcessador_tb
 !i10b 1
-!s100 OkgHZ`FK52>2e8GSG0LT62
-Ib:=bkARM]g8>o2gDg@:@52
+!s100 kzEmQH9::mDIkCPGfkk;R3
+IYk0]a;h4Fm5:F3>N[D1=m3
 VjNWXhCVY:dfOo[:MJEo=M0
 R1
-w1665673883
+w1665700001
 8C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador_tb.v
 FC:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador_tb.v
 L0 1
@@ -139,7 +159,7 @@ R5
 r1
 !s85 0
 31
-!s108 1665674374.179000
+!s108 1665700046.063000
 !s107 C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador_tb.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador|C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador_tb.v|
 !s101 -O0
@@ -147,13 +167,13 @@ R9
 R10
 nprojeto@processador_tb
 vregInstr
-ICDXif8L;:6<<cLoL??X]o3
+I:iORBPBAT7Kh:HF[3S>nd2
 VKED;W8KG42o12eIP^d4=>3
 R1
 R2
 R3
 R4
-L0 403
+L0 398
 R5
 r1
 31
@@ -164,17 +184,17 @@ R9
 R10
 nreg@instr
 !i10b 1
-!s100 LP]i8d]gKPl6fAQBW:hbD1
+!s100 LQOTb314DCYUJedc`j9Wd1
 !s85 0
 !s101 -O0
 vregn
-IfBEU[l`bhQ0EcT8iaZ5D11
+IVAUOIR>5gcG_YZzomizkP3
 V9zaDo2omaB;@NS2Ai0:Sl2
 R1
 R2
 R3
 R4
-L0 412
+L0 407
 R5
 r1
 31
@@ -184,6 +204,6 @@ R8
 R9
 R10
 !i10b 1
-!s100 D@@n:6;QiMX2ITE`;C=nd0
+!s100 ZZlA=9@lcUdaS3O729ano2
 !s85 0
 !s101 -O0

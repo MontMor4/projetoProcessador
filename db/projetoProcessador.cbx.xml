@@ -1,7 +1,5 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="projetoProcessador">
-		<CBX_INST_ENTRY INSTANCE_NAME="|projetoProcessador|instr_memory:memInstr|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_vk71.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|projetoProcessador|memory:memPrincipal|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_kpe1.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
