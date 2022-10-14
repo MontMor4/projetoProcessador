@@ -1,1 +1,2 @@
 Info (10281): Verilog HDL Declaration information at projetoProcessador.v(7): object "IMM" differs only in case from object "Imm" in the same scope
+Info (10281): Verilog HDL Declaration information at projetoProcessador.v(25): object "wren" differs only in case from object "Wren" in the same scope

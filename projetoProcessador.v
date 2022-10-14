@@ -14,13 +14,15 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	wire [8:0]Imm;
 	wire [15:0]G;
 	reg [15:0]IR_wire;
-	reg G_in, AddSub, ALU_and, wren, addr_in, pc_incr, pc_in, DOUT_in, Wd;
+	reg G_in, AddSub, ALU_and, addr_in, pc_incr, pc_in, DOUT_in, Wd;
 	wire[7:0] R_in;
 	wire [15:0] RA_out,RG_out;
 	wire [15:0] saidaALU, saidaROM, saidaIR, DadoMem;
-	reg [15:0] data;
+	wire [15:0] data;
 	reg [7:0] endMem;
 	wire [4:0]enderecoInstrucao;
+	wire [15:0]endereco;
+	wire wren;
 	
 	assign III = saidaIR[15:13]; //opcode da instrução
 	assign IMM = saidaIR[12]; //bit que indica se é imediato ou não
@@ -30,17 +32,33 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	
 	dec3to8 decX (rX_in, rX, R_in); //habilita os registradores de propósito geral a receberem dados
 	
-	instr_memory memInstr(r7[4:0], Clock, saidaROM); //modulo da memória de intruções
+	instr_memory memInstr(endereco[4:0], Clock, saidaROM); //modulo da memória de intruções
 	
-	memory memPrincipal(endMem, Clock, BusWires, wren, DadoMem); //módulo da memória principal
+	memoriaPrincipal memPrincipal(endereco[7:0], Clock, data, wren, DadoMem); //módulo da memória principal
 	
 	regn regIR(saidaROM, Resetn, IR_in, Clock, saidaIR);
+	
+	regn regAddr(BusWires,Reset,addr_in,Clock,endereco);
+	
+	pc_counter reg_7(Clock, BusWires, pc_incr, pc_in, r7);
+	
+	regn reg_0(BusWires, Resetn, R_in[7], Clock ,r0);
 	
 	parameter T0 = 3'b000, T1 = 3'b001, T2 = 3'b010, T3 = 3'b011, T4 = 3'b100, T5 = 3'b101;
 	
 	initial begin
 		Tstep_Q = T0;
-		IR_in = 1'b0;
+		Tstep_D = T0;
+		rX_in = 1'b0; Done = 1'b0;
+		AddSub = 1'b0;
+		ALU_and = 1'b0;
+		G_in = 1'b0;
+		IR_in =1'b0;
+		addr_in =1'b0;
+		pc_in = 1'b0;
+		pc_incr = 1'b0;
+			
+		
 	end
 	
 	// Control FSM state table
@@ -121,6 +139,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 							
 							rX_in = 1'b1; // enable rX
 							Done = 1'b1;
+							$display("r0=%16b",r0);
 						end
 						
 						mvt: // mvt rX, #D
@@ -240,7 +259,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 		end
 		
 			
-			regn reg_0(BusWires, Resetn, R_in[7], Clock ,r0);
+			
 		
 			regn reg_1(BusWires, Resetn, R_in[6], Clock, r1);
 			
@@ -254,17 +273,17 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 			
 			regn reg_6(BusWires, Resetn, R_in[1], Clock, r6);
 			
-			pc_counter reg_7(Clock, BusWires, pc_incr, pc_in, r7);
 			
-			regn D(BusWires, Resetn, DOUT_in, Clock, RD_out);
 			
-			regW W(Clock, Wd, W);
+			regn WDout(BusWires,Reset,Clock,DOUT_in,data);
 			
-			regInstr registradorInstrucao(r7[4:0], Clock, addr_in, enderecoInstrucao);
+			regW Wren(Clock,Wd,wren);
 			
 			regn A(BusWires, Resetn, A_in, Clock, RA_out);
 			 
 			regn regG(saidaALU, Resetn, G_in, Clock, G);
+			
+			
 			
 			Alu alu(BusWires, RA_out, AddSub, ALU_and, saidaALU);
 	
@@ -280,7 +299,10 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 				_R4: BusWires = r4;
 				_R5: BusWires = r5;
 				_R6: BusWires = r6;
-				_PC: BusWires = r7;
+				_PC: begin 
+					BusWires = r7;
+					$display("BusWires=%16b",BusWires);
+				end
 				_G: BusWires = G;
 				_IR8_IR8_0: BusWires = {{7{IR[8]}}, IR[8:0]};
 				_IR7_0_0: BusWires = {IR[7:0], 8'b00000000};
@@ -314,25 +336,14 @@ endmodule
 	module regW(Clock, Wd, W);
 		input Clock;
 		input Wd;
-		output W;
+		output reg W;
 		
-		always @(posedge clock)
+		always @(posedge Clock)
 			W = Wd;
 		
 	endmodule
 	
-	module DOUT();
-		input Clock;
-		input DOUT_in;
-		output D;
-	
-	endmodule
-	
-	
-	module Addr();
-	
-	
-	endmodule
+
 	
 	module pc_counter(clock, entrada_pc, pc_incr, pc_in, saida_pc);
 		input clock;
@@ -341,15 +352,14 @@ endmodule
 		input pc_in;
 		output reg [15:0] saida_pc;
 		initial begin
-			saida_pc = 16'b0;
+			saida_pc <= 16'b0;
 		end
 				
 		always @(posedge clock)
-			
 			if(pc_in) begin
-				saida_pc = entrada_pc;
+				saida_pc <= entrada_pc;
 			end else if(pc_incr)begin
-				saida_pc = saida_pc + 1'b1;
+				saida_pc <= saida_pc + 1'b1;
 			end
 				
 	endmodule
