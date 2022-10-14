@@ -1,5 +1,5 @@
 Flow report for projetoProcessador
-Fri Oct 14 01:39:42 2022
+Fri Oct 14 18:26:47 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Fri Oct 14 01:39:42 2022           ;
+; Flow Status                        ; Successful - Fri Oct 14 18:26:47 2022           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; projetoProcessador                              ;
 ; Top-level Entity Name              ; projetoProcessador                              ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 317 / 33,216 ( < 1 % )                          ;
-;     Total combinational functions  ; 263 / 33,216 ( < 1 % )                          ;
-;     Dedicated logic registers      ; 190 / 33,216 ( < 1 % )                          ;
-; Total registers                    ; 190                                             ;
-; Total pins                         ; 9 / 475 ( 2 % )                                 ;
+; Total logic elements               ; 633 / 33,216 ( 2 % )                            ;
+;     Total combinational functions  ; 553 / 33,216 ( 2 % )                            ;
+;     Dedicated logic registers      ; 207 / 33,216 ( < 1 % )                          ;
+; Total registers                    ; 207                                             ;
+; Total pins                         ; 148 / 475 ( 31 % )                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 4,608 / 483,840 ( < 1 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                  ;
@@ -64,48 +64,54 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/14/2022 01:39:26 ;
+; Start date & time ; 10/14/2022 18:26:21 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; projetoProcessador  ;
 +-------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                            ;
-+--------------------------------------+--------------------------------+---------------+-------------+-----------------------+
-; Assignment Name                      ; Value                          ; Default Value ; Entity Name ; Section Id            ;
-+--------------------------------------+--------------------------------+---------------+-------------+-----------------------+
-; COMPILER_SIGNATURE_ID                ; 13870908251063.166572236618672 ; --            ; --          ; --                    ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                             ; --            ; --          ; projetoProcessador_tb ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; projetoProcessador_tb          ; --            ; --          ; eda_simulation        ;
-; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                    ; --            ; --          ; eda_simulation        ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)      ; <None>        ; --          ; --                    ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                ; --            ; --          ; eda_simulation        ;
-; EDA_TEST_BENCH_FILE                  ; projetoProcessador_tb.v        ; --            ; --          ; projetoProcessador_tb ;
-; EDA_TEST_BENCH_MODULE_NAME           ; projetoProcessador_tb          ; --            ; --          ; projetoProcessador_tb ;
-; EDA_TEST_BENCH_NAME                  ; projetoProcessador_tb          ; --            ; --          ; eda_simulation        ;
-; EDA_TIME_SCALE                       ; 1 ps                           ; --            ; --          ; eda_simulation        ;
-; IP_TOOL_NAME                         ; RAM: 1-PORT                    ; --            ; --          ; --                    ;
-; IP_TOOL_NAME                         ; RAM: 1-PORT                    ; --            ; --          ; --                    ;
-; IP_TOOL_VERSION                      ; 13.0                           ; --            ; --          ; --                    ;
-; IP_TOOL_VERSION                      ; 13.0                           ; --            ; --          ; --                    ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                             ; --            ; --          ; --                    ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                              ; --            ; --          ; --                    ;
-; MISC_FILE                            ; memory.bsf                     ; --            ; --          ; --                    ;
-; MISC_FILE                            ; memory_inst.v                  ; --            ; --          ; --                    ;
-; MISC_FILE                            ; memory_bb.v                    ; --            ; --          ; --                    ;
-; MISC_FILE                            ; memory.inc                     ; --            ; --          ; --                    ;
-; MISC_FILE                            ; memory.cmp                     ; --            ; --          ; --                    ;
-; MISC_FILE                            ; memoriaPrincipal.bsf           ; --            ; --          ; --                    ;
-; MISC_FILE                            ; memoriaPrincipal_inst.v        ; --            ; --          ; --                    ;
-; MISC_FILE                            ; memoriaPrincipal_bb.v          ; --            ; --          ; --                    ;
-; MISC_FILE                            ; memoriaPrincipal.inc           ; --            ; --          ; --                    ;
-; MISC_FILE                            ; memoriaPrincipal.cmp           ; --            ; --          ; --                    ;
-; PARTITION_COLOR                      ; 16764057                       ; --            ; --          ; Top                   ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; PLACEMENT_AND_ROUTING          ; --            ; --          ; Top                   ;
-; PARTITION_NETLIST_TYPE               ; SOURCE                         ; --            ; --          ; Top                   ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                   ; --            ; --          ; --                    ;
-+--------------------------------------+--------------------------------+---------------+-------------+-----------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                   ;
++--------------------------------------+---------------------------------------+---------------+-------------+-----------------------+
+; Assignment Name                      ; Value                                 ; Default Value ; Entity Name ; Section Id            ;
++--------------------------------------+---------------------------------------+---------------+-------------+-----------------------+
+; COMPILER_SIGNATURE_ID                ; 102021908197062.166578278101572       ; --            ; --          ; --                    ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; projetoProcessador_tb ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; testebenchTese01      ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; projetoProcessador_tb                 ; --            ; --          ; eda_simulation        ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                           ; --            ; --          ; eda_simulation        ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)             ; <None>        ; --          ; --                    ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                       ; --            ; --          ; eda_simulation        ;
+; EDA_TEST_BENCH_FILE                  ; projetoProcessador_tb.v               ; --            ; --          ; projetoProcessador_tb ;
+; EDA_TEST_BENCH_FILE                  ; testeBenchTese01.v                    ; --            ; --          ; testebenchTese01      ;
+; EDA_TEST_BENCH_MODULE_NAME           ; projetoProcessador_tb                 ; --            ; --          ; projetoProcessador_tb ;
+; EDA_TEST_BENCH_MODULE_NAME           ; testebenchTese01                      ; --            ; --          ; testebenchTese01      ;
+; EDA_TEST_BENCH_NAME                  ; projetoProcessador_tb                 ; --            ; --          ; eda_simulation        ;
+; EDA_TEST_BENCH_NAME                  ; testebenchTese01                      ; --            ; --          ; eda_simulation        ;
+; EDA_TIME_SCALE                       ; 1 ps                                  ; --            ; --          ; eda_simulation        ;
+; IP_TOOL_NAME                         ; RAM: 1-PORT                           ; --            ; --          ; --                    ;
+; IP_TOOL_NAME                         ; RAM: 1-PORT                           ; --            ; --          ; --                    ;
+; IP_TOOL_VERSION                      ; 13.0                                  ; --            ; --          ; --                    ;
+; IP_TOOL_VERSION                      ; 13.0                                  ; --            ; --          ; --                    ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                    ; --            ; --          ; --                    ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                     ; --            ; --          ; --                    ;
+; MISC_FILE                            ; memory.bsf                            ; --            ; --          ; --                    ;
+; MISC_FILE                            ; memory_inst.v                         ; --            ; --          ; --                    ;
+; MISC_FILE                            ; memory_bb.v                           ; --            ; --          ; --                    ;
+; MISC_FILE                            ; memory.inc                            ; --            ; --          ; --                    ;
+; MISC_FILE                            ; memory.cmp                            ; --            ; --          ; --                    ;
+; MISC_FILE                            ; memoriaPrincipal.bsf                  ; --            ; --          ; --                    ;
+; MISC_FILE                            ; memoriaPrincipal_inst.v               ; --            ; --          ; --                    ;
+; MISC_FILE                            ; memoriaPrincipal_bb.v                 ; --            ; --          ; --                    ;
+; MISC_FILE                            ; memoriaPrincipal.inc                  ; --            ; --          ; --                    ;
+; MISC_FILE                            ; memoriaPrincipal.cmp                  ; --            ; --          ; --                    ;
+; PARTITION_COLOR                      ; 16764057                              ; --            ; --          ; Top                   ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; PLACEMENT_AND_ROUTING                 ; --            ; --          ; Top                   ;
+; PARTITION_NETLIST_TYPE               ; SOURCE                                ; --            ; --          ; Top                   ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                   ; --            ; --          ; --                    ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --                    ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                          ; --            ; --          ; --                    ;
++--------------------------------------+---------------------------------------+---------------+-------------+-----------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -113,12 +119,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4608 MB             ; 00:00:02                           ;
-; Fitter                    ; 00:00:07     ; 1.0                     ; 4882 MB             ; 00:00:07                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4560 MB             ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4546 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4524 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:13     ; --                      ; --                  ; 00:00:13                           ;
+; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 4610 MB             ; 00:00:05                           ;
+; Fitter                    ; 00:00:12     ; 1.0                     ; 4888 MB             ; 00:00:12                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 4562 MB             ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4557 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4525 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:24     ; --                      ; --                  ; 00:00:21                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -127,11 +133,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; Computador       ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; Computador       ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; Computador       ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; Computador       ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; Computador       ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; Leroy-PC         ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; Leroy-PC         ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; Leroy-PC         ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; Leroy-PC         ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; Leroy-PC         ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

@@ -10,7 +10,7 @@
 # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador {C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador.v}
+# vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/projetoProcessador.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module projetoProcessador
 # -- Compiling module dec3to8
@@ -25,22 +25,20 @@
 # Top level modules:
 # 	projetoProcessador
 # 	regInstr
-# 	F
-# 	barrel
-# vlog -vlog01compat -work work +incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador {C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/memoriaPrincipal.v}
+# vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/memoriaPrincipal.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module memoriaPrincipal
 # 
 # Top level modules:
 # 	memoriaPrincipal
-# vlog -vlog01compat -work work +incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador {C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/instr_memory.v}
+# vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/instr_memory.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module instr_memory
 # 
 # Top level modules:
 # 	instr_memory
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador {C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador_tb.v}
+# vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/projetoProcessador_tb.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module projetoProcessador_tb
 # 
@@ -61,7 +59,9 @@
 # Loading work.pc_counter
 # Loading work.regW
 # Loading work.Alu
-# ** Warning: (vsim-3015) C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador.v(35): [PCDPC] - Port size (5 or 5) does not match connection size (32) for port 'address'. The port definition is at: C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/instr_memory.v(40).
+# Loading work.F
+# Loading work.barrel
+# ** Warning: (vsim-3015) C:/pastaX/projetoProcessador/projetoProcessador.v(49): [PCDPC] - Port size (5 or 5) does not match connection size (32) for port 'address'. The port definition is at: C:/pastaX/projetoProcessador/instr_memory.v(40).
 # 
 #         Region: /projetoProcessador_tb/proc/memInstr
 # 
@@ -71,260 +71,615 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# r0=xxxxxxxxxxxxxxxx
-# BusWires=0000000000000000
-# BusWires=0000000000000001
-# BusWires=0000000000000001
+# -------------------------------------- MV R0, #2 --------------------------------------
+# data_in=0000000000000000 shift=xxx 
+# data_in=0000000000000000 shift=000 
+# T0 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 0000 | pc_incr: 1
+# addr:     0 | addr_in: 1 | DATA: 0000 | dout: xxxx | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
+# data_in=0000000000000000 shift=001 
+# T1 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0001 | pc_incr: 0
+# addr:     0 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# Testa mv
-# Time=650 clock=1 reset=1 run=1 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=10 instrucao=0000000000000000 BusWires =0000000000000001 endereco=0000000000000000 addrIn=0 regRX=000
-# Time=700 clock=0 reset=1 run=1 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=10 instrucao=0000000000000000 BusWires =0000000000000001 endereco=0000000000000000 addrIn=0 regRX=000
-# r0=xxxxxxxxxxxxxxxx
-# Time=750 clock=1 reset=1 run=1 done=1 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=11 instrucao=0000000000000000 BusWires =xxxxxxxxxxxxxxxx endereco=0000000000000000 addrIn=0 regRX=000
-# Time=800 clock=0 reset=1 run=1 done=1 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=11 instrucao=0000000000000000 BusWires =xxxxxxxxxxxxxxxx endereco=0000000000000000 addrIn=0 regRX=000
-# BusWires=0000000000000001
-# Time=850 clock=1 reset=1 run=1 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=0 instrucao=0000000000000000 BusWires =0000000000000001 endereco=0000000000000000 addrIn=1 regRX=000
-# Time=900 clock=0 reset=1 run=1 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=0 instrucao=0000000000000000 BusWires =0000000000000001 endereco=0000000000000000 addrIn=1 regRX=000
-# BusWires=0000000000000010
-# Time=950 clock=1 reset=1 run=1 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=1 instrucao=0000000000000000 BusWires =0000000000000010 endereco=0000000000000001 addrIn=0 regRX=000
-# Time=1000 clock=0 reset=1 run=1 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=1 instrucao=0000000000000000 BusWires =0000000000000010 endereco=0000000000000001 addrIn=0 regRX=000
-# BusWires=0000000000000010
-# Time=1050 clock=1 reset=1 run=1 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=10 instrucao=0000000000000000 BusWires =0000000000000010 endereco=0000000000000001 addrIn=0 regRX=000
-# Time=1100 clock=0 reset=1 run=1 done=0 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=10 instrucao=0000000000000000 BusWires =0000000000000010 endereco=0000000000000001 addrIn=0 regRX=000
-# BusWires=0000000000000010
-# r0=xxxxxxxxxxxxxxxx
-# Time=1150 clock=1 reset=1 run=1 done=1 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=11 instrucao=0001000000000100 BusWires =0000000000000100 endereco=0000000000000001 addrIn=0 regRX=000
-# Time=1200 clock=0 reset=1 run=1 done=1 Din=0 regDestino=xxxxxxxxxxxxxxxx tstepQ=11 instrucao=0001000000000100 BusWires =0000000000000100 endereco=0000000000000001 addrIn=0 regRX=000
-# BusWires=0000000000000010
-# Time=1250 clock=1 reset=1 run=1 done=0 Din=0 regDestino=0000000000000100 tstepQ=0 instrucao=0001000000000100 BusWires =0000000000000010 endereco=0000000000000001 addrIn=1 regRX=000
-# Time=1300 clock=0 reset=1 run=1 done=0 Din=0 regDestino=0000000000000100 tstepQ=0 instrucao=0001000000000100 BusWires =0000000000000010 endereco=0000000000000001 addrIn=1 regRX=000
-# BusWires=0000000000000011
-# Time=1350 clock=1 reset=1 run=1 done=0 Din=0 regDestino=0000000000000100 tstepQ=1 instrucao=0001000000000100 BusWires =0000000000000011 endereco=0000000000000010 addrIn=0 regRX=000
-# Time=1400 clock=0 reset=1 run=1 done=0 Din=0 regDestino=0000000000000100 tstepQ=1 instrucao=0001000000000100 BusWires =0000000000000011 endereco=0000000000000010 addrIn=0 regRX=000
-# BusWires=0000000000000011
-# Time=1450 clock=1 reset=1 run=1 done=0 Din=0 regDestino=0000000000000100 tstepQ=10 instrucao=0001000000000100 BusWires =0000000000000011 endereco=0000000000000010 addrIn=0 regRX=000
-# Time=1500 clock=0 reset=1 run=1 done=0 Din=0 regDestino=0000000000000100 tstepQ=10 instrucao=0001000000000100 BusWires =0000000000000011 endereco=0000000000000010 addrIn=0 regRX=000
-# BusWires=0000000000000011
-# Time=1550 clock=1 reset=1 run=1 done=0 Din=0 regDestino=0000000000000100 tstepQ=11 instrucao=1000001000000000 BusWires =0000000000000100 endereco=0000000000000010 addrIn=1 regRX=001
-# Time=1600 clock=0 reset=1 run=1 done=0 Din=0 regDestino=0000000000000100 tstepQ=11 instrucao=1000001000000000 BusWires =0000000000000100 endereco=0000000000000010 addrIn=1 regRX=001
-# Time=1650 clock=1 reset=1 run=1 done=0 Din=0 regDestino=0000000000000100 tstepQ=100 instrucao=1000001000000000 BusWires =0000000000000100 endereco=0000000000000100 addrIn=0 regRX=001
-# Time=1700 clock=0 reset=1 run=1 done=0 Din=0 regDestino=0000000000000100 tstepQ=100 instrucao=1000001000000000 BusWires =0000000000000100 endereco=0000000000000100 addrIn=0 regRX=001
+# T2 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0001 | pc_incr: 0
+# addr:     0 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
+# data_in=0000000000000000 shift=010 
+# T3 | Done: 1 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0001 | pc_incr: 0
+# addr:     0 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0001000000000010 | W: 0
 # 
-# Testa load
-# Time=1800 clock=1 reset=1 run=1 done=1 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=101 instrucao=1000001000000000 BusWires =0000000000000101 endereco=0000000000000100 saidaROM=0101001000001001 rx=1
-# Time=1850 clock=0 reset=1 run=1 done=1 Din=1 regDestino=xxxxxxxxxxxxxxxx tstepQ=101 instrucao=1000001000000000 BusWires =0000000000000101 endereco=0000000000000100 saidaROM=0101001000001001 rx=1
-# BusWires=0000000000000011
-# Time=1900 clock=1 reset=1 run=1 done=0 Din=1 regDestino=0000000000000101 tstepQ=0 instrucao=1000001000000000 BusWires =0000000000000011 endereco=0000000000000100 saidaROM=0101001000001001 rx=1
-# Time=1950 clock=0 reset=1 run=1 done=0 Din=1 regDestino=0000000000000101 tstepQ=0 instrucao=1000001000000000 BusWires =0000000000000011 endereco=0000000000000100 saidaROM=0101001000001001 rx=1
-# BusWires=0000000000000100
-# Time=2000 clock=1 reset=1 run=1 done=0 Din=1 regDestino=0000000000000101 tstepQ=1 instrucao=1000001000000000 BusWires =0000000000000100 endereco=0000000000000011 saidaROM=0101001000001001 rx=1
-# Time=2050 clock=0 reset=1 run=1 done=0 Din=1 regDestino=0000000000000101 tstepQ=1 instrucao=1000001000000000 BusWires =0000000000000100 endereco=0000000000000011 saidaROM=0101001000001001 rx=1
-# BusWires=0000000000000100
-# Time=2100 clock=1 reset=1 run=1 done=0 Din=1 regDestino=0000000000000101 tstepQ=10 instrucao=1000001000000000 BusWires =0000000000000100 endereco=0000000000000011 saidaROM=0101001000001001 rx=1
-# Time=2150 clock=0 reset=1 run=1 done=0 Din=1 regDestino=0000000000000101 tstepQ=10 instrucao=1000001000000000 BusWires =0000000000000100 endereco=0000000000000011 saidaROM=0101001000001001 rx=1
-# BusWires=0000000000000100
-# Time=2200 clock=1 reset=1 run=1 done=0 Din=1 regDestino=0000000000000101 tstepQ=11 instrucao=0101001000001001 BusWires =0000000000000101 endereco=0000000000000011 saidaROM=1010000000000001 rx=1
-# Time=2250 clock=0 reset=1 run=1 done=0 Din=1 regDestino=0000000000000101 tstepQ=11 instrucao=0101001000001001 BusWires =0000000000000101 endereco=0000000000000011 saidaROM=1010000000000001 rx=1
-# Time=2300 clock=1 reset=1 run=1 done=0 Din=1 regDestino=0000000000000101 tstepQ=100 instrucao=0101001000001001 BusWires =0000000000001001 endereco=0000000000000011 saidaROM=1010000000000001 rx=1
-# Time=2350 clock=0 reset=1 run=1 done=0 Din=1 regDestino=0000000000000101 tstepQ=100 instrucao=0101001000001001 BusWires =0000000000001001 endereco=0000000000000011 saidaROM=1010000000000001 rx=1
+# data_in=0000000000000000 shift=001 
+# T0 | Done: 0 | r0: 0002 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0001 | pc_incr: 1
+# addr:     0 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0001000000000010 | W: 0
 # 
+# data_in=0000000000000000 shift=010 
+# T1 | Done: 0 | r0: 0002 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0002 | pc_incr: 0
+# addr:     1 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0001000000000010 | W: 0
 # 
-# Testa Add
-# Time=2450 clock=1 reset=1 run=1 done=1 Din=1 regDestino=0000000000000101 tstepQ=101 instrucao=0101001000001001 BusWires =0000000000001110 saidaA=0000000000001001 Select=1000 saidaALU=0000000000010111
-# Time=2500 clock=0 reset=1 run=1 done=1 Din=1 regDestino=0000000000000101 tstepQ=101 instrucao=0101001000001001 BusWires =0000000000001110 saidaA=0000000000001001 Select=1000 saidaALU=0000000000010111
-# BusWires=0000000000000100
-# Time=2550 clock=1 reset=1 run=1 done=0 Din=1 regDestino=0000000000001110 tstepQ=0 instrucao=0101001000001001 BusWires =0000000000000100 saidaA=0000000000001110 Select=0111 saidaALU=0000000000010010
-# Time=2600 clock=0 reset=1 run=1 done=0 Din=1 regDestino=0000000000001110 tstepQ=0 instrucao=0101001000001001 BusWires =0000000000000100 saidaA=0000000000001110 Select=0111 saidaALU=0000000000010010
-# BusWires=0000000000000101
-# Time=2650 clock=1 reset=1 run=1 done=0 Din=1 regDestino=0000000000001110 tstepQ=1 instrucao=0101001000001001 BusWires =0000000000000101 saidaA=0000000000000100 Select=0111 saidaALU=0000000000001001
-# Time=2700 clock=0 reset=1 run=1 done=0 Din=1 regDestino=0000000000001110 tstepQ=1 instrucao=0101001000001001 BusWires =0000000000000101 saidaA=0000000000000100 Select=0111 saidaALU=0000000000001001
-# BusWires=0000000000000101
-# Time=2750 clock=1 reset=1 run=1 done=0 Din=1 regDestino=0000000000001110 tstepQ=10 instrucao=0101001000001001 BusWires =0000000000000101 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001010
-# Time=2800 clock=0 reset=1 run=1 done=0 Din=1 regDestino=0000000000001110 tstepQ=10 instrucao=0101001000001001 BusWires =0000000000000101 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001010
-# BusWires=0000000000000101
-# Time=2850 clock=1 reset=1 run=1 done=0 Din=1 regDestino=0000000000001110 tstepQ=11 instrucao=1010000000000001 BusWires =0000000000001110 saidaA=0000000000000101 Select=0001 saidaALU=0000000000010011
-# Time=2900 clock=0 reset=1 run=1 done=0 Din=1 regDestino=0000000000001110 tstepQ=11 instrucao=1010000000000001 BusWires =0000000000001110 saidaA=0000000000000101 Select=0001 saidaALU=0000000000010011
-# Time=2950 clock=1 reset=1 run=1 done=1 Din=1 regDestino=0000000000001110 tstepQ=100 instrucao=1010000000000001 BusWires =0000000000000100 saidaA=0000000000001110 Select=0000 saidaALU=0000000000010010
-# Time=3000 clock=0 reset=1 run=1 done=1 Din=1 regDestino=0000000000001110 tstepQ=100 instrucao=1010000000000001 BusWires =0000000000000100 saidaA=0000000000001110 Select=0000 saidaALU=0000000000010010
-# BusWires=0000000000000101
-# BusWires=0000000000000101
-# Time=3050 clock=1 reset=1 run=1 done=0 Din=1 regDestino=0000000000001110 tstepQ=0 instrucao=1010000000000001 BusWires =0000000000000101 saidaA=0000000000000100 Select=0111 saidaALU=0000000000001001
-# Time=3100 clock=0 reset=1 run=1 done=0 Din=1 regDestino=0000000000001110 tstepQ=0 instrucao=1010000000000001 BusWires =0000000000000101 saidaA=0000000000000100 Select=0111 saidaALU=0000000000001001
-# BusWires=0000000000000110
-# BusWires=0000000000000110
-# Time=3150 clock=1 reset=1 run=1 done=0 Din=1 regDestino=0000000000001110 tstepQ=1 instrucao=1010000000000001 BusWires =0000000000000110 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001011
-# Time=3200 clock=0 reset=1 run=1 done=0 Din=1 regDestino=0000000000001110 tstepQ=1 instrucao=1010000000000001 BusWires =0000000000000110 saidaA=0000000000000101 Select=0111 saidaALU=0000000000001011
-# BusWires=0000000000000110
-# Time=3250 clock=1 reset=1 run=1 done=0 Din=1 regDestino=0000000000001110 tstepQ=10 instrucao=1010000000000001 BusWires =0000000000000110 saidaA=0000000000000110 Select=0111 saidaALU=0000000000001100
-# Time=3300 clock=0 reset=1 run=1 done=0 Din=1 regDestino=0000000000001110 tstepQ=10 instrucao=1010000000000001 BusWires =0000000000000110 saidaA=0000000000000110 Select=0111 saidaALU=0000000000001100
-# BusWires=0000000000000110
-# Time=3350 clock=1 reset=1 run=1 done=0 Din=1 regDestino=0000000000001110 tstepQ=11 instrucao=1000010000000001 BusWires =0000000000001110 saidaA=0000000000000110 Select=0001 saidaALU=0000000000010100
-# Time=3400 clock=0 reset=1 run=1 done=0 Din=1 regDestino=0000000000001110 tstepQ=11 instrucao=1000010000000001 BusWires =0000000000001110 saidaA=0000000000000110 Select=0001 saidaALU=0000000000010100
-# Time=3450 clock=1 reset=1 run=1 done=0 Din=1 regDestino=0000000000001110 tstepQ=100 instrucao=1000010000000001 BusWires =0000000000001110 saidaA=0000000000001110 Select=0001 saidaALU=0000000000011100
-# Time=3500 clock=0 reset=1 run=1 done=0 Din=1 regDestino=0000000000001110 tstepQ=100 instrucao=1000010000000001 BusWires =0000000000001110 saidaA=0000000000001110 Select=0001 saidaALU=0000000000011100
+# T2 | Done: 0 | r0: 0002 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0002 | pc_incr: 0
+# addr:     1 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0001000000000010 | W: 0
 # 
+# data_in=0000000000000000 shift=011 
+# T3 | Done: 1 | r0: 0002 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0002 | pc_incr: 0
+# addr:     1 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0001001000000011 | W: 0
 # 
-# Testa store
-# Time=3600 clock=1 reset=1 run=1 done=1 Din=11 regDestino=0000000000000100 tstepQ=101 instrucao=1000010000000001 BusWires =0000000000001110 saidaA=0000000000001110 Select=1011 saidaALU=0000000000011100
-# Time=3650 clock=0 reset=1 run=1 done=1 Din=11 regDestino=0000000000000100 tstepQ=101 instrucao=1000010000000001 BusWires =0000000000001110 saidaA=0000000000001110 Select=1011 saidaALU=0000000000011100
-# BusWires=0000000000000110
-# Time=3700 clock=1 reset=1 run=1 done=0 Din=11 regDestino=0000000000000100 tstepQ=0 instrucao=1000010000000001 BusWires =0000000000000110 saidaA=0000000000001110 Select=0111 saidaALU=0000000000010100
-# Time=3750 clock=0 reset=1 run=1 done=0 Din=11 regDestino=0000000000000100 tstepQ=0 instrucao=1000010000000001 BusWires =0000000000000110 saidaA=0000000000001110 Select=0111 saidaALU=0000000000010100
-# BusWires=0000000000000111
-# Time=3800 clock=1 reset=1 run=1 done=0 Din=11 regDestino=0000000000000100 tstepQ=1 instrucao=1000010000000001 BusWires =0000000000000111 saidaA=0000000000000110 Select=0111 saidaALU=0000000000001101
-# Time=3850 clock=0 reset=1 run=1 done=0 Din=11 regDestino=0000000000000100 tstepQ=1 instrucao=1000010000000001 BusWires =0000000000000111 saidaA=0000000000000110 Select=0111 saidaALU=0000000000001101
-# BusWires=0000000000000111
-# Time=3900 clock=1 reset=1 run=1 done=0 Din=11 regDestino=0000000000000100 tstepQ=10 instrucao=1000010000000001 BusWires =0000000000000111 saidaA=0000000000000111 Select=0111 saidaALU=0000000000001110
-# Time=3950 clock=0 reset=1 run=1 done=0 Din=11 regDestino=0000000000000100 tstepQ=10 instrucao=1000010000000001 BusWires =0000000000000111 saidaA=0000000000000111 Select=0111 saidaALU=0000000000001110
-# BusWires=0000000000000111
-# r0=0000000000000100
-# Time=4000 clock=1 reset=1 run=1 done=1 Din=11 regDestino=0000000000000100 tstepQ=11 instrucao=0001010000000010 BusWires =0000000000000010 saidaA=0000000000000111 Select=1001 saidaALU=0000000000001001
-# Time=4050 clock=0 reset=1 run=1 done=1 Din=11 regDestino=0000000000000100 tstepQ=11 instrucao=0001010000000010 BusWires =0000000000000010 saidaA=0000000000000111 Select=1001 saidaALU=0000000000001001
-# BusWires=0000000000000111
-# Time=4100 clock=1 reset=1 run=1 done=0 Din=11 regDestino=0000000000000100 tstepQ=0 instrucao=0001010000000010 BusWires =0000000000000111 saidaA=0000000000000010 Select=0111 saidaALU=0000000000001001
-# Time=4150 clock=0 reset=1 run=1 done=0 Din=11 regDestino=0000000000000100 tstepQ=0 instrucao=0001010000000010 BusWires =0000000000000111 saidaA=0000000000000010 Select=0111 saidaALU=0000000000001001
-# BusWires=0000000000001000
-# BusWires=0000000000001000
-# Time=4200 clock=1 reset=1 run=1 done=0 Din=11 regDestino=0000000000000100 tstepQ=1 instrucao=0001010000000010 BusWires =0000000000001000 saidaA=0000000000000111 Select=0111 saidaALU=0000000000001111
-# Time=4250 clock=0 reset=1 run=1 done=0 Din=11 regDestino=0000000000000100 tstepQ=1 instrucao=0001010000000010 BusWires =0000000000001000 saidaA=0000000000000111 Select=0111 saidaALU=0000000000001111
-# BusWires=0000000000001000
-# Time=4300 clock=1 reset=1 run=1 done=0 Din=11 regDestino=0000000000000100 tstepQ=10 instrucao=0001010000000010 BusWires =0000000000001000 saidaA=0000000000001000 Select=0111 saidaALU=0000000000010000
-# Time=4350 clock=0 reset=1 run=1 done=0 Din=11 regDestino=0000000000000100 tstepQ=10 instrucao=0001010000000010 BusWires =0000000000001000 saidaA=0000000000001000 Select=0111 saidaALU=0000000000010000
-# BusWires=0000000000001000
-# Time=4400 clock=1 reset=1 run=1 done=0 Din=11 regDestino=0000000000000100 tstepQ=11 instrucao=1101010000000001 BusWires =0000000000000010 saidaA=0000000000001000 Select=0010 saidaALU=0000000000001010
-# Time=4450 clock=0 reset=1 run=1 done=0 Din=11 regDestino=0000000000000100 tstepQ=11 instrucao=1101010000000001 BusWires =0000000000000010 saidaA=0000000000001000 Select=0010 saidaALU=0000000000001010
-# ra_out: 0000000000000010 & BusW: 0000000000000010
-# ra_out: 0000000000000010 & BusW: 0000000000000001
-# Time=4500 clock=1 reset=1 run=1 done=0 Din=11 regDestino=0000000000000100 tstepQ=100 instrucao=1101010000000001 BusWires =0000000000000001 saidaA=0000000000000010 Select=1001 saidaALU=0000000000000000
-# Time=4550 clock=0 reset=1 run=1 done=0 Din=11 regDestino=0000000000000100 tstepQ=100 instrucao=1101010000000001 BusWires =0000000000000001 saidaA=0000000000000010 Select=1001 saidaALU=0000000000000000
-# ra_out: 0000000000000001 & BusW: 0000000000000001
-# Time=4600 clock=1 reset=1 run=1 done=1 Din=11 regDestino=0000000000000100 tstepQ=101 instrucao=1101010000000001 BusWires =0000000000000000 saidaA=0000000000000001 Select=1000 saidaALU=0000000000000001
-# Time=4650 clock=0 reset=1 run=1 done=1 Din=11 regDestino=0000000000000100 tstepQ=101 instrucao=1101010000000001 BusWires =0000000000000000 saidaA=0000000000000001 Select=1000 saidaALU=0000000000000001
+# -------------------------------------- MV R1, #3 --------------------------------------
+# data_in=0000000000000000 shift=010 
+# T0 | Done: 0 | r0: 0002 | r1: 0003 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0002 | pc_incr: 1
+# addr:     1 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0001001000000011 | W: 0
 # 
+# data_in=0000000000000000 shift=011 
+# T1 | Done: 0 | r0: 0002 | r1: 0003 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0003 | pc_incr: 0
+# addr:     2 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0001001000000011 | W: 0
 # 
-# Testa load
-# BusWires=0000000000001000
-# BusWires=0000000000001000
-# Time=4750 clock=1 reset=1 run=1 done=0 Din=100 regDestino=0000000000000000 tstepQ=0 instrucao=1101010000000001 BusWires =0000000000001000 saidaA=0000000000000000 Select=0111 saidaALU=0000000000001000
-# Time=4800 clock=0 reset=1 run=1 done=0 Din=100 regDestino=0000000000000000 tstepQ=0 instrucao=1101010000000001 BusWires =0000000000001000 saidaA=0000000000000000 Select=0111 saidaALU=0000000000001000
-# BusWires=0000000000001001
-# BusWires=0000000000001001
-# Time=4850 clock=1 reset=1 run=1 done=0 Din=100 regDestino=0000000000000000 tstepQ=1 instrucao=1101010000000001 BusWires =0000000000001001 saidaA=0000000000001000 Select=0111 saidaALU=0000000000010001
-# Time=4900 clock=0 reset=1 run=1 done=0 Din=100 regDestino=0000000000000000 tstepQ=1 instrucao=1101010000000001 BusWires =0000000000001001 saidaA=0000000000001000 Select=0111 saidaALU=0000000000010001
-# BusWires=0000000000001001
-# Time=4950 clock=1 reset=1 run=1 done=0 Din=100 regDestino=0000000000000000 tstepQ=10 instrucao=1101010000000001 BusWires =0000000000001001 saidaA=0000000000001001 Select=0111 saidaALU=0000000000010010
-# Time=5000 clock=0 reset=1 run=1 done=0 Din=100 regDestino=0000000000000000 tstepQ=10 instrucao=1101010000000001 BusWires =0000000000001001 saidaA=0000000000001001 Select=0111 saidaALU=0000000000010010
-# BusWires=0000000000001001
-# r0=0000000000000100
-# Time=5050 clock=1 reset=1 run=1 done=1 Din=100 regDestino=0000000000000000 tstepQ=11 instrucao=0000000000000000 BusWires =0000000000000100 saidaA=0000000000001001 Select=0000 saidaALU=0000000000001101
-# Time=5100 clock=0 reset=1 run=1 done=1 Din=100 regDestino=0000000000000000 tstepQ=11 instrucao=0000000000000000 BusWires =0000000000000100 saidaA=0000000000001001 Select=0000 saidaALU=0000000000001101
-# BusWires=0000000000001001
-# Time=5150 clock=1 reset=1 run=1 done=0 Din=100 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000001001 saidaA=0000000000000100 Select=0111 saidaALU=0000000000001101
-# Time=5200 clock=0 reset=1 run=1 done=0 Din=100 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000001001 saidaA=0000000000000100 Select=0111 saidaALU=0000000000001101
-# BusWires=0000000000001010
-# BusWires=0000000000001010
-# Time=5250 clock=1 reset=1 run=1 done=0 Din=100 regDestino=0000000000000000 tstepQ=1 instrucao=0000000000000000 BusWires =0000000000001010 saidaA=0000000000001001 Select=0111 saidaALU=0000000000010011
-# Time=5300 clock=0 reset=1 run=1 done=0 Din=100 regDestino=0000000000000000 tstepQ=1 instrucao=0000000000000000 BusWires =0000000000001010 saidaA=0000000000001001 Select=0111 saidaALU=0000000000010011
-# BusWires=0000000000001010
-# Time=5350 clock=1 reset=1 run=1 done=0 Din=100 regDestino=0000000000000000 tstepQ=10 instrucao=0000000000000000 BusWires =0000000000001010 saidaA=0000000000001010 Select=0111 saidaALU=0000000000010100
-# Time=5400 clock=0 reset=1 run=1 done=0 Din=100 regDestino=0000000000000000 tstepQ=10 instrucao=0000000000000000 BusWires =0000000000001010 saidaA=0000000000001010 Select=0111 saidaALU=0000000000010100
-# r0=0000000000000100
-# Time=5450 clock=1 reset=1 run=1 done=1 Din=100 regDestino=0000000000000000 tstepQ=11 instrucao=0000000000000000 BusWires =0000000000000100 saidaA=0000000000001010 Select=0000 saidaALU=0000000000001110
-# Time=5500 clock=0 reset=1 run=1 done=1 Din=100 regDestino=0000000000000000 tstepQ=11 instrucao=0000000000000000 BusWires =0000000000000100 saidaA=0000000000001010 Select=0000 saidaALU=0000000000001110
-# BusWires=0000000000001010
-# Time=5550 clock=1 reset=1 run=1 done=0 Din=100 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000001010 saidaA=0000000000000100 Select=0111 saidaALU=0000000000001110
-# Time=5600 clock=0 reset=1 run=1 done=0 Din=100 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000001010 saidaA=0000000000000100 Select=0111 saidaALU=0000000000001110
-# BusWires=0000000000001011
-# BusWires=0000000000001011
-# Time=5650 clock=1 reset=1 run=1 done=0 Din=100 regDestino=0000000000000000 tstepQ=1 instrucao=0000000000000000 BusWires =0000000000001011 saidaA=0000000000001010 Select=0111 saidaALU=0000000000010101
-# Time=5700 clock=0 reset=1 run=1 done=0 Din=100 regDestino=0000000000000000 tstepQ=1 instrucao=0000000000000000 BusWires =0000000000001011 saidaA=0000000000001010 Select=0111 saidaALU=0000000000010101
-# BusWires=0000000000001011
-# Time=5750 clock=1 reset=1 run=1 done=0 Din=100 regDestino=0000000000000000 tstepQ=10 instrucao=0000000000000000 BusWires =0000000000001011 saidaA=0000000000001011 Select=0111 saidaALU=0000000000010110
-# Time=5800 clock=0 reset=1 run=1 done=0 Din=100 regDestino=0000000000000000 tstepQ=10 instrucao=0000000000000000 BusWires =0000000000001011 saidaA=0000000000001011 Select=0111 saidaALU=0000000000010110
+# T2 | Done: 0 | r0: 0002 | r1: 0003 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0003 | pc_incr: 0
+# addr:     2 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0001001000000011 | W: 0
 # 
+# T3 | Done: 0 | r0: 0002 | r1: 0003 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0003 | pc_incr: 0
+# addr:     2 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0100001000000000 | W: 0
 # 
-# Testa mv
-# r0=0000000000000100
-# Time=5900 clock=1 reset=1 run=1 done=1 Din=101 regDestino=0000000000000000 tstepQ=11 instrucao=0000000000000000 BusWires =0000000000000100 endereco=0000000000001010
-# Time=5950 clock=0 reset=1 run=1 done=1 Din=101 regDestino=0000000000000000 tstepQ=11 instrucao=0000000000000000 BusWires =0000000000000100 endereco=0000000000001010
-# BusWires=0000000000001011
-# Time=6000 clock=1 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000001011 endereco=0000000000001010
-# Time=6050 clock=0 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000001011 endereco=0000000000001010
-# BusWires=0000000000001100
-# BusWires=0000000000001100
-# Time=6100 clock=1 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000001100 endereco=0000000000001011
-# Time=6150 clock=0 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000001100 endereco=0000000000001011
-# BusWires=0000000000001101
-# BusWires=0000000000001101
-# Time=6200 clock=1 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000001101 endereco=0000000000001100
-# Time=6250 clock=0 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000001101 endereco=0000000000001100
-# BusWires=0000000000001110
-# BusWires=0000000000001110
-# Time=6300 clock=1 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000001110 endereco=0000000000001101
-# Time=6350 clock=0 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000001110 endereco=0000000000001101
-# BusWires=0000000000001111
-# BusWires=0000000000001111
-# Time=6400 clock=1 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000001111 endereco=0000000000001110
-# Time=6450 clock=0 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000001111 endereco=0000000000001110
-# BusWires=0000000000010000
-# BusWires=0000000000010000
-# Time=6500 clock=1 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000010000 endereco=0000000000001111
-# Time=6550 clock=0 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000010000 endereco=0000000000001111
-# BusWires=0000000000010001
-# BusWires=0000000000010001
-# Time=6600 clock=1 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000010001 endereco=0000000000010000
-# Time=6650 clock=0 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000010001 endereco=0000000000010000
-# BusWires=0000000000010010
-# BusWires=0000000000010010
-# Time=6700 clock=1 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000010010 endereco=0000000000010001
-# Time=6750 clock=0 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000010010 endereco=0000000000010001
-# BusWires=0000000000010011
-# BusWires=0000000000010011
-# Time=6800 clock=1 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000010011 endereco=0000000000010010
-# Time=6850 clock=0 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000010011 endereco=0000000000010010
-# BusWires=0000000000010100
-# BusWires=0000000000010100
-# Time=6900 clock=1 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000010100 endereco=0000000000010011
-# Time=6950 clock=0 reset=1 run=0 done=0 Din=101 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000010100 endereco=0000000000010011
+# -------------------------------------- ADD R1, R0 --------------------------------------
+# data_in=0000000000000011 shift=011 
+# data_in=0000000000000011 shift=010 
+# T4 | Done: 0 | r0: 0002 | r1: 0003 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0003 | pc_incr: 0
+# addr:     2 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0003 | g: 0000 | f: x | F_in: 1 | zero: 0 | IR: 0100001000000000 | W: 0
 # 
+# data_in=0000000000000010 shift=010 
+# data_in=0000000000000010 shift=101 
+# T5 | Done: 1 | r0: 0002 | r1: 0003 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 0003 | pc_incr: 0
+# addr:     2 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0002 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0100001000000000 | W: 0
 # 
-# testa and
-# BusWires=0000000000010101
-# BusWires=0000000000010101
-# Time=7050 clock=1 reset=1 run=0 done=0 Din=110 regDestino=0000000000000000 tstepQ=1 instrucao=0000000000000000 BusWires =0000000000010101 saidaA=0000000000010100 Select=0111 saidaALU=0000000000101001
-# Time=7100 clock=0 reset=1 run=0 done=0 Din=110 regDestino=0000000000000000 tstepQ=1 instrucao=0000000000000000 BusWires =0000000000010101 saidaA=0000000000010100 Select=0111 saidaALU=0000000000101001
-# BusWires=0000000000010101
-# Time=7150 clock=1 reset=1 run=1 done=0 Din=110 regDestino=0000000000000000 tstepQ=10 instrucao=0000000000000000 BusWires =0000000000010101 saidaA=0000000000010101 Select=0111 saidaALU=0000000000101010
-# Time=7200 clock=0 reset=1 run=1 done=0 Din=110 regDestino=0000000000000000 tstepQ=10 instrucao=0000000000000000 BusWires =0000000000010101 saidaA=0000000000010101 Select=0111 saidaALU=0000000000101010
-# r0=0000000000000100
-# Time=7250 clock=1 reset=1 run=1 done=1 Din=110 regDestino=0000000000000000 tstepQ=11 instrucao=0000000000000000 BusWires =0000000000000100 saidaA=0000000000010101 Select=0000 saidaALU=0000000000011001
-# Time=7300 clock=0 reset=1 run=1 done=1 Din=110 regDestino=0000000000000000 tstepQ=11 instrucao=0000000000000000 BusWires =0000000000000100 saidaA=0000000000010101 Select=0000 saidaALU=0000000000011001
-# BusWires=0000000000010101
-# Time=7350 clock=1 reset=1 run=1 done=0 Din=110 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000010101 saidaA=0000000000000100 Select=0111 saidaALU=0000000000011001
-# Time=7400 clock=0 reset=1 run=1 done=0 Din=110 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000010101 saidaA=0000000000000100 Select=0111 saidaALU=0000000000011001
-# BusWires=0000000000010110
-# BusWires=0000000000010110
-# Time=7450 clock=1 reset=1 run=1 done=0 Din=110 regDestino=0000000000000000 tstepQ=1 instrucao=0000000000000000 BusWires =0000000000010110 saidaA=0000000000010101 Select=0111 saidaALU=0000000000101011
-# Time=7500 clock=0 reset=1 run=1 done=0 Din=110 regDestino=0000000000000000 tstepQ=1 instrucao=0000000000000000 BusWires =0000000000010110 saidaA=0000000000010101 Select=0111 saidaALU=0000000000101011
-# BusWires=0000000000010110
-# Time=7550 clock=1 reset=1 run=1 done=0 Din=110 regDestino=0000000000000000 tstepQ=10 instrucao=0000000000000000 BusWires =0000000000010110 saidaA=0000000000010110 Select=0111 saidaALU=0000000000101100
-# Time=7600 clock=0 reset=1 run=1 done=0 Din=110 regDestino=0000000000000000 tstepQ=10 instrucao=0000000000000000 BusWires =0000000000010110 saidaA=0000000000010110 Select=0111 saidaALU=0000000000101100
-# r0=0000000000000100
-# Time=7650 clock=1 reset=1 run=1 done=1 Din=110 regDestino=0000000000000000 tstepQ=11 instrucao=0000000000000000 BusWires =0000000000000100 saidaA=0000000000010110 Select=0000 saidaALU=0000000000011010
-# Time=7700 clock=0 reset=1 run=1 done=1 Din=110 regDestino=0000000000000000 tstepQ=11 instrucao=0000000000000000 BusWires =0000000000000100 saidaA=0000000000010110 Select=0000 saidaALU=0000000000011010
-# BusWires=0000000000010110
-# Time=7750 clock=1 reset=1 run=1 done=0 Din=110 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000010110 saidaA=0000000000000100 Select=0111 saidaALU=0000000000011010
-# Time=7800 clock=0 reset=1 run=1 done=0 Din=110 regDestino=0000000000000000 tstepQ=0 instrucao=0000000000000000 BusWires =0000000000010110 saidaA=0000000000000100 Select=0111 saidaALU=0000000000011010
-# BusWires=0000000000010111
-# BusWires=0000000000010111
-# Time=7850 clock=1 reset=1 run=1 done=0 Din=110 regDestino=0000000000000000 tstepQ=1 instrucao=0000000000000000 BusWires =0000000000010111 saidaA=0000000000010110 Select=0111 saidaALU=0000000000101101
-# Time=7900 clock=0 reset=1 run=1 done=0 Din=110 regDestino=0000000000000000 tstepQ=1 instrucao=0000000000000000 BusWires =0000000000010111 saidaA=0000000000010110 Select=0111 saidaALU=0000000000101101
-# BusWires=0000000000010111
-# Time=7950 clock=1 reset=1 run=1 done=0 Din=110 regDestino=0000000000000000 tstepQ=10 instrucao=0000000000000000 BusWires =0000000000010111 saidaA=0000000000010111 Select=0111 saidaALU=0000000000101110
-# Time=8000 clock=0 reset=1 run=1 done=0 Din=110 regDestino=0000000000000000 tstepQ=10 instrucao=0000000000000000 BusWires =0000000000010111 saidaA=0000000000010111 Select=0111 saidaALU=0000000000101110
-# r0=0000000000000100
-# Time=8050 clock=1 reset=1 run=1 done=1 Din=110 regDestino=0000000000000000 tstepQ=11 instrucao=0000000000000000 BusWires =0000000000000100 saidaA=0000000000010111 Select=0000 saidaALU=0000000000011011
-# Time=8100 clock=0 reset=1 run=1 done=1 Din=110 regDestino=0000000000000000 tstepQ=11 instrucao=0000000000000000 BusWires =0000000000000100 saidaA=0000000000010111 Select=0000 saidaALU=0000000000011011
-# BusWires=0000000000010111
+# data_in=0000000000000101 shift=101 
+# data_in=0000000000000101 shift=011 
+# T0 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0003 | pc_incr: 1
+# addr:     2 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0100001000000000 | W: 0
+# 
+# data_in=0000000000000011 shift=011 
+# data_in=0000000000000011 shift=100 
+# T1 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0004 | pc: 0004 | pc_incr: 0
+# addr:     3 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0003 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0100001000000000 | W: 0
+# 
+# data_in=0000000000000100 shift=100 
+# T2 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0004 | pc: 0004 | pc_incr: 0
+# addr:     3 | addr_in: 0 | DATA: 0000 | dout: 0006 | dout_in: x | a: 0004 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0100001000000000 | W: 0
+# 
+# data_in=0000000000000100 shift=010 
+# T3 | Done: 1 | r0: 0002 | r1: 0005 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0004 | pc_incr: 0
+# addr:     3 | addr_in: 0 | DATA: 0000 | dout: 0006 | dout_in: x | a: 0004 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0000010000000000 | W: 0
+# 
+# -------------------------------------- MV R2, R0 --------------------------------------
+# data_in=0000000000000010 shift=010 
+# data_in=0000000000000010 shift=100 
+# T0 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0002 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0004 | pc: 0004 | pc_incr: 1
+# addr:     3 | addr_in: 1 | DATA: 0000 | dout: 0006 | dout_in: x | a: 0002 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0000010000000000 | W: 0
+# 
+# data_in=0000000000000100 shift=100 
+# data_in=0000000000000100 shift=101 
+# T1 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0002 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 0005 | pc_incr: 0
+# addr:     4 | addr_in: 0 | DATA: 0000 | dout: 0006 | dout_in: x | a: 0004 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0000010000000000 | W: 0
+# 
+# data_in=0000000000000101 shift=101 
+# T2 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0002 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 0005 | pc_incr: 0
+# addr:     4 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0000010000000000 | W: 0
+# 
+# data_in=0000000000000101 shift=010 
+# T3 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0002 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0005 | pc_incr: 0
+# addr:     4 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0101010000000100 | W: 0
+# 
+# -------------------------------------- ADD R2, #4 --------------------------------------
+# data_in=0000000000000010 shift=010 
+# data_in=0000000000000010 shift=100 
+# T4 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0002 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0004 | pc: 0005 | pc_incr: 0
+# addr:     4 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0002 | g: 0005 | f: z | F_in: 1 | zero: 0 | IR: 0101010000000100 | W: 0
+# 
+# data_in=0000000000000100 shift=100 
+# data_in=0000000000000100 shift=110 
+# T5 | Done: 1 | r0: 0002 | r1: 0005 | r2: 0002 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0006 | pc: 0005 | pc_incr: 0
+# addr:     4 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0004 | g: 0006 | f: z | F_in: 0 | zero: 0 | IR: 0101010000000100 | W: 0
+# 
+# data_in=0000000000000110 shift=110 
+# data_in=0000000000000110 shift=101 
+# T0 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0006 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 0005 | pc_incr: 1
+# addr:     4 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0006 | g: 0006 | f: z | F_in: 0 | zero: 0 | IR: 0101010000000100 | W: 0
+# 
+# data_in=0000000000000101 shift=101 
+# data_in=0000000000000101 shift=110 
+# T1 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0006 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0006 | pc: 0006 | pc_incr: 0
+# addr:     5 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0006 | f: z | F_in: 0 | zero: 0 | IR: 0101010000000100 | W: 0
+# 
+# data_in=0000000000000110 shift=110 
+# T2 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0006 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0006 | pc: 0006 | pc_incr: 0
+# addr:     5 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0006 | g: 0006 | f: z | F_in: 0 | zero: 0 | IR: 0101010000000100 | W: 0
+# 
+# T3 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0006 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0006 | pc: 0006 | pc_incr: 0
+# addr:     5 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0006 | g: 0006 | f: z | F_in: 0 | zero: 0 | IR: 0110010000000001 | W: 0
+# 
+# -------------------------------------- SUB R2, R1 --------------------------------------
+# data_in=0000000000000110 shift=101 
+# T4 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0006 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 0006 | pc_incr: 0
+# addr:     5 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0006 | g: 0006 | f: z | F_in: 1 | zero: 0 | IR: 0110010000000001 | W: 0
+# 
+# data_in=0000000000000101 shift=101 
+# data_in=0000000000000101 shift=001 
+# T5 | Done: 1 | r0: 0002 | r1: 0005 | r2: 0006 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0006 | pc_incr: 0
+# addr:     5 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0110010000000001 | W: 0
+# 
+# data_in=0000000000000001 shift=001 
+# data_in=0000000000000001 shift=110 
+# T0 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0006 | pc: 0006 | pc_incr: 1
+# addr:     5 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0110010000000001 | W: 0
+# 
+# data_in=0000000000000110 shift=110 
+# data_in=0000000000000110 shift=111 
+# T1 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0007 | pc: 0007 | pc_incr: 0
+# addr:     6 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0006 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0110010000000001 | W: 0
+# 
+# data_in=0000000000000111 shift=111 
+# T2 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0007 | pc: 0007 | pc_incr: 0
+# addr:     6 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0007 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0110010000000001 | W: 0
+# 
+# data_in=0000000000000111 shift=001 
+# T3 | Done: 1 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0007 | pc_incr: 0
+# addr:     6 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0007 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0000011000000010 | W: 0
+# 
+# -------------------------------------- MV R3, R2 --------------------------------------
+# data_in=0000000000000001 shift=001 
+# data_in=0000000000000001 shift=111 
+# T0 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0007 | pc: 0007 | pc_incr: 1
+# addr:     6 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0000011000000010 | W: 0
+# 
+# data_in=0000000000000111 shift=111 
+# data_in=0000000000000111 shift=1000 
+# T1 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0008 | pc: 0008 | pc_incr: 0
+# addr:     7 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0007 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0000011000000010 | W: 0
+# 
+# data_in=0000000000001000 shift=1000 
+# T2 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0008 | pc: 0008 | pc_incr: 0
+# addr:     7 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0008 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0000011000000010 | W: 0
+# 
+# data_in=0000000000001000 shift=010 
+# T3 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0008 | pc_incr: 0
+# addr:     7 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0008 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0100000000000011 | W: 0
+# 
+# -------------------------------------- ADD R0,R3 --------------------------------------
+# data_in=0000000000000010 shift=010 
+# data_in=0000000000000010 shift=001 
+# T4 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0008 | pc_incr: 0
+# addr:     7 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0002 | g: 0001 | f: z | F_in: 1 | zero: 0 | IR: 0100000000000011 | W: 0
+# 
+# data_in=0000000000000001 shift=001 
+# data_in=0000000000000001 shift=011 
+# T5 | Done: 1 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0008 | pc_incr: 0
+# addr:     7 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0003 | f: z | F_in: 0 | zero: 0 | IR: 0100000000000011 | W: 0
+# 
+# data_in=0000000000000011 shift=011 
+# data_in=0000000000000011 shift=1000 
+# T0 | Done: 0 | r0: 0003 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0008 | pc: 0008 | pc_incr: 1
+# addr:     7 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0003 | g: 0003 | f: z | F_in: 0 | zero: 0 | IR: 0100000000000011 | W: 0
+# 
+# data_in=0000000000001000 shift=1000 
+# data_in=0000000000001000 shift=1001 
+# T1 | Done: 0 | r0: 0003 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0009 | pc: 0009 | pc_incr: 0
+# addr:     8 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0008 | g: 0003 | f: z | F_in: 0 | zero: 0 | IR: 0100000000000011 | W: 0
+# 
+# data_in=0000000000001001 shift=1001 
+# T2 | Done: 0 | r0: 0003 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0009 | pc: 0009 | pc_incr: 0
+# addr:     8 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0009 | g: 0003 | f: z | F_in: 0 | zero: 0 | IR: 0100000000000011 | W: 0
+# 
+# data_in=0000000000001001 shift=011 
+# T3 | Done: 0 | r0: 0003 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0009 | pc_incr: 0
+# addr:     8 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0009 | g: 0003 | f: z | F_in: 0 | zero: 0 | IR: 1100000000000001 | W: 0
+# 
+# -------------------------------------- AND R0, R1 --------------------------------------
+# data_in=0000000000000011 shift=011 
+# data_in=0000000000000011 shift=101 
+# T4 | Done: 0 | r0: 0003 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 0009 | pc_incr: 0
+# addr:     8 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0003 | g: 0003 | f: z | F_in: 1 | zero: 0 | IR: 1100000000000001 | W: 0
+# 
+# data_in=0000000000000101 shift=101 
+# data_in=0000000000000101 shift=001 
+# T5 | Done: 1 | r0: 0003 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0009 | pc_incr: 0
+# addr:     8 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1100000000000001 | W: 0
+# 
+# data_in=0000000000000001 shift=001 
+# data_in=0000000000000001 shift=1001 
+# T0 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0009 | pc: 0009 | pc_incr: 1
+# addr:     8 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1100000000000001 | W: 0
+# 
+# data_in=0000000000001001 shift=1001 
+# data_in=0000000000001001 shift=1010 
+# T1 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000a | pc: 000a | pc_incr: 0
+# addr:     9 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0009 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1100000000000001 | W: 0
+# 
+# data_in=0000000000001010 shift=1010 
+# T2 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000a | pc: 000a | pc_incr: 0
+# addr:     9 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000a | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1100000000000001 | W: 0
+# 
+# data_in=0000000000001010 shift=101 
+# T3 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 000a | pc_incr: 0
+# addr:     9 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000a | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1110001100000011 | W: 0
+# 
+# -------------------------------------- SLL R1, R3  --------------------------------------
+# data_in=0000000000000101 shift=101 
+# luiz
+# ,Res=0000000000000101
+# luiz
+# ,Res=0000000010100000
+# data_in=0000000000000101 shift=001 
+# luiz
+# ,Res=0000000010100000
+# T4 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 000a | pc_incr: 0
+# addr:     9 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0001 | f: z | F_in: 1 | zero: 0 | IR: 1110001100000011 | W: 0
+# 
+# luiz
+# ,Res=0000000000001010
+# data_in=0000000000000001 shift=001 
+# data_in=0000000000000001 shift=1010 
+# T5 | Done: 1 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000a | pc: 000a | pc_incr: 0
+# addr:     9 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 000a | f: z | F_in: 0 | zero: 0 | IR: 1110001100000011 | W: 0
+# 
+# data_in=0000000000001010 shift=1010 
+# T0 | Done: 0 | r0: 0001 | r1: 000a | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000a | pc: 000a | pc_incr: 1
+# addr:     9 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000a | g: 000a | f: z | F_in: 0 | zero: 0 | IR: 1110001100000011 | W: 0
+# 
+# data_in=0000000000001010 shift=1011 
+# T1 | Done: 0 | r0: 0001 | r1: 000a | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000b | pc: 000b | pc_incr: 0
+# addr:    10 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000a | g: 000a | f: z | F_in: 0 | zero: 0 | IR: 1110001100000011 | W: 0
+# 
+# data_in=0000000000001011 shift=1011 
+# T2 | Done: 0 | r0: 0001 | r1: 000a | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000b | pc: 000b | pc_incr: 0
+# addr:    10 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000b | g: 000a | f: z | F_in: 0 | zero: 0 | IR: 1110001100000011 | W: 0
+# 
+# T3 | Done: 0 | r0: 0001 | r1: 000a | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000a | pc: 000b | pc_incr: 0
+# addr:    10 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000b | g: 000a | f: z | F_in: 0 | zero: 0 | IR: 1110001100100011 | W: 0
+# 
+# -------------------------------------- SRL R1, R3 --------------------------------------
+# luiz
+# ,Res=0000000000001010
+# luiz
+# ,Res=0000000000000000
+# luiz
+# ,Res=0000000000000000
+# T4 | Done: 0 | r0: 0001 | r1: 000a | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 000b | pc_incr: 0
+# addr:    10 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000a | g: 000a | f: z | F_in: 1 | zero: 0 | IR: 1110001100100011 | W: 0
+# 
+# luiz
+# ,Res=0000000000000101
+# T5 | Done: 1 | r0: 0001 | r1: 000a | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 000b | pc_incr: 0
+# addr:    10 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 1110001100100011 | W: 0
+# 
+# T0 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000b | pc: 000b | pc_incr: 1
+# addr:    10 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 1110001100100011 | W: 0
+# 
+# T1 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000c | pc: 000c | pc_incr: 0
+# addr:    11 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000b | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 1110001100100011 | W: 0
+# 
+# T2 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000c | pc: 000c | pc_incr: 0
+# addr:    11 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000c | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 1110001100100011 | W: 0
+# 
+# data_in=0000000000001100 shift=1100 
+# data_in=0000000000001100 shift=101 
+# T3 | Done: 1 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 000c | pc_incr: 0
+# addr:    11 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000c | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0000010000000001 | W: 0
+# 
+# -------------------------------------- MV R2, R1 --------------------------------------
+# data_in=0000000000000101 shift=101 
+# data_in=0000000000000101 shift=1100 
+# T0 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0005 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000c | pc: 000c | pc_incr: 1
+# addr:    11 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0000010000000001 | W: 0
+# 
+# data_in=0000000000001100 shift=1100 
+# data_in=0000000000001100 shift=1101 
+# T1 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0005 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000d | pc: 000d | pc_incr: 0
+# addr:    12 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000c | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0000010000000001 | W: 0
+# 
+# data_in=0000000000001101 shift=1101 
+# T2 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0005 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000d | pc: 000d | pc_incr: 0
+# addr:    12 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000d | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0000010000000001 | W: 0
+# 
+# data_in=0000000000001101 shift=101 
+# T3 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0005 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 000d | pc_incr: 0
+# addr:    12 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000d | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 1101010000000011 | W: 0
+# 
+# -------------------------------------- AND R2, #3 --------------------------------------
+# data_in=0000000000000101 shift=101 
+# data_in=0000000000000101 shift=011 
+# T4 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0005 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 000d | pc_incr: 0
+# addr:    12 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0005 | f: z | F_in: 1 | zero: 0 | IR: 1101010000000011 | W: 0
+# 
+# data_in=0000000000000011 shift=011 
+# data_in=0000000000000011 shift=001 
+# T5 | Done: 1 | r0: 0001 | r1: 0005 | r2: 0005 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 000d | pc_incr: 0
+# addr:    12 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0003 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1101010000000011 | W: 0
+# 
+# data_in=0000000000000001 shift=001 
+# data_in=0000000000000001 shift=1101 
+# T0 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000d | pc: 000d | pc_incr: 1
+# addr:    12 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1101010000000011 | W: 0
+# 
+# data_in=0000000000001101 shift=1101 
+# data_in=0000000000001101 shift=1110 
+# T1 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000e | pc: 000e | pc_incr: 0
+# addr:    13 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000d | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1101010000000011 | W: 0
+# 
+# data_in=0000000000001110 shift=1110 
+# T2 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000e | pc: 000e | pc_incr: 0
+# addr:    13 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000e | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1101010000000011 | W: 0
+# 
+# data_in=0000000000001110 shift=001 
+# T3 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 000e | pc_incr: 0
+# addr:    13 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000e | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1111000100000010 | W: 0
+# 
+# -------------------------------------- SLL R0, #2 --------------------------------------
+# data_in=0000000000000001 shift=001 
+# luiz
+# ,Res=0000000000000011
+# T4 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 000e | pc_incr: 0
+# addr:    13 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0001 | f: z | F_in: 1 | zero: 0 | IR: 1111000100000010 | W: 0
+# 
+# data_in=0000000000000001 shift=010 
+# T5 | Done: 1 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 000e | pc_incr: 0
+# addr:    13 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 1111000100000010 | W: 0
+# 
+# data_in=0000000000000010 shift=010 
+# data_in=0000000000000010 shift=1110 
+# T0 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000e | pc: 000e | pc_incr: 1
+# addr:    13 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0002 | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 1111000100000010 | W: 0
+# 
+# data_in=0000000000001110 shift=1110 
+# data_in=0000000000001110 shift=1111 
+# T1 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000f | pc: 000f | pc_incr: 0
+# addr:    14 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000e | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 1111000100000010 | W: 0
+# 
+# data_in=0000000000001111 shift=1111 
+# T2 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000f | pc: 000f | pc_incr: 0
+# addr:    14 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000f | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 1111000100000010 | W: 0
+# 
+# data_in=0000000000001111 shift=010 
+# T3 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 000f | pc_incr: 0
+# addr:    14 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000f | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 0111000000000001 | W: 0
+# 
+# -------------------------------------- SUB R0, #1 --------------------------------------
+# data_in=0000000000000010 shift=010 
+# data_in=0000000000000010 shift=001 
+# T4 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 000f | pc_incr: 0
+# addr:    14 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0002 | g: 0002 | f: z | F_in: 1 | zero: 0 | IR: 0111000000000001 | W: 0
+# 
+# data_in=0000000000000001 shift=001 
+# T5 | Done: 1 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 000f | pc_incr: 0
+# addr:    14 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0111000000000001 | W: 0
+# 
+# data_in=0000000000000001 shift=1111 
+# T0 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000f | pc: 000f | pc_incr: 1
+# addr:    14 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0111000000000001 | W: 0
+# 
+# data_in=0000000000001111 shift=1111 
+# data_in=0000000000001111 shift=000 
+# T1 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0010 | pc: 0010 | pc_incr: 0
+# addr:    15 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000f | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0111000000000001 | W: 0
+# 
+# data_in=0000000000010000 shift=000 
+# T2 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0010 | pc: 0010 | pc_incr: 0
+# addr:    15 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0010 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0111000000000001 | W: 0
+# 
+# T3 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 0010 | pc_incr: 0
+# addr:    15 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0010 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 1111001100100010 | W: 0
+# 
+# -------------------------------------- SRL R1, #2 --------------------------------------
+# luiz
+# ,Res=0000000000000000
+# luiz
+# ,Res=0000000000000000
+# luiz
+# ,Res=0000000000000000
+# T4 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0010 | pc_incr: 0
+# addr:    15 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0001 | f: z | F_in: 1 | zero: 0 | IR: 1111001100100010 | W: 0
+# 
+# luiz
+# ,Res=0000000000000010
+# T5 | Done: 1 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0010 | pc_incr: 0
+# addr:    15 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 1111001100100010 | W: 0
+# 
+# T0 | Done: 0 | r0: 0001 | r1: 0002 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0010 | pc: 0010 | pc_incr: 1
+# addr:    15 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0002 | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 1111001100100010 | W: 0
+# 
+# T1 | Done: 0 | r0: 0001 | r1: 0002 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0011 | pc: 0011 | pc_incr: 0
+# addr:    16 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0010 | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 1111001100100010 | W: 0
+# 
+# T2 | Done: 0 | r0: 0001 | r1: 0002 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0011 | pc: 0011 | pc_incr: 0
+# addr:    16 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0011 | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 1111001100100010 | W: 0
+# 
+# data_in=0000000000010001 shift=001 
+# data_in=0000000000010001 shift=010 
+# T3 | Done: 0 | r0: 0001 | r1: 0002 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0011 | pc_incr: 0
+# addr:    16 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0011 | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 0100001000000001 | W: 0
+# 
+# -------------------------------------- ADD R1, R1 --------------------------------------
+# data_in=0000000000000010 shift=010 
+# T4 | Done: 0 | r0: 0001 | r1: 0002 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0011 | pc_incr: 0
+# addr:    16 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0002 | g: 0002 | f: z | F_in: 1 | zero: 0 | IR: 0100001000000001 | W: 0
+# 
+# data_in=0000000000000010 shift=100 
+# T5 | Done: 1 | r0: 0001 | r1: 0002 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0004 | pc: 0011 | pc_incr: 0
+# addr:    16 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0002 | g: 0004 | f: z | F_in: 0 | zero: 0 | IR: 0100001000000001 | W: 0
+# 
+# data_in=0000000000000100 shift=100 
+# data_in=0000000000000100 shift=001 
+# T0 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0011 | pc: 0011 | pc_incr: 1
+# addr:    16 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0004 | g: 0004 | f: z | F_in: 0 | zero: 0 | IR: 0100001000000001 | W: 0
+# 
+# data_in=0000000000010001 shift=001 
+# data_in=0000000000010001 shift=010 
+# T1 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0012 | pc: 0012 | pc_incr: 0
+# addr:    17 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0011 | g: 0004 | f: z | F_in: 0 | zero: 0 | IR: 0100001000000001 | W: 0
+# 
+# data_in=0000000000010010 shift=010 
+# T2 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0012 | pc: 0012 | pc_incr: 0
+# addr:    17 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0012 | g: 0004 | f: z | F_in: 0 | zero: 0 | IR: 0100001000000001 | W: 0
+# 
+# data_in=0000000000010010 shift=001 
+# T3 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0012 | pc_incr: 0
+# addr:    17 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0012 | g: 0004 | f: z | F_in: 0 | zero: 0 | IR: 1000010000000000 | W: 0
+# 
+# -------------------------------------- LD R2, R0 --------------------------------------
+# data_in=0000000000000001 shift=001 
+# T4 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0012 | pc_incr: 0
+# addr:     1 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0004 | f: z | F_in: 0 | zero: 0 | IR: 1000010000000000 | W: 0
+# 
+# data_in=0000000000000001 shift=000 
+# T5 | Done: 1 | r0: 0001 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 0012 | pc_incr: 0
+# addr:     1 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0004 | f: z | F_in: 0 | zero: 0 | IR: 1000010000000000 | W: 0
+# 
+# data_in=0000000000000000 shift=000 
+# data_in=0000000000000000 shift=010 
+# T0 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0000 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0012 | pc: 0012 | pc_incr: 1
+# addr:     1 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0004 | f: z | F_in: 0 | zero: 0 | IR: 1000010000000000 | W: 0
+# 
+# data_in=0000000000010010 shift=010 
+# data_in=0000000000010010 shift=011 
+# T1 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0000 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0013 | pc: 0013 | pc_incr: 0
+# addr:    18 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0012 | g: 0004 | f: z | F_in: 0 | zero: 0 | IR: 1000010000000000 | W: 0
+# 
+# data_in=0000000000010011 shift=011 
+# T2 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0000 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0013 | pc: 0013 | pc_incr: 0
+# addr:    18 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0013 | g: 0004 | f: z | F_in: 0 | zero: 0 | IR: 1000010000000000 | W: 0
+# 
+# data_in=0000000000010011 shift=000 
+# T3 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0000 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 0013 | pc_incr: 0
+# addr:    18 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0013 | g: 0004 | f: z | F_in: 0 | zero: 0 | IR: 0100010000000011 | W: 0
+# 
+# -------------------------------------- ADD R2, R3 --------------------------------------
+# data_in=0000000000000000 shift=000 
+# data_in=0000000000000000 shift=001 
+# T4 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0000 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0013 | pc_incr: 0
+# addr:    18 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0004 | f: z | F_in: 1 | zero: 0 | IR: 0100010000000011 | W: 0
+# 
+# data_in=0000000000000001 shift=001 
+# T5 | Done: 1 | r0: 0001 | r1: 0004 | r2: 0000 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0013 | pc_incr: 0
+# addr:    18 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 0100010000000011 | W: 0
+# 
+# data_in=0000000000000001 shift=011 
+# T0 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0013 | pc: 0013 | pc_incr: 1
+# addr:    18 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 0100010000000011 | W: 0
+# 
+# data_in=0000000000010011 shift=011 
+# data_in=0000000000010011 shift=100 
+# T1 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0014 | pc: 0014 | pc_incr: 0
+# addr:    19 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0013 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 0100010000000011 | W: 0
+# 
+# data_in=0000000000010100 shift=100 
+# T2 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0014 | pc: 0014 | pc_incr: 0
+# addr:    19 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0014 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 0100010000000011 | W: 0
+# 
+# data_in=0000000000010100 shift=001 
+# T3 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0014 | pc_incr: 0
+# addr:    19 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0014 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 0111000000000011 | W: 0
+# 
+# -------------------------------------- SUB R0, #3 --------------------------------------
+# data_in=0000000000000001 shift=001 
+# data_in=0000000000000001 shift=011 
+# T4 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0014 | pc_incr: 0
+# addr:    19 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0001 | f: z | F_in: 1 | zero: 0 | IR: 0111000000000011 | W: 0
+# 
+# data_in=0000000000000011 shift=011 
+# data_in=0000000000000011 shift=1110 
+# T5 | Done: 1 | r0: 0001 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: fffe | pc: 0014 | pc_incr: 0
+# addr:    19 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0003 | g: fffe | f: z | F_in: 0 | zero: 1 | IR: 0111000000000011 | W: 0
+# 
+# data_in=1111111111111110 shift=1110 
+# data_in=1111111111111110 shift=100 
+# T0 | Done: 0 | r0: fffe | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0014 | pc: 0014 | pc_incr: 1
+# addr:    19 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: fffe | g: fffe | f: z | F_in: 0 | zero: 1 | IR: 0111000000000011 | W: 0
+# 
+# data_in=0000000000010100 shift=100 
+# data_in=0000000000010100 shift=101 
+# T1 | Done: 0 | r0: fffe | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0015 | pc: 0015 | pc_incr: 0
+# addr:    20 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0014 | g: fffe | f: z | F_in: 0 | zero: 1 | IR: 0111000000000011 | W: 0
+# 
+# data_in=0000000000010101 shift=101 
+# T2 | Done: 0 | r0: fffe | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0015 | pc: 0015 | pc_incr: 0
+# addr:    20 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0015 | g: fffe | f: z | F_in: 0 | zero: 1 | IR: 0111000000000011 | W: 0
+# 
+# data_in=0000000000010101 shift=1110 
+# T3 | Done: 0 | r0: fffe | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: fffe | pc: 0015 | pc_incr: 0
+# addr:    20 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0015 | g: fffe | f: z | F_in: 0 | zero: 1 | IR: 1010010000000000 | W: 0
+# 
+# -------------------------------------- SD R2, R0 --------------------------------------
+# data_in=1111111111111110 shift=1110 
+# data_in=1111111111111110 shift=001 
+# T4 | Done: 1 | r0: fffe | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0015 | pc_incr: 0
+# addr: 65534 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: 1 | a: fffe | g: fffe | f: z | F_in: 0 | zero: 1 | IR: 1010010000000000 | W: 0
+# 
+# data_in=0000000000000001 shift=001 
+# data_in=0000000000000001 shift=101 
+# T0 | Done: 0 | r0: fffe | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0015 | pc: 0015 | pc_incr: 1
+# addr: 65534 | addr_in: 1 | DATA: 0001 | dout: 0000 | dout_in: 1 | a: 0001 | g: fffe | f: z | F_in: 0 | zero: 1 | IR: 1010010000000000 | W: 1
+# 
+# data_in=0000000000010101 shift=101 
+# data_in=0000000000010101 shift=110 
+# T1 | Done: 0 | r0: fffe | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0016 | pc: 0016 | pc_incr: 0
+# addr:    21 | addr_in: 0 | DATA: 0015 | dout: 0001 | dout_in: 1 | a: 0015 | g: fffe | f: z | F_in: 0 | zero: 1 | IR: 1010010000000000 | W: 0
+# 
+# data_in=0000000000010110 shift=110 
+# T2 | Done: 0 | r0: fffe | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0016 | pc: 0016 | pc_incr: 0
+# addr:    21 | addr_in: 0 | DATA: 0016 | dout: 0000 | dout_in: 1 | a: 0016 | g: fffe | f: z | F_in: 0 | zero: 1 | IR: 1010010000000000 | W: 0
+# 
+# data_in=0000000000010110 shift=1110 
+# T3 | Done: 0 | r0: fffe | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: fffe | pc: 0016 | pc_incr: 0
+# addr:    21 | addr_in: 1 | DATA: 0016 | dout: 0000 | dout_in: 1 | a: 0016 | g: fffe | f: z | F_in: 0 | zero: 1 | IR: 1000000000000000 | W: 0
+# 
+# -------------------------------------- LD R0, R0 --------------------------------------
+# data_in=1111111111111110 shift=1110 
+# T4 | Done: 0 | r0: fffe | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: fffe | pc: 0016 | pc_incr: 0
+# addr: 65534 | addr_in: 0 | DATA: fffe | dout: 0000 | dout_in: 1 | a: fffe | g: fffe | f: z | F_in: 0 | zero: 1 | IR: 1000000000000000 | W: 0
+# 
+# data_in=1111111111111110 shift=000 
+# data_in=1111111111111110 shift=001 
+# T5 | Done: 1 | r0: fffe | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0016 | pc_incr: 0
+# addr: 65534 | addr_in: 0 | DATA: fffe | dout: 0001 | dout_in: 1 | a: fffe | g: fffe | f: z | F_in: 0 | zero: 1 | IR: 1000000000000000 | W: 0
+# 
+# data_in=0000000000000001 shift=001 
+# data_in=0000000000000001 shift=110 
+# T0 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0016 | pc: 0016 | pc_incr: 1
+# addr: 65534 | addr_in: 1 | DATA: 0001 | dout: 0001 | dout_in: 1 | a: 0001 | g: fffe | f: z | F_in: 0 | zero: 1 | IR: 1000000000000000 | W: 0
+# 
+# data_in=0000000000010110 shift=110 
+# data_in=0000000000010110 shift=111 
+# T1 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0017 | pc: 0017 | pc_incr: 0
+# addr:    22 | addr_in: 0 | DATA: 0016 | dout: 0001 | dout_in: 1 | a: 0016 | g: fffe | f: z | F_in: 0 | zero: 1 | IR: 1000000000000000 | W: 0
+# 
+# data_in=0000000000010111 shift=111 
+# T2 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0017 | pc: 0017 | pc_incr: 0
+# addr:    22 | addr_in: 0 | DATA: 0017 | dout: 0000 | dout_in: 1 | a: 0017 | g: fffe | f: z | F_in: 0 | zero: 1 | IR: 1000000000000000 | W: 0
+# 
+# data_in=0000000000010111 shift=001 
+# T3 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0017 | pc_incr: 0
+# addr:    22 | addr_in: 0 | DATA: 0017 | dout: 0000 | dout_in: 1 | a: 0017 | g: fffe | f: z | F_in: 0 | zero: 1 | IR: 0110000000000011 | W: 0
+# 
+# -------------------------------------- SUB R0, R3 --------------------------------------
+# data_in=0000000000000001 shift=001 
+# T4 | Done: 0 | r0: 0001 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0017 | pc_incr: 0
+# addr:    22 | addr_in: 0 | DATA: 0001 | dout: 0000 | dout_in: 1 | a: 0001 | g: fffe | f: z | F_in: 1 | zero: 1 | IR: 0110000000000011 | W: 0
+# 
+# data_in=0000000000000001 shift=000 
+# T5 | Done: 1 | r0: 0001 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 0017 | pc_incr: 0
+# addr:    22 | addr_in: 0 | DATA: 0001 | dout: 0000 | dout_in: 1 | a: 0001 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 0110000000000011 | W: 0
+# 
+# data_in=0000000000000000 shift=000 
+# data_in=0000000000000000 shift=111 
+# T0 | Done: 0 | r0: 0000 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0017 | pc: 0017 | pc_incr: 1
+# addr:    22 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: 1 | a: 0000 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 0110000000000011 | W: 0
+# 
+# data_in=0000000000010111 shift=111 
+# data_in=0000000000010111 shift=1000 
+# T1 | Done: 0 | r0: 0000 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0018 | pc: 0018 | pc_incr: 0
+# addr:    23 | addr_in: 0 | DATA: 0017 | dout: 0000 | dout_in: 1 | a: 0017 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 0110000000000011 | W: 0
+# 
+# data_in=0000000000011000 shift=1000 
+# T2 | Done: 0 | r0: 0000 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0018 | pc: 0018 | pc_incr: 0
+# addr:    23 | addr_in: 0 | DATA: 0018 | dout: 0000 | dout_in: 1 | a: 0018 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 0110000000000011 | W: 0
+# 
+# data_in=0000000000011000 shift=000 
+# T3 | Done: 1 | r0: 0000 | r1: 0004 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 0018 | pc_incr: 0
+# addr:    23 | addr_in: 0 | DATA: 0018 | dout: 0000 | dout_in: 1 | a: 0018 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 0000000000000000 | W: 0
+# 

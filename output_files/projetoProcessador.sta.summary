@@ -2,51 +2,99 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow Model Setup 'Tstep_Q.T4'
+Slack : -10.659
+TNS   : -171.213
+
 Type  : Slow Model Setup 'Clock'
-Slack : -7.206
-TNS   : -1053.775
+Slack : -6.125
+TNS   : -1104.197
+
+Type  : Slow Model Setup 'Tstep_Q.T3'
+Slack : -3.772
+TNS   : -3.772
 
 Type  : Slow Model Setup 'Tstep_Q.T1'
-Slack : -3.692
-TNS   : -13.238
+Slack : -3.767
+TNS   : -14.555
 
 Type  : Slow Model Hold 'Clock'
-Slack : -2.467
-TNS   : -3.248
+Slack : -3.156
+TNS   : -26.171
+
+Type  : Slow Model Hold 'Tstep_Q.T4'
+Slack : -2.756
+TNS   : -29.981
 
 Type  : Slow Model Hold 'Tstep_Q.T1'
-Slack : 0.428
+Slack : -1.909
+TNS   : -6.915
+
+Type  : Slow Model Hold 'Tstep_Q.T3'
+Slack : 3.308
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'Clock'
 Slack : -2.000
-TNS   : -411.146
+TNS   : -386.610
 
 Type  : Slow Model Minimum Pulse Width 'Tstep_Q.T1'
 Slack : 0.500
 TNS   : 0.000
 
+Type  : Slow Model Minimum Pulse Width 'Tstep_Q.T3'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'Tstep_Q.T4'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'Tstep_Q.T4'
+Slack : -5.076
+TNS   : -79.513
+
 Type  : Fast Model Setup 'Clock'
-Slack : -3.265
-TNS   : -466.812
+Slack : -2.737
+TNS   : -472.242
+
+Type  : Fast Model Setup 'Tstep_Q.T3'
+Slack : -1.745
+TNS   : -1.745
 
 Type  : Fast Model Setup 'Tstep_Q.T1'
-Slack : -1.132
-TNS   : -3.899
+Slack : -1.136
+TNS   : -4.305
 
 Type  : Fast Model Hold 'Clock'
-Slack : -1.464
-TNS   : -1.707
+Slack : -1.760
+TNS   : -64.412
+
+Type  : Fast Model Hold 'Tstep_Q.T4'
+Slack : -1.534
+TNS   : -20.182
 
 Type  : Fast Model Hold 'Tstep_Q.T1'
-Slack : 0.371
+Slack : -1.182
+TNS   : -4.461
+
+Type  : Fast Model Hold 'Tstep_Q.T3'
+Slack : 2.133
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'Clock'
 Slack : -2.000
-TNS   : -411.146
+TNS   : -386.610
 
 Type  : Fast Model Minimum Pulse Width 'Tstep_Q.T1'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'Tstep_Q.T3'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'Tstep_Q.T4'
 Slack : 0.500
 TNS   : 0.000
 

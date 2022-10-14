@@ -1,5 +1,4 @@
-module projetoProcessador(DIN, Resetn, Clock, Run, Done);
-	input [4:0] DIN;
+module projetoProcessador(Resetn, Clock, Run, Done,reg0, reg1, reg2, reg3, reg4,reg5,reg6, regPC,Instr);
 	input Resetn, Clock, Run;
 	output Done;
 	//reg [15:0] IR;
@@ -8,8 +7,9 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	wire [2:0]rX;
 	wire [2:0]rY;
 	reg rX_in, A_in; reg [2:0]Tstep_Q; reg [2:0]Tstep_D; reg[15:0]BusWires;
+	output wire [15:0] reg0, reg1, reg2, reg3, reg4, reg5,reg6,regPC,Instr;
 	 
-	wire [15:0]r0, PC, r1, r2, r3, r4, r5, r6; //registradores de proposito geral
+	wire [15:0]r0, PC, r1, r2, r3, r4, r5, r6,saidaBarril; //registradores de proposito geral
 	reg Done,IR_in;reg[3:0]Select;
 	wire [8:0]Imm;
 	wire [15:0]G;
@@ -22,17 +22,31 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	reg [7:0] endMem;
 	wire [4:0]enderecoInstrucao;
 	wire [15:0]endereco;
-	wire wren;
+	wire wren,zeroULA,F,Imm_Shift;
+	reg f_in;
+	reg [2:0] opULA;
+	wire [1:0] opShift;
 	
 	assign III = saidaIR[15:13]; //opcode da instrução
 	assign IMM = saidaIR[12]; //bit que indica se é imediato ou não
 	assign rX = saidaIR[11:9]; // registrador x
 	assign rY = saidaIR[2:0]; //registrador y (existe quando IMM é igual a 0)
+	assign opShift = saidaIR[6:5];
+	assign Imm_Shift =saidaIR[7];
 	
+	assign reg0 = r0;
+	assign reg1 = r1;
+	assign reg2 = r2;
+	assign reg3 = r3;
+	assign reg4 = r4;
+	assign reg5 = r5;
+	assign reg6 = r6;
+	assign regPC = PC;
+	assign Instr = saidaROM;
 	
 	dec3to8 decX (rX_in, rX, R_in); //habilita os registradores de propósito geral a receberem dados
 	
-	instr_memory memInstr((PC - 1), Clock, saidaROM); //modulo da memória de intruções
+	instr_memory memInstr((PC[4:0] - 1), Clock, saidaROM); //modulo da memória de intruções
 	
 	memoriaPrincipal memPrincipal(endereco[7:0], Clock, data, wren, DadoMem); //módulo da memória principal
 	
@@ -51,13 +65,14 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 		Tstep_D = T0;
 		rX_in = 1'b0; 
 		Done = 1'b0;
-		AddSub = 1'b0;
-		ALU_and = 1'b0;
+		opULA=3'b000;
 		G_in = 1'b0;
 		IR_in =1'b0;
 		addr_in =1'b0;
 		pc_in = 1'b0;
 		pc_incr = 1'b0;
+		Wd=1'b0;
+		f_in = 1'b0;
 			
 		
 	end
@@ -95,7 +110,8 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 		
 			
 		//parametros que indicam o opcode da instrução
-		parameter mv = 3'b000, mvt = 3'b001, add = 3'b010, sub = 3'b011, load = 3'b100, store = 3'b101, _and = 3'b110, b_cond = 3'b111;
+		parameter mv = 3'b000, mvt = 3'b001, add = 3'b010, sub = 3'b011, load = 3'b100, store = 3'b101, _and = 3'b110, b_cond = 3'b001;
+		parameter shift = 3'b111;
 		
 		//selectors for the BusWires multiplexer
 		parameter _R0 = 4'b0000, _R1 = 4'b0001, _R2 = 4'b0010,
@@ -109,13 +125,14 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 			// initializing variable values
 			rX_in = 1'b0; 
 			Done = 1'b0;
-			AddSub = 1'b0;
-			ALU_and = 1'b0;
 			G_in = 1'b0;
 			IR_in =1'b0;
 			addr_in =1'b0;
 			pc_in = 1'b0;
 			pc_incr = 1'b0;
+			Wd =1'b0;
+			f_in = 1'b0;
+			opULA=3'b000;
 			//F_in = 1'b0;
 			
 			case (Tstep_Q) //controla o estado da instrução //
@@ -138,14 +155,30 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 							
 							rX_in = 1'b1; // enable rX
 							Done = 1'b1;
-							$display("r0=%16b",r0);
+							//$display("r0=%16b",r0);
 						end
 						
-						mvt: // mvt rX, #D
+						mvt,b_cond: // mvt rX, #D e b_cond
 							begin
-							Select = _IR7_0_0;
-							rX_in = 1'b1;
-							Done = 1'b1;
+								if(!IMM)begin //lógica para o branch
+									A_in = 1'b1;
+									Select = _PC;
+									case(rX)	
+										3'b001: //beq
+											if(!F) Done = 1'b1;
+										
+										3'b010: //bne
+											if(F) Done = 1'b1;
+										
+										//default: always branch
+									endcase
+									
+								end else begin //lógica para o mvt
+									Select = _IR7_0_0;
+									rX_in = 1'b1;
+									Done = 1'b1;
+								end
+							
 							
 							end
 							
@@ -158,20 +191,12 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 							addr_in = 1'b1;
 							Select = rY;           
 						end
+						shift: begin
+							Select = rX;
+							A_in = 1'b1;
 						
-						b_cond: begin
-								A_in = 1'b1;
-								Select = _PC;
-								case(rX)	
-									3'b001: //beq
-										if(G != 0) Done = 1'b1;
-									
-									3'b010: //bne
-										if(G == 0) Done = 1'b1;
-									
-									//default: always branch
-								endcase
 						end
+						
 
 					endcase
 				T4: // define signals in time step T2
@@ -182,6 +207,8 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 							if (!IMM) Select = rY;           
 							else Select = _IR8_IR8_0;
 							G_in = 1'b1;
+							f_in = 1'b1;
+							opULA=3'b001;
 							
 						end
 						
@@ -191,7 +218,8 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 							
 							//sinais de controle
 							G_in = 1'b1;
-							AddSub = 1'b1;
+							opULA=3'b010;
+							f_in = 1'b1;
 							
 						end
 						
@@ -209,14 +237,30 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 							//sinais de controle
 							G_in = 1'b1;
 							ALU_and = 1'b1;
+							f_in = 1'b1;
+							opULA=3'b011;
 							
 							end
 						
 						b_cond: begin
-							Select = _IR8_IR8_0;
-							G_in = 1'b1;
+							if(!IMM)begin
+								Select = _IR8_IR8_0;
+								G_in = 1'b1;
+								opULA=3'b001;
+							
+							end
+							
 							
 						end
+						shift: begin
+							if (!Imm_Shift) Select = rY; 
+							else Select = _IR8_IR8_0;
+							opULA = 3'b100;
+							G_in = 1'b1;
+							f_in = 1'b1;
+						
+						end
+						
 						
 						endcase
 						
@@ -237,8 +281,17 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 						end
 						
 						b_cond: begin
-							Select = G;
-							pc_in = 1'b1;
+							if(!IMM)begin
+								Select = _G;
+								pc_in = 1'b1;
+								Done = 1'b1;
+							
+							end
+							
+						end
+						shift: begin
+							Select = _G; 
+							rX_in = 1'b1; // enable rX
 							Done = 1'b1;
 						end
 						
@@ -277,7 +330,11 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 			 
 			regn regG(saidaALU, Resetn, G_in, Clock, G);
 			
-			Alu alu(BusWires, RA_out, AddSub, ALU_and, saidaALU);
+			Alu alu(BusWires, RA_out,saidaBarril,opULA, saidaALU,zeroULA);
+			
+			F bitF(f_in,ZeroULA,Clock,F);
+			
+			barrel Barrilzao(opShift,BusWires[3:0],RA_out,saidaBarril);
 	
 		
 	//. . . instantiate other registers and the adder/subtracter unit
@@ -293,7 +350,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 				_R6: BusWires = r6;
 				_PC: begin 
 					BusWires = PC;
-					$display("BusWires=%16b",BusWires);
+					//$display("BusWires=%16b",BusWires);
 				end
 				_G: BusWires = G;
 				_IR8_IR8_0: BusWires = {{7{saidaIR[8]}}, saidaIR[8:0]};
@@ -369,30 +426,41 @@ endmodule
 		input Reset;
 		input R_IN,clock;
 		output reg[15:0] R_OUT;
+		initial begin
+			R_OUT<=16'b0;
+		end
 		
 		always @(posedge clock) // antigo: negedge reset
 			if (R_IN) R_OUT <= BusW;	
 	endmodule 
 	
 	
-	module Alu(BusW, RA_out, AddSub, ALU_and, Res);
+	module Alu(BusW, RA_out,saidaBarril,op, Res,bitZero);
 		input [15:0] BusW;
 		input [15:0] RA_out;
-		input AddSub;
-		input ALU_and;
+		input [15:0] saidaBarril;
+		input [2:0]op;
 		output reg [15:0] Res;
+		output reg bitZero;
 
 		always@(*)
 		
-		if(ALU_and)begin
-			$display("ra_out: %16b & BusW: %16b", RA_out, BusW);
+		if(op == 3'b011)begin
 			Res = RA_out & BusW;
-		end else if (AddSub) begin
+		end else if (op == 3'b010) begin
 			Res = RA_out - BusW;
-		end else begin
+		end else if(op == 3'b001) begin
 			Res = BusW + RA_out;
+		end else if(op == 3'b100)begin
+			$display("luiz\n,Res=%16b",Res);
+			Res = saidaBarril;
 		end
-		
+		always@(*)
+		if(Res == 16'b0)begin
+			bitZero = 1'b1;
+		end else begin
+			bitZero = 1'b0;
+		end
 		
 	endmodule
 
@@ -416,9 +484,10 @@ endmodule
 		parameter lsl = 2'b00, lsr = 2'b01, asr = 2'b10, ror = 2'b11;
 			
 			always @(*)
-				if (shift_type == lsl)
-				data_out = data_in << shift;
-				
+				if (shift_type == lsl)begin
+				$display("data_in=%16b shift=%3b ",data_in,shift);
+				data_out = data_in << shift;     //0001  -> 0100
+				end
 				else if (shift_type == lsr)
 				data_out = data_in >> shift;
 				

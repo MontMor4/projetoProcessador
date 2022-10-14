@@ -2,36 +2,36 @@ m255
 K3
 13
 cModel Technology
-Z0 dC:\Users\Vitão\Desktop\Codes\LAOC2\projetoProcessador\simulation\modelsim
+Z0 dC:\pastaX\projetoProcessador\simulation\modelsim
 vAlu
-I3YG5>G^H>ckZSKJ7]N>8a1
-V0h<i=zXfad=@4^iz[FGdH1
-Z1 dC:\Users\Vitão\Desktop\Codes\LAOC2\projetoProcessador\simulation\modelsim
-Z2 w1665722362
-Z3 8C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador.v
-Z4 FC:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador.v
-L0 385
+I54EZRAdCc]>D0Ii>?BaUU1
+Vk7HXUL;=]A6lC1Z9QHLnj0
+Z1 dC:\pastaX\projetoProcessador\simulation\modelsim
+Z2 w1665782777
+Z3 8C:/pastaX/projetoProcessador/projetoProcessador.v
+Z4 FC:/pastaX/projetoProcessador/projetoProcessador.v
+L0 438
 Z5 OV;L;10.1d;51
 r1
 31
-Z6 !s108 1665722404.642000
-Z7 !s107 C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador.v|
-Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador|C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador.v|
+Z6 !s108 1665782832.013000
+Z7 !s107 C:/pastaX/projetoProcessador/projetoProcessador.v|
+Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/pastaX/projetoProcessador|C:/pastaX/projetoProcessador/projetoProcessador.v|
 Z9 o-vlog01compat -work work -O0
-Z10 !s92 -vlog01compat -work work +incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador -O0
+Z10 !s92 -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador -O0
 n@alu
 !i10b 1
-!s100 3fnY]@kEjPA<X?NSU><oT0
+!s100 2b0jH[[8`dBTnA^FGT3>:1
 !s85 0
 !s101 -O0
 vbarrel
-IQM83jGf3c0O;eFIgRSNSB2
+IRW]ln9nWO>7FN[gbe;`iK0
 V=]cL8o84G2<l9Z4mgbNb[1
 R1
 R2
 R3
 R4
-L0 418
+L0 479
 R5
 r1
 31
@@ -41,17 +41,17 @@ R8
 R9
 R10
 !i10b 1
-!s100 G]3dDz9o2]NOQnZ]B>0PN1
+!s100 nN?CnFL<SQlk]NbWhhK^_0
 !s85 0
 !s101 -O0
 vdec3to8
-Ic:XE^dLmCN83_bM^hA3oM2
+I_=@Ee:z^Zk@kDnK8e;=K:0
 VWGLzn^X@`CM]?8jJRF_IR3
 R1
 R2
 R3
 R4
-L0 313
+L0 363
 R5
 r1
 31
@@ -61,17 +61,17 @@ R8
 R9
 R10
 !i10b 1
-!s100 1M_iFHSE[CYj7dGLE>]RI2
+!s100 V4Q[]1kDgYeGUM^kB1CPk2
 !s85 0
 !s101 -O0
 vF
-I5ol@9jf2<OWmWmdbLJC6d1
+Iz^cHBO]Kj[5AaZ@zOE^f?3
 VOT=NNzmYTkeQ8e5YA<5A50
 R1
 R2
 R3
 R4
-L0 406
+L0 467
 R5
 r1
 31
@@ -82,16 +82,16 @@ R9
 R10
 n@f
 !i10b 1
-!s100 K2Q9<P;5Z235^OALeBA[P3
+!s100 TeIZi7j7F`cf=2N2jVDl80
 !s85 0
 !s101 -O0
 vinstr_memory
-IHcGzzP2CikR4@=8FM3KLe3
+IRRA6HzCHXPaJ?C:=;mlF[2
 V=h9ZWXQzRXjIdPJhZ^JfZ1
 R1
-Z11 w1665717885
-8C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/instr_memory.v
-FC:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/instr_memory.v
+w1665774929
+8C:/pastaX/projetoProcessador/instr_memory.v
+FC:/pastaX/projetoProcessador/instr_memory.v
 L0 39
 R5
 r1
@@ -99,19 +99,19 @@ r1
 R9
 R10
 !i10b 1
-!s100 >gaPhjSWLOc7DPaHPbYDR1
+!s100 X3V7J;L@^lz4oB_D9N[5;3
 !s85 0
-!s108 1665722404.886000
-!s107 C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/instr_memory.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador|C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/instr_memory.v|
+!s108 1665782832.309000
+!s107 C:/pastaX/projetoProcessador/instr_memory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/pastaX/projetoProcessador|C:/pastaX/projetoProcessador/instr_memory.v|
 !s101 -O0
 vmemoriaPrincipal
-IG@zKe=;;Tjk5]PfjPCac80
+IbY9RK[2K83^lPC_nC9=oW1
 V9Mk]8cPS3MDfKoBb8FFhY2
 R1
-R11
-8C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/memoriaPrincipal.v
-FC:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/memoriaPrincipal.v
+w1665749238
+8C:/pastaX/projetoProcessador/memoriaPrincipal.v
+FC:/pastaX/projetoProcessador/memoriaPrincipal.v
 L0 39
 R5
 r1
@@ -120,20 +120,20 @@ R9
 R10
 nmemoria@principal
 !i10b 1
-!s100 709OQ<Jz3_[V^S=YaK:443
+!s100 z3VeLnIaMPTHI:G4HALn23
 !s85 0
-!s108 1665722404.819000
-!s107 C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/memoriaPrincipal.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador|C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/memoriaPrincipal.v|
+!s108 1665782832.233000
+!s107 C:/pastaX/projetoProcessador/memoriaPrincipal.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/pastaX/projetoProcessador|C:/pastaX/projetoProcessador/memoriaPrincipal.v|
 !s101 -O0
 vpc_counter
-IhAg@R:1oGlPdOU<7lkU;F2
+Im3O>ozYV7@6j9<^XONHgA1
 V=6Mif9DTMjDg8G>YK?ikA2
 R1
 R2
 R3
 R4
-L0 347
+L0 397
 R5
 r1
 31
@@ -143,12 +143,12 @@ R8
 R9
 R10
 !i10b 1
-!s100 1nSohA[7H8`_I=fNFO4D>2
+!s100 AFL?nPC1H_j_8iZ39=Lzn1
 !s85 0
 !s101 -O0
 vprojetoProcessador
-IOY:WjATS>0K^SAojhPzBO0
-VDACPI8gA@3MlI[i>98R8G0
+ITYUaP=Oa8cCH9;PZ<WGRN1
+VlE5ZiYh^>M]>e7EUTR6861
 R1
 R2
 R3
@@ -164,38 +164,38 @@ R9
 R10
 nprojeto@processador
 !i10b 1
-!s100 D<RWTWBR`EahkNgU3jWMn1
+!s100 NR416Hd<C[gK>Tnb][IZ93
 !s85 0
 !s101 -O0
 vprojetoProcessador_tb
 !i10b 1
-!s100 >n2>R<l1OMYQhZ37V:F603
-IjeIm6MO<DO^7Ym^TX7b=72
+!s100 X8m[jF:ZDz`FWFW^Q;lPB1
+I8W4oEe6@^:6VX6fFk]zz;3
 VjNWXhCVY:dfOo[:MJEo=M0
 R1
-w1665722117
-8C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador_tb.v
-FC:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador_tb.v
+w1665778226
+8C:/pastaX/projetoProcessador/projetoProcessador_tb.v
+FC:/pastaX/projetoProcessador/projetoProcessador_tb.v
 L0 1
 R5
 r1
 !s85 0
 31
-!s108 1665722404.953000
-!s107 C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador|C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador_tb.v|
+!s108 1665782832.390000
+!s107 C:/pastaX/projetoProcessador/projetoProcessador_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/pastaX/projetoProcessador|C:/pastaX/projetoProcessador/projetoProcessador_tb.v|
 !s101 -O0
 R9
 R10
 nprojeto@processador_tb
 vregInstr
-IF^BEkWA05bcn81V3?9Y]32
+IY95JFP7c@aA3G6DNfGY_Y3
 VKED;W8KG42o12eIP^d4=>3
 R1
 R2
 R3
 R4
-L0 365
+L0 415
 R5
 r1
 31
@@ -206,17 +206,17 @@ R9
 R10
 nreg@instr
 !i10b 1
-!s100 2n__GkQHYT4z]fXf6hV[D0
+!s100 >G>U`D[`2CdekLAOER>[e2
 !s85 0
 !s101 -O0
 vregn
-IXo7bfkNAdziP=?M9JnO6F1
+I=@eCnXMhdHY<=>YVI^BPI3
 V9zaDo2omaB;@NS2Ai0:Sl2
 R1
 R2
 R3
 R4
-L0 374
+L0 424
 R5
 r1
 31
@@ -226,17 +226,17 @@ R8
 R9
 R10
 !i10b 1
-!s100 ]Tz0W9mg<TVKX`E_H1Pg12
+!s100 d6NM;<OQT`JR]eRD>:JSA1
 !s85 0
 !s101 -O0
 vregW
-I[QYCNOic9C1Vc?zCC9ETZ0
+IRlGz[3@Uz^8e`X9PVZcgZ2
 VJJL3M;1HUhIf[I4K6lR]i2
 R1
 R2
 R3
 R4
-L0 335
+L0 385
 R5
 r1
 31
@@ -247,6 +247,6 @@ R9
 R10
 nreg@w
 !i10b 1
-!s100 mmbmcRi]XeYHZTM267Tja1
+!s100 GJZL:X@4P@RTX^EH5mj?;3
 !s85 0
 !s101 -O0

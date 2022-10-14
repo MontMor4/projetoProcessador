@@ -15,7 +15,8 @@ entity projetoProcessador is
         load            : vl_logic_vector(0 to 2) := (Hi1, Hi0, Hi0);
         store           : vl_logic_vector(0 to 2) := (Hi1, Hi0, Hi1);
         \_and\          : vl_logic_vector(0 to 2) := (Hi1, Hi1, Hi0);
-        b_cond          : vl_logic_vector(0 to 2) := (Hi1, Hi1, Hi1);
+        b_cond          : vl_logic_vector(0 to 2) := (Hi0, Hi0, Hi1);
+        shift           : vl_logic_vector(0 to 2) := (Hi1, Hi1, Hi1);
         \_R0\           : vl_logic_vector(0 to 3) := (Hi0, Hi0, Hi0, Hi0);
         \_R1\           : vl_logic_vector(0 to 3) := (Hi0, Hi0, Hi0, Hi1);
         \_R2\           : vl_logic_vector(0 to 3) := (Hi0, Hi0, Hi1, Hi0);
@@ -30,11 +31,19 @@ entity projetoProcessador is
         \_DIN\          : vl_logic_vector(0 to 3) := (Hi1, Hi0, Hi1, Hi1)
     );
     port(
-        DIN             : in     vl_logic_vector(4 downto 0);
         Resetn          : in     vl_logic;
         Clock           : in     vl_logic;
         Run             : in     vl_logic;
-        Done            : out    vl_logic
+        Done            : out    vl_logic;
+        reg0            : out    vl_logic_vector(15 downto 0);
+        reg1            : out    vl_logic_vector(15 downto 0);
+        reg2            : out    vl_logic_vector(15 downto 0);
+        reg3            : out    vl_logic_vector(15 downto 0);
+        reg4            : out    vl_logic_vector(15 downto 0);
+        reg5            : out    vl_logic_vector(15 downto 0);
+        reg6            : out    vl_logic_vector(15 downto 0);
+        regPC           : out    vl_logic_vector(15 downto 0);
+        Instr           : out    vl_logic_vector(15 downto 0)
     );
     attribute mti_svvh_generic_type : integer;
     attribute mti_svvh_generic_type of T0 : constant is 1;
@@ -51,6 +60,7 @@ entity projetoProcessador is
     attribute mti_svvh_generic_type of store : constant is 1;
     attribute mti_svvh_generic_type of \_and\ : constant is 1;
     attribute mti_svvh_generic_type of b_cond : constant is 1;
+    attribute mti_svvh_generic_type of shift : constant is 1;
     attribute mti_svvh_generic_type of \_R0\ : constant is 1;
     attribute mti_svvh_generic_type of \_R1\ : constant is 1;
     attribute mti_svvh_generic_type of \_R2\ : constant is 1;

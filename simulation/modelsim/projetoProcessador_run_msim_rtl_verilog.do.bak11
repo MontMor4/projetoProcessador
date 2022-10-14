@@ -5,11 +5,11 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -vlog01compat -work work +incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador {C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador.v}
-vlog -vlog01compat -work work +incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador {C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/memoriaPrincipal.v}
-vlog -vlog01compat -work work +incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador {C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/instr_memory.v}
+vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/projetoProcessador.v}
+vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/memoriaPrincipal.v}
+vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/instr_memory.v}
 
-vlog -vlog01compat -work work +incdir+C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador {C:/Users/Vitão/Desktop/Codes/LAOC2/projetoProcessador/projetoProcessador_tb.v}
+vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/projetoProcessador_tb.v}
 
 vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  projetoProcessador_tb
 
