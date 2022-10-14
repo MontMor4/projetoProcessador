@@ -2,14 +2,14 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	input [4:0] DIN;
 	input Resetn, Clock, Run;
 	output Done;
-	reg [15:0] IR;
+	//reg [15:0] IR;
 	wire [2:0] III;
 	wire IMM;
 	wire [2:0]rX;
 	wire [2:0]rY;
 	reg rX_in, A_in; reg [2:0]Tstep_Q; reg [2:0]Tstep_D; reg[15:0]BusWires;
 	 
-	wire[15:0]r0, r7, r1, r2, r3, r4, r5, r6; //registradores de proposito geral
+	wire [15:0]r0, PC, r1, r2, r3, r4, r5, r6; //registradores de proposito geral
 	reg Done,IR_in;reg[3:0]Select;
 	wire [8:0]Imm;
 	wire [15:0]G;
@@ -32,7 +32,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	
 	dec3to8 decX (rX_in, rX, R_in); //habilita os registradores de propósito geral a receberem dados
 	
-	instr_memory memInstr(endereco[4:0], Clock, saidaROM); //modulo da memória de intruções
+	instr_memory memInstr((PC - 1), Clock, saidaROM); //modulo da memória de intruções
 	
 	memoriaPrincipal memPrincipal(endereco[7:0], Clock, data, wren, DadoMem); //módulo da memória principal
 	
@@ -40,7 +40,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	
 	regn regAddr(BusWires,Reset,addr_in,Clock,endereco);
 	
-	pc_counter reg_7(Clock, BusWires, pc_incr, pc_in, r7);
+	pc_counter reg_7(Clock, BusWires, pc_incr, pc_in, PC);
 	
 	regn reg_0(BusWires, Resetn, R_in[7], Clock ,r0);
 	
@@ -49,7 +49,8 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 	initial begin
 		Tstep_Q = T0;
 		Tstep_D = T0;
-		rX_in = 1'b0; Done = 1'b0;
+		rX_in = 1'b0; 
+		Done = 1'b0;
 		AddSub = 1'b0;
 		ALU_and = 1'b0;
 		G_in = 1'b0;
@@ -106,7 +107,8 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 		always @(*) begin
 			
 			// initializing variable values
-			rX_in = 1'b0; Done = 1'b0;
+			rX_in = 1'b0; 
+			Done = 1'b0;
 			AddSub = 1'b0;
 			ALU_and = 1'b0;
 			G_in = 1'b0;
@@ -114,7 +116,7 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 			addr_in =1'b0;
 			pc_in = 1'b0;
 			pc_incr = 1'b0;
-			
+			//F_in = 1'b0;
 			
 			case (Tstep_Q) //controla o estado da instrução //
 				T0:begin
@@ -125,11 +127,8 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 				end
 				T1: ;
 				
-				T2: // store DIN into IR
-					begin
-					IR_in = 1'b1;
-					//pc_incr = 1'b1;
-					//IR = saidaROM;
+				T2: begin //store DIN into IR
+						IR_in = 1'b1;
 					end
 				T3: // define signals in time step T1
 					case (III)
@@ -258,9 +257,6 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 			Tstep_Q <= Tstep_D;
 		end
 		
-			
-			
-		
 			regn reg_1(BusWires, Resetn, R_in[6], Clock, r1);
 			
 			regn reg_2(BusWires, Resetn, R_in[5], Clock, r2);
@@ -273,17 +269,13 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 			
 			regn reg_6(BusWires, Resetn, R_in[1], Clock, r6);
 			
-			
-			
-			regn WDout(BusWires,Reset,Clock,DOUT_in,data);
+			regn WDout(BusWires, Reset, DOUT_in, Clock, data);
 			
 			regW Wren(Clock,Wd,wren);
 			
 			regn A(BusWires, Resetn, A_in, Clock, RA_out);
 			 
 			regn regG(saidaALU, Resetn, G_in, Clock, G);
-			
-			
 			
 			Alu alu(BusWires, RA_out, AddSub, ALU_and, saidaALU);
 	
@@ -300,12 +292,12 @@ module projetoProcessador(DIN, Resetn, Clock, Run, Done);
 				_R5: BusWires = r5;
 				_R6: BusWires = r6;
 				_PC: begin 
-					BusWires = r7;
+					BusWires = PC;
 					$display("BusWires=%16b",BusWires);
 				end
 				_G: BusWires = G;
-				_IR8_IR8_0: BusWires = {{7{IR[8]}}, IR[8:0]};
-				_IR7_0_0: BusWires = {IR[7:0], 8'b00000000};
+				_IR8_IR8_0: BusWires = {{7{saidaIR[8]}}, saidaIR[8:0]};
+				_IR7_0_0: BusWires = {saidaIR[7:0], 8'b00000000};
 				_DIN: BusWires = DadoMem;
 				default: BusWires = 16'bxxxxxxxxxxxxxxxx;
 			endcase
@@ -404,6 +396,18 @@ endmodule
 		
 	endmodule
 
+	module F (F_in, zero, Clock, f);
+		input F_in, zero, Clock;
+		output reg f;
+		
+		always@(posedge Clock) begin
+			if(F_in) begin
+				f = zero; // armazena o valor do bit Zero da ULA
+			end
+		end
+	endmodule
+
+	
 	module barrel (shift_type, shift, data_in, data_out);
 		input wire [1:0] shift_type;
 		input wire [3:0] shift;
