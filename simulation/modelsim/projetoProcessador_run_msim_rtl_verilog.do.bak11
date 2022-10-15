@@ -7,6 +7,8 @@ vmap work rtl_work
 
 vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/projetoProcessador.v}
 vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/memoriaPrincipal.v}
+vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/barrel.v}
+vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/Alu.v}
 vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/instr_memory.v}
 
 vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/projetoProcessador_tb.v}

@@ -32,7 +32,7 @@ module projetoProcessador(Resetn, Clock, Run, Done,reg0, reg1, reg2, reg3, reg4,
 	assign rX = saidaIR[11:9]; // registrador x
 	assign rY = saidaIR[2:0]; //registrador y (existe quando IMM é igual a 0)
 	assign opShift = saidaIR[6:5];
-	assign Imm_Shift =saidaIR[7];
+	assign Imm_Shift =saidaIR[12];
 	
 	assign reg0 = r0;
 	assign reg1 = r1;
@@ -164,11 +164,14 @@ module projetoProcessador(Resetn, Clock, Run, Done,reg0, reg1, reg2, reg3, reg4,
 									A_in = 1'b1;
 									Select = _PC;
 									case(rX)	
-										3'b001: //beq
-											if(!F) Done = 1'b1;
-										
-										3'b010: //bne
-											if(F) Done = 1'b1;
+										3'b001: begin//beq
+											if(G!= 16'b0) Done = 1'b1;
+											$display("entrou no beq");
+										end
+										3'b010: begin//bne
+											if(G == 16'b0) Done = 1'b1;
+											$display("entrou no bne");
+											end
 										
 										//default: always branch
 									endcase
@@ -435,34 +438,7 @@ endmodule
 	endmodule 
 	
 	
-	module Alu(BusW, RA_out,saidaBarril,op, Res,bitZero);
-		input [15:0] BusW;
-		input [15:0] RA_out;
-		input [15:0] saidaBarril;
-		input [2:0]op;
-		output reg [15:0] Res;
-		output reg bitZero;
-
-		always@(*)
-		
-		if(op == 3'b011)begin
-			Res = RA_out & BusW;
-		end else if (op == 3'b010) begin
-			Res = RA_out - BusW;
-		end else if(op == 3'b001) begin
-			Res = BusW + RA_out;
-		end else if(op == 3'b100)begin
-			$display("luiz\n,Res=%16b",Res);
-			Res = saidaBarril;
-		end
-		always@(*)
-		if(Res == 16'b0)begin
-			bitZero = 1'b1;
-		end else begin
-			bitZero = 1'b0;
-		end
-		
-	endmodule
+	
 
 	module F (F_in, zero, Clock, f);
 		input F_in, zero, Clock;
@@ -476,26 +452,5 @@ endmodule
 	endmodule
 
 	
-	module barrel (shift_type, shift, data_in, data_out);
-		input wire [1:0] shift_type;
-		input wire [3:0] shift;
-		input wire [15:0] data_in;
-		output reg [15:0] data_out;
-		parameter lsl = 2'b00, lsr = 2'b01, asr = 2'b10, ror = 2'b11;
-			
-			always @(*)
-				if (shift_type == lsl)begin
-				$display("data_in=%16b shift=%3b ",data_in,shift);
-				data_out = data_in << shift;     //0001  -> 0100
-				end
-				else if (shift_type == lsr)
-				data_out = data_in >> shift;
-				
-				else if (shift_type == asr)
-				data_out = {{16{data_in[15]}},data_in} >> shift; // sign extend
-				
-				else // ror
-				data_out = (data_in >> shift) | (data_in << (16 - shift));
-				
-	endmodule
+	
 

@@ -17,145 +17,281 @@ module projetoProcessador_tb();
     end
 
    initial begin
-			/*for(i=0;i<23;i=i+1)begin
-			#1;
-			assign Clock=~Clock;
+			/*$display("--------------------------------------  mv r0, #2 --------------------------------------");
+		   for(i=0;i<16;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end
+		  
+		  $display("-------------------------------------- sub r0, #1 --------------------------------------");
+		   for(i=0;i<12;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end
+		  
+		  
+        $display("--------------------------------------  bne LOOP --------------------------------------");
+         for(i=0;i<12;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end
+
+        $display("-------------------------------------- sub r0, #1  --------------------------------------");
+         for(i=0;i<12;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end
+        
+		  $display("-------------------------------------- bne LOOP  --------------------------------------");
+		   for(i=0;i<12;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end
+		  
+		  $display("-------------------------------------- Beq T1  --------------------------------------");
+		   for(i=0;i<12;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end
+		  
+		  $display("-------------------------------------- mvt r0, #0xFF  --------------------------------------");
+		   for(i=0;i<8;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end
+		  
+		  $display("-------------------------------------- add r0, #0xFF   --------------------------------------");
+		   for(i=0;i<12;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end
+		  
+		  $display("-------------------------------------- B MAIN   --------------------------------------");
+		   for(i=0;i<12;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end
+		  
+		  $display("--------------------------------------  mv r0, #2 --------------------------------------");
+		   for(i=0;i<8;i=i+1)begin
+				Clock = ~Clock;
+				#1;
 			end*/
-			//assign Run = ~Run;
-		  $display("-------------------------------------- MV R0, #2 --------------------------------------");
+			
+			
+			//O testbench abaixo se refere ao teste 3: teste rotate
+		   /*$display("--------------------------------------  mv r0, #4 --------------------------------------");
 		  for(i=0;i<16;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end
+		  
+		  $display("-------------------------------------- ld r4, r3 --------------------------------------");
+		  for(i=0;i<12;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end
+		  
+		  
+        $display("--------------------------------------  lsl r4, #1 --------------------------------------");
+        for(i=0;i<16;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end
+
+        $display("-------------------------------------- lsr r4, #1  --------------------------------------");
+        for(i=0;i<16;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end
+        
+		  $display("-------------------------------------- lsl r4, r0  --------------------------------------");
+		  for(i=0;i<16;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end
+		  
+		  $display("-------------------------------------- asr r4, #1  --------------------------------------");
+		  for(i=0;i<16;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end
+		  
+		  $display("-------------------------------------- ror r4, r0  --------------------------------------");
+		  for(i=0;i<16;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end*/
+
+       
+		//O testbench abaixo se refere aos casos propostos no teste 2:
+		 /*$display("-------------------------------------- mv r0, #5 --------------------------------------");
+			for(i=0;i<16;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end
+		  
+		  $display("-------------------------------------- mvt r1, #0xFF --------------------------------------");
+		  for(i=0;i<8;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+		  end
+		  
+		  
+		  
+        $display("-------------------------------------- add r1, #0xFF --------------------------------------");
+        for(i=0;i<12;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end
+
+        $display("-------------------------------------- sub r1, r0 --------------------------------------");
+        for(i=0;i<12;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end
+        
+		  $display("-------------------------------------- add r1, #1 --------------------------------------");
+        for(i=0;i<12;i=i+1)begin
+				Clock = ~Clock;
+				#1;
+			end*/
+			
+		//O código abaixo se refere ao testbench do teste 1 proposto: 
+		  $display("MV R0, #2 --------------------------------------");
+		  for(i=0;i<10;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
 		  
-		  $display("-------------------------------------- MV R1, #3 --------------------------------------");
+		  $display("MV R1, #3 --------------------------------------");
 		  
 		  for(i=0;i<8;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
 		  
-        $display("-------------------------------------- ADD R1, R0 --------------------------------------");
+        $display("ADD R1, R0 --------------------------------------");
         for(i=0;i<12;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
-        $display("-------------------------------------- MV R2, R0 --------------------------------------");
+        $display("MV R2, R0 --------------------------------------");
         for(i=0;i<8;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
         
-		  $display("-------------------------------------- ADD R2, #4 --------------------------------------");
+		  $display("ADD R2, #4 --------------------------------------");
 		  for(i=0;i<12;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
 		  
-		  $display("-------------------------------------- SUB R2, R1 --------------------------------------");
+		  $display("SUB R2, R1 --------------------------------------");
 		  for(i=0;i<12;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
 		  
-		  $display("-------------------------------------- MV R3, R2 --------------------------------------");
+		  $display("MV R3, R2 --------------------------------------");
 		  for(i=0;i<8;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
 		  
-		  $display("-------------------------------------- ADD R0,R3 --------------------------------------");
+		  $display("ADD R0,R3 --------------------------------------");
 		  for(i=0;i<12;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
 		  
-		  $display("-------------------------------------- AND R0, R1 --------------------------------------");
+		  $display("AND R0, R1 --------------------------------------");
 		  for(i=0;i<12;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
        
 		  
-		  $display("-------------------------------------- SLL R1, R3  --------------------------------------");
+		  $display("SLL R1, R3  --------------------------------------");
 		  for(i=0;i<12;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
 		  
-		  $display("-------------------------------------- SRL R1, R3 --------------------------------------");
+		  $display("SRL R1, R3 --------------------------------------");
 		 for(i=0;i<12;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
 		  
-		  $display("-------------------------------------- MV R2, R1 --------------------------------------");
+		  $display("MV R2, R1 --------------------------------------");
 		  for(i=0;i<8;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
 		  
-		  $display("-------------------------------------- AND R2, #3 --------------------------------------");
+		  $display("AND R2, #3 --------------------------------------");
 		  for(i=0;i<12;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
 		  
-		  $display("-------------------------------------- SLL R0, #2 --------------------------------------");
+		  $display("SLL R0, #2 --------------------------------------");
 		  for(i=0;i<12;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
 		  
-		  $display("-------------------------------------- SUB R0, #1 --------------------------------------");
+		  $display("SUB R0, #1 --------------------------------------");
 		  for(i=0;i<12;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
 		  
-		  $display("-------------------------------------- SRL R1, #2 --------------------------------------");
+		  $display("SRL R1, #2 --------------------------------------");
 		  for(i=0;i<12;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
 		  
-		  $display("-------------------------------------- ADD R1, R1 --------------------------------------");
+		  $display("ADD R1, R1 --------------------------------------");
 		  for(i=0;i<12;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
 		  
-		  $display("-------------------------------------- LD R2, R0 --------------------------------------");
+		  $display("LD R2, R0 --------------------------------------");
 		  for(i=0;i<12;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
 		  
-		  $display("-------------------------------------- ADD R2, R3 --------------------------------------");
+		  $display("ADD R2, R3 --------------------------------------");
 		  for(i=0;i<12;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
 		  
-		  $display("-------------------------------------- SUB R0, #3 --------------------------------------");
+		  $display("SUB R0, #3 --------------------------------------");
 		  for(i=0;i<12;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
 		  
-		  $display("-------------------------------------- SD R2, R0 --------------------------------------");
+		  $display("SD R2, R0 --------------------------------------");
 		  for(i=0;i<10;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
 		  
-		  $display("-------------------------------------- LD R0, R0 --------------------------------------");
+		  $display("LD R0, R0 --------------------------------------");
 		  for(i=0;i<12;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
 		  end
 		  
-		  $display("-------------------------------------- SUB R0, R3 --------------------------------------");
+		  $display("SUB R0, R3 --------------------------------------");
 		  for(i=0;i<12;i=i+1)begin
 			 Clock = ~Clock;
 			#1;
@@ -164,149 +300,5 @@ module projetoProcessador_tb();
     end
 
  
-	/*reg clock;
-	reg reset;
-	reg [4:0] Din;
-	reg run;
-	wire done;
-	integer i;
-	projetoProcessador proc(Din,reset,clock,run,done);
-	initial begin
-		assign clock = 1'b0;
-		assign reset = 1'b1;
-		assign run = 1'b1;
-		assign Din = 5'b00000;
 	
-	end
-	initial begin
-		for(i=0;i<23;i=i+1)begin
-			#50;
-			assign clock=~clock;
-		end
-		assign run = ~run;
-		#50;
-		assign run = ~run;
-		//teste instrução mv 000 1 000 000000100
-		$display("\n\nTesta mv");
-		for(i=0;i<6;i= i+1)begin
-			#50;
-			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%16b BusWires =%16b endereco=%16b addrIn=%1b regRX=%3b",
-			$time,clock,reset,run,done,Din,proc.r0,proc.Tstep_Q,proc.saidaIR,proc.BusWires,proc.endereco,proc.addr_in,proc.rX);
-			//if(i==1)assign run = ~run;
-			assign clock =~clock;
-			
-		end
-		
-		//testa instrução load 100 0 001 000000000
-		$display("\n\nTesta load");
-		//assign run = ~run;
-		assign run = ~run;
-		#50;
-		assign run = ~run;
-		assign Din = 5'b00001;
-		
-		for(i=0;i<12;i= i+1)begin
-			#50;
-			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%16b BusWires =%16b endereco=%16b saidaROM=%16b rx=%1b",
-			$time,clock,reset,run,done,Din,proc.r1,proc.Tstep_Q,proc.saidaIR,proc.BusWires,proc.endereco,proc.saidaROM,proc.rX);
-			//if(i==1)assign run = ~run;
-			assign clock =~clock;
-		end
-		
-		
-		$display("testa bcond"); //beq 001 0 000 000000011
-		assign run = ~run;
-		#50;
-		
-		assign Din = 5'b00111;
-		for(i=0;i<14;i= i+1)begin
-			#50;
-			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b instrucao=%16b BusWires =%16b saidaA=%16b PC=%16b saidaALU=%16b G=%16b",
-			$time,clock,reset,run,done,Din,proc.r2,proc.saidaIR,proc.BusWires,proc.RA_out,proc.PC,proc.saidaALU,proc.G);
-			if(i==1)assign run = ~run;
-			assign clock =~clock;
-		end
-		
-		
-		//testa instrução add 010 1 001 000001001
-		/*$display("\n\nTesta Add");
-		//assign run = ~run;
-		assign run = ~run;
-		#50;
-		assign run = ~run;
-		
-		//assign Din = 5'b00010;
-		for(i=0;i<12;i= i+1)begin
-			#50;
-			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%16b BusWires =%16b saidaA=%16b Select=%4b saidaALU=%16b",
-			$time,clock,reset,run,done,Din,proc.r1,proc.Tstep_Q,proc.saidaIR,proc.BusWires,proc.RA_out,proc.Select,proc.saidaALU);
-			//if(i==1)assign run = ~run;
-			assign clock =~clock;
-		end
-		
-		//testa instrução store 101 0 000 000000001
-		$display("\n\nTesta store");
-		//assign run = ~run;
-		assign run = ~run;
-		#50;
-		assign run = ~run;
-		
-		assign Din = 5'b00011;
-		for(i=0;i<12;i= i+1)begin
-			#50;
-			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%16b BusWires =%16b Select=%4b data=%16b endereco=%16b wren=%1b",
-			$time,clock,reset,run,done,Din,proc.r0,proc.Tstep_Q,proc.saidaIR,proc.BusWires,proc.Select,proc.data,proc.endereco,proc.wren);
-			//if(i==1)assign run = ~run;
-			assign clock =~clock;
-		end
-		
-		$display("\n\nTesta load"); //load 100 0 010 000000001
-		//assign run = ~run;
-		assign run = ~run;
-		#50;
-		assign run = ~run;
-		
-		assign Din = 5'b00100;
-		for(i=0;i<12;i= i+1)begin
-			#50;
-			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%16b BusWires =%16b saidaA=%16b Select=%4b saidaALU=%16b",
-			$time,clock,reset,run,done,Din,proc.r2,proc.Tstep_Q,proc.saidaIR,proc.BusWires,proc.RA_out,proc.Select,proc.saidaALU);
-			//if(i==1)assign run = ~run;
-			assign clock =~clock;
-		end
-
-		//teste instrução mv 000 1 010 000000010
-		$display("\n\nTesta mv");
-		assign run = ~run;
-		#50;
-		assign run = ~run;
-		assign Din = 5'b00101;
-		
-		for(i=0;i<6;i= i+1)begin
-			#50;
-			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%16b BusWires =%16b endereco=%16b",
-			$time,clock,reset,run,done,Din,proc.r2,proc.Tstep_Q,proc.saidaIR,proc.BusWires,proc.endereco);
-			if(i==1)assign run = ~run;
-			assign clock =~clock;
-			
-		end
-
-
-		$display("\n\ntesta and"); //and 110 1 010 000000001
-		assign run = ~run;
-		#50;
-		assign run = ~run;
-		
-		assign Din = 5'b00110;
-		for(i=0;i<7;i= i+1)begin
-			#50;
-			$display("Time=%0d clock=%0b reset=%0b run=%0d done=%0b Din=%0b regDestino=%16b tstepQ=%0b instrucao=%16b BusWires =%16b saidaA=%16b Select=%4b saidaALU=%16b",
-			$time,clock,reset,run,done,Din,proc.r2,proc.Tstep_Q,proc.saidaIR,proc.BusWires,proc.RA_out,proc.Select,proc.saidaALU);
-			if(i==1)assign run = ~run;
-			assign clock =~clock;
-		end
-		
-		
-	end*/
-
 endmodule 

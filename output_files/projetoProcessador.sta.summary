@@ -3,35 +3,35 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'Tstep_Q.T4'
-Slack : -10.659
-TNS   : -171.213
+Slack : -10.086
+TNS   : -159.427
 
 Type  : Slow Model Setup 'Clock'
-Slack : -6.125
-TNS   : -1104.197
+Slack : -6.367
+TNS   : -1104.595
 
 Type  : Slow Model Setup 'Tstep_Q.T3'
-Slack : -3.772
-TNS   : -3.772
+Slack : -3.266
+TNS   : -3.266
 
 Type  : Slow Model Setup 'Tstep_Q.T1'
-Slack : -3.767
-TNS   : -14.555
-
-Type  : Slow Model Hold 'Clock'
-Slack : -3.156
-TNS   : -26.171
+Slack : -1.898
+TNS   : -6.693
 
 Type  : Slow Model Hold 'Tstep_Q.T4'
-Slack : -2.756
-TNS   : -29.981
+Slack : -2.833
+TNS   : -25.428
 
 Type  : Slow Model Hold 'Tstep_Q.T1'
-Slack : -1.909
-TNS   : -6.915
+Slack : -2.569
+TNS   : -9.501
+
+Type  : Slow Model Hold 'Clock'
+Slack : -2.557
+TNS   : -57.668
 
 Type  : Slow Model Hold 'Tstep_Q.T3'
-Slack : 3.308
+Slack : 2.959
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'Clock'
@@ -51,35 +51,35 @@ Slack : 0.500
 TNS   : 0.000
 
 Type  : Fast Model Setup 'Tstep_Q.T4'
-Slack : -5.076
-TNS   : -79.513
+Slack : -4.703
+TNS   : -72.517
 
 Type  : Fast Model Setup 'Clock'
-Slack : -2.737
-TNS   : -472.242
+Slack : -2.929
+TNS   : -474.340
 
 Type  : Fast Model Setup 'Tstep_Q.T3'
-Slack : -1.745
-TNS   : -1.745
+Slack : -1.435
+TNS   : -1.435
 
 Type  : Fast Model Setup 'Tstep_Q.T1'
-Slack : -1.136
-TNS   : -4.305
-
-Type  : Fast Model Hold 'Clock'
-Slack : -1.760
-TNS   : -64.412
+Slack : -0.200
+TNS   : -0.502
 
 Type  : Fast Model Hold 'Tstep_Q.T4'
-Slack : -1.534
-TNS   : -20.182
+Slack : -1.582
+TNS   : -17.576
 
 Type  : Fast Model Hold 'Tstep_Q.T1'
-Slack : -1.182
-TNS   : -4.461
+Slack : -1.496
+TNS   : -5.636
+
+Type  : Fast Model Hold 'Clock'
+Slack : -1.413
+TNS   : -78.364
 
 Type  : Fast Model Hold 'Tstep_Q.T3'
-Slack : 2.133
+Slack : 1.889
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'Clock'
