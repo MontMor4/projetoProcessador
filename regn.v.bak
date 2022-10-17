@@ -1,0 +1,12 @@
+module regn(BusW,Reset,R_IN,clock,R_OUT);
+		input [15:0]BusW;
+		input Reset;
+		input R_IN,clock;
+		output reg[15:0] R_OUT;
+		initial begin
+			R_OUT<=16'b0;
+		end
+		
+		always @(posedge clock) // antigo: negedge reset
+			if (R_IN) R_OUT <= BusW;	
+	endmodule 

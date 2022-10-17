@@ -1,4 +1,4 @@
-module Alu(BusW, RA_out,saidaBarril,op, Res,bitZero);
+module Alu(BusW, RA_out, saidaBarril, op, Res, bitZero);
 		input [15:0] BusW;
 		input [15:0] RA_out;
 		input [15:0] saidaBarril;

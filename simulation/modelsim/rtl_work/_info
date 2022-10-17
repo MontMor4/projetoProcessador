@@ -2,35 +2,35 @@ m255
 K3
 13
 cModel Technology
-Z0 dC:\pastaX\projetoProcessador\simulation\modelsim
+Z0 dC:\altera\projetoProcessador\simulation\modelsim
 vAlu
-IRJT1Hgo059F^moDJm^GH60
+I;7m5[bQ8:BMDX<9NCnNb>1
 Vk7HXUL;=]A6lC1Z9QHLnj0
-Z1 dC:\pastaX\projetoProcessador\simulation\modelsim
-w1665787434
-8C:/pastaX/projetoProcessador/Alu.v
-FC:/pastaX/projetoProcessador/Alu.v
+Z1 dC:\altera\projetoProcessador\simulation\modelsim
+w1666022119
+8C:/altera/projetoProcessador/Alu.v
+FC:/altera/projetoProcessador/Alu.v
 L0 1
 Z2 OV;L;10.1d;51
 r1
 31
 Z3 o-vlog01compat -work work -O0
-Z4 !s92 -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador -O0
+Z4 !s92 -vlog01compat -work work +incdir+C:/altera/projetoProcessador -O0
 n@alu
 !i10b 1
-!s100 5cQ7K_Y0bZBkKb7C;oE^L3
+!s100 6dPV8DO^4LSPFV[:CgFnZ0
 !s85 0
-!s108 1665799429.972000
-!s107 C:/pastaX/projetoProcessador/Alu.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/pastaX/projetoProcessador|C:/pastaX/projetoProcessador/Alu.v|
+!s108 1666039181.062000
+!s107 C:/altera/projetoProcessador/Alu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/projetoProcessador|C:/altera/projetoProcessador/Alu.v|
 !s101 -O0
 vbarrel
-IaR`9k_98;QbEM1SbPCLCM2
+I33[Z8PZ]n8:_H:@=WILag2
 V=]cL8o84G2<l9Z4mgbNb[1
 R1
-w1665796542
-8C:/pastaX/projetoProcessador/barrel.v
-FC:/pastaX/projetoProcessador/barrel.v
+Z5 w1666014943
+8C:/altera/projetoProcessador/barrel.v
+FC:/altera/projetoProcessador/barrel.v
 L0 1
 R2
 r1
@@ -38,60 +38,81 @@ r1
 R3
 R4
 !i10b 1
-!s100 D_aUd]Q_Xkj]6W?BSKTVo0
+!s100 ?E@>kFJBD@VUDKiT:SO[H3
 !s85 0
-!s108 1665799429.893000
-!s107 C:/pastaX/projetoProcessador/barrel.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/pastaX/projetoProcessador|C:/pastaX/projetoProcessador/barrel.v|
+!s108 1666039180.997000
+!s107 C:/altera/projetoProcessador/barrel.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/projetoProcessador|C:/altera/projetoProcessador/barrel.v|
 !s101 -O0
 vdec3to8
-I]?3e3>lZgLMn6bKn_VZ[V1
+If4YI3FVfO_@32T7YEXB4G0
 VWGLzn^X@`CM]?8jJRF_IR3
 R1
-Z5 w1665798025
-Z6 8C:/pastaX/projetoProcessador/projetoProcessador.v
-Z7 FC:/pastaX/projetoProcessador/projetoProcessador.v
-L0 366
+w1666016993
+8C:/altera/projetoProcessador/dec3to8.v
+FC:/altera/projetoProcessador/dec3to8.v
+L0 1
 R2
 r1
 31
-Z8 !s108 1665799429.601000
-Z9 !s107 C:/pastaX/projetoProcessador/projetoProcessador.v|
-Z10 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/pastaX/projetoProcessador|C:/pastaX/projetoProcessador/projetoProcessador.v|
 R3
 R4
 !i10b 1
-!s100 4@<^7R_gZ<07ZE>iJ4`j93
+!s100 dz2MO`lLK<hB1Alk]=`Ri0
 !s85 0
+!s108 1666039181.344000
+!s107 C:/altera/projetoProcessador/dec3to8.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/projetoProcessador|C:/altera/projetoProcessador/dec3to8.v|
 !s101 -O0
-vF
-I`>SdeV6bXS4Fm;5GdSN`o1
-VOT=NNzmYTkeQ8e5YA<5A50
+vDisplay
+I9Y7LnmY>0cG^z`1QH63<52
+Vadf32hWiKQk08JL^A_Cfh3
 R1
-R5
-R6
-R7
-L0 443
+w1666016926
+8C:/altera/projetoProcessador/display.v
+FC:/altera/projetoProcessador/display.v
+L0 1
 R2
 r1
 31
-R8
-R9
-R10
+R3
+R4
+n@display
+!i10b 1
+!s100 <U28_mKDk:Ief4hj3WRLI1
+!s85 0
+!s108 1666039181.311000
+!s107 C:/altera/projetoProcessador/display.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/projetoProcessador|C:/altera/projetoProcessador/display.v|
+!s101 -O0
+vF
+I^cag=ZTiSF<;nJ9^2O@dc3
+VOT=NNzmYTkeQ8e5YA<5A50
+R1
+w1666015482
+8C:/altera/projetoProcessador/F.v
+FC:/altera/projetoProcessador/F.v
+L0 1
+R2
+r1
+31
 R3
 R4
 n@f
 !i10b 1
-!s100 4nQSmHSSV^C1icCD1G1ZQ2
+!s100 HW;jPAa0kG5KU^WCESV=f0
 !s85 0
+!s108 1666039181.214000
+!s107 C:/altera/projetoProcessador/F.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/projetoProcessador|C:/altera/projetoProcessador/F.v|
 !s101 -O0
 vinstr_memory
-IRRA6HzCHXPaJ?C:=;mlF[2
+IoXKRnoXn<ma5G]O[ieE<11
 V=h9ZWXQzRXjIdPJhZ^JfZ1
 R1
-w1665798965
-8C:/pastaX/projetoProcessador/instr_memory.v
-FC:/pastaX/projetoProcessador/instr_memory.v
+w1666035665
+8C:/altera/projetoProcessador/instr_memory.v
+FC:/altera/projetoProcessador/instr_memory.v
 L0 39
 R2
 r1
@@ -99,19 +120,40 @@ r1
 R3
 R4
 !i10b 1
-!s100 X3V7J;L@^lz4oB_D9N[5;3
+!s100 :T]gGB:j1PJ[g2m6edfV40
 !s85 0
-!s108 1665799430.046000
-!s107 C:/pastaX/projetoProcessador/instr_memory.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/pastaX/projetoProcessador|C:/pastaX/projetoProcessador/instr_memory.v|
+!s108 1666039181.453000
+!s107 C:/altera/projetoProcessador/instr_memory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/projetoProcessador|C:/altera/projetoProcessador/instr_memory.v|
+!s101 -O0
+vMain
+I=Fnf6e^UND[_S4LikEH;f3
+V?^7UZ8S?n24lHITHOOLmV1
+R1
+w1666038430
+8C:/altera/projetoProcessador/Main.v
+FC:/altera/projetoProcessador/Main.v
+L0 3
+R2
+r1
+31
+R3
+R4
+n@main
+!i10b 1
+!s100 U1KgAYGWeSKT>SULV_X160
+!s85 0
+!s108 1666039181.406000
+!s107 C:/altera/projetoProcessador/Main.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/projetoProcessador|C:/altera/projetoProcessador/Main.v|
 !s101 -O0
 vmemoriaPrincipal
-IbY9RK[2K83^lPC_nC9=oW1
+I5H2R7^lSHTk^7hALXdVbK0
 V9Mk]8cPS3MDfKoBb8FFhY2
 R1
-w1665749238
-8C:/pastaX/projetoProcessador/memoriaPrincipal.v
-FC:/pastaX/projetoProcessador/memoriaPrincipal.v
+R5
+8C:/altera/projetoProcessador/memoriaPrincipal.v
+FC:/altera/projetoProcessador/memoriaPrincipal.v
 L0 39
 R2
 r1
@@ -120,133 +162,112 @@ R3
 R4
 nmemoria@principal
 !i10b 1
-!s100 z3VeLnIaMPTHI:G4HALn23
+!s100 9Man<:eHgY2_VnGEh7VS33
 !s85 0
-!s108 1665799429.809000
-!s107 C:/pastaX/projetoProcessador/memoriaPrincipal.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/pastaX/projetoProcessador|C:/pastaX/projetoProcessador/memoriaPrincipal.v|
+!s108 1666039180.948000
+!s107 C:/altera/projetoProcessador/memoriaPrincipal.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/projetoProcessador|C:/altera/projetoProcessador/memoriaPrincipal.v|
 !s101 -O0
 vpc_counter
-I0Tne@8F>aYI29M68_UmR53
+I`VWgiAXMCgcK=03iM8?O01
 V=6Mif9DTMjDg8G>YK?ikA2
 R1
-R5
-R6
-R7
-L0 400
-R2
-r1
-31
-R8
-R9
-R10
-R3
-R4
-!i10b 1
-!s100 W[9MD7h41b^:T3oK0]Vg^0
-!s85 0
-!s101 -O0
-vprojetoProcessador
-I@YYzEmQ90:3^bA94n<7SM1
-VlE5ZiYh^>M]>e7EUTR6861
-R1
-R5
-R6
-R7
+w1666015409
+8C:/altera/projetoProcessador/pc_counter.v
+FC:/altera/projetoProcessador/pc_counter.v
 L0 1
 R2
 r1
 31
-R8
-R9
-R10
 R3
 R4
-nprojeto@processador
 !i10b 1
-!s100 TDG@AGl<ZznRLmWdYCS8c2
+!s100 PdYlVekbY6BnHl_F7GzQ20
 !s85 0
+!s108 1666039181.114000
+!s107 C:/altera/projetoProcessador/pc_counter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/projetoProcessador|C:/altera/projetoProcessador/pc_counter.v|
+!s101 -O0
+vprojetoProcessador
+IO5Q4_Y5P>1KHgjKnJ3IiG0
+VlE5ZiYh^>M]>e7EUTR6861
+R1
+w1666027029
+8C:/altera/projetoProcessador/projetoProcessador.v
+FC:/altera/projetoProcessador/projetoProcessador.v
+L0 1
+R2
+r1
+31
+R3
+nprojeto@processador
+R4
+!i10b 1
+!s100 R=fNOGA;j=ekzNLb6[4Wo0
+!s85 0
+!s108 1666039180.897000
+!s107 C:/altera/projetoProcessador/projetoProcessador.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/projetoProcessador|C:/altera/projetoProcessador/projetoProcessador.v|
 !s101 -O0
 vprojetoProcessador_tb
 !i10b 1
-!s100 ]FX;WVLY]nAQ=X9i6A7D70
-I3TXNaf8@b9lX4aKg8mTJZ2
+!s100 4JYc<El1^R>V4BH[?Y_al3
+If=KMYZ5k59lPF]0QlTDLZ3
 VjNWXhCVY:dfOo[:MJEo=M0
 R1
-w1665799351
-8C:/pastaX/projetoProcessador/projetoProcessador_tb.v
-FC:/pastaX/projetoProcessador/projetoProcessador_tb.v
+w1666035840
+8C:/altera/projetoProcessador/projetoProcessador_tb.v
+FC:/altera/projetoProcessador/projetoProcessador_tb.v
 L0 1
 R2
 r1
 !s85 0
 31
-!s108 1665799430.137000
-!s107 C:/pastaX/projetoProcessador/projetoProcessador_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/pastaX/projetoProcessador|C:/pastaX/projetoProcessador/projetoProcessador_tb.v|
+!s108 1666039181.503000
+!s107 C:/altera/projetoProcessador/projetoProcessador_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/projetoProcessador|C:/altera/projetoProcessador/projetoProcessador_tb.v|
 !s101 -O0
 R3
 R4
 nprojeto@processador_tb
-vregInstr
-ITW@^[IFdjg96CNW1NRe;D1
-VKED;W8KG42o12eIP^d4=>3
-R1
-R5
-R6
-R7
-L0 418
-R2
-r1
-31
-R8
-R9
-R10
-R3
-R4
-nreg@instr
-!i10b 1
-!s100 TjknLjR>7O>0HX?7GWQ;C0
-!s85 0
-!s101 -O0
 vregn
-ImMk;ozGQdEFKSZMT6nRZK2
+IgKWKi3ZGnPaefMES4dQ8h1
 V9zaDo2omaB;@NS2Ai0:Sl2
 R1
-R5
-R6
-R7
-L0 427
+w1666029985
+8C:/altera/projetoProcessador/regn.v
+FC:/altera/projetoProcessador/regn.v
+L0 1
 R2
 r1
 31
-R8
-R9
-R10
 R3
 R4
 !i10b 1
-!s100 fklM41`4d<MHCbVOcYPc?1
+!s100 EkgkLOBa>7@GjfD6Te63`0
 !s85 0
+!s108 1666039181.163000
+!s107 C:/altera/projetoProcessador/regn.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/projetoProcessador|C:/altera/projetoProcessador/regn.v|
 !s101 -O0
 vregW
-Ii^H9okYY:Cc>MXVUZLn?O3
+I^YdJK?O54ePk4o6B^RkRW0
 VJJL3M;1HUhIf[I4K6lR]i2
 R1
-R5
-R6
-R7
-L0 388
+w1666015504
+8C:/altera/projetoProcessador/regW.v
+FC:/altera/projetoProcessador/regW.v
+L0 1
 R2
 r1
 31
-R8
-R9
-R10
 R3
 R4
 nreg@w
 !i10b 1
-!s100 17UJh3aIFoPk>0Y[MS;O02
+!s100 =2@U`8WOEenSe`0D4U?J90
 !s85 0
+!s108 1666039181.261000
+!s107 C:/altera/projetoProcessador/regW.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/projetoProcessador|C:/altera/projetoProcessador/regW.v|
 !s101 -O0

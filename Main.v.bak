@@ -1,0 +1,19 @@
+module Main(
+	input wire [17:0] SW;
+	input wire CLOCK_50;
+	
+	output wire [6:0] HEX7,
+   output wire [6:0] HEX6,
+   output wire [6:0] HEX5,
+   output wire [6:0] HEX4,
+   output wire [6:0] HEX3,
+   output wire [6:0] HEX2,
+   output wire [6:0] HEX1,
+   output wire [6:0] HEX0,
+   output wire [7:0] LEDG
+);
+  wire Clock;
+  
+
+
+endmodule 

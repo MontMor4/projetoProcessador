@@ -10,45 +10,80 @@
 # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/projetoProcessador.v}
+# vlog -vlog01compat -work work +incdir+C:/altera/projetoProcessador {C:/altera/projetoProcessador/projetoProcessador.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module projetoProcessador
-# -- Compiling module dec3to8
-# -- Compiling module regW
-# -- Compiling module pc_counter
-# -- Compiling module regInstr
-# -- Compiling module regn
-# -- Compiling module F
 # 
 # Top level modules:
 # 	projetoProcessador
-# 	regInstr
-# vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/memoriaPrincipal.v}
+# vlog -vlog01compat -work work +incdir+C:/altera/projetoProcessador {C:/altera/projetoProcessador/memoriaPrincipal.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module memoriaPrincipal
 # 
 # Top level modules:
 # 	memoriaPrincipal
-# vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/barrel.v}
+# vlog -vlog01compat -work work +incdir+C:/altera/projetoProcessador {C:/altera/projetoProcessador/barrel.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module barrel
 # 
 # Top level modules:
 # 	barrel
-# vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/Alu.v}
+# vlog -vlog01compat -work work +incdir+C:/altera/projetoProcessador {C:/altera/projetoProcessador/Alu.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module Alu
 # 
 # Top level modules:
 # 	Alu
-# vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/instr_memory.v}
+# vlog -vlog01compat -work work +incdir+C:/altera/projetoProcessador {C:/altera/projetoProcessador/pc_counter.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module pc_counter
+# 
+# Top level modules:
+# 	pc_counter
+# vlog -vlog01compat -work work +incdir+C:/altera/projetoProcessador {C:/altera/projetoProcessador/regn.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module regn
+# 
+# Top level modules:
+# 	regn
+# vlog -vlog01compat -work work +incdir+C:/altera/projetoProcessador {C:/altera/projetoProcessador/F.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module F
+# 
+# Top level modules:
+# 	F
+# vlog -vlog01compat -work work +incdir+C:/altera/projetoProcessador {C:/altera/projetoProcessador/regW.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module regW
+# 
+# Top level modules:
+# 	regW
+# vlog -vlog01compat -work work +incdir+C:/altera/projetoProcessador {C:/altera/projetoProcessador/display.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Display
+# 
+# Top level modules:
+# 	Display
+# vlog -vlog01compat -work work +incdir+C:/altera/projetoProcessador {C:/altera/projetoProcessador/dec3to8.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module dec3to8
+# 
+# Top level modules:
+# 	dec3to8
+# vlog -vlog01compat -work work +incdir+C:/altera/projetoProcessador {C:/altera/projetoProcessador/Main.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Main
+# 
+# Top level modules:
+# 	Main
+# vlog -vlog01compat -work work +incdir+C:/altera/projetoProcessador {C:/altera/projetoProcessador/instr_memory.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module instr_memory
 # 
 # Top level modules:
 # 	instr_memory
 # 
-# vlog -vlog01compat -work work +incdir+C:/pastaX/projetoProcessador {C:/pastaX/projetoProcessador/projetoProcessador_tb.v}
+# vlog -vlog01compat -work work +incdir+C:/altera/projetoProcessador {C:/altera/projetoProcessador/projetoProcessador_tb.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module projetoProcessador_tb
 # 
@@ -71,7 +106,7 @@
 # Loading work.Alu
 # Loading work.F
 # Loading work.barrel
-# ** Warning: (vsim-3015) C:/pastaX/projetoProcessador/projetoProcessador.v(49): [PCDPC] - Port size (5 or 5) does not match connection size (32) for port 'address'. The port definition is at: C:/pastaX/projetoProcessador/instr_memory.v(40).
+# ** Warning: (vsim-3015) C:/altera/projetoProcessador/projetoProcessador.v(52): [PCDPC] - Port size (5 or 5) does not match connection size (32) for port 'address'. The port definition is at: C:/altera/projetoProcessador/instr_memory.v(40).
 # 
 #         Region: /projetoProcessador_tb/proc/memInstr
 # 
@@ -81,410 +116,196 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# MV R0, #2 --------------------------------------
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "../instrucao4.mif" for reading.
+# 
+# No such file or directory. (errno = ENOENT)    : C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_mf.v(187)
+#    Time: 0 ps  Iteration: 0  Instance: /projetoProcessador_tb/proc/memInstr/altsyncram_component
+# ERROR: cannot read ../instrucao4.mif.
+# ** Warning: (vsim-7) Failed to open readmem file "../instrucao4.ver" in read mode.
+# 
+# No such file or directory. (errno = ENOENT)    : C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_mf.v(45501)
+#    Time: 0 ps  Iteration: 0  Instance: /projetoProcessador_tb/proc/memInstr/altsyncram_component
+# --------------------------------------  mv r0, #2 --------------------------------------
 # T0 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 0000 | pc_incr: 1
-# addr:     0 | addr_in: 1 | DATA: 0000 | dout: xxxx | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
+# addr:     0 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
 # T1 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0001 | pc_incr: 0
-# addr:     0 | addr_in: 0 | DATA: 0000 | dout: 0f0f | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
+# addr:     0 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
 # T2 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0001 | pc_incr: 0
-# addr:     0 | addr_in: 0 | DATA: 0000 | dout: 0f0f | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
+# addr:     0 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T3 | Done: 1 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0001 | pc_incr: 0
-# addr:     0 | addr_in: 0 | DATA: 0000 | dout: 0f0f | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0001000000000010 | W: 0
+# T3 | Done: 1 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 0001 | pc_incr: 0
+# addr:     0 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T0 | Done: 0 | r0: 0002 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0001 | pc_incr: 1
-# addr:     0 | addr_in: 1 | DATA: 0000 | dout: 0f0f | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0001000000000010 | W: 0
+# T0 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0001 | pc_incr: 1
+# addr:     0 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# MV R1, #3 --------------------------------------
-# T1 | Done: 0 | r0: 0002 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0002 | pc_incr: 0
-# addr:     1 | addr_in: 0 | DATA: 0000 | dout: 0f0f | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0001000000000010 | W: 0
+# T1 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0002 | pc_incr: 0
+# addr:     1 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T2 | Done: 0 | r0: 0002 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0002 | pc_incr: 0
-# addr:     1 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0001000000000010 | W: 0
+# T2 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0002 | pc_incr: 0
+# addr:     1 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T3 | Done: 1 | r0: 0002 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0002 | pc_incr: 0
-# addr:     1 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0001001000000011 | W: 0
+# T3 | Done: 1 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 0002 | pc_incr: 0
+# addr:     1 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T0 | Done: 0 | r0: 0002 | r1: 0003 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0002 | pc_incr: 1
-# addr:     1 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0001001000000011 | W: 0
+# -------------------------------------- sub r0, #1 --------------------------------------
+# T0 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0002 | pc_incr: 1
+# addr:     1 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# ADD R1, R0 --------------------------------------
-# T1 | Done: 0 | r0: 0002 | r1: 0003 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0003 | pc_incr: 0
-# addr:     2 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0001001000000011 | W: 0
+# T1 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0003 | pc_incr: 0
+# addr:     2 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T2 | Done: 0 | r0: 0002 | r1: 0003 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0003 | pc_incr: 0
-# addr:     2 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0001001000000011 | W: 0
+# T2 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0003 | pc_incr: 0
+# addr:     2 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T3 | Done: 0 | r0: 0002 | r1: 0003 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0003 | pc_incr: 0
-# addr:     2 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0100001000000000 | W: 0
+# T3 | Done: 1 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 0003 | pc_incr: 0
+# addr:     2 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T4 | Done: 0 | r0: 0002 | r1: 0003 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0003 | pc_incr: 0
-# addr:     2 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0003 | g: 0000 | f: x | F_in: 1 | zero: 0 | IR: 0100001000000000 | W: 0
+# T0 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0003 | pc_incr: 1
+# addr:     2 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T5 | Done: 1 | r0: 0002 | r1: 0003 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 0003 | pc_incr: 0
-# addr:     2 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0002 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0100001000000000 | W: 0
+# T1 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0004 | pc: 0004 | pc_incr: 0
+# addr:     3 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T0 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0003 | pc_incr: 1
-# addr:     2 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0100001000000000 | W: 0
+# --------------------------------------  bne LOOP --------------------------------------
+# T2 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0004 | pc: 0004 | pc_incr: 0
+# addr:     3 | addr_in: 0 | DATA: 0000 | dout: 0006 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# MV R2, R0 --------------------------------------
-# T1 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0004 | pc: 0004 | pc_incr: 0
-# addr:     3 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0003 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0100001000000000 | W: 0
+# T3 | Done: 1 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 0004 | pc_incr: 0
+# addr:     3 | addr_in: 0 | DATA: 0000 | dout: 0006 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T2 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0004 | pc: 0004 | pc_incr: 0
-# addr:     3 | addr_in: 0 | DATA: 0000 | dout: 0006 | dout_in: x | a: 0004 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0100001000000000 | W: 0
+# T0 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0004 | pc: 0004 | pc_incr: 1
+# addr:     3 | addr_in: 1 | DATA: 0000 | dout: 0006 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T3 | Done: 1 | r0: 0002 | r1: 0005 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0004 | pc_incr: 0
-# addr:     3 | addr_in: 0 | DATA: 0000 | dout: 0006 | dout_in: x | a: 0004 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0000010000000000 | W: 0
+# T1 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 0005 | pc_incr: 0
+# addr:     4 | addr_in: 0 | DATA: 0000 | dout: 0006 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T0 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0002 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0004 | pc: 0004 | pc_incr: 1
-# addr:     3 | addr_in: 1 | DATA: 0000 | dout: 0006 | dout_in: x | a: 0002 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0000010000000000 | W: 0
+# T2 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 0005 | pc_incr: 0
+# addr:     4 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# ADD R2, #4 --------------------------------------
-# T1 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0002 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 0005 | pc_incr: 0
-# addr:     4 | addr_in: 0 | DATA: 0000 | dout: 0006 | dout_in: x | a: 0004 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0000010000000000 | W: 0
+# T3 | Done: 1 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 0005 | pc_incr: 0
+# addr:     4 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T2 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0002 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 0005 | pc_incr: 0
-# addr:     4 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0000010000000000 | W: 0
+# -------------------------------------- sub r0, #1  --------------------------------------
+# T0 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 0005 | pc_incr: 1
+# addr:     4 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T3 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0002 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0005 | pc_incr: 0
-# addr:     4 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0101010000000100 | W: 0
+# T1 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0006 | pc: 0006 | pc_incr: 0
+# addr:     5 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T4 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0002 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0004 | pc: 0005 | pc_incr: 0
-# addr:     4 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0002 | g: 0005 | f: z | F_in: 1 | zero: 0 | IR: 0101010000000100 | W: 0
+# T2 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0006 | pc: 0006 | pc_incr: 0
+# addr:     5 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T5 | Done: 1 | r0: 0002 | r1: 0005 | r2: 0002 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0006 | pc: 0005 | pc_incr: 0
-# addr:     4 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0004 | g: 0006 | f: z | F_in: 0 | zero: 0 | IR: 0101010000000100 | W: 0
+# T3 | Done: 1 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 0006 | pc_incr: 0
+# addr:     5 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T0 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0006 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 0005 | pc_incr: 1
-# addr:     4 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0006 | g: 0006 | f: z | F_in: 0 | zero: 0 | IR: 0101010000000100 | W: 0
+# T0 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0006 | pc: 0006 | pc_incr: 1
+# addr:     5 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# SUB R2, R1 --------------------------------------
-# T1 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0006 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0006 | pc: 0006 | pc_incr: 0
-# addr:     5 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0006 | f: z | F_in: 0 | zero: 0 | IR: 0101010000000100 | W: 0
+# T1 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0007 | pc: 0007 | pc_incr: 0
+# addr:     6 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T2 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0006 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0006 | pc: 0006 | pc_incr: 0
-# addr:     5 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0006 | g: 0006 | f: z | F_in: 0 | zero: 0 | IR: 0101010000000100 | W: 0
+# -------------------------------------- bne LOOP  --------------------------------------
+# T2 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0007 | pc: 0007 | pc_incr: 0
+# addr:     6 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T3 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0006 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0006 | pc: 0006 | pc_incr: 0
-# addr:     5 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0006 | g: 0006 | f: z | F_in: 0 | zero: 0 | IR: 0110010000000001 | W: 0
+# T3 | Done: 1 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 0007 | pc_incr: 0
+# addr:     6 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T4 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0006 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 0006 | pc_incr: 0
-# addr:     5 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0006 | g: 0006 | f: z | F_in: 1 | zero: 0 | IR: 0110010000000001 | W: 0
+# T0 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0007 | pc: 0007 | pc_incr: 1
+# addr:     6 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T5 | Done: 1 | r0: 0002 | r1: 0005 | r2: 0006 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0006 | pc_incr: 0
-# addr:     5 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0110010000000001 | W: 0
+# T1 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0008 | pc: 0008 | pc_incr: 0
+# addr:     7 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T0 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0006 | pc: 0006 | pc_incr: 1
-# addr:     5 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0110010000000001 | W: 0
+# T2 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0008 | pc: 0008 | pc_incr: 0
+# addr:     7 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# MV R3, R2 --------------------------------------
-# T1 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0007 | pc: 0007 | pc_incr: 0
-# addr:     6 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0006 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0110010000000001 | W: 0
+# T3 | Done: 1 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 0008 | pc_incr: 0
+# addr:     7 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T2 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0007 | pc: 0007 | pc_incr: 0
-# addr:     6 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0007 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0110010000000001 | W: 0
+# -------------------------------------- Beq T1  --------------------------------------
+# T0 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0008 | pc: 0008 | pc_incr: 1
+# addr:     7 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T3 | Done: 1 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0007 | pc_incr: 0
-# addr:     6 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0007 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0000011000000010 | W: 0
+# T1 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0009 | pc: 0009 | pc_incr: 0
+# addr:     8 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T0 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0007 | pc: 0007 | pc_incr: 1
-# addr:     6 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0000011000000010 | W: 0
+# T2 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0009 | pc: 0009 | pc_incr: 0
+# addr:     8 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# ADD R0,R3 --------------------------------------
-# T1 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0008 | pc: 0008 | pc_incr: 0
-# addr:     7 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0007 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0000011000000010 | W: 0
+# T3 | Done: 1 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 0009 | pc_incr: 0
+# addr:     8 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T2 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0008 | pc: 0008 | pc_incr: 0
-# addr:     7 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0008 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0000011000000010 | W: 0
+# T0 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0009 | pc: 0009 | pc_incr: 1
+# addr:     8 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T3 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0008 | pc_incr: 0
-# addr:     7 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0008 | g: 0001 | f: z | F_in: 0 | zero: 1 | IR: 0100000000000011 | W: 0
+# T1 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000a | pc: 000a | pc_incr: 0
+# addr:     9 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T4 | Done: 0 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0008 | pc_incr: 0
-# addr:     7 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0002 | g: 0001 | f: z | F_in: 1 | zero: 0 | IR: 0100000000000011 | W: 0
+# -------------------------------------- mvt r0, #0xFF  --------------------------------------
+# T2 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000a | pc: 000a | pc_incr: 0
+# addr:     9 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T5 | Done: 1 | r0: 0002 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0008 | pc_incr: 0
-# addr:     7 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0003 | f: z | F_in: 0 | zero: 0 | IR: 0100000000000011 | W: 0
+# T3 | Done: 1 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 000a | pc_incr: 0
+# addr:     9 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T0 | Done: 0 | r0: 0003 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0008 | pc: 0008 | pc_incr: 1
-# addr:     7 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0003 | g: 0003 | f: z | F_in: 0 | zero: 0 | IR: 0100000000000011 | W: 0
+# T0 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000a | pc: 000a | pc_incr: 1
+# addr:     9 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# AND R0, R1 --------------------------------------
-# T1 | Done: 0 | r0: 0003 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0009 | pc: 0009 | pc_incr: 0
-# addr:     8 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0008 | g: 0003 | f: z | F_in: 0 | zero: 0 | IR: 0100000000000011 | W: 0
+# T1 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000b | pc: 000b | pc_incr: 0
+# addr:    10 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T2 | Done: 0 | r0: 0003 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0009 | pc: 0009 | pc_incr: 0
-# addr:     8 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0009 | g: 0003 | f: z | F_in: 0 | zero: 0 | IR: 0100000000000011 | W: 0
+# -------------------------------------- add r0, #0xFF   --------------------------------------
+# T2 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000b | pc: 000b | pc_incr: 0
+# addr:    10 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T3 | Done: 0 | r0: 0003 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0009 | pc_incr: 0
-# addr:     8 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0009 | g: 0003 | f: z | F_in: 0 | zero: 0 | IR: 1100000000000001 | W: 0
+# T3 | Done: 1 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 000b | pc_incr: 0
+# addr:    10 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T4 | Done: 0 | r0: 0003 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 0009 | pc_incr: 0
-# addr:     8 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0003 | g: 0003 | f: z | F_in: 1 | zero: 0 | IR: 1100000000000001 | W: 0
+# T0 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000b | pc: 000b | pc_incr: 1
+# addr:    10 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T5 | Done: 1 | r0: 0003 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0009 | pc_incr: 0
-# addr:     8 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1100000000000001 | W: 0
+# T1 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000c | pc: 000c | pc_incr: 0
+# addr:    11 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T0 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0009 | pc: 0009 | pc_incr: 1
-# addr:     8 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1100000000000001 | W: 0
+# T2 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000c | pc: 000c | pc_incr: 0
+# addr:    11 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# SLL R1, R3  --------------------------------------
-# T1 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000a | pc: 000a | pc_incr: 0
-# addr:     9 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0009 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1100000000000001 | W: 0
+# T3 | Done: 1 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 000c | pc_incr: 0
+# addr:    11 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T2 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000a | pc: 000a | pc_incr: 0
-# addr:     9 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000a | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1100000000000001 | W: 0
+# -------------------------------------- B MAIN   --------------------------------------
+# T0 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000c | pc: 000c | pc_incr: 1
+# addr:    11 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T3 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 000a | pc_incr: 0
-# addr:     9 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000a | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1110001100000011 | W: 0
+# T1 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000d | pc: 000d | pc_incr: 0
+# addr:    12 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T4 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 000a | pc_incr: 0
-# addr:     9 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0001 | f: z | F_in: 1 | zero: 0 | IR: 1110001100000011 | W: 0
+# T2 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000d | pc: 000d | pc_incr: 0
+# addr:    12 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T5 | Done: 1 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000a | pc: 000a | pc_incr: 0
-# addr:     9 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 000a | f: z | F_in: 0 | zero: 0 | IR: 1110001100000011 | W: 0
+# T3 | Done: 1 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 000d | pc_incr: 0
+# addr:    12 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T0 | Done: 0 | r0: 0001 | r1: 000a | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000a | pc: 000a | pc_incr: 1
-# addr:     9 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000a | g: 000a | f: z | F_in: 0 | zero: 0 | IR: 1110001100000011 | W: 0
+# T0 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000d | pc: 000d | pc_incr: 1
+# addr:    12 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# SRL R1, R3 --------------------------------------
-# T1 | Done: 0 | r0: 0001 | r1: 000a | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000b | pc: 000b | pc_incr: 0
-# addr:    10 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000a | g: 000a | f: z | F_in: 0 | zero: 0 | IR: 1110001100000011 | W: 0
+# T1 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000e | pc: 000e | pc_incr: 0
+# addr:    13 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T2 | Done: 0 | r0: 0001 | r1: 000a | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000b | pc: 000b | pc_incr: 0
-# addr:    10 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000b | g: 000a | f: z | F_in: 0 | zero: 0 | IR: 1110001100000011 | W: 0
+# --------------------------------------  mv r0, #2 --------------------------------------
+# T2 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000e | pc: 000e | pc_incr: 0
+# addr:    13 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T3 | Done: 0 | r0: 0001 | r1: 000a | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000a | pc: 000b | pc_incr: 0
-# addr:    10 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000b | g: 000a | f: z | F_in: 0 | zero: 0 | IR: 1110001100100011 | W: 0
+# T3 | Done: 1 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 000e | pc_incr: 0
+# addr:    13 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T4 | Done: 0 | r0: 0001 | r1: 000a | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 000b | pc_incr: 0
-# addr:    10 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000a | g: 000a | f: z | F_in: 1 | zero: 0 | IR: 1110001100100011 | W: 0
+# T0 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000e | pc: 000e | pc_incr: 1
+# addr:    13 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 
-# T5 | Done: 1 | r0: 0001 | r1: 000a | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 000b | pc_incr: 0
-# addr:    10 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 1110001100100011 | W: 0
-# 
-# T0 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000b | pc: 000b | pc_incr: 1
-# addr:    10 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 1110001100100011 | W: 0
-# 
-# MV R2, R1 --------------------------------------
-# T1 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000c | pc: 000c | pc_incr: 0
-# addr:    11 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000b | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 1110001100100011 | W: 0
-# 
-# T2 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000c | pc: 000c | pc_incr: 0
-# addr:    11 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000c | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 1110001100100011 | W: 0
-# 
-# T3 | Done: 1 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 000c | pc_incr: 0
-# addr:    11 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000c | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0000010000000001 | W: 0
-# 
-# T0 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0005 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000c | pc: 000c | pc_incr: 1
-# addr:    11 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0000010000000001 | W: 0
-# 
-# AND R2, #3 --------------------------------------
-# T1 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0005 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000d | pc: 000d | pc_incr: 0
-# addr:    12 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000c | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0000010000000001 | W: 0
-# 
-# T2 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0005 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000d | pc: 000d | pc_incr: 0
-# addr:    12 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000d | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 0000010000000001 | W: 0
-# 
-# T3 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0005 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 000d | pc_incr: 0
-# addr:    12 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000d | g: 0005 | f: z | F_in: 0 | zero: 0 | IR: 1101010000000011 | W: 0
-# 
-# T4 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0005 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 000d | pc_incr: 0
-# addr:    12 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0005 | f: z | F_in: 1 | zero: 0 | IR: 1101010000000011 | W: 0
-# 
-# T5 | Done: 1 | r0: 0001 | r1: 0005 | r2: 0005 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 000d | pc_incr: 0
-# addr:    12 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0003 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1101010000000011 | W: 0
-# 
-# T0 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000d | pc: 000d | pc_incr: 1
-# addr:    12 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1101010000000011 | W: 0
-# 
-# SLL R0, #2 --------------------------------------
-# T1 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000e | pc: 000e | pc_incr: 0
-# addr:    13 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000d | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1101010000000011 | W: 0
-# 
-# T2 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000e | pc: 000e | pc_incr: 0
-# addr:    13 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000e | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1101010000000011 | W: 0
-# 
-# T3 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 000e | pc_incr: 0
-# addr:    13 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000e | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1111000100000010 | W: 0
-# 
-# T4 | Done: 0 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: ff02 | pc: 000e | pc_incr: 0
-# addr:    13 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0001 | f: z | F_in: 1 | zero: 0 | IR: 1111000100000010 | W: 0
-# 
-# T5 | Done: 1 | r0: 0001 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0004 | pc: 000e | pc_incr: 0
-# addr:    13 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: ff02 | g: 0004 | f: z | F_in: 0 | zero: 0 | IR: 1111000100000010 | W: 0
-# 
-# T0 | Done: 0 | r0: 0004 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000e | pc: 000e | pc_incr: 1
-# addr:    13 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0004 | g: 0004 | f: z | F_in: 0 | zero: 0 | IR: 1111000100000010 | W: 0
-# 
-# SUB R0, #1 --------------------------------------
-# T1 | Done: 0 | r0: 0004 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000f | pc: 000f | pc_incr: 0
-# addr:    14 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000e | g: 0004 | f: z | F_in: 0 | zero: 0 | IR: 1111000100000010 | W: 0
-# 
-# T2 | Done: 0 | r0: 0004 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000f | pc: 000f | pc_incr: 0
-# addr:    14 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000f | g: 0004 | f: z | F_in: 0 | zero: 0 | IR: 1111000100000010 | W: 0
-# 
-# T3 | Done: 0 | r0: 0004 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0004 | pc: 000f | pc_incr: 0
-# addr:    14 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000f | g: 0004 | f: z | F_in: 0 | zero: 0 | IR: 0111000000000001 | W: 0
-# 
-# T4 | Done: 0 | r0: 0004 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 000f | pc_incr: 0
-# addr:    14 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0004 | g: 0004 | f: z | F_in: 1 | zero: 0 | IR: 0111000000000001 | W: 0
-# 
-# T5 | Done: 1 | r0: 0004 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 000f | pc_incr: 0
-# addr:    14 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0003 | f: z | F_in: 0 | zero: 1 | IR: 0111000000000001 | W: 0
-# 
-# T0 | Done: 0 | r0: 0003 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000f | pc: 000f | pc_incr: 1
-# addr:    14 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0003 | g: 0003 | f: z | F_in: 0 | zero: 1 | IR: 0111000000000001 | W: 0
-# 
-# SRL R1, #2 --------------------------------------
-# T1 | Done: 0 | r0: 0003 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0010 | pc: 0010 | pc_incr: 0
-# addr:    15 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 000f | g: 0003 | f: z | F_in: 0 | zero: 1 | IR: 0111000000000001 | W: 0
-# 
-# T2 | Done: 0 | r0: 0003 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0010 | pc: 0010 | pc_incr: 0
-# addr:    15 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0010 | g: 0003 | f: z | F_in: 0 | zero: 1 | IR: 0111000000000001 | W: 0
-# 
-# T3 | Done: 0 | r0: 0003 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0005 | pc: 0010 | pc_incr: 0
-# addr:    15 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0010 | g: 0003 | f: z | F_in: 0 | zero: 1 | IR: 1111001100100010 | W: 0
-# 
-# T4 | Done: 0 | r0: 0003 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: ff22 | pc: 0010 | pc_incr: 0
-# addr:    15 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0005 | g: 0003 | f: z | F_in: 1 | zero: 0 | IR: 1111001100100010 | W: 0
-# 
-# T5 | Done: 1 | r0: 0003 | r1: 0005 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0010 | pc_incr: 0
-# addr:    15 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: ff22 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1111001100100010 | W: 0
-# 
-# T0 | Done: 0 | r0: 0003 | r1: 0001 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0010 | pc: 0010 | pc_incr: 1
-# addr:    15 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1111001100100010 | W: 0
-# 
-# ADD R1, R1 --------------------------------------
-# T1 | Done: 0 | r0: 0003 | r1: 0001 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0011 | pc: 0011 | pc_incr: 0
-# addr:    16 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0010 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1111001100100010 | W: 0
-# 
-# T2 | Done: 0 | r0: 0003 | r1: 0001 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0011 | pc: 0011 | pc_incr: 0
-# addr:    16 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0011 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 1111001100100010 | W: 0
-# 
-# T3 | Done: 0 | r0: 0003 | r1: 0001 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0011 | pc_incr: 0
-# addr:    16 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0011 | g: 0001 | f: z | F_in: 0 | zero: 0 | IR: 0100001000000001 | W: 0
-# 
-# T4 | Done: 0 | r0: 0003 | r1: 0001 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0011 | pc_incr: 0
-# addr:    16 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0001 | f: z | F_in: 1 | zero: 0 | IR: 0100001000000001 | W: 0
-# 
-# T5 | Done: 1 | r0: 0003 | r1: 0001 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0002 | pc: 0011 | pc_incr: 0
-# addr:    16 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 0100001000000001 | W: 0
-# 
-# T0 | Done: 0 | r0: 0003 | r1: 0002 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0011 | pc: 0011 | pc_incr: 1
-# addr:    16 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0002 | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 0100001000000001 | W: 0
-# 
-# LD R2, R0 --------------------------------------
-# T1 | Done: 0 | r0: 0003 | r1: 0002 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0012 | pc: 0012 | pc_incr: 0
-# addr:    17 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0011 | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 0100001000000001 | W: 0
-# 
-# T2 | Done: 0 | r0: 0003 | r1: 0002 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0012 | pc: 0012 | pc_incr: 0
-# addr:    17 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0012 | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 0100001000000001 | W: 0
-# 
-# T3 | Done: 0 | r0: 0003 | r1: 0002 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0012 | pc_incr: 0
-# addr:    17 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0012 | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 1000010000000000 | W: 0
-# 
-# T4 | Done: 0 | r0: 0003 | r1: 0002 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0012 | pc_incr: 0
-# addr:     3 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0003 | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 1000010000000000 | W: 0
-# 
-# T5 | Done: 1 | r0: 0003 | r1: 0002 | r2: 0001 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0006 | pc: 0012 | pc_incr: 0
-# addr:     3 | addr_in: 0 | DATA: 0000 | dout: 0006 | dout_in: x | a: 0003 | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 1000010000000000 | W: 0
-# 
-# T0 | Done: 0 | r0: 0003 | r1: 0002 | r2: 0006 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0012 | pc: 0012 | pc_incr: 1
-# addr:     3 | addr_in: 1 | DATA: 0000 | dout: 0006 | dout_in: x | a: 0006 | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 1000010000000000 | W: 0
-# 
-# ADD R2, R3 --------------------------------------
-# T1 | Done: 0 | r0: 0003 | r1: 0002 | r2: 0006 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0013 | pc: 0013 | pc_incr: 0
-# addr:    18 | addr_in: 0 | DATA: 0000 | dout: 0006 | dout_in: x | a: 0012 | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 1000010000000000 | W: 0
-# 
-# T2 | Done: 0 | r0: 0003 | r1: 0002 | r2: 0006 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0013 | pc: 0013 | pc_incr: 0
-# addr:    18 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0013 | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 1000010000000000 | W: 0
-# 
-# T3 | Done: 0 | r0: 0003 | r1: 0002 | r2: 0006 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0006 | pc: 0013 | pc_incr: 0
-# addr:    18 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0013 | g: 0002 | f: z | F_in: 0 | zero: 0 | IR: 0100010000000011 | W: 0
-# 
-# T4 | Done: 0 | r0: 0003 | r1: 0002 | r2: 0006 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0013 | pc_incr: 0
-# addr:    18 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0006 | g: 0002 | f: z | F_in: 1 | zero: 0 | IR: 0100010000000011 | W: 0
-# 
-# T5 | Done: 1 | r0: 0003 | r1: 0002 | r2: 0006 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0007 | pc: 0013 | pc_incr: 0
-# addr:    18 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0001 | g: 0007 | f: z | F_in: 0 | zero: 0 | IR: 0100010000000011 | W: 0
-# 
-# T0 | Done: 0 | r0: 0003 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0013 | pc: 0013 | pc_incr: 1
-# addr:    18 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0007 | g: 0007 | f: z | F_in: 0 | zero: 0 | IR: 0100010000000011 | W: 0
-# 
-# SUB R0, #3 --------------------------------------
-# T1 | Done: 0 | r0: 0003 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0014 | pc: 0014 | pc_incr: 0
-# addr:    19 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0013 | g: 0007 | f: z | F_in: 0 | zero: 0 | IR: 0100010000000011 | W: 0
-# 
-# T2 | Done: 0 | r0: 0003 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0014 | pc: 0014 | pc_incr: 0
-# addr:    19 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0014 | g: 0007 | f: z | F_in: 0 | zero: 0 | IR: 0100010000000011 | W: 0
-# 
-# T3 | Done: 0 | r0: 0003 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0014 | pc_incr: 0
-# addr:    19 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0014 | g: 0007 | f: z | F_in: 0 | zero: 0 | IR: 0111000000000011 | W: 0
-# 
-# T4 | Done: 0 | r0: 0003 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0003 | pc: 0014 | pc_incr: 0
-# addr:    19 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0003 | g: 0007 | f: z | F_in: 1 | zero: 1 | IR: 0111000000000011 | W: 0
-# 
-# T5 | Done: 1 | r0: 0003 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 0014 | pc_incr: 0
-# addr:    19 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0003 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 0111000000000011 | W: 0
-# 
-# T0 | Done: 0 | r0: 0000 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0014 | pc: 0014 | pc_incr: 1
-# addr:    19 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 0111000000000011 | W: 0
-# 
-# SD R2, R0 --------------------------------------
-# T1 | Done: 0 | r0: 0000 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0015 | pc: 0015 | pc_incr: 0
-# addr:    20 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0014 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 0111000000000011 | W: 0
-# 
-# T2 | Done: 0 | r0: 0000 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0015 | pc: 0015 | pc_incr: 0
-# addr:    20 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0015 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 0111000000000011 | W: 0
-# 
-# T3 | Done: 0 | r0: 0000 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 0015 | pc_incr: 0
-# addr:    20 | addr_in: 1 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0015 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 1010010000000000 | W: 0
-# 
-# T4 | Done: 1 | r0: 0000 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0007 | pc: 0015 | pc_incr: 0
-# addr:     0 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: 1 | a: 0000 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 1010010000000000 | W: 0
-# 
-# T0 | Done: 0 | r0: 0000 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0015 | pc: 0015 | pc_incr: 1
-# addr:     0 | addr_in: 1 | DATA: 0007 | dout: 0f0f | dout_in: 1 | a: 0007 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 1010010000000000 | W: 1
-# 
-# LD R0, R0 --------------------------------------
-# T1 | Done: 0 | r0: 0000 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0016 | pc: 0016 | pc_incr: 0
-# addr:    21 | addr_in: 0 | DATA: 0015 | dout: 0007 | dout_in: 1 | a: 0015 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 1010010000000000 | W: 0
-# 
-# T2 | Done: 0 | r0: 0000 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0016 | pc: 0016 | pc_incr: 0
-# addr:    21 | addr_in: 0 | DATA: 0016 | dout: 0000 | dout_in: 1 | a: 0016 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 1010010000000000 | W: 0
-# 
-# T3 | Done: 0 | r0: 0000 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 0016 | pc_incr: 0
-# addr:    21 | addr_in: 1 | DATA: 0016 | dout: 0000 | dout_in: 1 | a: 0016 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 1000000000000000 | W: 0
-# 
-# T4 | Done: 0 | r0: 0000 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0000 | pc: 0016 | pc_incr: 0
-# addr:     0 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: 1 | a: 0000 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 1000000000000000 | W: 0
-# 
-# T5 | Done: 1 | r0: 0000 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0007 | pc: 0016 | pc_incr: 0
-# addr:     0 | addr_in: 0 | DATA: 0000 | dout: 0007 | dout_in: 1 | a: 0000 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 1000000000000000 | W: 0
-# 
-# T0 | Done: 0 | r0: 0007 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0016 | pc: 0016 | pc_incr: 1
-# addr:     0 | addr_in: 1 | DATA: 0007 | dout: 0007 | dout_in: 1 | a: 0007 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 1000000000000000 | W: 0
-# 
-# SUB R0, R3 --------------------------------------
-# T1 | Done: 0 | r0: 0007 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0017 | pc: 0017 | pc_incr: 0
-# addr:    22 | addr_in: 0 | DATA: 0016 | dout: 0007 | dout_in: 1 | a: 0016 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 1000000000000000 | W: 0
-# 
-# T2 | Done: 0 | r0: 0007 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0017 | pc: 0017 | pc_incr: 0
-# addr:    22 | addr_in: 0 | DATA: 0017 | dout: 0000 | dout_in: 1 | a: 0017 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 1000000000000000 | W: 0
-# 
-# T3 | Done: 0 | r0: 0007 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0007 | pc: 0017 | pc_incr: 0
-# addr:    22 | addr_in: 0 | DATA: 0017 | dout: 0000 | dout_in: 1 | a: 0017 | g: 0000 | f: z | F_in: 0 | zero: 1 | IR: 0110000000000011 | W: 0
-# 
-# T4 | Done: 0 | r0: 0007 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0001 | pc: 0017 | pc_incr: 0
-# addr:    22 | addr_in: 0 | DATA: 0007 | dout: 0000 | dout_in: 1 | a: 0007 | g: 0000 | f: z | F_in: 1 | zero: 0 | IR: 0110000000000011 | W: 0
-# 
-# T5 | Done: 1 | r0: 0007 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0006 | pc: 0017 | pc_incr: 0
-# addr:    22 | addr_in: 0 | DATA: 0001 | dout: 0000 | dout_in: 1 | a: 0001 | g: 0006 | f: z | F_in: 0 | zero: 1 | IR: 0110000000000011 | W: 0
-# 
-# T0 | Done: 0 | r0: 0006 | r1: 0002 | r2: 0007 | r3: 0001 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 0017 | pc: 0017 | pc_incr: 1
-# addr:    22 | addr_in: 1 | DATA: 0006 | dout: 0000 | dout_in: 1 | a: 0006 | g: 0006 | f: z | F_in: 0 | zero: 1 | IR: 0110000000000011 | W: 0
+# T1 | Done: 0 | r0: 0000 | r1: 0000 | r2: 0000 | r3: 0000 | r4: 0000 | r5: 0000 | r6: 0000 | buswires: 000f | pc: 000f | pc_incr: 0
+# addr:    14 | addr_in: 0 | DATA: 0000 | dout: 0000 | dout_in: x | a: 0000 | g: 0000 | f: x | F_in: 0 | zero: x | IR: 0000000000000000 | W: 0
 # 

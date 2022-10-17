@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projetoProcessador
-Fri Oct 14 23:02:40 2022
+Mon Oct 17 17:58:38 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -15,27 +15,28 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. State Machine - |projetoProcessador|Tstep_Q
+ 10. State Machine - |Main|projetoProcessador:Controle|Tstep_Q
  11. User-Specified and Inferred Latches
  12. Registers Removed During Synthesis
  13. General Register Statistics
  14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_pc71:auto_generated
- 16. Source assignments for memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component|altsyncram_ffd1:auto_generated
- 17. Parameter Settings for User Entity Instance: Top-level Entity: |projetoProcessador
- 18. Parameter Settings for User Entity Instance: instr_memory:memInstr|altsyncram:altsyncram_component
- 19. Parameter Settings for User Entity Instance: memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component
- 20. Parameter Settings for User Entity Instance: barrel:Barrilzao
+ 15. Source assignments for projetoProcessador:Controle|instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_ma81:auto_generated
+ 16. Source assignments for projetoProcessador:Controle|memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component|altsyncram_ffd1:auto_generated
+ 17. Parameter Settings for User Entity Instance: projetoProcessador:Controle
+ 18. Parameter Settings for User Entity Instance: projetoProcessador:Controle|instr_memory:memInstr|altsyncram:altsyncram_component
+ 19. Parameter Settings for User Entity Instance: projetoProcessador:Controle|memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component
+ 20. Parameter Settings for User Entity Instance: projetoProcessador:Controle|barrel:Barrilzao
  21. altsyncram Parameter Settings by Entity Instance
- 22. Port Connectivity Checks: "F:bitF"
- 23. Port Connectivity Checks: "Alu:alu"
- 24. Port Connectivity Checks: "regn:WDout"
- 25. Port Connectivity Checks: "regn:regAddr"
- 26. Port Connectivity Checks: "instr_memory:memInstr"
- 27. Port Connectivity Checks: "dec3to8:decX"
- 28. Elapsed Time Per Partition
- 29. Analysis & Synthesis Messages
- 30. Analysis & Synthesis Suppressed Messages
+ 22. Port Connectivity Checks: "projetoProcessador:Controle|F:bitF"
+ 23. Port Connectivity Checks: "projetoProcessador:Controle|Alu:alu"
+ 24. Port Connectivity Checks: "projetoProcessador:Controle|regn:WDout"
+ 25. Port Connectivity Checks: "projetoProcessador:Controle|regn:regAddr"
+ 26. Port Connectivity Checks: "projetoProcessador:Controle|instr_memory:memInstr"
+ 27. Port Connectivity Checks: "projetoProcessador:Controle|dec3to8:decX"
+ 28. Port Connectivity Checks: "projetoProcessador:Controle"
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
+ 31. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -61,16 +62,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Oct 14 23:02:40 2022           ;
+; Analysis & Synthesis Status        ; Successful - Mon Oct 17 17:58:38 2022           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; projetoProcessador                              ;
-; Top-level Entity Name              ; projetoProcessador                              ;
+; Top-level Entity Name              ; Main                                            ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 709                                             ;
-;     Total combinational functions  ; 555                                             ;
+; Total logic elements               ; 737                                             ;
+;     Total combinational functions  ; 583                                             ;
 ;     Dedicated logic registers      ; 207                                             ;
 ; Total registers                    ; 207                                             ;
-; Total pins                         ; 148                                             ;
+; Total pins                         ; 93                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 4,608                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -84,7 +85,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C35F672C6       ;                    ;
-; Top-level entity name                                                      ; projetoProcessador ; projetoProcessador ;
+; Top-level entity name                                                      ; Main               ; projetoProcessador ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -169,124 +170,136 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 4      ;
+; Number detected on machine ; 8      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                     ;
-+----------------------------------+-----------------+-----------------------------------+-------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                         ; File Name with Absolute Path                                            ; Library ;
-+----------------------------------+-----------------+-----------------------------------+-------------------------------------------------------------------------+---------+
-; projetoProcessador.v             ; yes             ; User Verilog HDL File             ; C:/pastaX/projetoProcessador/projetoProcessador.v                       ;         ;
-; data_memory.mif                  ; yes             ; User Memory Initialization File   ; C:/pastaX/projetoProcessador/data_memory.mif                            ;         ;
-; memoriaPrincipal.v               ; yes             ; User Wizard-Generated File        ; C:/pastaX/projetoProcessador/memoriaPrincipal.v                         ;         ;
-; eu.mif                           ; yes             ; User Memory Initialization File   ; C:/pastaX/projetoProcessador/eu.mif                                     ;         ;
-; barrel.v                         ; yes             ; User Verilog HDL File             ; C:/pastaX/projetoProcessador/barrel.v                                   ;         ;
-; Alu.v                            ; yes             ; User Verilog HDL File             ; C:/pastaX/projetoProcessador/Alu.v                                      ;         ;
-; instr_memory.v                   ; yes             ; Auto-Found Wizard-Generated File  ; C:/pastaX/projetoProcessador/instr_memory.v                             ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc        ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                       ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                       ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_pc71.tdf           ; yes             ; Auto-Generated Megafunction       ; C:/pastaX/projetoProcessador/db/altsyncram_pc71.tdf                     ;         ;
-; db/altsyncram_ffd1.tdf           ; yes             ; Auto-Generated Megafunction       ; C:/pastaX/projetoProcessador/db/altsyncram_ffd1.tdf                     ;         ;
-+----------------------------------+-----------------+-----------------------------------+-------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------+---------+
+; projetoProcessador.v             ; yes             ; User Verilog HDL File                  ; C:/altera/projetoProcessador/projetoProcessador.v                       ;         ;
+; data_memory.mif                  ; yes             ; User Memory Initialization File        ; C:/altera/projetoProcessador/data_memory.mif                            ;         ;
+; memoriaPrincipal.v               ; yes             ; User Wizard-Generated File             ; C:/altera/projetoProcessador/memoriaPrincipal.v                         ;         ;
+; barrel.v                         ; yes             ; User Verilog HDL File                  ; C:/altera/projetoProcessador/barrel.v                                   ;         ;
+; Alu.v                            ; yes             ; User Verilog HDL File                  ; C:/altera/projetoProcessador/Alu.v                                      ;         ;
+; pc_counter.v                     ; yes             ; User Verilog HDL File                  ; C:/altera/projetoProcessador/pc_counter.v                               ;         ;
+; regn.v                           ; yes             ; User Verilog HDL File                  ; C:/altera/projetoProcessador/regn.v                                     ;         ;
+; F.v                              ; yes             ; User Verilog HDL File                  ; C:/altera/projetoProcessador/F.v                                        ;         ;
+; regW.v                           ; yes             ; User Verilog HDL File                  ; C:/altera/projetoProcessador/regW.v                                     ;         ;
+; display.v                        ; yes             ; User Verilog HDL File                  ; C:/altera/projetoProcessador/display.v                                  ;         ;
+; dec3to8.v                        ; yes             ; User Verilog HDL File                  ; C:/altera/projetoProcessador/dec3to8.v                                  ;         ;
+; Main.v                           ; yes             ; User Verilog HDL File                  ; C:/altera/projetoProcessador/Main.v                                     ;         ;
+; instr_memory.v                   ; yes             ; Auto-Found Wizard-Generated File       ; C:/altera/projetoProcessador/instr_memory.v                             ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_ma81.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/altera/projetoProcessador/db/altsyncram_ma81.tdf                     ;         ;
+; instrucao4.mif                   ; yes             ; Auto-Found Memory Initialization File  ; C:/altera/projetoProcessador/instrucao4.mif                             ;         ;
+; db/altsyncram_ffd1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/altera/projetoProcessador/db/altsyncram_ffd1.tdf                     ;         ;
++----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 709   ;
-;                                             ;       ;
-; Total combinational functions               ; 555   ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 368   ;
-;     -- 3 input functions                    ; 146   ;
-;     -- <=2 input functions                  ; 41    ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 510   ;
-;     -- arithmetic mode                      ; 45    ;
-;                                             ;       ;
-; Total registers                             ; 207   ;
-;     -- Dedicated logic registers            ; 207   ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 148   ;
-; Total memory bits                           ; 4608  ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; Clock ;
-; Maximum fan-out                             ; 239   ;
-; Total fan-out                               ; 3043  ;
-; Average fan-out                             ; 3.23  ;
-+---------------------------------------------+-------+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 737      ;
+;                                             ;          ;
+; Total combinational functions               ; 583      ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 395      ;
+;     -- 3 input functions                    ; 146      ;
+;     -- <=2 input functions                  ; 42       ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 538      ;
+;     -- arithmetic mode                      ; 45       ;
+;                                             ;          ;
+; Total registers                             ; 207      ;
+;     -- Dedicated logic registers            ; 207      ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 93       ;
+; Total memory bits                           ; 4608     ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+; Maximum fan-out node                        ; CLOCK_50 ;
+; Maximum fan-out                             ; 239      ;
+; Total fan-out                               ; 3030     ;
+; Average fan-out                             ; 3.31     ;
++---------------------------------------------+----------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                     ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                              ; Library Name ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
-; |projetoProcessador                       ; 555 (180)         ; 207 (6)      ; 4608        ; 0            ; 0       ; 0         ; 148  ; 0            ; |projetoProcessador                                                                                              ; work         ;
-;    |Alu:alu|                              ; 171 (171)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|Alu:alu                                                                                      ; work         ;
-;    |barrel:Barrilzao|                     ; 179 (179)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|barrel:Barrilzao                                                                             ; work         ;
-;    |dec3to8:decX|                         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|dec3to8:decX                                                                                 ; work         ;
-;    |instr_memory:memInstr|                ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|instr_memory:memInstr                                                                        ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|instr_memory:memInstr|altsyncram:altsyncram_component                                        ; work         ;
-;          |altsyncram_pc71:auto_generated| ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_pc71:auto_generated         ; work         ;
-;    |memoriaPrincipal:memPrincipal|        ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|memoriaPrincipal:memPrincipal                                                                ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component                                ; work         ;
-;          |altsyncram_ffd1:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component|altsyncram_ffd1:auto_generated ; work         ;
-;    |pc_counter:reg_7|                     ; 18 (18)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|pc_counter:reg_7                                                                             ; work         ;
-;    |regW:Wren|                            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regW:Wren                                                                                    ; work         ;
-;    |regn:A|                               ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:A                                                                                       ; work         ;
-;    |regn:WDout|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:WDout                                                                                   ; work         ;
-;    |regn:regAddr|                         ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:regAddr                                                                                 ; work         ;
-;    |regn:regG|                            ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:regG                                                                                    ; work         ;
-;    |regn:regIR|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:regIR                                                                                   ; work         ;
-;    |regn:reg_0|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_0                                                                                   ; work         ;
-;    |regn:reg_1|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_1                                                                                   ; work         ;
-;    |regn:reg_2|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_2                                                                                   ; work         ;
-;    |regn:reg_3|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_3                                                                                   ; work         ;
-;    |regn:reg_4|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_4                                                                                   ; work         ;
-;    |regn:reg_5|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_5                                                                                   ; work         ;
-;    |regn:reg_6|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projetoProcessador|regn:reg_6                                                                                   ; work         ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                      ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                            ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |Main                                        ; 583 (0)           ; 207 (0)      ; 4608        ; 0            ; 0       ; 0         ; 93   ; 0            ; |Main                                                                                                                          ; work         ;
+;    |Display:registrador0_0|                  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Display:registrador0_0                                                                                                   ; work         ;
+;    |Display:registrador0_1|                  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Display:registrador0_1                                                                                                   ; work         ;
+;    |Display:registrador0_2|                  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Display:registrador0_2                                                                                                   ; work         ;
+;    |Display:registrador0_3|                  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Display:registrador0_3                                                                                                   ; work         ;
+;    |projetoProcessador:Controle|             ; 555 (180)         ; 207 (6)      ; 4608        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle                                                                                              ; work         ;
+;       |Alu:alu|                              ; 171 (171)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|Alu:alu                                                                                      ; work         ;
+;       |barrel:Barrilzao|                     ; 179 (179)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|barrel:Barrilzao                                                                             ; work         ;
+;       |dec3to8:decX|                         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|dec3to8:decX                                                                                 ; work         ;
+;       |instr_memory:memInstr|                ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|instr_memory:memInstr                                                                        ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|instr_memory:memInstr|altsyncram:altsyncram_component                                        ; work         ;
+;             |altsyncram_ma81:auto_generated| ; 0 (0)             ; 0 (0)        ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_ma81:auto_generated         ; work         ;
+;       |memoriaPrincipal:memPrincipal|        ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|memoriaPrincipal:memPrincipal                                                                ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component                                ; work         ;
+;             |altsyncram_ffd1:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component|altsyncram_ffd1:auto_generated ; work         ;
+;       |pc_counter:reg_7|                     ; 18 (18)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|pc_counter:reg_7                                                                             ; work         ;
+;       |regW:Wren|                            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|regW:Wren                                                                                    ; work         ;
+;       |regn:A|                               ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|regn:A                                                                                       ; work         ;
+;       |regn:WDout|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|regn:WDout                                                                                   ; work         ;
+;       |regn:regAddr|                         ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|regn:regAddr                                                                                 ; work         ;
+;       |regn:regG|                            ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|regn:regG                                                                                    ; work         ;
+;       |regn:regIR|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|regn:regIR                                                                                   ; work         ;
+;       |regn:reg_0|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|regn:reg_0                                                                                   ; work         ;
+;       |regn:reg_1|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|regn:reg_1                                                                                   ; work         ;
+;       |regn:reg_2|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|regn:reg_2                                                                                   ; work         ;
+;       |regn:reg_3|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|regn:reg_3                                                                                   ; work         ;
+;       |regn:reg_4|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|regn:reg_4                                                                                   ; work         ;
+;       |regn:reg_5|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|regn:reg_5                                                                                   ; work         ;
+;       |regn:reg_6|                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|projetoProcessador:Controle|regn:reg_6                                                                                   ; work         ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                  ;
-+---------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+-----------------+
-; Name                                                                                                    ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF             ;
-+---------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+-----------------+
-; instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_pc71:auto_generated|ALTSYNCRAM         ; AUTO ; ROM         ; 32           ; 16           ; --           ; --           ; 512  ; eu.mif          ;
-; memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component|altsyncram_ffd1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 16           ; --           ; --           ; 4096 ; data_memory.mif ;
-+---------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+-----------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                ;
++-------------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+-------------------+
+; Name                                                                                                                                ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF               ;
++-------------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+-------------------+
+; projetoProcessador:Controle|instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_ma81:auto_generated|ALTSYNCRAM         ; AUTO ; ROM         ; 32           ; 16           ; --           ; --           ; 512  ; ../instrucao4.mif ;
+; projetoProcessador:Controle|memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component|altsyncram_ffd1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 16           ; --           ; --           ; 4096 ; data_memory.mif   ;
++-------------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+-------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                               ;
-+--------+--------------+---------+--------------+--------------+---------------------------------------------------+-------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                   ; IP Include File                                 ;
-+--------+--------------+---------+--------------+--------------+---------------------------------------------------+-------------------------------------------------+
-; Altera ; ROM: 1-PORT  ; N/A     ; N/A          ; N/A          ; |projetoProcessador|instr_memory:memInstr         ; C:/pastaX/projetoProcessador/instr_memory.v     ;
-; Altera ; RAM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |projetoProcessador|memoriaPrincipal:memPrincipal ; C:/pastaX/projetoProcessador/memoriaPrincipal.v ;
-+--------+--------------+---------+--------------+--------------+---------------------------------------------------+-------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                             ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------------------------+-------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                 ; IP Include File                                 ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------------------------+-------------------------------------------------+
+; Altera ; ROM: 1-PORT  ; N/A     ; N/A          ; N/A          ; |Main|projetoProcessador:Controle|instr_memory:memInstr         ; C:/altera/projetoProcessador/instr_memory.v     ;
+; Altera ; RAM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Main|projetoProcessador:Controle|memoriaPrincipal:memPrincipal ; C:/altera/projetoProcessador/memoriaPrincipal.v ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------------------------+-------------------------------------------------+
 
 
 Encoding Type:  One-Hot
 +------------------------------------------------------------------------------------------+
-; State Machine - |projetoProcessador|Tstep_Q                                              ;
+; State Machine - |Main|projetoProcessador:Controle|Tstep_Q                                ;
 +------------+------------+------------+------------+------------+------------+------------+
 ; Name       ; Tstep_Q.T5 ; Tstep_Q.T4 ; Tstep_Q.T3 ; Tstep_Q.T2 ; Tstep_Q.T1 ; Tstep_Q.T0 ;
 +------------+------------+------------+------------+------------+------------+------------+
@@ -299,34 +312,34 @@ Encoding Type:  One-Hot
 +------------+------------+------------+------------+------------+------------+------------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Alu:alu|Res[0]                                      ; Alu:alu|Res[15]     ; yes                    ;
-; Alu:alu|Res[1]                                      ; Alu:alu|Res[15]     ; yes                    ;
-; Alu:alu|Res[2]                                      ; Alu:alu|Res[15]     ; yes                    ;
-; Alu:alu|Res[3]                                      ; Alu:alu|Res[15]     ; yes                    ;
-; Alu:alu|Res[4]                                      ; Alu:alu|Res[15]     ; yes                    ;
-; Alu:alu|Res[5]                                      ; Alu:alu|Res[15]     ; yes                    ;
-; Alu:alu|Res[6]                                      ; Alu:alu|Res[15]     ; yes                    ;
-; Alu:alu|Res[7]                                      ; Alu:alu|Res[15]     ; yes                    ;
-; Alu:alu|Res[8]                                      ; Alu:alu|Res[15]     ; yes                    ;
-; Alu:alu|Res[9]                                      ; Alu:alu|Res[15]     ; yes                    ;
-; Alu:alu|Res[10]                                     ; Alu:alu|Res[15]     ; yes                    ;
-; Alu:alu|Res[11]                                     ; Alu:alu|Res[15]     ; yes                    ;
-; Alu:alu|Res[12]                                     ; Alu:alu|Res[15]     ; yes                    ;
-; Alu:alu|Res[13]                                     ; Alu:alu|Res[15]     ; yes                    ;
-; Alu:alu|Res[14]                                     ; Alu:alu|Res[15]     ; yes                    ;
-; Alu:alu|Res[15]                                     ; Alu:alu|Res[15]     ; yes                    ;
-; Select[1]                                           ; Selector1           ; yes                    ;
-; Select[3]                                           ; Selector1           ; yes                    ;
-; Select[0]                                           ; Selector1           ; yes                    ;
-; Select[2]                                           ; Selector1           ; yes                    ;
-; A_in                                                ; A_in                ; yes                    ;
-; Number of user-specified and inferred latches = 21  ;                     ;                        ;
-+-----------------------------------------------------+---------------------+------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                        ;
++-----------------------------------------------------+---------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                         ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------------------------------+------------------------+
+; projetoProcessador:Controle|Select[1]               ; projetoProcessador:Controle|Selector1       ; yes                    ;
+; projetoProcessador:Controle|Select[0]               ; projetoProcessador:Controle|Selector1       ; yes                    ;
+; projetoProcessador:Controle|Select[2]               ; projetoProcessador:Controle|Selector1       ; yes                    ;
+; projetoProcessador:Controle|Select[3]               ; projetoProcessador:Controle|Selector1       ; yes                    ;
+; projetoProcessador:Controle|Alu:alu|Res[0]          ; projetoProcessador:Controle|Alu:alu|Res[15] ; yes                    ;
+; projetoProcessador:Controle|Alu:alu|Res[1]          ; projetoProcessador:Controle|Alu:alu|Res[15] ; yes                    ;
+; projetoProcessador:Controle|Alu:alu|Res[2]          ; projetoProcessador:Controle|Alu:alu|Res[15] ; yes                    ;
+; projetoProcessador:Controle|Alu:alu|Res[3]          ; projetoProcessador:Controle|Alu:alu|Res[15] ; yes                    ;
+; projetoProcessador:Controle|Alu:alu|Res[4]          ; projetoProcessador:Controle|Alu:alu|Res[15] ; yes                    ;
+; projetoProcessador:Controle|Alu:alu|Res[5]          ; projetoProcessador:Controle|Alu:alu|Res[15] ; yes                    ;
+; projetoProcessador:Controle|Alu:alu|Res[6]          ; projetoProcessador:Controle|Alu:alu|Res[15] ; yes                    ;
+; projetoProcessador:Controle|Alu:alu|Res[7]          ; projetoProcessador:Controle|Alu:alu|Res[15] ; yes                    ;
+; projetoProcessador:Controle|Alu:alu|Res[8]          ; projetoProcessador:Controle|Alu:alu|Res[15] ; yes                    ;
+; projetoProcessador:Controle|Alu:alu|Res[9]          ; projetoProcessador:Controle|Alu:alu|Res[15] ; yes                    ;
+; projetoProcessador:Controle|Alu:alu|Res[10]         ; projetoProcessador:Controle|Alu:alu|Res[15] ; yes                    ;
+; projetoProcessador:Controle|Alu:alu|Res[11]         ; projetoProcessador:Controle|Alu:alu|Res[15] ; yes                    ;
+; projetoProcessador:Controle|Alu:alu|Res[12]         ; projetoProcessador:Controle|Alu:alu|Res[15] ; yes                    ;
+; projetoProcessador:Controle|Alu:alu|Res[13]         ; projetoProcessador:Controle|Alu:alu|Res[15] ; yes                    ;
+; projetoProcessador:Controle|Alu:alu|Res[14]         ; projetoProcessador:Controle|Alu:alu|Res[15] ; yes                    ;
+; projetoProcessador:Controle|Alu:alu|Res[15]         ; projetoProcessador:Controle|Alu:alu|Res[15] ; yes                    ;
+; projetoProcessador:Controle|A_in                    ; projetoProcessador:Controle|A_in            ; yes                    ;
+; Number of user-specified and inferred latches = 21  ;                                             ;                        ;
++-----------------------------------------------------+---------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -335,9 +348,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------------+--------------------+
 ; Register name                         ; Reason for Removal ;
 +---------------------------------------+--------------------+
-; Tstep_Q~4                             ; Lost fanout        ;
-; Tstep_Q~5                             ; Lost fanout        ;
-; Tstep_Q~6                             ; Lost fanout        ;
+; projetoProcessador:Controle|Tstep_Q~4 ; Lost fanout        ;
+; projetoProcessador:Controle|Tstep_Q~5 ; Lost fanout        ;
+; projetoProcessador:Controle|Tstep_Q~6 ; Lost fanout        ;
 ; Total Number of Removed Registers = 3 ;                    ;
 +---------------------------------------+--------------------+
 
@@ -350,253 +363,253 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Total registers                              ; 207   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 16    ;
-; Number of registers using Asynchronous Clear ; 6     ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 184   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |projetoProcessador|pc_counter:reg_7|saida_pc[3] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |projetoProcessador|barrel:Barrilzao|ShiftRight1 ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |projetoProcessador|barrel:Barrilzao|ShiftLeft1  ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |projetoProcessador|barrel:Barrilzao|ShiftLeft1  ;
-; 12:1               ; 8 bits    ; 64 LEs        ; 56 LEs               ; 8 LEs                  ; No         ; |projetoProcessador|Mux30                        ;
-; 12:1               ; 8 bits    ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |projetoProcessador|Mux22                        ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |projetoProcessador|barrel:Barrilzao|ShiftLeft1  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 35 LEs               ; 7 LEs                  ; No         ; |projetoProcessador|Alu:alu|Res[7]               ;
-; 10:1               ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |projetoProcessador|Alu:alu|Res[10]              ;
-; 11:1               ; 3 bits    ; 21 LEs        ; 21 LEs               ; 0 LEs                  ; No         ; |projetoProcessador|Alu:alu|Res[14]              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |Main|projetoProcessador:Controle|pc_counter:reg_7|saida_pc[6] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Main|projetoProcessador:Controle|barrel:Barrilzao|ShiftRight1 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Main|projetoProcessador:Controle|barrel:Barrilzao|ShiftLeft1  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Main|projetoProcessador:Controle|barrel:Barrilzao|ShiftLeft1  ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 56 LEs               ; 8 LEs                  ; No         ; |Main|projetoProcessador:Controle|Mux27                        ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Main|projetoProcessador:Controle|Mux21                        ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |Main|projetoProcessador:Controle|barrel:Barrilzao|ShiftLeft1  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 35 LEs               ; 7 LEs                  ; No         ; |Main|projetoProcessador:Controle|Alu:alu|Res[5]               ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |Main|projetoProcessador:Controle|Alu:alu|Res[9]               ;
+; 11:1               ; 3 bits    ; 21 LEs        ; 21 LEs               ; 0 LEs                  ; No         ; |Main|projetoProcessador:Controle|Alu:alu|Res[14]              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------+
-; Source assignments for instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_pc71:auto_generated ;
-+---------------------------------+--------------------+------+-----------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                            ;
-+---------------------------------+--------------------+------+-----------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                             ;
-+---------------------------------+--------------------+------+-----------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for projetoProcessador:Controle|instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_ma81:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                        ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                         ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Source assignments for memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component|altsyncram_ffd1:auto_generated ;
-+---------------------------------+--------------------+------+-------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                    ;
-+---------------------------------+--------------------+------+-------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                     ;
-+---------------------------------+--------------------+------+-------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for projetoProcessador:Controle|memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component|altsyncram_ffd1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                 ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |projetoProcessador ;
-+----------------+-------+-----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                      ;
-+----------------+-------+-----------------------------------------------------------+
-; T0             ; 000   ; Unsigned Binary                                           ;
-; T1             ; 001   ; Unsigned Binary                                           ;
-; T2             ; 010   ; Unsigned Binary                                           ;
-; T3             ; 011   ; Unsigned Binary                                           ;
-; T4             ; 100   ; Unsigned Binary                                           ;
-; T5             ; 101   ; Unsigned Binary                                           ;
-; mv             ; 000   ; Unsigned Binary                                           ;
-; mvt            ; 001   ; Unsigned Binary                                           ;
-; add            ; 010   ; Unsigned Binary                                           ;
-; sub            ; 011   ; Unsigned Binary                                           ;
-; load           ; 100   ; Unsigned Binary                                           ;
-; store          ; 101   ; Unsigned Binary                                           ;
-; _and           ; 110   ; Unsigned Binary                                           ;
-; b_cond         ; 001   ; Unsigned Binary                                           ;
-; shift          ; 111   ; Unsigned Binary                                           ;
-; _R0            ; 0000  ; Unsigned Binary                                           ;
-; _R1            ; 0001  ; Unsigned Binary                                           ;
-; _R2            ; 0010  ; Unsigned Binary                                           ;
-; _R3            ; 0011  ; Unsigned Binary                                           ;
-; _R4            ; 0100  ; Unsigned Binary                                           ;
-; _R5            ; 0101  ; Unsigned Binary                                           ;
-; _R6            ; 0110  ; Unsigned Binary                                           ;
-; _PC            ; 0111  ; Unsigned Binary                                           ;
-; _G             ; 1000  ; Unsigned Binary                                           ;
-; _IR8_IR8_0     ; 1001  ; Unsigned Binary                                           ;
-; _IR7_0_0       ; 1010  ; Unsigned Binary                                           ;
-; _DIN           ; 1011  ; Unsigned Binary                                           ;
-+----------------+-------+-----------------------------------------------------------+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: projetoProcessador:Controle ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; T0             ; 000   ; Unsigned Binary                                 ;
+; T1             ; 001   ; Unsigned Binary                                 ;
+; T2             ; 010   ; Unsigned Binary                                 ;
+; T3             ; 011   ; Unsigned Binary                                 ;
+; T4             ; 100   ; Unsigned Binary                                 ;
+; T5             ; 101   ; Unsigned Binary                                 ;
+; mv             ; 000   ; Unsigned Binary                                 ;
+; mvt            ; 001   ; Unsigned Binary                                 ;
+; add            ; 010   ; Unsigned Binary                                 ;
+; sub            ; 011   ; Unsigned Binary                                 ;
+; load           ; 100   ; Unsigned Binary                                 ;
+; store          ; 101   ; Unsigned Binary                                 ;
+; _and           ; 110   ; Unsigned Binary                                 ;
+; b_cond         ; 001   ; Unsigned Binary                                 ;
+; shift          ; 111   ; Unsigned Binary                                 ;
+; _R0            ; 0000  ; Unsigned Binary                                 ;
+; _R1            ; 0001  ; Unsigned Binary                                 ;
+; _R2            ; 0010  ; Unsigned Binary                                 ;
+; _R3            ; 0011  ; Unsigned Binary                                 ;
+; _R4            ; 0100  ; Unsigned Binary                                 ;
+; _R5            ; 0101  ; Unsigned Binary                                 ;
+; _R6            ; 0110  ; Unsigned Binary                                 ;
+; _PC            ; 0111  ; Unsigned Binary                                 ;
+; _G             ; 1000  ; Unsigned Binary                                 ;
+; _IR8_IR8_0     ; 1001  ; Unsigned Binary                                 ;
+; _IR7_0_0       ; 1010  ; Unsigned Binary                                 ;
+; _DIN           ; 1011  ; Unsigned Binary                                 ;
++----------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: instr_memory:memInstr|altsyncram:altsyncram_component ;
-+------------------------------------+----------------------+----------------------------------------+
-; Parameter Name                     ; Value                ; Type                                   ;
-+------------------------------------+----------------------+----------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                             ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                           ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                           ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                         ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                                ;
-; OPERATION_MODE                     ; ROM                  ; Untyped                                ;
-; WIDTH_A                            ; 16                   ; Signed Integer                         ;
-; WIDTHAD_A                          ; 5                    ; Signed Integer                         ;
-; NUMWORDS_A                         ; 32                   ; Signed Integer                         ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                                ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                ;
-; WIDTH_B                            ; 1                    ; Untyped                                ;
-; WIDTHAD_B                          ; 1                    ; Untyped                                ;
-; NUMWORDS_B                         ; 1                    ; Untyped                                ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                                ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                                ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                         ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                ;
-; BYTE_SIZE                          ; 8                    ; Untyped                                ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                ;
-; INIT_FILE                          ; eu.mif               ; Untyped                                ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                                ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                ;
-; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                                ;
-; CBXI_PARAMETER                     ; altsyncram_pc71      ; Untyped                                ;
-+------------------------------------+----------------------+----------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: projetoProcessador:Controle|instr_memory:memInstr|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+--------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                               ;
++------------------------------------+----------------------+--------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                            ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                         ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                       ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                       ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                     ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                            ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                            ;
+; WIDTH_A                            ; 16                   ; Signed Integer                                                     ;
+; WIDTHAD_A                          ; 5                    ; Signed Integer                                                     ;
+; NUMWORDS_A                         ; 32                   ; Signed Integer                                                     ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                            ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                            ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                            ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                            ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                            ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                            ;
+; WIDTH_B                            ; 1                    ; Untyped                                                            ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                            ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                            ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                            ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                            ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                            ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                            ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                            ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                            ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                            ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                            ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                            ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                            ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                            ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                            ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                     ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                            ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                            ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                            ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                            ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                            ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                            ;
+; INIT_FILE                          ; ../instrucao4.mif    ; Untyped                                                            ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                            ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                            ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                            ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                            ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                            ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                            ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                            ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                            ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                            ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                            ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                            ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                                                            ;
+; CBXI_PARAMETER                     ; altsyncram_ma81      ; Untyped                                                            ;
++------------------------------------+----------------------+--------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component ;
-+------------------------------------+----------------------+------------------------------------------------+
-; Parameter Name                     ; Value                ; Type                                           ;
-+------------------------------------+----------------------+------------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                        ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                     ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                   ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                   ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                 ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                                        ;
-; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                        ;
-; WIDTH_A                            ; 16                   ; Signed Integer                                 ;
-; WIDTHAD_A                          ; 8                    ; Signed Integer                                 ;
-; NUMWORDS_A                         ; 256                  ; Signed Integer                                 ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                        ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                        ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                        ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                        ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                                        ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                        ;
-; WIDTH_B                            ; 1                    ; Untyped                                        ;
-; WIDTHAD_B                          ; 1                    ; Untyped                                        ;
-; NUMWORDS_B                         ; 1                    ; Untyped                                        ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                                        ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                        ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                        ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                        ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                        ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                        ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                                        ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                        ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                        ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                        ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                        ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                        ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                 ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                        ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                        ;
-; BYTE_SIZE                          ; 8                    ; Untyped                                        ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                        ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                        ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                        ;
-; INIT_FILE                          ; data_memory.mif      ; Untyped                                        ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                        ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                        ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                        ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                        ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                        ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                        ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                        ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                        ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                                        ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                        ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                        ;
-; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                                        ;
-; CBXI_PARAMETER                     ; altsyncram_ffd1      ; Untyped                                        ;
-+------------------------------------+----------------------+------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: projetoProcessador:Controle|memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+----------------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                                       ;
++------------------------------------+----------------------+----------------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                                    ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                                 ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                               ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                               ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                             ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                                    ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                                                    ;
+; WIDTH_A                            ; 16                   ; Signed Integer                                                             ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer                                                             ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer                                                             ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                                    ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                                    ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                                    ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                                    ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                                    ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                                    ;
+; WIDTH_B                            ; 1                    ; Untyped                                                                    ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                                    ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                                    ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                                    ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                                    ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                                    ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                                    ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                                    ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                                    ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                                    ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                    ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                                    ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                                    ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                    ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                                    ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                                    ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                                    ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                                    ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                                    ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                    ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                    ;
+; INIT_FILE                          ; data_memory.mif      ; Untyped                                                                    ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                                    ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                                    ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                                    ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                                    ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                                    ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                                    ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                                    ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                                    ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                                    ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                                    ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                                    ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                                                                    ;
+; CBXI_PARAMETER                     ; altsyncram_ffd1      ; Untyped                                                                    ;
++------------------------------------+----------------------+----------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: barrel:Barrilzao ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-; lsl            ; 00    ; Unsigned Binary                      ;
-; lsr            ; 01    ; Unsigned Binary                      ;
-; asr            ; 10    ; Unsigned Binary                      ;
-; ror            ; 11    ; Unsigned Binary                      ;
-+----------------+-------+--------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: projetoProcessador:Controle|barrel:Barrilzao ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; lsl            ; 00    ; Unsigned Binary                                                  ;
+; lsr            ; 01    ; Unsigned Binary                                                  ;
+; asr            ; 10    ; Unsigned Binary                                                  ;
+; ror            ; 11    ; Unsigned Binary                                                  ;
++----------------+-------+------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                                          ;
-+-------------------------------------------+---------------------------------------------------------------+
-; Name                                      ; Value                                                         ;
-+-------------------------------------------+---------------------------------------------------------------+
-; Number of entity instances                ; 2                                                             ;
-; Entity Instance                           ; instr_memory:memInstr|altsyncram:altsyncram_component         ;
-;     -- OPERATION_MODE                     ; ROM                                                           ;
-;     -- WIDTH_A                            ; 16                                                            ;
-;     -- NUMWORDS_A                         ; 32                                                            ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                  ;
-;     -- WIDTH_B                            ; 1                                                             ;
-;     -- NUMWORDS_B                         ; 1                                                             ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                        ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                  ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                          ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                     ;
-; Entity Instance                           ; memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component ;
-;     -- OPERATION_MODE                     ; SINGLE_PORT                                                   ;
-;     -- WIDTH_A                            ; 16                                                            ;
-;     -- NUMWORDS_A                         ; 256                                                           ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                  ;
-;     -- WIDTH_B                            ; 1                                                             ;
-;     -- NUMWORDS_B                         ; 1                                                             ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                        ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                  ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                          ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                     ;
-+-------------------------------------------+---------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                                      ;
++-------------------------------------------+-------------------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                                     ;
++-------------------------------------------+-------------------------------------------------------------------------------------------+
+; Number of entity instances                ; 2                                                                                         ;
+; Entity Instance                           ; projetoProcessador:Controle|instr_memory:memInstr|altsyncram:altsyncram_component         ;
+;     -- OPERATION_MODE                     ; ROM                                                                                       ;
+;     -- WIDTH_A                            ; 16                                                                                        ;
+;     -- NUMWORDS_A                         ; 32                                                                                        ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                              ;
+;     -- WIDTH_B                            ; 1                                                                                         ;
+;     -- NUMWORDS_B                         ; 1                                                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                              ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                      ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                 ;
+; Entity Instance                           ; projetoProcessador:Controle|memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                                               ;
+;     -- WIDTH_A                            ; 16                                                                                        ;
+;     -- NUMWORDS_A                         ; 256                                                                                       ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                              ;
+;     -- WIDTH_B                            ; 1                                                                                         ;
+;     -- NUMWORDS_B                         ; 1                                                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                              ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                      ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                 ;
++-------------------------------------------+-------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "F:bitF"                                                                             ;
+; Port Connectivity Checks: "projetoProcessador:Controle|F:bitF"                                                 ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -605,7 +618,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Alu:alu"                                                                               ;
+; Port Connectivity Checks: "projetoProcessador:Controle|Alu:alu"                                                   ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port    ; Type   ; Severity ; Details                                                                             ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
@@ -613,17 +626,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------+
-; Port Connectivity Checks: "regn:WDout" ;
-+------+-------+----------+--------------+
-; Port ; Type  ; Severity ; Details      ;
-+------+-------+----------+--------------+
-; R_IN ; Input ; Info     ; Stuck at VCC ;
-+------+-------+----------+--------------+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "projetoProcessador:Controle|regn:WDout" ;
++------+-------+----------+------------------------------------------+
+; Port ; Type  ; Severity ; Details                                  ;
++------+-------+----------+------------------------------------------+
+; R_IN ; Input ; Info     ; Stuck at VCC                             ;
++------+-------+----------+------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "regn:regAddr"                                                                               ;
+; Port Connectivity Checks: "projetoProcessador:Controle|regn:regAddr"                                                   ;
 +--------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port         ; Type   ; Severity ; Details                                                                             ;
 +--------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -632,7 +645,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "instr_memory:memInstr"                                                                                                                                                               ;
+; Port Connectivity Checks: "projetoProcessador:Controle|instr_memory:memInstr"                                                                                                                                   ;
 +---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
 +---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -641,7 +654,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "dec3to8:decX"                                                                       ;
+; Port Connectivity Checks: "projetoProcessador:Controle|dec3to8:decX"                                           ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -649,12 +662,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "projetoProcessador:Controle"                                                                                                                                                             ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                                                            ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Resetn     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Resetn[-1] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; Run        ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Run[-1]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; reg1       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
+; reg2       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
+; reg3       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
+; reg4       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
+; reg5       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
+; reg6       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
+; regPC      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
+; Instr      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -664,20 +697,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Oct 14 23:02:33 2022
+    Info: Processing started: Mon Oct 17 17:58:33 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projetoProcessador -c projetoProcessador
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (12019): Can't analyze file -- file processador.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file projetoprocessador_tb.v
     Info (12023): Found entity 1: projetoProcessador_tb
-Info (12021): Found 7 design units, including 7 entities, in source file projetoprocessador.v
+Info (12021): Found 1 design units, including 1 entities, in source file projetoprocessador.v
     Info (12023): Found entity 1: projetoProcessador
-    Info (12023): Found entity 2: dec3to8
-    Info (12023): Found entity 3: regW
-    Info (12023): Found entity 4: pc_counter
-    Info (12023): Found entity 5: regInstr
-    Info (12023): Found entity 6: regn
-    Info (12023): Found entity 7: F
 Info (12021): Found 1 design units, including 1 entities, in source file memory.v
     Info (12023): Found entity 1: memory
 Info (12021): Found 1 design units, including 1 entities, in source file memoriaprincipal.v
@@ -690,33 +717,53 @@ Info (12021): Found 1 design units, including 1 entities, in source file alu.v
     Info (12023): Found entity 1: Alu
 Info (12021): Found 1 design units, including 1 entities, in source file testbench2.v
     Info (12023): Found entity 1: testbench2
-Warning (10236): Verilog HDL Implicit Net warning at projetoProcessador.v(55): created implicit net for "Reset"
-Warning (10236): Verilog HDL Implicit Net warning at projetoProcessador.v(338): created implicit net for "ZeroULA"
-Info (12127): Elaborating entity "projetoProcessador" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at projetoProcessador.v(17): object "ALU_and" assigned a value but never read
-Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(166): incomplete case statement has no default case item
-Info (10264): Verilog HDL Case Statement information at projetoProcessador.v(166): all case item expressions in this case statement are onehot
-Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(207): incomplete case statement has no default case item
-Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(272): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(126): inferring latch(es) for variable "Select", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(126): inferring latch(es) for variable "A_in", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(126): inferring latch(es) for variable "DOUT_in", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "DOUT_in" at projetoProcessador.v(126)
-Info (10041): Inferred latch for "A_in" at projetoProcessador.v(126)
-Info (10041): Inferred latch for "Select[0]" at projetoProcessador.v(126)
-Info (10041): Inferred latch for "Select[1]" at projetoProcessador.v(126)
-Info (10041): Inferred latch for "Select[2]" at projetoProcessador.v(126)
-Info (10041): Inferred latch for "Select[3]" at projetoProcessador.v(126)
-Info (12128): Elaborating entity "dec3to8" for hierarchy "dec3to8:decX"
+Info (12021): Found 1 design units, including 1 entities, in source file pc_counter.v
+    Info (12023): Found entity 1: pc_counter
+Info (12021): Found 1 design units, including 1 entities, in source file reginstr.v
+    Info (12023): Found entity 1: regInstr
+Info (12021): Found 1 design units, including 1 entities, in source file regn.v
+    Info (12023): Found entity 1: regn
+Info (12021): Found 1 design units, including 1 entities, in source file f.v
+    Info (12023): Found entity 1: F
+Info (12021): Found 1 design units, including 1 entities, in source file regw.v
+    Info (12023): Found entity 1: regW
+Info (12021): Found 1 design units, including 1 entities, in source file display.v
+    Info (12023): Found entity 1: Display
+Info (12021): Found 1 design units, including 1 entities, in source file dec3to8.v
+    Info (12023): Found entity 1: dec3to8
+Info (12021): Found 1 design units, including 1 entities, in source file main.v
+    Info (12023): Found entity 1: Main
+Info (12021): Found 1 design units, including 1 entities, in source file clock_divider.v
+    Info (12023): Found entity 1: Clock_divider
+Warning (10236): Verilog HDL Implicit Net warning at projetoProcessador.v(58): created implicit net for "Reset"
+Warning (10236): Verilog HDL Implicit Net warning at projetoProcessador.v(341): created implicit net for "ZeroULA"
+Info (12127): Elaborating entity "Main" for the top level hierarchy
+Warning (10034): Output port "LEDR[16..0]" at Main.v(9) has no driver
+Info (12128): Elaborating entity "projetoProcessador" for hierarchy "projetoProcessador:Controle"
+Warning (10036): Verilog HDL or VHDL warning at projetoProcessador.v(20): object "ALU_and" assigned a value but never read
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(169): incomplete case statement has no default case item
+Info (10264): Verilog HDL Case Statement information at projetoProcessador.v(169): all case item expressions in this case statement are onehot
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(210): incomplete case statement has no default case item
+Warning (10270): Verilog HDL Case Statement warning at projetoProcessador.v(275): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(129): inferring latch(es) for variable "Select", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(129): inferring latch(es) for variable "A_in", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at projetoProcessador.v(129): inferring latch(es) for variable "DOUT_in", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "DOUT_in" at projetoProcessador.v(129)
+Info (10041): Inferred latch for "A_in" at projetoProcessador.v(129)
+Info (10041): Inferred latch for "Select[0]" at projetoProcessador.v(129)
+Info (10041): Inferred latch for "Select[1]" at projetoProcessador.v(129)
+Info (10041): Inferred latch for "Select[2]" at projetoProcessador.v(129)
+Info (10041): Inferred latch for "Select[3]" at projetoProcessador.v(129)
+Info (12128): Elaborating entity "dec3to8" for hierarchy "projetoProcessador:Controle|dec3to8:decX"
 Warning (12125): Using design file instr_memory.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: instr_memory
-Info (12128): Elaborating entity "instr_memory" for hierarchy "instr_memory:memInstr"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "instr_memory:memInstr|altsyncram:altsyncram_component"
-Info (12130): Elaborated megafunction instantiation "instr_memory:memInstr|altsyncram:altsyncram_component"
-Info (12133): Instantiated megafunction "instr_memory:memInstr|altsyncram:altsyncram_component" with the following parameter:
+Info (12128): Elaborating entity "instr_memory" for hierarchy "projetoProcessador:Controle|instr_memory:memInstr"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "projetoProcessador:Controle|instr_memory:memInstr|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "projetoProcessador:Controle|instr_memory:memInstr|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "projetoProcessador:Controle|instr_memory:memInstr|altsyncram:altsyncram_component" with the following parameter:
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
-    Info (12134): Parameter "init_file" = "eu.mif"
+    Info (12134): Parameter "init_file" = "../instrucao4.mif"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
@@ -727,13 +774,13 @@ Info (12133): Instantiated megafunction "instr_memory:memInstr|altsyncram:altsyn
     Info (12134): Parameter "widthad_a" = "5"
     Info (12134): Parameter "width_a" = "16"
     Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_pc71.tdf
-    Info (12023): Found entity 1: altsyncram_pc71
-Info (12128): Elaborating entity "altsyncram_pc71" for hierarchy "instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_pc71:auto_generated"
-Info (12128): Elaborating entity "memoriaPrincipal" for hierarchy "memoriaPrincipal:memPrincipal"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component"
-Info (12130): Elaborated megafunction instantiation "memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component"
-Info (12133): Instantiated megafunction "memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component" with the following parameter:
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ma81.tdf
+    Info (12023): Found entity 1: altsyncram_ma81
+Info (12128): Elaborating entity "altsyncram_ma81" for hierarchy "projetoProcessador:Controle|instr_memory:memInstr|altsyncram:altsyncram_component|altsyncram_ma81:auto_generated"
+Info (12128): Elaborating entity "memoriaPrincipal" for hierarchy "projetoProcessador:Controle|memoriaPrincipal:memPrincipal"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "projetoProcessador:Controle|memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "projetoProcessador:Controle|memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "projetoProcessador:Controle|memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component" with the following parameter:
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "init_file" = "data_memory.mif"
@@ -750,11 +797,11 @@ Info (12133): Instantiated megafunction "memoriaPrincipal:memPrincipal|altsyncra
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ffd1.tdf
     Info (12023): Found entity 1: altsyncram_ffd1
-Info (12128): Elaborating entity "altsyncram_ffd1" for hierarchy "memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component|altsyncram_ffd1:auto_generated"
-Info (12128): Elaborating entity "regn" for hierarchy "regn:regIR"
-Info (12128): Elaborating entity "pc_counter" for hierarchy "pc_counter:reg_7"
-Info (12128): Elaborating entity "regW" for hierarchy "regW:Wren"
-Info (12128): Elaborating entity "Alu" for hierarchy "Alu:alu"
+Info (12128): Elaborating entity "altsyncram_ffd1" for hierarchy "projetoProcessador:Controle|memoriaPrincipal:memPrincipal|altsyncram:altsyncram_component|altsyncram_ffd1:auto_generated"
+Info (12128): Elaborating entity "regn" for hierarchy "projetoProcessador:Controle|regn:regIR"
+Info (12128): Elaborating entity "pc_counter" for hierarchy "projetoProcessador:Controle|pc_counter:reg_7"
+Info (12128): Elaborating entity "regW" for hierarchy "projetoProcessador:Controle|regW:Wren"
+Info (12128): Elaborating entity "Alu" for hierarchy "projetoProcessador:Controle|Alu:alu"
 Warning (10240): Verilog HDL Always Construct warning at Alu.v(11): inferring latch(es) for variable "Res", which holds its previous value in one or more paths through the always construct
 Info (10041): Inferred latch for "Res[0]" at Alu.v(13)
 Info (10041): Inferred latch for "Res[1]" at Alu.v(13)
@@ -772,81 +819,139 @@ Info (10041): Inferred latch for "Res[12]" at Alu.v(13)
 Info (10041): Inferred latch for "Res[13]" at Alu.v(13)
 Info (10041): Inferred latch for "Res[14]" at Alu.v(13)
 Info (10041): Inferred latch for "Res[15]" at Alu.v(13)
-Info (12128): Elaborating entity "F" for hierarchy "F:bitF"
-Info (12128): Elaborating entity "barrel" for hierarchy "barrel:Barrilzao"
+Info (12128): Elaborating entity "F" for hierarchy "projetoProcessador:Controle|F:bitF"
+Info (12128): Elaborating entity "barrel" for hierarchy "projetoProcessador:Controle|barrel:Barrilzao"
 Warning (10230): Verilog HDL assignment warning at barrel.v(16): truncated value with size 32 to match size of target (16)
+Info (12128): Elaborating entity "Display" for hierarchy "Display:registrador0_3"
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "Reset" is missing source, defaulting to GND
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "Reset" is missing source, defaulting to GND
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "Reset" is missing source, defaulting to GND
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "Reset" is missing source, defaulting to GND
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "Reset" is missing source, defaulting to GND
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13012): Latch Alu:alu|Res[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T4
-Warning (13012): Latch Alu:alu|Res[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T4
-Warning (13012): Latch Alu:alu|Res[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T4
-Warning (13012): Latch Alu:alu|Res[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T4
-Warning (13012): Latch Alu:alu|Res[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T4
-Warning (13012): Latch Alu:alu|Res[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T4
-Warning (13012): Latch Alu:alu|Res[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T4
-Warning (13012): Latch Alu:alu|Res[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T4
-Warning (13012): Latch Alu:alu|Res[8] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T4
-Warning (13012): Latch Alu:alu|Res[9] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T4
-Warning (13012): Latch Alu:alu|Res[10] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T4
-Warning (13012): Latch Alu:alu|Res[11] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T4
-Warning (13012): Latch Alu:alu|Res[12] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T4
-Warning (13012): Latch Alu:alu|Res[13] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T4
-Warning (13012): Latch Alu:alu|Res[14] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T4
-Warning (13012): Latch Alu:alu|Res[15] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T4
-Warning (13012): Latch Select[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T5
-Warning (13012): Latch Select[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T5
-Warning (13012): Latch Select[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T5
-Warning (13012): Latch Select[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Tstep_Q.T4
-Warning (13012): Latch A_in has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regn:regIR|R_OUT[13]
+    Warning (12110): Net "projetoProcessador:Controle|Reset" is missing source, defaulting to GND
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch projetoProcessador:Controle|Select[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T5
+Warning (13012): Latch projetoProcessador:Controle|Select[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T5
+Warning (13012): Latch projetoProcessador:Controle|Select[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T4
+Warning (13012): Latch projetoProcessador:Controle|Select[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T5
+Warning (13012): Latch projetoProcessador:Controle|Alu:alu|Res[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T4
+Warning (13012): Latch projetoProcessador:Controle|Alu:alu|Res[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T4
+Warning (13012): Latch projetoProcessador:Controle|Alu:alu|Res[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T4
+Warning (13012): Latch projetoProcessador:Controle|Alu:alu|Res[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T4
+Warning (13012): Latch projetoProcessador:Controle|Alu:alu|Res[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T4
+Warning (13012): Latch projetoProcessador:Controle|Alu:alu|Res[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T4
+Warning (13012): Latch projetoProcessador:Controle|Alu:alu|Res[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T4
+Warning (13012): Latch projetoProcessador:Controle|Alu:alu|Res[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T4
+Warning (13012): Latch projetoProcessador:Controle|Alu:alu|Res[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T4
+Warning (13012): Latch projetoProcessador:Controle|Alu:alu|Res[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T4
+Warning (13012): Latch projetoProcessador:Controle|Alu:alu|Res[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T4
+Warning (13012): Latch projetoProcessador:Controle|Alu:alu|Res[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T4
+Warning (13012): Latch projetoProcessador:Controle|Alu:alu|Res[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T4
+Warning (13012): Latch projetoProcessador:Controle|Alu:alu|Res[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T4
+Warning (13012): Latch projetoProcessador:Controle|Alu:alu|Res[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T4
+Warning (13012): Latch projetoProcessador:Controle|Alu:alu|Res[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|Tstep_Q.T4
+Warning (13012): Latch projetoProcessador:Controle|A_in has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal projetoProcessador:Controle|regn:regIR|R_OUT[13]
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX7[0]" is stuck at VCC
+    Warning (13410): Pin "HEX7[1]" is stuck at VCC
+    Warning (13410): Pin "HEX7[2]" is stuck at VCC
+    Warning (13410): Pin "HEX7[3]" is stuck at VCC
+    Warning (13410): Pin "HEX7[4]" is stuck at VCC
+    Warning (13410): Pin "HEX7[5]" is stuck at VCC
+    Warning (13410): Pin "HEX7[6]" is stuck at VCC
+    Warning (13410): Pin "HEX6[0]" is stuck at VCC
+    Warning (13410): Pin "HEX6[1]" is stuck at VCC
+    Warning (13410): Pin "HEX6[2]" is stuck at VCC
+    Warning (13410): Pin "HEX6[3]" is stuck at VCC
+    Warning (13410): Pin "HEX6[4]" is stuck at VCC
+    Warning (13410): Pin "HEX6[5]" is stuck at VCC
+    Warning (13410): Pin "HEX6[6]" is stuck at VCC
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC
+    Warning (13410): Pin "HEX4[2]" is stuck at VCC
+    Warning (13410): Pin "HEX4[3]" is stuck at VCC
+    Warning (13410): Pin "HEX4[4]" is stuck at VCC
+    Warning (13410): Pin "HEX4[5]" is stuck at VCC
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC
+    Warning (13410): Pin "LEDR[0]" is stuck at GND
+    Warning (13410): Pin "LEDR[1]" is stuck at GND
+    Warning (13410): Pin "LEDR[2]" is stuck at GND
+    Warning (13410): Pin "LEDR[3]" is stuck at GND
+    Warning (13410): Pin "LEDR[4]" is stuck at GND
+    Warning (13410): Pin "LEDR[5]" is stuck at GND
+    Warning (13410): Pin "LEDR[6]" is stuck at GND
+    Warning (13410): Pin "LEDR[7]" is stuck at GND
+    Warning (13410): Pin "LEDR[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[9]" is stuck at GND
+    Warning (13410): Pin "LEDR[10]" is stuck at GND
+    Warning (13410): Pin "LEDR[11]" is stuck at GND
+    Warning (13410): Pin "LEDR[12]" is stuck at GND
+    Warning (13410): Pin "LEDR[13]" is stuck at GND
+    Warning (13410): Pin "LEDR[14]" is stuck at GND
+    Warning (13410): Pin "LEDR[15]" is stuck at GND
+    Warning (13410): Pin "LEDR[16]" is stuck at GND
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/pastaX/projetoProcessador/output_files/projetoProcessador.map.smsg
+Info (144001): Generated suppressed messages file C:/altera/projetoProcessador/output_files/projetoProcessador.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 921 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 145 output pins
-    Info (21061): Implemented 741 logic cells
+Warning (21074): Design contains 18 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[0]"
+    Warning (15610): No output dependent on input pin "SW[1]"
+    Warning (15610): No output dependent on input pin "SW[2]"
+    Warning (15610): No output dependent on input pin "SW[3]"
+    Warning (15610): No output dependent on input pin "SW[4]"
+    Warning (15610): No output dependent on input pin "SW[5]"
+    Warning (15610): No output dependent on input pin "SW[6]"
+    Warning (15610): No output dependent on input pin "SW[7]"
+    Warning (15610): No output dependent on input pin "SW[8]"
+    Warning (15610): No output dependent on input pin "SW[9]"
+    Warning (15610): No output dependent on input pin "SW[10]"
+    Warning (15610): No output dependent on input pin "SW[11]"
+    Warning (15610): No output dependent on input pin "SW[12]"
+    Warning (15610): No output dependent on input pin "SW[13]"
+    Warning (15610): No output dependent on input pin "SW[14]"
+    Warning (15610): No output dependent on input pin "SW[15]"
+    Warning (15610): No output dependent on input pin "SW[16]"
+    Warning (15610): No output dependent on input pin "SW[17]"
+Info (21057): Implemented 894 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 19 input pins
+    Info (21059): Implemented 74 output pins
+    Info (21061): Implemented 769 logic cells
     Info (21064): Implemented 32 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 67 warnings
-    Info: Peak virtual memory: 4621 megabytes
-    Info: Processing ended: Fri Oct 14 23:02:40 2022
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:06
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 125 warnings
+    Info: Peak virtual memory: 4620 megabytes
+    Info: Processing ended: Mon Oct 17 17:58:38 2022
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/pastaX/projetoProcessador/output_files/projetoProcessador.map.smsg.
+The suppressed messages can be found in C:/altera/projetoProcessador/output_files/projetoProcessador.map.smsg.
 
 

@@ -17,7 +17,11 @@ module projetoProcessador_tb();
     end
 
    initial begin
-			/*$display("--------------------------------------  mv r0, #2 --------------------------------------");
+	
+	
+			//O testbench abaixo se refere ao teste 3: teste rotate
+			
+			$display("--------------------------------------  mv r0, #2 --------------------------------------");
 		   for(i=0;i<16;i=i+1)begin
 				Clock = ~Clock;
 				#1;
@@ -76,11 +80,15 @@ module projetoProcessador_tb();
 		   for(i=0;i<8;i=i+1)begin
 				Clock = ~Clock;
 				#1;
-			end*/
+			end
 			
-			
+			//fim do teste 4
+
+
+/*
 			//O testbench abaixo se refere ao teste 3: teste rotate
-		   /*$display("--------------------------------------  mv r0, #4 --------------------------------------");
+			
+		   $display("--------------------------------------  mv r0, #4 --------------------------------------");
 		  for(i=0;i<16;i=i+1)begin
 				Clock = ~Clock;
 				#1;
@@ -121,11 +129,15 @@ module projetoProcessador_tb();
 		  for(i=0;i<16;i=i+1)begin
 				Clock = ~Clock;
 				#1;
-			end*/
+			end
+			
+			//fim do teste 3
+*/
 
-       
+/*
 		//O testbench abaixo se refere aos casos propostos no teste 2:
-		 /*$display("-------------------------------------- mv r0, #5 --------------------------------------");
+
+		$display("-------------------------------------- mv r0, #5 --------------------------------------");
 			for(i=0;i<16;i=i+1)begin
 				Clock = ~Clock;
 				#1;
@@ -155,9 +167,14 @@ module projetoProcessador_tb();
         for(i=0;i<12;i=i+1)begin
 				Clock = ~Clock;
 				#1;
-			end*/
+			end
 			
+			//fim do teste 2
+*/
+			
+/*	
 		//O código abaixo se refere ao testbench do teste 1 proposto: 
+		
 		  $display("MV R0, #2 --------------------------------------");
 		  for(i=0;i<10;i=i+1)begin
 			 Clock = ~Clock;
@@ -211,7 +228,6 @@ module projetoProcessador_tb();
 			 Clock = ~Clock;
 			#1;
 		  end
-       
 		  
 		  $display("SLL R1, R3  --------------------------------------");
 		  for(i=0;i<12;i=i+1)begin
@@ -296,9 +312,10 @@ module projetoProcessador_tb();
 			 Clock = ~Clock;
 			#1;
 		  end
-
-    end
-
- 
 	
+			//fim do teste 1
+*/
+		  
+		  
+    end
 endmodule 

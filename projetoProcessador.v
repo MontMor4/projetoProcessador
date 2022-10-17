@@ -1,16 +1,19 @@
-module projetoProcessador(Resetn, Clock, Run, Done,reg0, reg1, reg2, reg3, reg4,reg5,reg6, regPC,Instr);
+module projetoProcessador(Resetn, Clock, Run, Done, reg0, reg1, reg2, reg3, reg4, reg5, reg6, regPC, Instr);
 	input Resetn, Clock, Run;
 	output Done;
-	//reg [15:0] IR;
 	wire [2:0] III;
 	wire IMM;
 	wire [2:0]rX;
 	wire [2:0]rY;
-	reg rX_in, A_in; reg [2:0]Tstep_Q; reg [2:0]Tstep_D; reg[15:0]BusWires;
-	output wire [15:0] reg0, reg1, reg2, reg3, reg4, reg5,reg6,regPC,Instr;
+	reg rX_in, A_in; 
+	reg [2:0]Tstep_Q; 
+	reg [2:0]Tstep_D; 
+	reg[15:0]BusWires;
+	output wire [15:0] reg0, reg1, reg2, reg3, reg4, reg5,reg6, regPC, Instr;
 	 
-	wire [15:0]r0, PC, r1, r2, r3, r4, r5, r6,saidaBarril; //registradores de proposito geral
-	reg Done,IR_in;reg[3:0]Select;
+	wire [15:0]r0, PC, r1, r2, r3, r4, r5, r6, saidaBarril; //registradores de proposito geral
+	reg Done,IR_in;
+	reg[3:0]Select;
 	wire [8:0]Imm;
 	wire [15:0]G;
 	reg [15:0]IR_wire;
@@ -65,13 +68,13 @@ module projetoProcessador(Resetn, Clock, Run, Done,reg0, reg1, reg2, reg3, reg4,
 		Tstep_D = T0;
 		rX_in = 1'b0; 
 		Done = 1'b0;
-		opULA=3'b000;
+		opULA = 3'b000;
 		G_in = 1'b0;
 		IR_in =1'b0;
-		addr_in =1'b0;
+		addr_in = 1'b0;
 		pc_in = 1'b0;
 		pc_incr = 1'b0;
-		Wd=1'b0;
+		Wd = 1'b0;
 		f_in = 1'b0;
 			
 		
@@ -127,12 +130,12 @@ module projetoProcessador(Resetn, Clock, Run, Done,reg0, reg1, reg2, reg3, reg4,
 			Done = 1'b0;
 			G_in = 1'b0;
 			IR_in =1'b0;
-			addr_in =1'b0;
+			addr_in = 1'b0;
 			pc_in = 1'b0;
 			pc_incr = 1'b0;
-			Wd =1'b0;
+			Wd = 1'b0;
 			f_in = 1'b0;
-			opULA=3'b000;
+			opULA = 3'b000;
 			//F_in = 1'b0;
 			
 			case (Tstep_Q) //controla o estado da instrução //
@@ -363,94 +366,4 @@ module projetoProcessador(Resetn, Clock, Run, Done,reg0, reg1, reg2, reg3, reg4,
 			endcase
 	endmodule
 	
-	module dec3to8(E, W, Y);
-		input E; // enable
-		input [2:0] W;
-		output [0:7] Y;
-		reg [0:7] Y;
-		
-		always @(*)
-			if (E == 0)
-				Y = 8'b00000000;
-			else
-				case (W)
-					3'b000: Y = 8'b10000000;
-					3'b001: Y = 8'b01000000;
-					3'b010: Y = 8'b00100000;
-					3'b011: Y = 8'b00010000;
-					3'b100: Y = 8'b00001000;
-					3'b101: Y = 8'b00000100;
-					3'b110: Y = 8'b00000010;
-					3'b111: Y = 8'b00000001;
-				endcase
-endmodule
 	
-	module regW(Clock, Wd, W);
-		input Clock;
-		input Wd;
-		output reg W;
-		
-		always @(posedge Clock)
-			W = Wd;
-		
-	endmodule
-	
-
-	
-	module pc_counter(clock, entrada_pc, pc_incr, pc_in, saida_pc);
-		input clock;
-		input [15:0] entrada_pc;
-		input pc_incr;
-		input pc_in;
-		output reg [15:0] saida_pc;
-		initial begin
-			saida_pc <= 16'b0;
-		end
-				
-		always @(posedge clock)
-			if(pc_in) begin
-				saida_pc <= entrada_pc;
-			end else if(pc_incr)begin
-				saida_pc <= saida_pc + 1'b1;
-			end
-				
-	endmodule
-	module regInstr(endereco,clock,in,endInstr);
-		input [4:0] endereco;
-		input clock;
-		input in;
-		output reg endInstr;
-		always@(posedge clock)
-			if(in)endInstr<=endereco;
-	endmodule
-	
-	module regn(BusW,Reset,R_IN,clock,R_OUT);
-		input [15:0]BusW;
-		input Reset;
-		input R_IN,clock;
-		output reg[15:0] R_OUT;
-		initial begin
-			R_OUT<=16'b0;
-		end
-		
-		always @(posedge clock) // antigo: negedge reset
-			if (R_IN) R_OUT <= BusW;	
-	endmodule 
-	
-	
-	
-
-	module F (F_in, zero, Clock, f);
-		input F_in, zero, Clock;
-		output reg f;
-		
-		always@(posedge Clock) begin
-			if(F_in) begin
-				f = zero; // armazena o valor do bit Zero da ULA
-			end
-		end
-	endmodule
-
-	
-	
-

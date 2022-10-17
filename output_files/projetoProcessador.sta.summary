@@ -2,99 +2,99 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow Model Setup 'Tstep_Q.T4'
-Slack : -10.086
-TNS   : -159.427
+Type  : Slow Model Setup 'projetoProcessador:Controle|Tstep_Q.T4'
+Slack : -10.577
+TNS   : -167.265
 
-Type  : Slow Model Setup 'Clock'
-Slack : -6.367
-TNS   : -1104.595
+Type  : Slow Model Setup 'CLOCK_50'
+Slack : -5.254
+TNS   : -784.674
 
-Type  : Slow Model Setup 'Tstep_Q.T3'
-Slack : -3.266
-TNS   : -3.266
+Type  : Slow Model Setup 'projetoProcessador:Controle|Tstep_Q.T3'
+Slack : -4.079
+TNS   : -4.079
 
-Type  : Slow Model Setup 'Tstep_Q.T1'
-Slack : -1.898
-TNS   : -6.693
+Type  : Slow Model Setup 'projetoProcessador:Controle|Tstep_Q.T1'
+Slack : -2.815
+TNS   : -10.824
 
-Type  : Slow Model Hold 'Tstep_Q.T4'
-Slack : -2.833
-TNS   : -25.428
+Type  : Slow Model Hold 'CLOCK_50'
+Slack : -4.286
+TNS   : -320.487
 
-Type  : Slow Model Hold 'Tstep_Q.T1'
-Slack : -2.569
-TNS   : -9.501
+Type  : Slow Model Hold 'projetoProcessador:Controle|Tstep_Q.T4'
+Slack : -3.219
+TNS   : -33.422
 
-Type  : Slow Model Hold 'Clock'
-Slack : -2.557
-TNS   : -57.668
+Type  : Slow Model Hold 'projetoProcessador:Controle|Tstep_Q.T1'
+Slack : -2.153
+TNS   : -6.937
 
-Type  : Slow Model Hold 'Tstep_Q.T3'
-Slack : 2.959
+Type  : Slow Model Hold 'projetoProcessador:Controle|Tstep_Q.T3'
+Slack : 2.501
 TNS   : 0.000
 
-Type  : Slow Model Minimum Pulse Width 'Clock'
+Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
 Slack : -2.000
-TNS   : -386.610
+TNS   : -415.988
 
-Type  : Slow Model Minimum Pulse Width 'Tstep_Q.T1'
+Type  : Slow Model Minimum Pulse Width 'projetoProcessador:Controle|Tstep_Q.T1'
 Slack : 0.500
 TNS   : 0.000
 
-Type  : Slow Model Minimum Pulse Width 'Tstep_Q.T3'
+Type  : Slow Model Minimum Pulse Width 'projetoProcessador:Controle|Tstep_Q.T3'
 Slack : 0.500
 TNS   : 0.000
 
-Type  : Slow Model Minimum Pulse Width 'Tstep_Q.T4'
+Type  : Slow Model Minimum Pulse Width 'projetoProcessador:Controle|Tstep_Q.T4'
 Slack : 0.500
 TNS   : 0.000
 
-Type  : Fast Model Setup 'Tstep_Q.T4'
-Slack : -4.703
-TNS   : -72.517
+Type  : Fast Model Setup 'projetoProcessador:Controle|Tstep_Q.T4'
+Slack : -4.882
+TNS   : -74.900
 
-Type  : Fast Model Setup 'Clock'
-Slack : -2.929
-TNS   : -474.340
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : -2.039
+TNS   : -318.198
 
-Type  : Fast Model Setup 'Tstep_Q.T3'
-Slack : -1.435
-TNS   : -1.435
+Type  : Fast Model Setup 'projetoProcessador:Controle|Tstep_Q.T3'
+Slack : -1.866
+TNS   : -1.866
 
-Type  : Fast Model Setup 'Tstep_Q.T1'
-Slack : -0.200
-TNS   : -0.502
+Type  : Fast Model Setup 'projetoProcessador:Controle|Tstep_Q.T1'
+Slack : -0.681
+TNS   : -2.501
 
-Type  : Fast Model Hold 'Tstep_Q.T4'
-Slack : -1.582
-TNS   : -17.576
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : -2.258
+TNS   : -176.306
 
-Type  : Fast Model Hold 'Tstep_Q.T1'
-Slack : -1.496
-TNS   : -5.636
+Type  : Fast Model Hold 'projetoProcessador:Controle|Tstep_Q.T4'
+Slack : -1.729
+TNS   : -21.719
 
-Type  : Fast Model Hold 'Clock'
-Slack : -1.413
-TNS   : -78.364
+Type  : Fast Model Hold 'projetoProcessador:Controle|Tstep_Q.T1'
+Slack : -1.256
+TNS   : -4.385
 
-Type  : Fast Model Hold 'Tstep_Q.T3'
-Slack : 1.889
+Type  : Fast Model Hold 'projetoProcessador:Controle|Tstep_Q.T3'
+Slack : 1.706
 TNS   : 0.000
 
-Type  : Fast Model Minimum Pulse Width 'Clock'
+Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
 Slack : -2.000
-TNS   : -386.610
+TNS   : -415.988
 
-Type  : Fast Model Minimum Pulse Width 'Tstep_Q.T1'
+Type  : Fast Model Minimum Pulse Width 'projetoProcessador:Controle|Tstep_Q.T1'
 Slack : 0.500
 TNS   : 0.000
 
-Type  : Fast Model Minimum Pulse Width 'Tstep_Q.T3'
+Type  : Fast Model Minimum Pulse Width 'projetoProcessador:Controle|Tstep_Q.T3'
 Slack : 0.500
 TNS   : 0.000
 
-Type  : Fast Model Minimum Pulse Width 'Tstep_Q.T4'
+Type  : Fast Model Minimum Pulse Width 'projetoProcessador:Controle|Tstep_Q.T4'
 Slack : 0.500
 TNS   : 0.000
 
